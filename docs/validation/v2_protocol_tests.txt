@@ -1,0 +1,13 @@
+test_all_methods_finite_and_freezing (__main__.ScientificContracts.test_all_methods_finite_and_freezing) ... /data1/shq/GP/PRPrompt_prompt_v2_20260930/prprompt/model.py:23: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  return torch.sparse_coo_tensor(indices.flip(0), weights, (nodes, nodes)).coalesce()
+ok
+test_changed_support_changes_routing (__main__.ScientificContracts.test_changed_support_changes_routing) ... ok
+test_label_renaming_equivariance_and_noop (__main__.ScientificContracts.test_label_renaming_equivariance_and_noop) ... ok
+test_one_shot_no_extra_labels (__main__.ScientificContracts.test_one_shot_no_extra_labels) ... ok
+test_query_labels_cannot_affect_fit_and_tamper_rejected (__main__.ScientificContracts.test_query_labels_cannot_affect_fit_and_tamper_rejected) ... ok
+test_stratified_sampling_and_disjoint_folds (__main__.ScientificContracts.test_stratified_sampling_and_disjoint_folds) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.166s
+
+OK

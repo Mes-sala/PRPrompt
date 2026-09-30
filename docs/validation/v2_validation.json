@@ -1,0 +1,409 @@
+{
+  "date": "2026-09-30",
+  "environment": {
+    "python": "/data1/shq/miniforge3/envs/prog-v2-cu130/bin/python",
+    "host": "5090",
+    "real_graph_smoke_device": "cpu"
+  },
+  "source_sha256": {
+    "prprompt/__init__.py": "73345f3b5d19e86082b37b8a720a99b4da6e81bb473f661746fca3311ec45c01",
+    "prprompt/model.py": "db90b06dc92d044edea99de8bb0ab15f542d6ae68ef351c6559414d51aa85842",
+    "prprompt/protocol.py": "d22870e0da42703f73d214ad08ff8a147565b5508d103fa0ac6135d0c35a76a9",
+    "prprompt/train.py": "d878feeb319f3aa51a232cc1cd51f11cc99ff69715cb57b638166ca41a8b2272",
+    "experiments/prepare_manifest.py": "de416d5e43fc2c0a193f50615ab744259a4102aa71c24a69e607ae6b5dca6390",
+    "experiments/run_benchmark.py": "25f9953e581f9092a453b6920566142da1ec63ec0f627ddb0fd66ed78756f86c",
+    "experiments/summarize.py": "e8b94109a2c2991ad978f6eb5138763e8a5db93fbb80d56ddb8199a1b5a9852b",
+    "experiments/tests/test_pipeline.py": "b1bb41783c9fe9eba358c9a4c84dad5d7c11ce61847cb3f7ff687abbda779760",
+    "experiments/tests/test_protocol.py": "28ccbe59e818d5bb55d348f69563d9d14429f0e54338ee6940710e6e123a7af7",
+    "experiments/configs/diagnostics.json": "a3252a1d7a9154a38bd157c521baac0335c36f9aa68eed4b29e88d19cd65116b",
+    "experiments/configs/main.json": "d0073b61de668a05b20cff0b5aa4d6d4345500b21381e6e3d1dc03c5c4ccf0d4",
+    "experiments/configs/shot_curve.json": "1ea370cddc424c3863d58743a7433f0be2b2fe4634bb384d2c53b8b6d6ff7fa9"
+  },
+  "commands": [
+    [
+      "experiments/tests/test_protocol.py"
+    ],
+    [
+      "experiments/tests/test_pipeline.py"
+    ],
+    [
+      "experiments/run_benchmark.py",
+      "--manifest",
+      "experiments/local/checkpoints.json",
+      "--device",
+      "cpu",
+      "--threads",
+      "4",
+      "--checkpoint-id",
+      "Cora__Edgepred_Gprompt__87bd546f7897",
+      "CiteSeer__Edgepred_GPPT__e5488f6ef537",
+      "--methods",
+      "FrozenLinear",
+      "FrozenPrototype",
+      "FullFineTune",
+      "ScratchGCN",
+      "ScratchGAT",
+      "ScratchSAGE",
+      "MLP",
+      "GPF",
+      "GPFPlus",
+      "GraphPromptDiag",
+      "AttributePrototype",
+      "AttributeRidge",
+      "PRPrompt",
+      "SharedHidden",
+      "LearnedRouterHidden",
+      "RandomFrozenPRPrompt",
+      "--smoke"
+    ],
+    [
+      "experiments/summarize.py",
+      "/data1/shq/GP/PRPrompt_prompt_v2_20260930/experiments/outputs/smoke/72a756c2ed330661"
+    ],
+    [
+      "experiments/run_benchmark.py",
+      "--manifest",
+      "experiments/local/checkpoints.json",
+      "--device",
+      "cpu",
+      "--threads",
+      "4",
+      "--checkpoint-id",
+      "Cora__Edgepred_Gprompt__87bd546f7897",
+      "CiteSeer__Edgepred_GPPT__e5488f6ef537",
+      "--methods",
+      "FrozenLinear",
+      "FrozenPrototype",
+      "FullFineTune",
+      "ScratchGCN",
+      "ScratchGAT",
+      "ScratchSAGE",
+      "MLP",
+      "GPF",
+      "GPFPlus",
+      "GraphPromptDiag",
+      "AttributePrototype",
+      "AttributeRidge",
+      "PRPrompt",
+      "SharedHidden",
+      "LearnedRouterHidden",
+      "RandomFrozenPRPrompt",
+      "--smoke"
+    ],
+    [
+      "experiments/run_benchmark.py",
+      "--manifest",
+      "experiments/local/checkpoints.json",
+      "--config",
+      "experiments/configs/main.json",
+      "--dry-run"
+    ],
+    [
+      "experiments/run_benchmark.py",
+      "--manifest",
+      "experiments/local/checkpoints.json",
+      "--config",
+      "experiments/configs/shot_curve.json",
+      "--dry-run"
+    ],
+    [
+      "experiments/run_benchmark.py",
+      "--manifest",
+      "experiments/local/checkpoints.json",
+      "--config",
+      "experiments/configs/diagnostics.json",
+      "--dry-run"
+    ]
+  ],
+  "scientific_contract_tests": 6,
+  "pipeline_integration_tests": 1,
+  "checkpoint_parity": {
+    "new_model_sha256": "db90b06dc92d044edea99de8bb0ab15f542d6ae68ef351c6559414d51aa85842",
+    "archived_gnn_sha256": "5fbd7e7fecab292c140d0f44ce8b0915f9b6cddcd1bfee5aaaffcc93198cf659",
+    "rows": [
+      {
+        "id": "Cora__Edgepred_Gprompt__87bd546f7897",
+        "checkpoint_sha256": "87bd546f7897218161bfb0876e792cf8f4682f3a42d6fc6e2227b9aa0f723493",
+        "max_abs_forward_error": 0.0,
+        "pretraining_provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "Edgepred_Gprompt",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "Cora",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "87bd546f7897218161bfb0876e792cf8f4682f3a42d6fc6e2227b9aa0f723493",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 120,
+          "best_training_loss": 0.016783489756142862,
+          "selection": "last_after_training_loss_patience_10"
+        }
+      },
+      {
+        "id": "CiteSeer__Edgepred_Gprompt__7bf67dc55e3a",
+        "checkpoint_sha256": "7bf67dc55e3a33541646a03e797ad32e1e16ce2f7a4be4c1fe2064d900de6e0b",
+        "max_abs_forward_error": 0.0,
+        "pretraining_provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "Edgepred_Gprompt",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "CiteSeer",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "7bf67dc55e3a33541646a03e797ad32e1e16ce2f7a4be4c1fe2064d900de6e0b",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 76,
+          "best_training_loss": 0.01023808982796394,
+          "selection": "last_after_training_loss_patience_10"
+        }
+      },
+      {
+        "id": "Cora__Edgepred_GPPT__a279caf82ae2",
+        "checkpoint_sha256": "a279caf82ae2d2fdbfc280143494c82054738b4fa2166034380ad83c971d3f7b",
+        "max_abs_forward_error": 0.0,
+        "pretraining_provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "Edgepred_GPPT",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "Cora",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "a279caf82ae2d2fdbfc280143494c82054738b4fa2166034380ad83c971d3f7b",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 322,
+          "best_training_loss": 0.2796752145344561,
+          "selection": "last_after_training_loss_patience_10"
+        }
+      },
+      {
+        "id": "CiteSeer__Edgepred_GPPT__e5488f6ef537",
+        "checkpoint_sha256": "e5488f6ef53701dc38f4401933e1bce64cae52406ca37bd41a9a0ae53762243d",
+        "max_abs_forward_error": 0.0,
+        "pretraining_provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "Edgepred_GPPT",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "CiteSeer",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "e5488f6ef53701dc38f4401933e1bce64cae52406ca37bd41a9a0ae53762243d",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 251,
+          "best_training_loss": 0.22795840358002145,
+          "selection": "last_after_training_loss_patience_10"
+        }
+      },
+      {
+        "id": "Cora__DGI__fb2b361637cb",
+        "checkpoint_sha256": "fb2b361637cbcc95e5885fecaf40a7ad45c80001f554ec7e19c203a56d925de9",
+        "max_abs_forward_error": 0.0,
+        "pretraining_provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "DGI",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "Cora",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "fb2b361637cbcc95e5885fecaf40a7ad45c80001f554ec7e19c203a56d925de9",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 309,
+          "best_training_loss": 0.09136056900024414,
+          "selection": "last_after_training_loss_patience_20"
+        }
+      },
+      {
+        "id": "CiteSeer__DGI__460f97d1cd97",
+        "checkpoint_sha256": "460f97d1cd973575e7d2d28b08a1b4532d50bd55e5edc0fc777c3820ce616e5f",
+        "max_abs_forward_error": 0.0,
+        "pretraining_provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "DGI",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "CiteSeer",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "460f97d1cd973575e7d2d28b08a1b4532d50bd55e5edc0fc777c3820ce616e5f",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 416,
+          "best_training_loss": 0.08958067744970322,
+          "selection": "last_after_training_loss_patience_20"
+        }
+      }
+    ],
+    "fixture": "17-node bidirectional ring, random inputs, CPU eval mode"
+  },
+  "cuda_fixture": {
+    "device": "NVIDIA GeForce RTX 5090",
+    "max_memory_allocated": 18126336,
+    "train_source_sha256": "d878feeb319f3aa51a232cc1cd51f11cc99ff69715cb57b638166ca41a8b2272",
+    "rows": [
+      {
+        "method": "FrozenLinear",
+        "trainable_parameters": 27,
+        "prompt_parameters": 0,
+        "task_model_parameters": 0,
+        "head_parameters": 27,
+        "backbone_parameters": 0,
+        "backbone_frozen": true,
+        "backbone_before": "56c6a5eb3b949e1eefb32f9901f5b0af2a50209fe1a253f24a36832c4b01daa5",
+        "backbone_after": "56c6a5eb3b949e1eefb32f9901f5b0af2a50209fe1a253f24a36832c4b01daa5",
+        "query_labels_received": false,
+        "support_label_hash": "77dfde7de40fcf6297b766e357e09d026e9847f584ffcca43d725ef17f723900",
+        "support_index_hash": "eac3cf03f4f9c43db9ca4f287a156b94508d1374923a96ab3137b555253cd692",
+        "zero_prompt_max_error": null,
+        "prompt_gradient_max": 0.0,
+        "first_support_loss": 1.117616891860962,
+        "last_support_loss": 1.10691499710083,
+        "fit_seconds": 0.9704528232105076
+      },
+      {
+        "method": "FullFineTune",
+        "trainable_parameters": 163,
+        "prompt_parameters": 0,
+        "task_model_parameters": 0,
+        "head_parameters": 27,
+        "backbone_parameters": 136,
+        "backbone_frozen": false,
+        "backbone_before": "56c6a5eb3b949e1eefb32f9901f5b0af2a50209fe1a253f24a36832c4b01daa5",
+        "backbone_after": "e186708df9f397552130cdeba0d4d5a28c3c2cf9ac511d5eda2f4da67bac0b36",
+        "query_labels_received": false,
+        "support_label_hash": "77dfde7de40fcf6297b766e357e09d026e9847f584ffcca43d725ef17f723900",
+        "support_index_hash": "eac3cf03f4f9c43db9ca4f287a156b94508d1374923a96ab3137b555253cd692",
+        "zero_prompt_max_error": null,
+        "prompt_gradient_max": 0.0,
+        "first_support_loss": 1.117616891860962,
+        "last_support_loss": 1.090151309967041,
+        "fit_seconds": 0.10381935210898519
+      },
+      {
+        "method": "GPFPlus",
+        "trainable_parameters": 327,
+        "prompt_parameters": 300,
+        "task_model_parameters": 0,
+        "head_parameters": 27,
+        "backbone_parameters": 0,
+        "backbone_frozen": true,
+        "backbone_before": "56c6a5eb3b949e1eefb32f9901f5b0af2a50209fe1a253f24a36832c4b01daa5",
+        "backbone_after": "56c6a5eb3b949e1eefb32f9901f5b0af2a50209fe1a253f24a36832c4b01daa5",
+        "query_labels_received": false,
+        "support_label_hash": "77dfde7de40fcf6297b766e357e09d026e9847f584ffcca43d725ef17f723900",
+        "support_index_hash": "eac3cf03f4f9c43db9ca4f287a156b94508d1374923a96ab3137b555253cd692",
+        "zero_prompt_max_error": null,
+        "prompt_gradient_max": 0.014722154816825357,
+        "first_support_loss": 1.119094967842102,
+        "last_support_loss": 1.1058740615844727,
+        "fit_seconds": 0.11213661590591073
+      },
+      {
+        "method": "PRPrompt",
+        "trainable_parameters": 51,
+        "prompt_parameters": 24,
+        "task_model_parameters": 0,
+        "head_parameters": 27,
+        "backbone_parameters": 0,
+        "backbone_frozen": true,
+        "backbone_before": "56c6a5eb3b949e1eefb32f9901f5b0af2a50209fe1a253f24a36832c4b01daa5",
+        "backbone_after": "56c6a5eb3b949e1eefb32f9901f5b0af2a50209fe1a253f24a36832c4b01daa5",
+        "query_labels_received": false,
+        "support_label_hash": "77dfde7de40fcf6297b766e357e09d026e9847f584ffcca43d725ef17f723900",
+        "support_index_hash": "eac3cf03f4f9c43db9ca4f287a156b94508d1374923a96ab3137b555253cd692",
+        "zero_prompt_max_error": 0.0,
+        "prompt_gradient_max": 0.11738476045486992,
+        "first_support_loss": 1.117616891860962,
+        "last_support_loss": 1.1008644104003906,
+        "fit_seconds": 0.1592739294283092,
+        "route_hash": "7da8fb8bb732ed3fc8378f8625495dd2de26c81807bb4e519b711d51b4ab8668",
+        "route_entropy": 0.7122463583946228
+      },
+      {
+        "method": "LearnedRouterHidden",
+        "trainable_parameters": 75,
+        "prompt_parameters": 48,
+        "task_model_parameters": 0,
+        "head_parameters": 27,
+        "backbone_parameters": 0,
+        "backbone_frozen": true,
+        "backbone_before": "56c6a5eb3b949e1eefb32f9901f5b0af2a50209fe1a253f24a36832c4b01daa5",
+        "backbone_after": "56c6a5eb3b949e1eefb32f9901f5b0af2a50209fe1a253f24a36832c4b01daa5",
+        "query_labels_received": false,
+        "support_label_hash": "77dfde7de40fcf6297b766e357e09d026e9847f584ffcca43d725ef17f723900",
+        "support_index_hash": "eac3cf03f4f9c43db9ca4f287a156b94508d1374923a96ab3137b555253cd692",
+        "zero_prompt_max_error": 0.0,
+        "prompt_gradient_max": 0.03477389318084403,
+        "first_support_loss": 1.117616891860962,
+        "last_support_loss": 1.1049779653549194,
+        "fit_seconds": 0.07465810095891356,
+        "route_hash": "ec068b081a96a8900ecd9d4c60eacf1e01802621faefc7f589875aefbf1c2807",
+        "route_entropy": 1.0730204582214355
+      },
+      {
+        "method": "RandomFrozenPRPrompt",
+        "trainable_parameters": 51,
+        "prompt_parameters": 24,
+        "task_model_parameters": 0,
+        "head_parameters": 27,
+        "backbone_parameters": 0,
+        "backbone_frozen": true,
+        "backbone_before": "4815df60ac98d450a6eb882d4280fb016ed78cfeb02e56965870bccbd9e0fdd1",
+        "backbone_after": "4815df60ac98d450a6eb882d4280fb016ed78cfeb02e56965870bccbd9e0fdd1",
+        "query_labels_received": false,
+        "support_label_hash": "77dfde7de40fcf6297b766e357e09d026e9847f584ffcca43d725ef17f723900",
+        "support_index_hash": "eac3cf03f4f9c43db9ca4f287a156b94508d1374923a96ab3137b555253cd692",
+        "zero_prompt_max_error": 0.0,
+        "prompt_gradient_max": 0.14517205819527015,
+        "first_support_loss": 1.1234217882156372,
+        "last_support_loss": 1.1035035848617554,
+        "fit_seconds": 0.04840689990669489,
+        "route_hash": "7da8fb8bb732ed3fc8378f8625495dd2de26c81807bb4e519b711d51b4ab8668",
+        "route_entropy": 0.7122463583946228
+      }
+    ]
+  },
+  "smoke_run_directory": "/data1/shq/GP/PRPrompt_prompt_v2_20260930/experiments/outputs/smoke/72a756c2ed330661",
+  "smoke_coverage": {
+    "expected": 64,
+    "present": 64,
+    "missing": [],
+    "smoke": true
+  },
+  "smoke_completion": {
+    "plan_sha256": "72a756c2ed3306610ddf8c804a8c40275d801a98bf2bb390e16ae20c45f1bf09",
+    "completed": 64,
+    "smoke": true
+  },
+  "resume_without_retraining": true,
+  "plans": [
+    {
+      "name": "main",
+      "output": "/data1/shq/GP/PRPrompt_prompt_v2_20260930/experiments/outputs/paper/970d67f3f73c6a41",
+      "expected_runs": 4680,
+      "dry_run": true
+    },
+    {
+      "name": "shot_curve",
+      "output": "/data1/shq/GP/PRPrompt_prompt_v2_20260930/experiments/outputs/paper/f82d82c553addfa0",
+      "expected_runs": 18720,
+      "dry_run": true
+    },
+    {
+      "name": "diagnostics",
+      "output": "/data1/shq/GP/PRPrompt_prompt_v2_20260930/experiments/outputs/paper/2d3e49a464af85e2",
+      "expected_runs": 2520,
+      "dry_run": true
+    }
+  ],
+  "formal_experiments_run": false,
+  "seconds": 63.74811148643494
+}
