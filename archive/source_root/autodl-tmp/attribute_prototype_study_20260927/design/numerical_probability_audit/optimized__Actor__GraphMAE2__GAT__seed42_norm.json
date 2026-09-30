@@ -1,0 +1,66 @@
+{
+  "round": "numerical_probability_optimized",
+  "parent_plan": "/root/autodl-tmp/attribute_prototype_study_20260927/design/expanded_confirmation/expanded_confirmation_Actor__GraphMAE2__GAT__seed42_norm.json",
+  "parent_plan_sha256": "6499539e40fc28128e2b45ffd6a1ca166f76d42ea34d21db9638dbf15fcc4726",
+  "replay_sha256": "b0833962d39114c261cfae137d3b181687d7fe88c8cf7a91adc3c4e48f3b6410",
+  "selection_csv_sha256": "abad2e0f006684a317872bfc1c558ab8e18fec82a78fe3c6e9aa1ad313bdfa5d",
+  "jobs": [
+    {
+      "seed": 271405,
+      "config": "raw_b0.25_t0.05_n3_confidence",
+      "routes": [
+        "GAT"
+      ]
+    },
+    {
+      "seed": 271406,
+      "config": "raw_b0.25_t0.1_n3_confidence",
+      "routes": [
+        "GAT"
+      ]
+    },
+    {
+      "seed": 271408,
+      "config": "raw_b0.25_t0.1_n10_confidence",
+      "routes": [
+        "GAT"
+      ]
+    },
+    {
+      "seed": 271409,
+      "config": "diag_b0.25_t0.1_n10_neighbor",
+      "routes": [
+        "GAT"
+      ]
+    },
+    {
+      "seed": 271411,
+      "config": "center_no_refine",
+      "routes": [
+        "GAT"
+      ]
+    },
+    {
+      "seed": 271412,
+      "config": "raw_b0.25_t0.05_n3_confidence",
+      "routes": [
+        "GAT",
+        "any_frozen"
+      ]
+    },
+    {
+      "seed": 271418,
+      "config": "raw_b0.25_t0.1_n3_confidence",
+      "routes": [
+        "GAT"
+      ]
+    },
+    {
+      "seed": 271419,
+      "config": "center_no_refine",
+      "routes": [
+        "GAT"
+      ]
+    }
+  ]
+}

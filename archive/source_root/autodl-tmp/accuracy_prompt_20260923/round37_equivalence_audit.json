@@ -1,0 +1,62 @@
+{
+  "rows": 56,
+  "unchanged_legacy_functions": true,
+  "pairs": [
+    {
+      "dataset": "Cora",
+      "checkpoint": "GraphMAE",
+      "method": "mix_none_none",
+      "baseline": "frozen",
+      "max_score_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "Cora",
+      "checkpoint": "GraphMAE",
+      "method": "mix_token_none",
+      "baseline": "token_ridge_kd10plainlate",
+      "max_score_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "Cora",
+      "checkpoint": "GraphMAE2",
+      "method": "mix_none_none",
+      "baseline": "frozen",
+      "max_score_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "Cora",
+      "checkpoint": "GraphMAE2",
+      "method": "mix_token_none",
+      "baseline": "token_ridge_kd10plainlate",
+      "max_score_error": 1.430511474609375e-06
+    },
+    {
+      "dataset": "PubMed",
+      "checkpoint": "GraphMAE",
+      "method": "mix_none_none",
+      "baseline": "frozen",
+      "max_score_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "PubMed",
+      "checkpoint": "GraphMAE",
+      "method": "mix_token_none",
+      "baseline": "token_kd3_ref50",
+      "max_score_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "PubMed",
+      "checkpoint": "GraphMAE2",
+      "method": "mix_none_none",
+      "baseline": "frozen",
+      "max_score_error": 9.5367431640625e-07
+    },
+    {
+      "dataset": "PubMed",
+      "checkpoint": "GraphMAE2",
+      "method": "mix_token_none",
+      "baseline": "token_kd3_ref50",
+      "max_score_error": 9.5367431640625e-07
+    }
+  ]
+}

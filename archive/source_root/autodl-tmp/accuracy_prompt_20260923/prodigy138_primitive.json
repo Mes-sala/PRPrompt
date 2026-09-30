@@ -1,0 +1,61 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "mode": "prd",
+      "initial": "zero",
+      "error": 1.6298145055770874e-09,
+      "final_d": 0.10148522719573302,
+      "updates": 118
+    },
+    {
+      "mode": "prd",
+      "initial": "nonzero",
+      "error": 2.3283064365386963e-10,
+      "final_d": 0.12093616682556212,
+      "updates": 118
+    },
+    {
+      "mode": "pbc",
+      "initial": "zero",
+      "error": 2.9103830456733704e-10,
+      "final_d": 0.12838485651926648,
+      "updates": 118
+    },
+    {
+      "mode": "pbc",
+      "initial": "nonzero",
+      "error": 1.1641532182693481e-10,
+      "final_d": 0.14381712125536425,
+      "updates": 118
+    },
+    {
+      "mode": "pf0",
+      "initial": "zero",
+      "error": 1.734723475976807e-18,
+      "final_d": 1e-06,
+      "updates": 118
+    },
+    {
+      "mode": "pf0",
+      "initial": "nonzero",
+      "error": 1.734723475976807e-18,
+      "final_d": 1e-06,
+      "updates": 118
+    },
+    {
+      "mode": "pf1",
+      "initial": "zero",
+      "error": 8.881784197001252e-16,
+      "final_d": 0.01,
+      "updates": 118
+    },
+    {
+      "mode": "pf1",
+      "initial": "nonzero",
+      "error": 1.7763568394002505e-15,
+      "final_d": 0.01,
+      "updates": 118
+    }
+  ]
+}

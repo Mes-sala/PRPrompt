@@ -1,0 +1,272 @@
+[
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 59.26999971270561,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 2.170000523328781,
+      "ci95_seed_bootstrap": [
+        1.5199995040893555,
+        2.800000313669443
+      ],
+      "wins": 18,
+      "ties": 1,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 57.099999189376824,
+    "frozen": {
+      "delta_pp": -2.170000523328781,
+      "ci95_seed_bootstrap": [
+        -2.800000313669443,
+        -1.5199995040893555
+      ],
+      "wins": 1,
+      "ties": 1,
+      "losses": 18
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "head_base_knn-0.9-clamp",
+    "n": 20,
+    "accuracy": 53.86000007390977,
+    "frozen": {
+      "delta_pp": -5.409999638795853,
+      "ci95_seed_bootstrap": [
+        -8.32999974861741,
+        -2.0299996435642242
+      ],
+      "wins": 2,
+      "ties": 1,
+      "losses": 17
+    },
+    "graphprompt": {
+      "delta_pp": -3.2399991154670715,
+      "ci95_seed_bootstrap": [
+        -6.209999341517687,
+        0.11000024527311325
+      ],
+      "wins": 6,
+      "ties": 0,
+      "losses": 14
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "head_token_knn-0.5-clamp",
+    "n": 20,
+    "accuracy": 72.739999294281,
+    "frozen": {
+      "delta_pp": 13.469999581575394,
+      "ci95_seed_bootstrap": [
+        11.640000481158495,
+        15.479998741298914
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 15.640000104904175,
+      "ci95_seed_bootstrap": [
+        13.670000433921814,
+        17.719999704509974
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "head_token_knn-0.9-clamp",
+    "n": 20,
+    "accuracy": 73.09999972581863,
+    "frozen": {
+      "delta_pp": 13.830000013113022,
+      "ci95_seed_bootstrap": [
+        11.990000300109386,
+        15.78000009059906
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 16.000000536441803,
+      "ci95_seed_bootstrap": [
+        14.029750280082226,
+        18.05999994650483
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "head_token_knn-0.9-free",
+    "n": 20,
+    "accuracy": 73.07999968528748,
+    "frozen": {
+      "delta_pp": 13.809999972581863,
+      "ci95_seed_bootstrap": [
+        11.960000094026327,
+        15.779999494552612
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 15.980000495910645,
+      "ci95_seed_bootstrap": [
+        14.0000013820827,
+        18.04000050202012
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "head_token_mean",
+    "n": 20,
+    "accuracy": 72.66999930143356,
+    "frozen": {
+      "delta_pp": 13.399999588727951,
+      "ci95_seed_bootstrap": [
+        11.539999544620514,
+        15.47999918833375
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 15.570000112056732,
+      "ci95_seed_bootstrap": [
+        13.570000380277634,
+        17.72000030055642
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "head_token_orig-0.5-clamp",
+    "n": 20,
+    "accuracy": 72.65999972820282,
+    "frozen": {
+      "delta_pp": 13.390000015497208,
+      "ci95_seed_bootstrap": [
+        11.52000068128109,
+        15.460000347346067
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 15.560000538825989,
+      "ci95_seed_bootstrap": [
+        13.530000448226929,
+        17.7400004863739
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "head_token_random-0.9-clamp",
+    "n": 20,
+    "accuracy": 54.269999712705605,
+    "frozen": {
+      "delta_pp": -5.0,
+      "ci95_seed_bootstrap": [
+        -9.280249867588282,
+        -0.9399996660649776
+      ],
+      "wins": 7,
+      "ties": 1,
+      "losses": 12
+    },
+    "graphprompt": {
+      "delta_pp": -2.829999476671219,
+      "ci95_seed_bootstrap": [
+        -7.030249197036028,
+        1.1500006951391697
+      ],
+      "wins": 10,
+      "ties": 0,
+      "losses": 10
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "ridge_teacher_plain",
+    "n": 20,
+    "accuracy": 71.82000011205673,
+    "frozen": {
+      "delta_pp": 12.55000039935112,
+      "ci95_seed_bootstrap": [
+        10.680000927299261,
+        14.65999961644411
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 14.720000922679901,
+      "ci95_seed_bootstrap": [
+        12.73000031337142,
+        16.860000800341368
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  }
+]

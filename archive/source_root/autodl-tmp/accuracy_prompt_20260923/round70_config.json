@@ -1,0 +1,31 @@
+{
+  "dataset": "Cora",
+  "checkpoints": [
+    "GraphMAE",
+    "GraphMAE2"
+  ],
+  "seeds": [
+    106100,
+    106101,
+    106102,
+    106103,
+    106104
+  ],
+  "steps": 100,
+  "phase": "dev",
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "head_base_qeps-50",
+    "head_postbase_mean",
+    "head_postbase_qeps-50",
+    "head_token_mean",
+    "head_token_qeps-50",
+    "head_posttoken_mean",
+    "head_posttoken_qeps-50",
+    "head_scale2_mean",
+    "head_scale2_qeps-50",
+    "head_postscale2_mean",
+    "head_postscale2_qeps-50"
+  ]
+}

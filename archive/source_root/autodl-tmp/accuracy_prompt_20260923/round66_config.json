@@ -1,0 +1,42 @@
+{
+  "dataset": "CiteSeer",
+  "checkpoints": [
+    "GraphMAE",
+    "GraphMAE2"
+  ],
+  "seeds": [
+    101100,
+    101101,
+    101102,
+    101103,
+    101104
+  ],
+  "methods": [
+    "directrect_mean",
+    "directcenter_mean",
+    "frozen",
+    "graphprompt",
+    "head_tdnone_mean",
+    "head_tdnone_qeps-50",
+    "head_tdboth_mean",
+    "head_tdboth_qeps-50",
+    "head_tdgate_mean",
+    "head_tdgate_qeps-50",
+    "head_rkc3_mean",
+    "head_rkc3_qeps-50",
+    "head_akc1_mean",
+    "head_akc1_qeps-50",
+    "head_akc2_mean",
+    "head_akc2_qeps-50",
+    "head_akc3_mean",
+    "head_akc3_qeps-50",
+    "head_akp1_mean",
+    "head_akp1_qeps-50",
+    "head_akp2_mean",
+    "head_akp2_qeps-50",
+    "head_akp3_mean",
+    "head_akp3_qeps-50"
+  ],
+  "steps": 100,
+  "phase": "dev"
+}

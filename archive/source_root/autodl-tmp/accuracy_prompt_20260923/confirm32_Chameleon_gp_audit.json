@@ -1,0 +1,114 @@
+[
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "candidate": "geom_full10_gp",
+    "baseline": "geom_full10_base",
+    "n": 20,
+    "delta_pp": -0.17543882131576538,
+    "ci95": [
+      -0.8114038445055485,
+      0.41666656732559204
+    ],
+    "wins": 11,
+    "losses": 9
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "candidate": "geom_full10_gp",
+    "baseline": "geom_full50_base",
+    "n": 20,
+    "delta_pp": 1.3925443589687347,
+    "ci95": [
+      0.8114039897918701,
+      1.9517551362514496
+    ],
+    "wins": 16,
+    "losses": 3
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "candidate": "geom_full10_gp",
+    "baseline": "rawridge",
+    "n": 20,
+    "delta_pp": 1.315789520740509,
+    "ci95": [
+      0.42763203009963036,
+      2.1055377274751623
+    ],
+    "wins": 16,
+    "losses": 4
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "candidate": "geom_full10_gp",
+    "baseline": "graphprompt",
+    "n": 20,
+    "delta_pp": 4.177632033824921,
+    "ci95": [
+      3.1688599288463593,
+      5.208333887159824
+    ],
+    "wins": 20,
+    "losses": 0
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "candidate": "geom_full10_gp",
+    "baseline": "geom_full10_base",
+    "n": 20,
+    "delta_pp": 0.23026242852210999,
+    "ci95": [
+      -0.42763248085975647,
+      0.9758767485618591
+    ],
+    "wins": 11,
+    "losses": 9
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "candidate": "geom_full10_gp",
+    "baseline": "geom_full50_base",
+    "n": 20,
+    "delta_pp": 0.7236838340759277,
+    "ci95": [
+      -0.41666731238365173,
+      1.8752741031348665
+    ],
+    "wins": 11,
+    "losses": 9
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "candidate": "geom_full10_gp",
+    "baseline": "rawridge",
+    "n": 20,
+    "delta_pp": 0.8771926164627075,
+    "ci95": [
+      -0.9978076815605164,
+      2.839912325143814
+    ],
+    "wins": 11,
+    "losses": 8
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "candidate": "geom_full10_gp",
+    "baseline": "graphprompt",
+    "n": 20,
+    "delta_pp": 4.725876599550247,
+    "ci95": [
+      2.6864027939736843,
+      6.92982405424118
+    ],
+    "wins": 17,
+    "losses": 3
+  }
+]

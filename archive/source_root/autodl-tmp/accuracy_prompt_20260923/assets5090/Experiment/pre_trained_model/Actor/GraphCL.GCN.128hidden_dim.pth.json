@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "GraphCL",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "Actor",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "73eda304d4ee9ddd382d6e528b2a658f8fa9ba1f64fd4b40d0d7a969ab85e224",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 59,
+  "best_training_loss": 0.0007103921234374866,
+  "selection": "last_after_training_loss_patience_10"
+}

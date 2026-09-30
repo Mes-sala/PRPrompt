@@ -1,0 +1,174 @@
+import os
+import time
+
+import torch
+from torch.utils.data import DataLoader, TensorDataset
+
+from prompt_graph.data import load4link_prediction_multi_graph, load4link_prediction_single_graph
+from prompt_graph.utils import (
+    Gprompt_link_loss,
+    edge_index_to_sparse_matrix,
+    get_logger,
+    prepare_structured_data,
+)
+
+from ..defines import GRAPH_TASKS, NODE_TASKS
+from .base import PreTrain
+from ._masked_utils import write_provenance_sidecar
+
+logger = get_logger(__name__)
+
+
+class Edgepred_Gprompt(PreTrain):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.dataloader = self.generate_loader_data()
+        self.initialize_gnn(self.input_dim, self.hid_dim)
+        self.graph_pred_linear = torch.nn.Linear(self.hid_dim, self.output_dim).to(self.device)
+
+        # Train the projection head jointly with the GNN.
+        self.optimizer.add_param_group({"params": self.graph_pred_linear.parameters()})
+
+    def generate_loader_data(self):
+        if self.dataset_name in NODE_TASKS:
+            self.data, edge_label, edge_index, self.input_dim, self.output_dim = (
+                load4link_prediction_single_graph(self.dataset_name)
+            )
+            self.adj = edge_index_to_sparse_matrix(self.data.edge_index, self.data.x.shape[0]).to(
+                self.device
+            )
+            data = prepare_structured_data(self.data)
+            if self.dataset_name in ["ogbn-arxiv", "Flickr"]:
+                return DataLoader(
+                    TensorDataset(data), batch_size=1024, shuffle=True, num_workers=self.num_workers
+                )
+            else:
+                return DataLoader(
+                    TensorDataset(data), batch_size=64, shuffle=True, num_workers=self.num_workers
+                )
+
+        elif self.dataset_name in GRAPH_TASKS:
+            self.data, edge_label, edge_index, self.input_dim, self.output_dim = (
+                load4link_prediction_multi_graph(self.dataset_name)
+            )
+            self.adj = edge_index_to_sparse_matrix(self.data.edge_index, self.data.x.shape[0]).to(
+                self.device
+            )
+            data = prepare_structured_data(self.data)
+
+            if self.dataset_name in ["COLLAB", "IMDB-BINARY", "REDDIT-BINARY", "ogbg-ppa", "DD"]:
+                from torch_geometric import loader
+
+                self.batch_dataloader = loader.DataLoader(
+                    self.data.to_data_list(),
+                    batch_size=256,
+                    shuffle=False,
+                    num_workers=self.num_workers,
+                )
+                return DataLoader(
+                    TensorDataset(data),
+                    batch_size=5120000,
+                    shuffle=True,
+                    num_workers=self.num_workers,
+                )
+            else:
+                return DataLoader(
+                    TensorDataset(data), batch_size=64, shuffle=True, num_workers=self.num_workers
+                )
+
+    def pretrain_one_epoch(self):
+        accum_loss, total_step = 0, 0
+        device = self.device
+        self.gnn.train()
+        for step, batch in enumerate(self.dataloader):
+            self.optimizer.zero_grad()
+
+            batch = batch[0]
+            batch = batch.to(device)
+
+            # 如果graph datasets经过Batch图太大了，那就分开操作
+            if self.dataset_name in ["COLLAB", "IMDB-BINARY", "REDDIT-BINARY", "ogbg-ppa", "DD"]:
+                for batch_id, batch_graph in enumerate(self.batch_dataloader):
+                    batch_graph.to(device)
+                    if batch_id == 0:
+                        out = self.gnn(batch_graph.x, batch_graph.edge_index)
+                    else:
+                        out = torch.concatenate(
+                            [out, self.gnn(batch_graph.x, batch_graph.edge_index)], dim=0
+                        )
+            else:
+                out = self.gnn(self.data.x.to(device), self.data.edge_index.to(device))
+
+            all_node_emb = self.graph_pred_linear(out)
+
+            # TODO: GraphPrompt customized node embedding computation
+            all_node_emb = torch.sparse.mm(self.adj, all_node_emb)
+
+            node_emb = all_node_emb[batch[:, 0]]
+            pos_emb, neg_emb = all_node_emb[batch[:, 1]], all_node_emb[batch[:, 2]]
+
+            loss = Gprompt_link_loss(node_emb, pos_emb, neg_emb)
+
+            loss.backward()
+            self.optimizer.step()
+
+            accum_loss += float(loss.detach().cpu().item())
+            total_step += 1
+
+            # print('第{}次反向传播过程'.format(step))
+
+        return accum_loss / total_step
+
+    def pretrain(self):
+        num_epoch = self.epochs
+        train_loss_min = 1000000
+        patience = 10
+        cnt_wait = 0
+
+        for epoch in range(1, num_epoch + 1):
+            st_time = time.time()
+            train_loss = self.pretrain_one_epoch()
+
+            logger.info(
+                f"Edgepred_Gprompt [Pretrain] Epoch {epoch}/{num_epoch} | Train Loss {train_loss:.5f} | "
+                f"Cost Time {time.time() - st_time:.3}s"
+            )
+
+            if train_loss_min > train_loss:
+                train_loss_min = train_loss
+                cnt_wait = 0
+            else:
+                cnt_wait += 1
+                if cnt_wait == patience:
+                    logger.info("-" * 100)
+                    logger.info("Early stopping at " + str(epoch) + " epoch!")
+                    break
+            logger.info(cnt_wait)
+
+        folder_path = f"./Experiment/pre_trained_model/{self.dataset_name}"
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
+        checkpoint_path = "{}/{}.{}.{}.pth".format(
+            folder_path, "Edgepred_Gprompt", self.gnn_type, str(self.hid_dim) + "hidden_dim"
+        )
+        torch.save(self.gnn.state_dict(), checkpoint_path)
+        write_provenance_sidecar(
+            checkpoint_path,
+            method="Edgepred_Gprompt",
+            dataset=self.dataset_name,
+            gnn=self.gnn_type,
+            hidden_dim=self.hid_dim,
+            metadata=dict(labels_used=False, requested_epochs=self.epochs,
+                          completed_epochs=epoch, best_training_loss=float(train_loss_min),
+                          selection="last_after_training_loss_patience_10"),
+        )
+
+        logger.info(
+            "+++model saved ! {}/{}.{}.{}.pth".format(
+                self.dataset_name,
+                "Edgepred_Gprompt",
+                self.gnn_type,
+                str(self.hid_dim) + "hidden_dim",
+            )
+        )

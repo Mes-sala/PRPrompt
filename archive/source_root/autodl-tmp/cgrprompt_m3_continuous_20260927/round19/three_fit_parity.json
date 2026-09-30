@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "engineering_only": true,
+  "script_sha256": "caf3ca0090cd68ce8020bce6e217dcbe29dd2c303962c0d68716cc68acb44c24",
+  "source_runner_sha256": "9cd894e802748cd459f508fffdaade8599dd71774766c0161c307cfdbf5ba206",
+  "results": [
+    {
+      "job": "CiteSeer__Edgepred_Gprompt__7bf67dc55e3a",
+      "seed": 26094620,
+      "actual_optimizer_calls": 3,
+      "max_probability_error": 1.1614837824858171e-07,
+      "argmax_identical": true,
+      "seconds": 1.3296783044934273,
+      "reference_prediction_sha256": "1c4c9869cd054e8bad01ea9b04903fd74d3b8bf4e626c1b0fd952840d4e40a6a",
+      "prediction_sha256": "e60cbcfd1dbb814ed435277ddddce4fbad37fc0c7910750bac05247b18cfd31d"
+    },
+    {
+      "job": "CiteSeer__Edgepred_GPPT__e5488f6ef537",
+      "seed": 26094620,
+      "actual_optimizer_calls": 3,
+      "max_probability_error": 7.812112315375153e-08,
+      "argmax_identical": true,
+      "seconds": 1.3793090507388115,
+      "reference_prediction_sha256": "747ba41f666bc0b6f56fba57a1840cb5abdc91e7fd0b15deb09210d938549fe0",
+      "prediction_sha256": "233d750eb238c91a1fb77578ce9b2bb4bc7ff034497578c225915839edca206c"
+    }
+  ]
+}

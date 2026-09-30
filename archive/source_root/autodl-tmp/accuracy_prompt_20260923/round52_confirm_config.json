@@ -1,0 +1,41 @@
+{
+  "dataset": "Cora",
+  "checkpoints": [
+    "GraphMAE",
+    "GraphMAE2"
+  ],
+  "seeds": [
+    79100,
+    79101,
+    79102,
+    79103,
+    79104,
+    79105,
+    79106,
+    79107,
+    79108,
+    79109,
+    79110,
+    79111,
+    79112,
+    79113,
+    79114,
+    79115,
+    79116,
+    79117,
+    79118,
+    79119
+  ],
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "head_token_mean",
+    "head_token_qeps-50",
+    "head_token_ls-10",
+    "head_token_lsonce-10",
+    "head_token_lsrandom-10",
+    "head_token_ls-3"
+  ],
+  "steps": 100,
+  "phase": "confirm"
+}

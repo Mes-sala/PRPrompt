@@ -1,0 +1,39 @@
+{
+  "candidate": {
+    "dataset": "PubMed",
+    "checkpoint": "Edgepred_Gprompt",
+    "method": "token_ridge_kd10"
+  },
+  "basis": "completed1080 development, best candidate73.56; GMAE GP73.40 and proto73.00, GMAE2 proto72.36",
+  "confirmation_checkpoints": [
+    "Edgepred_Gprompt",
+    "GraphMAE",
+    "GraphMAE2"
+  ],
+  "confirmation_methods": "all8, preserving baseline/teacher/position/prototype references",
+  "seeds": [
+    27100,
+    27101,
+    27102,
+    27103,
+    27104,
+    27105,
+    27106,
+    27107,
+    27108,
+    27109,
+    27110,
+    27111,
+    27112,
+    27113,
+    27114,
+    27115,
+    27116,
+    27117,
+    27118,
+    27119
+  ],
+  "expected": 480,
+  "phase": "confirm",
+  "stopped": "Cora new weights below GraphMAE; CiteSeer all below direct teacher; round19 FiLM no clear incremental benefit"
+}

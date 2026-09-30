@@ -1,0 +1,47 @@
+{
+  "smoke_rows": 36,
+  "lowrank_rows": 24,
+  "zero_residual_max_error": 0.0,
+  "backbone_frozen": true,
+  "post_activation_fold_max_error": 5.329070518200751e-15,
+  "scope": "preflight and algebra, not accuracy evidence",
+  "config": {
+    "out": "/root/autodl-tmp/accuracy_prompt_20260923/round36_smoke",
+    "datasets": [
+      "Actor"
+    ],
+    "checkpoints": [
+      "GraphMAE",
+      "GraphCL"
+    ],
+    "methods": [
+      "frozen",
+      "rawridge",
+      "geom_diag10_base",
+      "geom_diag10_gp",
+      "geom_diag10_ce",
+      "ssf_pre_both",
+      "lr_pre_1_learn",
+      "lr_pre_1_fixed",
+      "lr_pre_1_random",
+      "lr_pre_4_learn",
+      "lr_pre_4_fixed",
+      "lr_pre_4_random",
+      "lr_post_1_learn",
+      "lr_post_1_fixed",
+      "lr_post_1_random",
+      "lr_post_4_learn",
+      "lr_post_4_fixed",
+      "lr_post_4_random"
+    ],
+    "seeds": [
+      54100
+    ],
+    "fold": 0,
+    "steps": 3,
+    "phase": "dev",
+    "source_sha256": "aa3c94d85e50b4cabea7951628d5175b5f73fe76dc5b0da0d11502a574aad997",
+    "torch": "2.12.1+cu130",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "selected_before_round2_confirmation": true,
+  "candidate": "sphered_hidden_kl",
+  "checkpoint": "GraphMAE",
+  "datasets": ["Cora", "PubMed"],
+  "methods": ["frozen", "graphprompt", "sphered", "sphered_graphprompt", "sphered_hidden_kl", "raw"],
+  "support_seeds": [6100,6101,6102,6103,6104,6105,6106,6107,6108,6109,6110,6111,6112,6113,6114,6115,6116,6117,6118,6119],
+  "steps": 100,
+  "reason": "Cora development 63.72%, +2.92pp Frozen, +1.96pp original GraphPrompt. Add same-geometry GraphPrompt control. Transfer same recipe to previously unused PubMed without tuning.",
+  "boundary": "Cora reserved query labels already scored in round1; this is new-support robustness, not untouched-query confirmation. PubMed is first evaluated in this task, but historical workspace may have evaluated it."
+}

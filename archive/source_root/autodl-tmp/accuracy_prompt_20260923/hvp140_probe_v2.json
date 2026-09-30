@@ -1,0 +1,213 @@
+{
+  "passed": true,
+  "query_labels_used": false,
+  "accuracy_evaluated": false,
+  "seed": 208199,
+  "results": [
+    {
+      "checkpoint": "GraphMAE",
+      "scale": 0.0,
+      "errors": {
+        "gpu64/gradient": 3.9155251306660325e-16,
+        "gpu64/hvp": 4.769125913025039e-16,
+        "gpu32/gradient": 1.2094184676559462e-07,
+        "gpu32/hvp": 1.4149887105495444e-07
+      },
+      "finite_difference": [
+        {
+          "eps": 0.001,
+          "relative_error": 1.2465828235095748e-05,
+          "max_error": 7.851962257776623e-06
+        },
+        {
+          "eps": 0.0001,
+          "relative_error": 1.246594566480558e-07,
+          "max_error": 7.852083594439563e-08
+        },
+        {
+          "eps": 1e-05,
+          "relative_error": 1.2473778273843432e-09,
+          "max_error": 7.857953177037302e-10
+        }
+      ],
+      "negative_estimate_fraction": 0.6171875,
+      "initial_clipped_fraction": {
+        "0.01": 0.9955357142857143,
+        "0.1": 0.9709821428571429,
+        "1.0": 0.8526785714285714
+      },
+      "artifact_sha256": "ba437fe7acf8758d1f4f1fb66b5d62f5d4dfe7bf7a27964f66781e72c5e84ecf"
+    },
+    {
+      "checkpoint": "GraphMAE",
+      "scale": 0.05,
+      "errors": {
+        "gpu64/gradient": 3.807610922172429e-16,
+        "gpu64/hvp": 4.412839839828435e-16,
+        "gpu32/gradient": 1.3199711010572288e-07,
+        "gpu32/hvp": 1.5763406547339186e-07
+      },
+      "finite_difference": [
+        {
+          "eps": 0.001,
+          "relative_error": 1.730356297993545e-05,
+          "max_error": 1.8324953311110725e-05
+        },
+        {
+          "eps": 0.0001,
+          "relative_error": 1.730378494485321e-07,
+          "max_error": 1.8325237272076578e-07
+        },
+        {
+          "eps": 1e-05,
+          "relative_error": 1.7312495377492178e-09,
+          "max_error": 1.8341416163636381e-09
+        }
+      ],
+      "negative_estimate_fraction": 0.6149553571428571,
+      "initial_clipped_fraction": {
+        "0.01": 0.9955357142857143,
+        "0.1": 0.9698660714285714,
+        "1.0": 0.8359375
+      },
+      "artifact_sha256": "d6f1be502611c852c8bc86f16abeba3a2a9ac629d09d943645b601f11eb321a8"
+    },
+    {
+      "checkpoint": "GraphMAE",
+      "scale": 0.2,
+      "errors": {
+        "gpu64/gradient": 4.905807757867633e-16,
+        "gpu64/hvp": 3.5341174270700957e-16,
+        "gpu32/gradient": 1.685493491782414e-07,
+        "gpu32/hvp": 1.7920669933902125e-07
+      },
+      "finite_difference": [
+        {
+          "eps": 0.001,
+          "relative_error": 1.7230830232153018e-05,
+          "max_error": 9.11514864493368e-06
+        },
+        {
+          "eps": 0.0001,
+          "relative_error": 1.7231078182960968e-07,
+          "max_error": 9.115282784133427e-08
+        },
+        {
+          "eps": 1e-05,
+          "relative_error": 1.7238227786757789e-09,
+          "max_error": 9.121136623768678e-10
+        }
+      ],
+      "negative_estimate_fraction": 0.6049107142857143,
+      "initial_clipped_fraction": {
+        "0.01": 0.9988839285714286,
+        "0.1": 0.984375,
+        "1.0": 0.8895089285714286
+      },
+      "artifact_sha256": "06e8003791733932d1088a25338cd8ae1d7a263e3a431aceae39ba71c1c919ef"
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "scale": 0.0,
+      "errors": {
+        "gpu64/gradient": 4.583150775217947e-16,
+        "gpu64/hvp": 4.0571977707162147e-16,
+        "gpu32/gradient": 2.268397119519339e-07,
+        "gpu32/hvp": 1.8603464194775444e-07
+      },
+      "finite_difference": [
+        {
+          "eps": 0.001,
+          "relative_error": 1.7251291698945998e-05,
+          "max_error": 1.7242020005858727e-05
+        },
+        {
+          "eps": 0.0001,
+          "relative_error": 1.7251484477364432e-07,
+          "max_error": 1.724229367061625e-07
+        },
+        {
+          "eps": 1e-05,
+          "relative_error": 1.7244937104120498e-09,
+          "max_error": 1.7227813620124266e-09
+        }
+      ],
+      "negative_estimate_fraction": 0.6473214285714286,
+      "initial_clipped_fraction": {
+        "0.01": 0.9977678571428571,
+        "0.1": 0.9553571428571429,
+        "1.0": 0.8080357142857143
+      },
+      "artifact_sha256": "af2949da561ff2df6be6bbe2f0e2cb45382dd3cfc4ad09a2940d53606305fdd6"
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "scale": 0.05,
+      "errors": {
+        "gpu64/gradient": 4.851350476837325e-16,
+        "gpu64/hvp": 4.56302697134272e-16,
+        "gpu32/gradient": 1.9732496762852948e-07,
+        "gpu32/hvp": 1.8196165035343818e-07
+      },
+      "finite_difference": [
+        {
+          "eps": 0.001,
+          "relative_error": 1.5230456880534961e-05,
+          "max_error": 1.2885451188382469e-05
+        },
+        {
+          "eps": 0.0001,
+          "relative_error": 1.523062112786485e-07,
+          "max_error": 1.2885641997861796e-07
+        },
+        {
+          "eps": 1e-05,
+          "relative_error": 1.52311531373925e-09,
+          "max_error": 1.2888194955706922e-09
+        }
+      ],
+      "negative_estimate_fraction": 0.6785714285714286,
+      "initial_clipped_fraction": {
+        "0.01": 0.9966517857142857,
+        "0.1": 0.9620535714285714,
+        "1.0": 0.8348214285714286
+      },
+      "artifact_sha256": "141e0979c152e96c3907de8d976871a55457074cc9a0af316597cd2d64cf80e0"
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "scale": 0.2,
+      "errors": {
+        "gpu64/gradient": 4.089874517609297e-16,
+        "gpu64/hvp": 3.831030374153374e-16,
+        "gpu32/gradient": 1.8158737242645705e-07,
+        "gpu32/hvp": 2.077171413166249e-07
+      },
+      "finite_difference": [
+        {
+          "eps": 0.001,
+          "relative_error": 1.3774449055708397e-05,
+          "max_error": 5.443975229169062e-06
+        },
+        {
+          "eps": 0.0001,
+          "relative_error": 1.3774566152024627e-07,
+          "max_error": 5.444034828494537e-08
+        },
+        {
+          "eps": 1e-05,
+          "relative_error": 1.3775052216171562e-09,
+          "max_error": 5.450225826209021e-10
+        }
+      ],
+      "negative_estimate_fraction": 0.6551339285714286,
+      "initial_clipped_fraction": {
+        "0.01": 1.0,
+        "0.1": 0.9910714285714286,
+        "1.0": 0.9040178571428571
+      },
+      "artifact_sha256": "497c03f3834b017c87f97f8c99f1cd18948d4795873e6fbbb5c386173fdf7290"
+    }
+  ],
+  "source_sha256": "de43cd8904eaa83d296e7deb2efb602dc9df980839075b86067b98e8da87faf3"
+}

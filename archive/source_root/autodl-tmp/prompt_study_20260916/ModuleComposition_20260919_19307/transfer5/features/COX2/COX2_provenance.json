@@ -1,0 +1,131 @@
+{
+  "seeds": [
+    11,
+    23,
+    47,
+    71
+  ],
+  "kernel_sha": {
+    "WL0": "88b12a3d67808f36d80377fbb337f3d9abb44fe46194ab9725405c7f22d30e25",
+    "WL1": "0ae0e7e88679ed5f2da3e12e9ca0d75fd1d8fa13b65e6feb407371ac76cafcd3",
+    "WL2": "f4d3ddbc3bd1bdb78262a8674b0ae96f316acca29812ba7613a740785d62167a",
+    "WL3": "cc2eed1d19e90f8d8a8fcbaa5d5be89613228a6dbb4dbf39ead4192b514f1bf9",
+    "attributes_linear": "412d5a249ecfa8bebc1d2592e63e212a76941af1a03b7c7933551aba1e00b3db",
+    "attributes_rbf_01": "be1e0df7092ad6e4676316b5abe9305ae913ab94b2e1fc7a4a1c99e33dd1551b",
+    "attributes_rbf": "d9f8195db1b6844fafea9c28c976aa51cad85e1a5cb0b95fa48660cc24a68d02",
+    "attributes_rbf_10": "6bac8184c3795a9b7cc8a232c51dbbcf2e36eeb7363c8c9eb80257c1537ecbee",
+    "structure": "a20775dfa5cdcfcb7c5dbd58b75a7e5fd4ce25b424167b536afa84bb380e97bd",
+    "structure_rbf_01": "b31231899469a2b179efd158a094a656cd74f6de2a8e5dccfeed4168d63b0c7c",
+    "structure_rbf": "fc82d75318dd101129bb5dd9c09e00263689384a3b810934cce30018d3739827",
+    "structure_rbf_10": "4e0920ec446aec89f68cbfc0b5a8ad3d15b9c04e6d99dd988907fa5260f2c8f9",
+    "random11_mean": "f952d4bf60121b5ee902752ab1c042b8f2610e339496e497fdbe17ca82207876",
+    "random11_multi": "bc6e9d909af9a580592fa79ffab9bbe2f471b4b19e2d009245d698d0ef38d3e8",
+    "random23_mean": "ff784a36857b54beaedd06adfeb7d9e27296b64f0faf2fecc7d0a563b05e5b6f",
+    "random23_multi": "6838da0cc856c5c60297ba0ae68defb3d4b47538a15dcf7e8f5cb0fb4b74e04d",
+    "random47_mean": "8bd6b466e50a26224e57ba11de22ce066dfba315c1a35c4149044dcf11a62d1a",
+    "random47_multi": "996c365082734364634559961b2f9032a74d49365e82d71321bf4526dd9993de",
+    "random71_mean": "9c2991c840275692551c9a8ae3a718f4db4cea5ca4f3252454bcac69632f9c57",
+    "random71_multi": "f8691a3869a8db2b4275a0563903c5e978d6993588560f036c7b36a820b28fb3",
+    "RH": "e54a9aa3d07abeefd29cc8f44d9fc4b777f198ac4e29ce4b2d8f31db93e31359",
+    "RM": "e72bfbacdff9a32ae1c619fd64648b5fee952e7b76f31acf7b68303fa11c0148"
+  },
+  "weights": {
+    "random11": {
+      "fp32_init_state": {
+        "conv_layers.0.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.0.lin.weight": "a98996b3b9d69af906dd8ec15becb6c21b9f86a675251cd0aa750d5cecc30616",
+        "conv_layers.1.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.1.lin.weight": "74a65a28134252a3e7a435b5634a33d0240d42e2f099143220529a961b6d715e"
+      },
+      "float64_state": {
+        "conv_layers.0.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.0.lin.weight": "ee36c8eb0fe8b56ec3c64afa22213f7feba02375e06b93f8da3add08bd5fdd39",
+        "conv_layers.1.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.1.lin.weight": "cacd9276b02883d7f486a916aedc90a9b469c0293ff8695f230e9ce94dd724a3"
+      },
+      "frozen": true,
+      "zero_std_graphs_by_layer": [
+        0,
+        0
+      ]
+    },
+    "random23": {
+      "fp32_init_state": {
+        "conv_layers.0.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.0.lin.weight": "1e1e890dfadc50effe3b4be181ca02f9dee7dc32248acf48a813284b30f20d6d",
+        "conv_layers.1.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.1.lin.weight": "a04a3888017c0e176d7268eb695812e7c72673e8a77e470eb7364974f50585e0"
+      },
+      "float64_state": {
+        "conv_layers.0.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.0.lin.weight": "f0b57a615acd86b76252e633d13d507bd879ced4fa4dbc78df4773c62c8456ec",
+        "conv_layers.1.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.1.lin.weight": "5f75c057724773975363deef13225b6d00df5cbff5e3ce31b174d8d9aaf6ed67"
+      },
+      "frozen": true,
+      "zero_std_graphs_by_layer": [
+        0,
+        0
+      ]
+    },
+    "random47": {
+      "fp32_init_state": {
+        "conv_layers.0.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.0.lin.weight": "a0a65d68ff9c4a5d7add4a2798bdf0ec964257e9d47195cbf1dc484d96207359",
+        "conv_layers.1.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.1.lin.weight": "9cdbeb834571140cc74d5d208e825d7cf7a35b5f0276033a2c3f8f80f04d5461"
+      },
+      "float64_state": {
+        "conv_layers.0.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.0.lin.weight": "850b11fcafa75237fe26a03c40d2163f5f12574dde58409c3d3c8ed0942820db",
+        "conv_layers.1.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.1.lin.weight": "8497058ba9a1544923134736959c17abec718856e0692f0a2f755b3d54bf0710"
+      },
+      "frozen": true,
+      "zero_std_graphs_by_layer": [
+        0,
+        0
+      ]
+    },
+    "random71": {
+      "fp32_init_state": {
+        "conv_layers.0.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.0.lin.weight": "006722fd170b8e7fcb29515d1ffeaf6b987f01ea97af659c7abd9cf9ebccc309",
+        "conv_layers.1.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.1.lin.weight": "55ac17740fe0be98051ea37abd772ef557d9d4942cc3e949fd12a3018c72de92"
+      },
+      "float64_state": {
+        "conv_layers.0.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.0.lin.weight": "c6d33428bc4ce7a2082ecbcc46b2fa4e1a566ecc76638d42ea685d7b0eb446ac",
+        "conv_layers.1.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.1.lin.weight": "dbeff221c9ec56c925fd19a060d23856d9762c021d38b45b33ebea93049de4bb"
+      },
+      "frozen": true,
+      "zero_std_graphs_by_layer": [
+        0,
+        0
+      ]
+    }
+  },
+  "precision": "FP32 initialized weights promoted unchanged to float64; deterministic single-thread CPU encoding",
+  "variance": "centered two-pass; std <= 1e-10 * per-channel RMS set to zero",
+  "source_sha": "f60c3a50a5c0c16e4e1a14b3bf8eb52ed214d2562292694cd6cb23b1c0445ebd",
+  "model_sources": {
+    "/root/ProG/prompt_graph/model/GAT.py": "6ed9fd1b3fa1f95d6f8d778d7104257c8c48c1127c30dbd1cdce2f54cc871166",
+    "/root/ProG/prompt_graph/model/GCN.py": "0677389462f0d20fa5a46ef454ff6c30c153cd4b9c21f5a710c8e3161b089365",
+    "/root/ProG/prompt_graph/model/GCov.py": "4d3910ab3e8e4b7f96bcea0b5848d2d3822d7eea1a87d3d8ae29fcd869f5271d",
+    "/root/ProG/prompt_graph/model/GIN.py": "468ae044f55531f5a1e0592dd438eb08609ffd6f7c552bb4d639a60a7b110ea1",
+    "/root/ProG/prompt_graph/model/GraphSAGE.py": "d307614d66b5458d09da3132981b0c4e1942f595eec251dd22d0a95108e3ba6b",
+    "/root/ProG/prompt_graph/model/GraphTransformer.py": "24fff0d94ed6f5c555f492d97cc9a0739b06df811df1d5527b79a5c274536f1a",
+    "/root/ProG/prompt_graph/model/__init__.py": "85d4ea3625d881f2eae8de02762810442c71ab2adf8b1fa3a3669000d4c4d6d5",
+    "/root/ProG/prompt_graph/model/gnn.py": "5fbd7e7fecab292c140d0f44ce8b0915f9b6cddcd1bfee5aaaffcc93198cf659"
+  },
+  "raw_sha": {
+    "README.txt": "05d4c1c4810080a07759007e0585f92046c08d35adbe3aa1894bf06890dc0b70",
+    "COX2_A.txt": "243231bc10b9ce2576f7f2d3d49c74d403912bd32264c85bcfba2edeb531175f",
+    "COX2_graph_labels.txt": "106e76e03040eb4024d6cb3ab08af914f92609b0a85a17ddc6cc48ab0e08d7f5",
+    "COX2_node_labels.txt": "2e7081a445a29387e9ba927724f3fe86b0c17d27033bca5e47949754a29d9759",
+    "COX2_node_attributes.txt": "f2dcba7354e0a6f8bb1c8b8e0c46f90258e05b59fc1600bcf2c307351f2e246a",
+    "COX2_graph_indicator.txt": "92f3610a7d32dadd60ac12292e8f047cfa88b2c15b0c20143171185e2d4329f1"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "seed": 199199,
+  "support_sha256": "fc7efa728f4694dc156cd206acff1aab800bc1da148e0bfc6dbc1c23e981db76",
+  "teacher_sha256": "51a269429fbf228aef8c9a48a1bd24dc3ce1eef10603d8ad9ae35b11e483e132",
+  "accuracy_evaluated": false,
+  "query_labels_used": false,
+  "checkpoints": {
+    "GraphMAE": {
+      "checkpoint_sha256": "fb9bb0e2e2bd5301782e683f5e99a476d8e1ee668a0423f667de602c5eda137e",
+      "losses": {
+        "kl": 0.37390807271003723,
+        "inter": 0.41581231355667114,
+        "intra": 0.41692739725112915,
+        "both": 0.8327397108078003,
+        "supervised": 1.7804064750671387
+      },
+      "gradient_norms": {
+        "kl": 0.12586349248886108,
+        "inter": 0.18173937499523163,
+        "intra": 0.19436562061309814,
+        "both": 0.33488285541534424,
+        "supervised": 0.41852083802223206
+      },
+      "gradient_vs_kl": {
+        "kl": 1.0,
+        "inter": 0.5278353691101074,
+        "intra": 0.4682793617248535,
+        "both": 0.5582426190376282,
+        "supervised": 0.9278104305267334
+      },
+      "gradient_ratio_vs_kl": {
+        "kl": 1.0,
+        "inter": 1.4439404010772705,
+        "intra": 1.5442572832107544,
+        "both": 2.6606829166412354,
+        "supervised": 3.3251965045928955
+      }
+    },
+    "GraphMAE2": {
+      "checkpoint_sha256": "b4ccffb1990810bfa314fd5b9c061da3da807fc7cd09417963920dbd29d8bf3b",
+      "losses": {
+        "kl": 0.5461063981056213,
+        "inter": 0.44918280839920044,
+        "intra": 0.38020098209381104,
+        "both": 0.8293837904930115,
+        "supervised": 2.2997756004333496
+      },
+      "gradient_norms": {
+        "kl": 0.0569477453827858,
+        "inter": 0.5554155111312866,
+        "intra": 0.424900084733963,
+        "both": 0.8957589864730835,
+        "supervised": 0.16539032757282257
+      },
+      "gradient_vs_kl": {
+        "kl": 0.9999999403953552,
+        "inter": 0.49239587783813477,
+        "intra": 0.6277350783348083,
+        "both": 0.6030740737915039,
+        "supervised": 0.928803563117981
+      },
+      "gradient_ratio_vs_kl": {
+        "kl": 1.0,
+        "inter": 9.753072738647461,
+        "intra": 7.4612274169921875,
+        "both": 15.729490280151367,
+        "supervised": 2.9042470455169678
+      }
+    }
+  },
+  "source_files": {
+    "run_round53_focal.py": "57f4930041bbf0c5517513aa2ec28d261729e98b8aecd83f2bd82dd31509ae9b",
+    "dist134_draft.py": "eda2a1c1fcaaf7dba29afc3078b1b1f49d7ca5cbf41f2f38d6cae3e90d257573",
+    "probe_dist134.py": "3e801c6801e8dee01591fb940fb11dd5d3f804d489202b8ae86173c8ca206e95"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "warmup": 0,
+      "beta1": 0.0,
+      "initial": "zero",
+      "max_reference_numpy_error": 5.551115123125783e-16,
+      "max_fast_reference_error": 1.1102230246251565e-16
+    },
+    {
+      "warmup": 0,
+      "beta1": 0.0,
+      "initial": "nonzero",
+      "max_reference_numpy_error": 3.885780586188048e-16,
+      "max_fast_reference_error": 1.1102230246251565e-16
+    },
+    {
+      "warmup": 0,
+      "beta1": 0.9,
+      "initial": "zero",
+      "max_reference_numpy_error": 6.661338147750939e-16,
+      "max_fast_reference_error": 6.106226635438361e-16
+    },
+    {
+      "warmup": 0,
+      "beta1": 0.9,
+      "initial": "nonzero",
+      "max_reference_numpy_error": 5.551115123125783e-16,
+      "max_fast_reference_error": 5.551115123125783e-16
+    },
+    {
+      "warmup": 10,
+      "beta1": 0.0,
+      "initial": "zero",
+      "max_reference_numpy_error": 5.551115123125783e-16,
+      "max_fast_reference_error": 1.1102230246251565e-16
+    },
+    {
+      "warmup": 10,
+      "beta1": 0.0,
+      "initial": "nonzero",
+      "max_reference_numpy_error": 4.163336342344337e-16,
+      "max_fast_reference_error": 1.6653345369377348e-16
+    },
+    {
+      "warmup": 10,
+      "beta1": 0.9,
+      "initial": "zero",
+      "max_reference_numpy_error": 6.661338147750939e-16,
+      "max_fast_reference_error": 4.996003610813204e-16
+    },
+    {
+      "warmup": 10,
+      "beta1": 0.9,
+      "initial": "nonzero",
+      "max_reference_numpy_error": 6.661338147750939e-16,
+      "max_fast_reference_error": 8.881784197001252e-16
+    }
+  ],
+  "sources": {
+    "check139.py": "45ec1b46c0c53739c2c12f075f2f5ab1dcb49dbaef2d7dd19fb79d976350264d",
+    "schedulefree_reference_snapshot.py": "e3c07b2d5b93375892ee1e62f3ca586145589444b2b50d314892e58c47433fa3",
+    "schedulefree_fast_snapshot.py": "eccb8691b9faa5e64f5160575637c6211ac6edfc00442c12a9013b2637e1bd50"
+  }
+}

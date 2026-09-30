@@ -1,0 +1,40 @@
+{
+  "out": "confirm4_previous_Cora",
+  "datasets": [
+    "Cora"
+  ],
+  "checkpoints": [
+    "GraphMAE"
+  ],
+  "methods": [
+    "frozen",
+    "sphered_hidden_kl"
+  ],
+  "seeds": [
+    8100,
+    8101,
+    8102,
+    8103,
+    8104,
+    8105,
+    8106,
+    8107,
+    8108,
+    8109,
+    8110,
+    8111,
+    8112,
+    8113,
+    8114,
+    8115,
+    8116,
+    8117,
+    8118,
+    8119
+  ],
+  "steps": 100,
+  "phase": "confirm",
+  "source_sha256": "6dd062769514cdbbfe0a0dc113649beea99fa614d6b631f72b7501660bb30bd3",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+}

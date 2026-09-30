@@ -1,0 +1,119 @@
+{
+  "cases": [
+    {
+      "epsilon": 1e-08,
+      "base": "adam",
+      "mode": "raw",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 1e-08,
+      "base": "adam",
+      "mode": "matched",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 1e-08,
+      "base": "adam",
+      "mode": "amplitude",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 1e-08,
+      "base": "adam",
+      "mode": "identity",
+      "yogi_direction_max_error": 3.3306690738754696e-16,
+      "identity_error": 2.9802322387695312e-08
+    },
+    {
+      "epsilon": 1e-08,
+      "base": "gshampoo",
+      "mode": "raw",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 1e-08,
+      "base": "gshampoo",
+      "mode": "matched",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 1e-08,
+      "base": "gshampoo",
+      "mode": "amplitude",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 1e-08,
+      "base": "gshampoo",
+      "mode": "identity",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": 0.0
+    },
+    {
+      "epsilon": 0.001,
+      "base": "adam",
+      "mode": "raw",
+      "yogi_direction_max_error": 3.3306690738754696e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 0.001,
+      "base": "adam",
+      "mode": "matched",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 0.001,
+      "base": "adam",
+      "mode": "amplitude",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 0.001,
+      "base": "adam",
+      "mode": "identity",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": 2.9802322387695312e-08
+    },
+    {
+      "epsilon": 0.001,
+      "base": "gshampoo",
+      "mode": "raw",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 0.001,
+      "base": "gshampoo",
+      "mode": "matched",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 0.001,
+      "base": "gshampoo",
+      "mode": "amplitude",
+      "yogi_direction_max_error": 3.3306690738754696e-16,
+      "identity_error": null
+    },
+    {
+      "epsilon": 0.001,
+      "base": "gshampoo",
+      "mode": "identity",
+      "yogi_direction_max_error": 4.440892098500626e-16,
+      "identity_error": 0.0
+    }
+  ],
+  "zero_boundary": true,
+  "zero_gradient_preserves_yogi_moment": true,
+  "passed": true
+}

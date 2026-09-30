@@ -1,0 +1,10 @@
+{
+  "selected_before_confirmation": true,
+  "dataset": "Cora",
+  "candidates": {"GraphMAE": "token_ridge_kd10late", "GraphMAE2": "token_ridge_kd10deep"},
+  "checkpoints": ["GraphMAE", "GraphMAE2", "Random_s20260923", "Random_s20260924", "Random_s20260925"],
+  "methods": ["frozen", "graphprompt", "ridge_teacher", "token_ridge_kd10", "token_ridge_kd10late", "token_ridge_kd10deep", "token_ridge_kd10output"],
+  "seeds": [16100,16101,16102,16103,16104,16105,16106,16107,16108,16109,16110,16111,16112,16113,16114,16115,16116,16117,16118,16119],
+  "phase": "confirm",
+  "boundary": "Same-graph support robustness. Three random backbones test limited initialization sensitivity. Deep has twice the prompt parameters, output is terminal adaptation. No position retuning on these query scores."
+}

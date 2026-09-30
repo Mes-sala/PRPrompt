@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "GraphCL",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "CiteSeer",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "b4708f27c7e5a556c2fab217272e6154301fa56336b97833ea291af38aa74115",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 39,
+  "best_training_loss": 0.19548682132735848,
+  "selection": "last_after_training_loss_patience_10"
+}

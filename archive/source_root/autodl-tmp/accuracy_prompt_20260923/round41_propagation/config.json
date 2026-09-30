@@ -1,0 +1,43 @@
+{
+  "out": "/root/autodl-tmp/accuracy_prompt_20260923/round41_propagation",
+  "datasets": [
+    "Cora",
+    "PubMed"
+  ],
+  "checkpoints": [
+    "GraphMAE",
+    "GraphMAE2"
+  ],
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "ridge_teacher_plain",
+    "rect_teacher_ref50",
+    "head_base_mean",
+    "head_base_orig-0.5-free",
+    "head_base_orig-0.5-clamp",
+    "head_base_knn-0.5-free",
+    "head_base_knn-0.5-clamp",
+    "head_base_knn-0.9-clamp",
+    "head_base_random-0.5-clamp",
+    "head_token_mean",
+    "head_token_orig-0.5-free",
+    "head_token_orig-0.5-clamp",
+    "head_token_knn-0.5-free",
+    "head_token_knn-0.5-clamp",
+    "head_token_knn-0.9-clamp",
+    "head_token_random-0.5-clamp"
+  ],
+  "seeds": [
+    63100,
+    63101,
+    63102,
+    63103,
+    63104
+  ],
+  "steps": 100,
+  "phase": "dev",
+  "source_sha256": "ff7b00e273b08027f1bb14839a104886e4c0340eb0511850e6f2cca9e5f63847",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+}

@@ -1,0 +1,4 @@
+{
+  "error": "AssertionError(1.9311904907226562e-05)",
+  "traceback": "Traceback (most recent call last):\n  File \"/data1/shq/GP/PRPrompt_M3_softening_20260928/run_softening.py\", line 94, in <module>\n    try:run(job,args.smoke)\n        ^^^^^^^^^^^^^^^^^^^\n  File \"/data1/shq/GP/PRPrompt_M3_softening_20260928/run_softening.py\", line 73, in run\n    err=float((ref.softmax(-1)-scores['T0.2'].softmax(-1)).abs().max());assert err<2e-6,err\n                                                                               ^^^^^^^^\nAssertionError: 1.9311904907226562e-05\n"
+}

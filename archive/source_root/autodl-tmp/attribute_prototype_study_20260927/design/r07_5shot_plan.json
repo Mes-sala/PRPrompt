@@ -1,0 +1,137 @@
+{
+  "round": "r07_external_5shot",
+  "datasets": [
+    "Cora",
+    "CiteSeer",
+    "PubMed",
+    "Computers",
+    "Photo",
+    "Actor",
+    "Chameleon",
+    "Cornell"
+  ],
+  "seeds": [
+    270700,
+    270701,
+    270702,
+    270703,
+    270704,
+    270705,
+    270706,
+    270707,
+    270708,
+    270709,
+    270710,
+    270711,
+    270712,
+    270713,
+    270714,
+    270715,
+    270716,
+    270717,
+    270718,
+    270719
+  ],
+  "shots": 5,
+  "configs": [
+    {
+      "id": "h0_c0_anchored",
+      "hops": 0,
+      "center": 0,
+      "readout": "anchored"
+    },
+    {
+      "id": "h0_c0_simpleshot_style",
+      "hops": 0,
+      "center": 0,
+      "readout": "simpleshot_style"
+    },
+    {
+      "id": "h0_c0_soft_kmeans_adapted",
+      "hops": 0,
+      "center": 0,
+      "readout": "soft_kmeans_adapted"
+    },
+    {
+      "id": "h0_c0_laplacianshot_adapted",
+      "hops": 0,
+      "center": 0,
+      "readout": "laplacianshot_adapted"
+    },
+    {
+      "id": "h0_c1_anchored",
+      "hops": 0,
+      "center": 1,
+      "readout": "anchored"
+    },
+    {
+      "id": "h0_c1_simpleshot_style",
+      "hops": 0,
+      "center": 1,
+      "readout": "simpleshot_style"
+    },
+    {
+      "id": "h0_c1_soft_kmeans_adapted",
+      "hops": 0,
+      "center": 1,
+      "readout": "soft_kmeans_adapted"
+    },
+    {
+      "id": "h0_c1_laplacianshot_adapted",
+      "hops": 0,
+      "center": 1,
+      "readout": "laplacianshot_adapted"
+    },
+    {
+      "id": "h2_c0_anchored",
+      "hops": 2,
+      "center": 0,
+      "readout": "anchored"
+    },
+    {
+      "id": "h2_c0_simpleshot_style",
+      "hops": 2,
+      "center": 0,
+      "readout": "simpleshot_style"
+    },
+    {
+      "id": "h2_c0_soft_kmeans_adapted",
+      "hops": 2,
+      "center": 0,
+      "readout": "soft_kmeans_adapted"
+    },
+    {
+      "id": "h2_c0_laplacianshot_adapted",
+      "hops": 2,
+      "center": 0,
+      "readout": "laplacianshot_adapted"
+    },
+    {
+      "id": "h2_c1_anchored",
+      "hops": 2,
+      "center": 1,
+      "readout": "anchored"
+    },
+    {
+      "id": "h2_c1_simpleshot_style",
+      "hops": 2,
+      "center": 1,
+      "readout": "simpleshot_style"
+    },
+    {
+      "id": "h2_c1_soft_kmeans_adapted",
+      "hops": 2,
+      "center": 1,
+      "readout": "soft_kmeans_adapted"
+    },
+    {
+      "id": "h2_c1_laplacianshot_adapted",
+      "hops": 2,
+      "center": 1,
+      "readout": "laplacianshot_adapted"
+    }
+  ],
+  "runner_sha256": "c4cbab34445b6ed33fcfa31ae1516724c5ef1479e4f16bd5a544035a2b95e937",
+  "external_sha256": "975de33ecf590b520060fe57a0574bd2611b97956474017494416c3b592910d4",
+  "operator_sha256": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123"
+}

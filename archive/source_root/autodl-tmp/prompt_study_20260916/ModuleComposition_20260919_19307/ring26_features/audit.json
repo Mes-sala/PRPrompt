@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "manifest_sha": "a06b5204772ca0641d9b4252283b76b561a2cc08fc3156b1ddd8b2669e303188",
+  "freeze_sha": "4846e479e8c2f61e7d9983f6dd2a19cd5ac568d5b45c923f01e0f5610e4a8128",
+  "checker_sha": "5c3b7f87f4648f24304cf12f666000a0ec47ddf292693355fb2fbb2f2436d10e",
+  "reference_files": {
+    "NCI1": {
+      "sha": "b689f6f79df8ef039f60ed1951e1c9ec59c9669ca5986327f91090e651db735f",
+      "bytes": 50201446,
+      "all_augmented_WL_count_entries_exact": true
+    },
+    "NCI109": {
+      "sha": "0a95453ecb05d7265f8a27127dc952ad2c2eb4026373a0203a7ba951509ca15f",
+      "bytes": 50957470,
+      "all_augmented_WL_count_entries_exact": true
+    }
+  },
+  "maximum_errors": {
+    "global_mean": 0.0,
+    "global_std": 0.0,
+    "global_z": 0.0,
+    "RingWL3": 0.0,
+    "RingWL0": 0.0,
+    "RingBinary3": 0.0,
+    "RingCos3": 0.0,
+    "RingPerm3": 0.0,
+    "count3": 0.0,
+    "RingGlobal": 7.105427357601002e-15,
+    "RingGlobalRBF": 1.7763568394002505e-15
+  },
+  "synthetic": {
+    "node_relabel": "passed",
+    "independent_producer_partitions": "passed"
+  },
+  "numeric_graph_targets_used": false
+}

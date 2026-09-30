@@ -1,0 +1,47 @@
+{
+  "status": "STRICT_LOAD_PASS",
+  "global_step": 349999,
+  "anycq_keys": 33,
+  "predictor_keys": 4,
+  "roundtrip_equal": true,
+  "parity_probe": {
+    "heads": [
+      0,
+      2,
+      5
+    ],
+    "relations": [
+      0,
+      1,
+      3
+    ],
+    "tail_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "native_point_vs_batch_max": 3.1779727935791016,
+    "point_vs_canonical_max": 9.5367431640625e-07,
+    "top1_native": [
+      1,
+      5683,
+      5881
+    ],
+    "top1_canonical": [
+      1,
+      7133,
+      5256
+    ],
+    "scope": "fixed deterministic numerical probe, not labeled query accuracy"
+  },
+  "files": {
+    "source/models/FB15k-237/anycq/config.json": "e1c2e2922ecb3b75674089f9d84e2b5f8eb37c14edbe37ba2c1027150c907b0e",
+    "source/models/FB15k-237/anycq/_checkpoint_350000.pkl": "91a334ca1724a2c879e40207f02d4f1d82365b6fb7a7959275e84ccd01a66ec5",
+    "source/models/FB15k-237/predictor/ComplEx_pretrained.pth": "56a804d3429cf68ac2b1e0de914d7962228bc0bb28e0d6d3cea461b7c31ad2a4"
+  },
+  "PE_training_files": "not present in official archive under required path"
+}

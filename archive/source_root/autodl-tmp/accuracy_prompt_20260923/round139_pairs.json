@@ -1,0 +1,70 @@
+{
+  "rows": 185,
+  "seeds": [
+    207100,
+    207101,
+    207102,
+    207103,
+    207104
+  ],
+  "means": {
+    "Direct/ridge_teacherplain": 73.08000000000001,
+    "GraphMAE/frozen": 60.879999999999995,
+    "GraphMAE/graphprompt": 60.8,
+    "GraphMAE/head_base_qeps-50": 62.120000000000005,
+    "GraphMAE/head_gp_qeps-50": 62.080000000000005,
+    "GraphMAE/head_token_mean": 76.16,
+    "GraphMAE/head_token_qeps-50": 76.36000000000001,
+    "GraphMAE/head_scale2_mean": 76.28,
+    "GraphMAE/head_scale2_qeps-50": 76.68,
+    "GraphMAE/head_sf0_mean": 75.36000000000001,
+    "GraphMAE/head_sf0_qeps-50": 75.56,
+    "GraphMAE/head_sfw_mean": 75.44000000000001,
+    "GraphMAE/head_sfw_qeps-50": 75.72,
+    "GraphMAE/head_sfz_mean": 75.96000000000001,
+    "GraphMAE/head_sfz_qeps-50": 75.56000000000002,
+    "GraphMAE/head_sfy_mean": 75.72,
+    "GraphMAE/head_sfy_qeps-50": 75.92,
+    "GraphMAE/head_awm_mean": 76.16000000000001,
+    "GraphMAE/head_awm_qeps-50": 76.76,
+    "GraphMAE2/frozen": 53.080000000000005,
+    "GraphMAE2/graphprompt": 50.959999999999994,
+    "GraphMAE2/head_base_qeps-50": 35.32000000000001,
+    "GraphMAE2/head_gp_qeps-50": 38.120000000000005,
+    "GraphMAE2/head_token_mean": 73.52000000000001,
+    "GraphMAE2/head_token_qeps-50": 75.12,
+    "GraphMAE2/head_scale2_mean": 73.91999999999999,
+    "GraphMAE2/head_scale2_qeps-50": 75.36,
+    "GraphMAE2/head_sf0_mean": 72.36000000000001,
+    "GraphMAE2/head_sf0_qeps-50": 73.84,
+    "GraphMAE2/head_sfw_mean": 72.36000000000001,
+    "GraphMAE2/head_sfw_qeps-50": 73.76,
+    "GraphMAE2/head_sfz_mean": 72.28,
+    "GraphMAE2/head_sfz_qeps-50": 73.76,
+    "GraphMAE2/head_sfy_mean": 72.32,
+    "GraphMAE2/head_sfy_qeps-50": 73.84,
+    "GraphMAE2/head_awm_mean": 73.92,
+    "GraphMAE2/head_awm_qeps-50": 75.12
+  },
+  "strongest_root": "GraphMAE/head_awm_qeps-50",
+  "selected": "GraphMAE/head_sfy_qeps-50",
+  "delta_vs_strongest": -0.8400000000000034,
+  "delta_vs_direct": 2.839999999999989,
+  "passed": false,
+  "paired": {
+    "GraphMAE/head_awm_qeps-50": [
+      -0.7999999999999972,
+      -1.7999999999999972,
+      -1.8000000000000114,
+      0.19999999999998863,
+      0.0
+    ],
+    "Direct/ridge_teacherplain": [
+      4.0,
+      7.200000000000003,
+      3.3999999999999915,
+      0.19999999999998863,
+      -0.6000000000000085
+    ]
+  }
+}

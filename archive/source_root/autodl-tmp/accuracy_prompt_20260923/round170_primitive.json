@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "source_commit": "6dd03a0fe187960b098049b04cd9f286cbb25f6a",
+  "cases": [
+    {
+      "rank": 1,
+      "frequency": 5.0,
+      "initial_noop": true,
+      "initial_gradient_matches_scaled_linear": true,
+      "forward_error": 3.552713678800501e-14,
+      "gradient_error": 8.881784197001252e-16,
+      "wrong_activation_gap": 0.07288008018424019
+    },
+    {
+      "rank": 1,
+      "frequency": 20.0,
+      "initial_noop": true,
+      "initial_gradient_matches_scaled_linear": true,
+      "forward_error": 3.730349362740526e-14,
+      "gradient_error": 7.105427357601002e-15,
+      "wrong_activation_gap": 0.5415595312835357
+    },
+    {
+      "rank": 4,
+      "frequency": 5.0,
+      "initial_noop": true,
+      "initial_gradient_matches_scaled_linear": true,
+      "forward_error": 4.618527782440651e-14,
+      "gradient_error": 1.7763568394002505e-15,
+      "wrong_activation_gap": 0.2002202359067411
+    },
+    {
+      "rank": 4,
+      "frequency": 20.0,
+      "initial_noop": true,
+      "initial_gradient_matches_scaled_linear": true,
+      "forward_error": 3.907985046680551e-14,
+      "gradient_error": 7.105427357601002e-15,
+      "wrong_activation_gap": 0.6494395760587404
+    }
+  ],
+  "scope": "actual author unmerged weight-sine forward; independent linear fusion and gradients; no query"
+}

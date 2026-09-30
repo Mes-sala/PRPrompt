@@ -1,0 +1,45 @@
+{
+  "time": 1790142876.9729931,
+  "removed": "round29_smoke",
+  "completed": 45,
+  "bytes": 2090156,
+  "config": {
+    "out": "round29_smoke",
+    "datasets": [
+      "Cornell",
+      "Actor",
+      "Chameleon"
+    ],
+    "checkpoints": [
+      "GraphMAE"
+    ],
+    "methods": [
+      "frozen",
+      "graphprompt",
+      "raw",
+      "rawridge",
+      "cache_teacher10",
+      "cache_teacher30",
+      "token_ridge_kd10plainlate",
+      "token_rawridge_kd10late",
+      "token_rawridge_kd10late_directgate",
+      "token_cache10_kd10late",
+      "token_cache10_kd10late_directgate",
+      "token_cache30_kd10late",
+      "token_cache30_kd10late_directgate",
+      "token_random_rawridge10late_directgate",
+      "token_random_cache30_kd10late_directgate"
+    ],
+    "seeds": [
+      42100
+    ],
+    "fold": 0,
+    "steps": 3,
+    "phase": "dev",
+    "source_sha256": "07a400121b4a3719ce1a3aa5ff7bda103165bc0837718b963164f1803bc3ca06",
+    "torch": "2.12.1+cu130",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+  },
+  "prediction_hashes_verified": true,
+  "formal_predictions_preserved": true
+}

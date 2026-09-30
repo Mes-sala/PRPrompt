@@ -1,0 +1,268 @@
+{
+  "dataset": "Photo",
+  "seed": 271700,
+  "protocol": "fixed20_perclass_pool_all_remaining_query",
+  "contract_sha256": "1580a3cc92ff6665e7d14341d1029ea7be47090be0d8d9ff8ee45d9f69ade927",
+  "design_sha256": "e1d89bb217cff744e5d806271548c1fecd120402570fe80adb8024c0c9b06aa2",
+  "runner_sha256": "90fc895c55ede5ebd11800811174c924e172ad4237cd8f04e26cffa6a5c839bf",
+  "dependencies": {
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e",
+    "theory/方向集中下的反馈与判别尺度_候选.md": "7172d88c0cefd0167c0dfeb3d5dd184587707b917b03a15c992b72a9775ce204",
+    "theory/池质量与方向集中_联合极限.md": "36f6c4625be7f41ec8251a22e36d4a45c696b4f1e40e8e3badcb790f52b4e8e1"
+  },
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  },
+  "input_hashes": {
+    "input": "b5fc3930333d75d0d7ee01a8f99c5d9ebd004373608a012e990f59c544244bdf",
+    "raw_input": "81b341d81e4e9f863fbcf151f132382287048c68e40896d5e1c4ba489033b9c5",
+    "graph": "e8c8d72c84c653e2b5937696273e6dc3b3df88038383407973d8a951f3fa9c07",
+    "adjacency_indices": "cc03e77e889aed7ca1d65cbd8a7bb7dcb498b23497c8d74760e911dafcd04dcf",
+    "adjacency_values": "2205777877a4affdaed8b1852d3c4159dedd56688197f8b03d8f4bd45d13b8a7",
+    "propagated": "5e92017aa71fcd2e35b99b16d23c49126d47a440e9dbffb86ac360247a9bb209",
+    "representation": "f3a289d7ded1b69ba7359a22be18ad6db8f4391543f03db76d3634fb0a555afc",
+    "query": "49902400cb5477b7f92e8a418f1006c430801ffa712577cb4241f0e31b4dd18b",
+    "pool": "027549acf764355304850117bfbb92116a5dd141abff631894e32a2bebc0b992",
+    "source_sha256": "89d7e7ff49fecb13a8a60e9e39b4852464fb0ccd5994b4b82be4db0ad843f1e4"
+  },
+  "epsilon": 1.0,
+  "k": 0,
+  "temperature": "scaled",
+  "tau": 0.05,
+  "beta": 1.0,
+  "radius": 6.3552253216458725,
+  "epsilon_radius": 6.3552253216458725,
+  "epsilon_squared_radius_squared_over_tau0": 807.7777777777777,
+  "fixed_temperature_local_domain": false,
+  "rounds": {
+    "1": {
+      "metrics": {
+        "initial_contrast": {
+          "amplitude": 0.840497571917802,
+          "predicted_amplitude": 1.086799347212678,
+          "error": 0.33138052604908974,
+          "relative_error": 0.3049141747269022,
+          "resolution_threshold": 6.2803698347351e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "tangent_prototype_to_limit": {
+          "amplitude": 1.0365425685717105,
+          "predicted_amplitude": 1.3837590180162773,
+          "error": 0.39433586184882163,
+          "relative_error": 0.28497437538953263,
+          "resolution_threshold": 1.7142073596704305e-12,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "centered_D_to_limit": {
+          "amplitude": 10.197681186143814,
+          "predicted_amplitude": 21.3645657404444,
+          "error": 11.922294806696293,
+          "relative_error": 0.5580405869952543,
+          "resolution_threshold": 5.435332639363196e-12,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        }
+      },
+      "ranking": {
+        "full_vs_common": {
+          "disagreement_count": 6902,
+          "nodes": 7490,
+          "disagreement_fraction": 0.9214953271028037,
+          "unresolved_gap_either_count": 7490,
+          "disagreement_outside_unresolved_count": 0,
+          "min_physical_gap": 0.0
+        },
+        "full_vs_frozen_tangent_limit": {
+          "disagreement_count": 474,
+          "nodes": 7490,
+          "disagreement_fraction": 0.06328437917222964,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 474,
+          "min_physical_gap": 4.945941044831592e-06
+        },
+        "canonical_cosine_vs_stable_D": {
+          "disagreement_count": 0,
+          "nodes": 7490,
+          "disagreement_fraction": 0.0,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 0,
+          "min_physical_gap": 6.6344632401182935e-06
+        },
+        "canonical_score_identity_centered_max_error": 2.7373936450914016e-15
+      },
+      "update_seconds": 0.0017829909920692444,
+      "score_seconds": 0.0009094402194023132,
+      "mass_min": 600.5696549063886,
+      "mass_max": 1273.5264229838076,
+      "logmass_min": 6.39787862964143,
+      "mass_underflow_count": 0,
+      "q_probability_zero_count": 0
+    },
+    "2": {
+      "metrics": {
+        "initial_contrast": {
+          "amplitude": 0.840497571917802,
+          "predicted_amplitude": 1.086799347212678,
+          "error": 0.33138052604908974,
+          "relative_error": 0.3049141747269022,
+          "resolution_threshold": 6.2803698347351e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "tangent_prototype_to_limit": {
+          "amplitude": 0.9898139139795155,
+          "predicted_amplitude": 1.3159566024216585,
+          "error": 0.4245517916283162,
+          "relative_error": 0.3226183833471747,
+          "resolution_threshold": 1.7142073596704305e-12,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "centered_D_to_limit": {
+          "amplitude": 5.563561210704226,
+          "predicted_amplitude": 17.22999931946052,
+          "error": 12.56565160029645,
+          "relative_error": 0.7292891524437904,
+          "resolution_threshold": 5.435332639363196e-12,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        }
+      },
+      "ranking": {
+        "full_vs_common": {
+          "disagreement_count": 6636,
+          "nodes": 7490,
+          "disagreement_fraction": 0.8859813084112149,
+          "unresolved_gap_either_count": 7490,
+          "disagreement_outside_unresolved_count": 0,
+          "min_physical_gap": 0.0
+        },
+        "full_vs_frozen_tangent_limit": {
+          "disagreement_count": 679,
+          "nodes": 7490,
+          "disagreement_fraction": 0.09065420560747664,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 679,
+          "min_physical_gap": 6.97345194131116e-07
+        },
+        "canonical_cosine_vs_stable_D": {
+          "disagreement_count": 0,
+          "nodes": 7490,
+          "disagreement_fraction": 0.0,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 0,
+          "min_physical_gap": 6.97345194131116e-07
+        },
+        "canonical_score_identity_centered_max_error": 2.6922908347160046e-15
+      },
+      "update_seconds": 0.0017682015895843506,
+      "score_seconds": 0.0009074658155441284,
+      "mass_min": 836.9317422505009,
+      "mass_max": 1046.0428485713,
+      "logmass_min": 6.7297425166867555,
+      "mass_underflow_count": 0,
+      "q_probability_zero_count": 0
+    },
+    "3": {
+      "metrics": {
+        "initial_contrast": {
+          "amplitude": 0.840497571917802,
+          "predicted_amplitude": 1.086799347212678,
+          "error": 0.33138052604908974,
+          "relative_error": 0.3049141747269022,
+          "resolution_threshold": 6.2803698347351e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "tangent_prototype_to_limit": {
+          "amplitude": 0.9769621042548271,
+          "predicted_amplitude": 1.2797076022180949,
+          "error": 0.42358573675372097,
+          "relative_error": 0.3310019695276696,
+          "resolution_threshold": 1.7142073596704305e-12,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "centered_D_to_limit": {
+          "amplitude": 3.163209077870671,
+          "predicted_amplitude": 14.415629372568192,
+          "error": 12.02441996962863,
+          "relative_error": 0.8341238289956423,
+          "resolution_threshold": 5.435332639363196e-12,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        }
+      },
+      "ranking": {
+        "full_vs_common": {
+          "disagreement_count": 6667,
+          "nodes": 7490,
+          "disagreement_fraction": 0.8901201602136182,
+          "unresolved_gap_either_count": 7490,
+          "disagreement_outside_unresolved_count": 0,
+          "min_physical_gap": 0.0
+        },
+        "full_vs_frozen_tangent_limit": {
+          "disagreement_count": 1326,
+          "nodes": 7490,
+          "disagreement_fraction": 0.17703604806408546,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 1326,
+          "min_physical_gap": 1.4134621459382934e-07
+        },
+        "canonical_cosine_vs_stable_D": {
+          "disagreement_count": 0,
+          "nodes": 7490,
+          "disagreement_fraction": 0.0,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 0,
+          "min_physical_gap": 1.413462137334065e-07
+        },
+        "canonical_score_identity_centered_max_error": 2.7200464103316335e-15
+      },
+      "update_seconds": 0.0017700791358947754,
+      "score_seconds": 0.0009079650044441223,
+      "mass_min": 912.7391297299347,
+      "mass_max": 974.4904451804061,
+      "logmass_min": 6.816450111102939,
+      "mass_underflow_count": 0,
+      "q_probability_zero_count": 0
+    }
+  },
+  "r13_replay": {},
+  "pre_artifact_sha256": "72a3a26f78213b3b98bbb6ee00bbdcf579909741d20ddda739437fab2bccbe89",
+  "pre_record_sha256": "1d59e3e151791f34868ac6a1375e0f1557d2aab7b1f10135972e06db9ab723bc",
+  "calculation_seconds": 0.025115344673395157,
+  "status": "complete",
+  "serialization_seconds": 0.14661413431167603,
+  "artifact_sha256": "af20b842c25d1e67894094a21096b47d6df3870365c32415f709bf30beb08eed"
+}

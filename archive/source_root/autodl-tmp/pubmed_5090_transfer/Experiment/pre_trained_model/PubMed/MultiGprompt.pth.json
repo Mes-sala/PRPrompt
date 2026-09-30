@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "MultiGprompt",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "PubMed",
+  "gnn": "MultiGprompt",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "3bc081ec95a6fe08f24c05050ec96a66079bbee0c503563d6be62131e52fa2d5",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 999,
+  "best_training_loss": 1.3088358640670776,
+  "selection": "last_after_training_loss_patience_20"
+}

@@ -1,0 +1,47 @@
+{
+  "out": "confirm5",
+  "datasets": [
+    "Cora",
+    "CiteSeer",
+    "PubMed"
+  ],
+  "checkpoints": [
+    "GraphMAE2"
+  ],
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "rawprop2",
+    "token_kd3",
+    "token3",
+    "token_kd3perm",
+    "token_random3"
+  ],
+  "seeds": [
+    9100,
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110,
+    9111,
+    9112,
+    9113,
+    9114,
+    9115,
+    9116,
+    9117,
+    9118,
+    9119
+  ],
+  "steps": 100,
+  "phase": "confirm",
+  "source_sha256": "77e9648924de47ccd92de45b43b1b016f323e415b8f4a4d2969fae1886f5e411",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+}

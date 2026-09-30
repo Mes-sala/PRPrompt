@@ -1,0 +1,55 @@
+{
+  "round": "numerical_probability_optimized",
+  "parent_plan": "/root/autodl-tmp/attribute_prototype_study_20260927/design/expanded_confirmation/expanded_confirmation_Cornell__GraphMAE2__GCN__seed42_norm.json",
+  "parent_plan_sha256": "dc0a4c771d6d2cffe4b611bead04355135139a3c53d1fbf078e2ff7fa8bc8a0b",
+  "replay_sha256": "b0833962d39114c261cfae137d3b181687d7fe88c8cf7a91adc3c4e48f3b6410",
+  "selection_csv_sha256": "abad2e0f006684a317872bfc1c558ab8e18fec82a78fe3c6e9aa1ad313bdfa5d",
+  "jobs": [
+    {
+      "seed": 271400,
+      "config": "zca001_b0.75_t0.1_n3_none",
+      "routes": [
+        "GCN",
+        "any_frozen"
+      ]
+    },
+    {
+      "seed": 271401,
+      "config": "zca001_b0.75_t0.05_n3_confidence",
+      "routes": [
+        "GCN",
+        "any_frozen"
+      ]
+    },
+    {
+      "seed": 271404,
+      "config": "zca01_b0.75_t0.1_n3_confidence",
+      "routes": [
+        "GCN"
+      ]
+    },
+    {
+      "seed": 271406,
+      "config": "zca001_b0.75_t0.1_n10_confidence",
+      "routes": [
+        "GCN",
+        "any_frozen",
+        "all_including_attributes"
+      ]
+    },
+    {
+      "seed": 271407,
+      "config": "zca01_b0.5_t0.1_n10_confidence",
+      "routes": [
+        "GCN"
+      ]
+    },
+    {
+      "seed": 271418,
+      "config": "zca001_b0.75_t0.05_n1_confidence",
+      "routes": [
+        "GCN"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "comparison_errors": [
+    [
+      "GraphMAE",
+      "stage_100",
+      "head_token_mean",
+      1.601874828338623e-06
+    ],
+    [
+      "GraphMAE",
+      "stage_prop",
+      "head_token_knn-0.9-clamp",
+      {
+        "log_probability_error": 0.013701438903808594,
+        "probability_error": 0.0017316341400146484,
+        "predictions_equal": true,
+        "note": "Separate GPU retraining changes near-tied knn. Not bitwise equivalence."
+      }
+    ],
+    [
+      "GraphMAE",
+      "stage_200",
+      "stage_zero",
+      9.5367431640625e-07
+    ],
+    [
+      "GraphMAE",
+      "stage_200",
+      "old_continuous_200",
+      1.430511474609375e-06
+    ],
+    [
+      "GraphMAE2",
+      "stage_100",
+      "head_token_mean",
+      1.430511474609375e-06
+    ],
+    [
+      "GraphMAE2",
+      "stage_prop",
+      "head_token_knn-0.9-clamp",
+      {
+        "log_probability_error": 0.0031740665435791016,
+        "probability_error": 0.0002880692481994629,
+        "predictions_equal": true,
+        "note": "Separate GPU retraining changes near-tied knn. Not bitwise equivalence."
+      }
+    ],
+    [
+      "GraphMAE2",
+      "stage_200",
+      "stage_zero",
+      9.5367431640625e-07
+    ],
+    [
+      "GraphMAE2",
+      "stage_200",
+      "old_continuous_200",
+      9.5367431640625e-07
+    ]
+  ],
+  "constant_probability_zero_and_graph_unchanged_asserted_in_runner": true
+}

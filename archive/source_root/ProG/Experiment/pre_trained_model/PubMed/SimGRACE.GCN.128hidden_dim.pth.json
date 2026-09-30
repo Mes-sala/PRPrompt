@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "SimGRACE",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "PubMed",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "50beb94f14f36bdecc56670ae0bbae408c05f76ad8458217921e37fb301201cf",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 45,
+  "best_training_loss": 0.16790960319340228,
+  "selection": "last_after_training_loss_patience_10"
+}

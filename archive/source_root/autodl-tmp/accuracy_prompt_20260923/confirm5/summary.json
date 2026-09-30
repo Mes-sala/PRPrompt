@@ -1,0 +1,779 @@
+[
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 40.31999960541725,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 1.2299998104572296,
+      "ci95_seed_bootstrap": [
+        0.3299999199807644,
+        2.199999690055847
+      ],
+      "wins": 15,
+      "ties": 0,
+      "losses": 5
+    },
+    "rawprop2": {
+      "delta_pp": -20.130000412464142,
+      "ci95_seed_bootstrap": [
+        -22.60000005364418,
+        -17.470000382512808
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 39.08999979496002,
+    "frozen": {
+      "delta_pp": -1.2299998104572296,
+      "ci95_seed_bootstrap": [
+        -2.199999690055847,
+        -0.3299999199807644
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 15
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": -21.36000022292137,
+      "ci95_seed_bootstrap": [
+        -23.729999966919422,
+        -18.80000039562583
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "rawprop2",
+    "n": 20,
+    "accuracy": 60.450000017881386,
+    "frozen": {
+      "delta_pp": 20.130000412464142,
+      "ci95_seed_bootstrap": [
+        17.470000382512808,
+        22.60000005364418
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 21.36000022292137,
+      "ci95_seed_bootstrap": [
+        18.80000039562583,
+        23.729999966919422
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "token3",
+    "n": 20,
+    "accuracy": 50.88000014424324,
+    "frozen": {
+      "delta_pp": 10.560000538825989,
+      "ci95_seed_bootstrap": [
+        8.200000077486038,
+        12.61000081896782
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 11.790000349283218,
+      "ci95_seed_bootstrap": [
+        9.37000035122037,
+        13.950000710785389
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "rawprop2": {
+      "delta_pp": -9.569999873638153,
+      "ci95_seed_bootstrap": [
+        -11.26999944448471,
+        -7.790000285953283
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3",
+    "n": 20,
+    "accuracy": 50.86999997496605,
+    "frozen": {
+      "delta_pp": 10.550000369548798,
+      "ci95_seed_bootstrap": [
+        8.140001259744167,
+        12.7200001552701
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 11.780000180006027,
+      "ci95_seed_bootstrap": [
+        9.400000113993883,
+        13.960000731050968
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "rawprop2": {
+      "delta_pp": -9.580000042915344,
+      "ci95_seed_bootstrap": [
+        -11.3299998678267,
+        -7.799999546259642
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3perm",
+    "n": 20,
+    "accuracy": 36.730000376701355,
+    "frozen": {
+      "delta_pp": -3.5899992287158966,
+      "ci95_seed_bootstrap": [
+        -4.729999154806137,
+        -2.5299994610249996
+      ],
+      "wins": 1,
+      "ties": 0,
+      "losses": 19
+    },
+    "graphprompt": {
+      "delta_pp": -2.359999418258667,
+      "ci95_seed_bootstrap": [
+        -3.4699995815753937,
+        -1.2399992309510708
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 17
+    },
+    "rawprop2": {
+      "delta_pp": -23.71999964118004,
+      "ci95_seed_bootstrap": [
+        -26.200250316411257,
+        -21.159749381244186
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "token_random3",
+    "n": 20,
+    "accuracy": 40.869999676942825,
+    "frozen": {
+      "delta_pp": 0.5500000715255737,
+      "ci95_seed_bootstrap": [
+        -0.4999999701976776,
+        1.579999778419733
+      ],
+      "wins": 13,
+      "ties": 0,
+      "losses": 7
+    },
+    "graphprompt": {
+      "delta_pp": 1.7799998819828033,
+      "ci95_seed_bootstrap": [
+        0.4599997401237488,
+        3.200250212103125
+      ],
+      "wins": 14,
+      "ties": 0,
+      "losses": 6
+    },
+    "rawprop2": {
+      "delta_pp": -19.580000340938568,
+      "ci95_seed_bootstrap": [
+        -22.060000155121088,
+        -16.829750008881096
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 60.809999853372574,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 2.159999758005142,
+      "ci95_seed_bootstrap": [
+        1.5199987515807152,
+        2.7700002528727055
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "rawprop2": {
+      "delta_pp": -7.0500002801418304,
+      "ci95_seed_bootstrap": [
+        -9.280000187456608,
+        -4.9800011441111565
+      ],
+      "wins": 1,
+      "ties": 0,
+      "losses": 19
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 58.650000095367425,
+    "frozen": {
+      "delta_pp": -2.159999758005142,
+      "ci95_seed_bootstrap": [
+        -2.7700002528727055,
+        -1.5199987515807152
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 18
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": -9.210000038146973,
+      "ci95_seed_bootstrap": [
+        -11.349999606609344,
+        -7.129749428480867
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "rawprop2",
+    "n": 20,
+    "accuracy": 67.8600001335144,
+    "frozen": {
+      "delta_pp": 7.0500002801418304,
+      "ci95_seed_bootstrap": [
+        4.9800011441111565,
+        9.280000187456608
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 9.210000038146973,
+      "ci95_seed_bootstrap": [
+        7.129749428480864,
+        11.349999606609344
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "token3",
+    "n": 20,
+    "accuracy": 67.85999923944473,
+    "frozen": {
+      "delta_pp": 7.049999386072159,
+      "ci95_seed_bootstrap": [
+        5.499999813735485,
+        8.69999960437417
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 9.209999144077301,
+      "ci95_seed_bootstrap": [
+        7.539747461676598,
+        10.769998881965876
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": -8.940696716308594e-07,
+      "ci95_seed_bootstrap": [
+        -1.7300009801983833,
+        1.6699987649917603
+      ],
+      "wins": 10,
+      "ties": 1,
+      "losses": 9
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3",
+    "n": 20,
+    "accuracy": 67.89999932050705,
+    "frozen": {
+      "delta_pp": 7.089999467134476,
+      "ci95_seed_bootstrap": [
+        5.519998963922262,
+        8.720250066369768
+      ],
+      "wins": 19,
+      "ties": 1,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 9.249999225139618,
+      "ci95_seed_bootstrap": [
+        7.599998846650124,
+        10.770000074058771
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": 0.039999186992645264,
+      "ci95_seed_bootstrap": [
+        -1.8700006753206253,
+        1.8599984049797058
+      ],
+      "wins": 10,
+      "ties": 0,
+      "losses": 10
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3perm",
+    "n": 20,
+    "accuracy": 57.030000388622284,
+    "frozen": {
+      "delta_pp": -3.77999946475029,
+      "ci95_seed_bootstrap": [
+        -4.729999464005232,
+        -2.839999634772539
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    },
+    "graphprompt": {
+      "delta_pp": -1.6199997067451477,
+      "ci95_seed_bootstrap": [
+        -2.820000059902668,
+        -0.4200005456805229
+      ],
+      "wins": 7,
+      "ties": 0,
+      "losses": 13
+    },
+    "rawprop2": {
+      "delta_pp": -10.82999974489212,
+      "ci95_seed_bootstrap": [
+        -12.969999615103006,
+        -8.829999711364508
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE2",
+    "method": "token_random3",
+    "n": 20,
+    "accuracy": 62.06999972462655,
+    "frozen": {
+      "delta_pp": 1.2599998712539673,
+      "ci95_seed_bootstrap": [
+        0.4300001263618469,
+        2.119997762143612
+      ],
+      "wins": 12,
+      "ties": 1,
+      "losses": 7
+    },
+    "graphprompt": {
+      "delta_pp": 3.4199996292591095,
+      "ci95_seed_bootstrap": [
+        2.2299993000924587,
+        4.649999439716339
+      ],
+      "wins": 17,
+      "ties": 2,
+      "losses": 1
+    },
+    "rawprop2": {
+      "delta_pp": -5.790000408887863,
+      "ci95_seed_bootstrap": [
+        -8.06999982520938,
+        -3.7700010798871517
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 18
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 68.75999957323074,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": -0.8400002121925354,
+      "ci95_seed_bootstrap": [
+        -1.600000575184822,
+        -0.020000040531158447
+      ],
+      "wins": 6,
+      "ties": 0,
+      "losses": 14
+    },
+    "rawprop2": {
+      "delta_pp": -2.080000340938568,
+      "ci95_seed_bootstrap": [
+        -3.529999554157257,
+        -0.5300006195902824
+      ],
+      "wins": 2,
+      "ties": 1,
+      "losses": 17
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 69.59999978542328,
+    "frozen": {
+      "delta_pp": 0.8400002121925354,
+      "ci95_seed_bootstrap": [
+        0.020000040531158447,
+        1.600000575184822
+      ],
+      "wins": 14,
+      "ties": 0,
+      "losses": 6
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": -1.2400001287460327,
+      "ci95_seed_bootstrap": [
+        -2.9500001668930054,
+        0.5799996852874756
+      ],
+      "wins": 6,
+      "ties": 0,
+      "losses": 14
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "rawprop2",
+    "n": 20,
+    "accuracy": 70.83999991416931,
+    "frozen": {
+      "delta_pp": 2.080000340938568,
+      "ci95_seed_bootstrap": [
+        0.5300006195902824,
+        3.529999554157257
+      ],
+      "wins": 17,
+      "ties": 1,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 1.2400001287460327,
+      "ci95_seed_bootstrap": [
+        -0.5799996852874756,
+        2.9500001668930054
+      ],
+      "wins": 14,
+      "ties": 0,
+      "losses": 6
+    },
+    "rawprop2": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "token3",
+    "n": 20,
+    "accuracy": 72.1900001168251,
+    "frozen": {
+      "delta_pp": 3.4300005435943604,
+      "ci95_seed_bootstrap": [
+        2.3900002241134644,
+        4.560251742601391
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 2.590000331401825,
+      "ci95_seed_bootstrap": [
+        1.510000228881836,
+        3.670000746846199
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "rawprop2": {
+      "delta_pp": 1.3500002026557922,
+      "ci95_seed_bootstrap": [
+        -0.13999851047992706,
+        3.0500003695487976
+      ],
+      "wins": 9,
+      "ties": 1,
+      "losses": 10
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3",
+    "n": 20,
+    "accuracy": 73.88000011444092,
+    "frozen": {
+      "delta_pp": 5.120000541210175,
+      "ci95_seed_bootstrap": [
+        3.750000298023224,
+        6.600000865757465
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 4.280000329017639,
+      "ci95_seed_bootstrap": [
+        2.7000001072883606,
+        5.970000326633453
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "rawprop2": {
+      "delta_pp": 3.0400002002716064,
+      "ci95_seed_bootstrap": [
+        1.8500003144145012,
+        4.349999725818634
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3perm",
+    "n": 20,
+    "accuracy": 68.58999937772751,
+    "frozen": {
+      "delta_pp": -0.17000019550323486,
+      "ci95_seed_bootstrap": [
+        -0.7100003957748413,
+        0.3900006413459778
+      ],
+      "wins": 7,
+      "ties": 0,
+      "losses": 13
+    },
+    "graphprompt": {
+      "delta_pp": -1.0100004076957703,
+      "ci95_seed_bootstrap": [
+        -1.8700003623962402,
+        -0.140000581741333
+      ],
+      "wins": 5,
+      "ties": 1,
+      "losses": 14
+    },
+    "rawprop2": {
+      "delta_pp": -2.250000536441803,
+      "ci95_seed_bootstrap": [
+        -3.6800003051757812,
+        -0.6900006383657455
+      ],
+      "wins": 4,
+      "ties": 0,
+      "losses": 16
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "token_random3",
+    "n": 20,
+    "accuracy": 69.08999979496002,
+    "frozen": {
+      "delta_pp": 0.33000022172927856,
+      "ci95_seed_bootstrap": [
+        -0.4699993208050728,
+        1.0899996757507324
+      ],
+      "wins": 10,
+      "ties": 3,
+      "losses": 7
+    },
+    "graphprompt": {
+      "delta_pp": -0.5099999904632568,
+      "ci95_seed_bootstrap": [
+        -1.4599993899464607,
+        0.4102500677108728
+      ],
+      "wins": 7,
+      "ties": 1,
+      "losses": 12
+    },
+    "rawprop2": {
+      "delta_pp": -1.7500001192092896,
+      "ci95_seed_bootstrap": [
+        -3.369999535381794,
+        -0.050000548362731934
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 15
+    }
+  }
+]

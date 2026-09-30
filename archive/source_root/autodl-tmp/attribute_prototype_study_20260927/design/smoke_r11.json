@@ -1,0 +1,126 @@
+{
+  "round": "smoke_r11",
+  "shots": 5,
+  "seeds": [
+    279998
+  ],
+  "checkpoints": [
+    {
+      "dataset": "Actor",
+      "family": "Edgepred_GPPT",
+      "sha256": "ade64f6f3b9be645456ba161af13f4940c732485124973a3c004107344e9dd33",
+      "paths": [
+        "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/Actor/Edgepred_GPPT.GCN.128hidden_dim.pth"
+      ],
+      "id": "Actor__Edgepred_GPPT__ade64f6f3b9b",
+      "path": "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/Actor/Edgepred_GPPT.GCN.128hidden_dim.pth",
+      "provenance": {
+        "schema": "prog-pretrain-provenance-v1",
+        "method": "Edgepred_GPPT",
+        "variant": "ProG-adapted",
+        "source_parity": "not_fully_verified",
+        "dataset": "Actor",
+        "gnn": "GCN",
+        "hidden_dim": 128,
+        "checkpoint_sha256": "ade64f6f3b9be645456ba161af13f4940c732485124973a3c004107344e9dd33",
+        "labels_used": false,
+        "requested_epochs": 1000,
+        "completed_epochs": 74,
+        "best_training_loss": 0.0818504873877421,
+        "selection": "last_after_training_loss_patience_10"
+      },
+      "status": "ready",
+      "reason": "Strict two-layer GCN state_dict load passed"
+    }
+  ],
+  "runner_sha256": "95c849f237a9fa7b8b3e4e9d872aa16ce08bd7e2fa1a1b8328699bb495f5908f",
+  "operator_sha256": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+  "scope": "Freeze shrinkage ratios .01/.1/1; fixed matched prototype refinement ablation. New support samples; no query-label selection.",
+  "candidates": [
+    {
+      "id": "raw_refine",
+      "hops": 0,
+      "center": 0,
+      "op": "prototype",
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3
+    },
+    {
+      "id": "raw_no_refine",
+      "hops": 0,
+      "center": 0,
+      "op": "prototype",
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 0
+    },
+    {
+      "id": "zca001_refine",
+      "hops": 1,
+      "center": 0,
+      "op": "prototype",
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3
+    },
+    {
+      "id": "zca001_no_refine",
+      "hops": 1,
+      "center": 0,
+      "op": "prototype",
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 0
+    },
+    {
+      "id": "zca01_refine",
+      "hops": 2,
+      "center": 0,
+      "op": "prototype",
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3
+    },
+    {
+      "id": "zca01_no_refine",
+      "hops": 2,
+      "center": 0,
+      "op": "prototype",
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 0
+    },
+    {
+      "id": "zca1_refine",
+      "hops": 3,
+      "center": 0,
+      "op": "prototype",
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3
+    },
+    {
+      "id": "zca1_no_refine",
+      "hops": 3,
+      "center": 0,
+      "op": "prototype",
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 0
+    }
+  ],
+  "outputs": [
+    "raw_refine",
+    "raw_no_refine",
+    "zca001_refine",
+    "zca001_no_refine",
+    "zca01_refine",
+    "zca01_no_refine",
+    "zca1_refine",
+    "zca1_no_refine",
+    "cv_frozen",
+    "cv_frozen_no_refine"
+  ],
+  "selector_sha256": "a06b0ca599e38cdf4600aa66134fb2be0905ee5e46da36a18be0e622b139c65e"
+}

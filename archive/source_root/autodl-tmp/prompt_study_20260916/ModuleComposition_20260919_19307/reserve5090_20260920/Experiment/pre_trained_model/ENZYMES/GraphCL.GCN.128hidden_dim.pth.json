@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "GraphCL",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "ENZYMES",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "6211f158aa0a2d02d9d75e2d1cc1723d0c987a2bc7eb5be63541120a2a09df7f",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 26,
+  "best_training_loss": 0.7046795790394147,
+  "selection": "last_after_training_loss_patience_10"
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "dataset": "PubMed",
+    "candidate": "GraphMAE2:token_kd3_ref50_sym",
+    "baseline": "GraphMAE2:token_kd3_ref50",
+    "n": 20,
+    "delta_pp": -0.0200006365776062,
+    "ci95": [
+      -0.6700009182095528,
+      0.6999993324279785
+    ],
+    "wins": 7,
+    "losses": 11,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "PubMed",
+    "candidate": "GraphMAE2:token_kd3_ref50_sym",
+    "baseline": "GraphMAE2:token_kd3_ref50_kl2",
+    "n": 20,
+    "delta_pp": -0.26000022888183594,
+    "ci95": [
+      -0.49000084400177,
+      -0.029748782515529454
+    ],
+    "wins": 6,
+    "losses": 13,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "PubMed",
+    "candidate": "GraphMAE2:token_kd3_ref50_sym",
+    "baseline": "GraphMAE2:graphprompt",
+    "n": 20,
+    "delta_pp": 5.509999990463257,
+    "ci95": [
+      3.6299997493624687,
+      7.619999058544636
+    ],
+    "wins": 18,
+    "losses": 2,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "PubMed",
+    "candidate": "GraphMAE2:token_kd3_ref50_sym",
+    "baseline": "GraphMAE2:rect_teacher_ref50",
+    "n": 20,
+    "delta_pp": 3.4199991822242737,
+    "ci95": [
+      2.249999336898327,
+      4.639999575912952
+    ],
+    "wins": 18,
+    "losses": 2,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "PubMed",
+    "candidate": "GraphMAE2:token_kd3_ref50_sym",
+    "baseline": "GraphMAE:token_kd3_ref50",
+    "n": 20,
+    "delta_pp": -0.20000040531158447,
+    "ci95": [
+      -1.5399995520710945,
+      1.1102505624294245
+    ],
+    "wins": 8,
+    "losses": 12,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "PubMed",
+    "candidate": "GraphMAE2:token_kd3_ref50_sym",
+    "baseline": "GraphMAE:graphprompt",
+    "n": 20,
+    "delta_pp": 0.7699999213218689,
+    "ci95": [
+      -0.7900002747774124,
+      2.5302516445517504
+    ],
+    "wins": 12,
+    "losses": 8,
+    "scope": "same graph support sampling, not independent graphs"
+  }
+]

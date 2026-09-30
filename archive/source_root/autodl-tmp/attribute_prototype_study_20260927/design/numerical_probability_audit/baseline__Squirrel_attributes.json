@@ -1,0 +1,53 @@
+{
+  "round": "numerical_probability_baseline",
+  "parent_plan": "/root/autodl-tmp/attribute_prototype_study_20260927/design/default_anchor_confirmation/default_anchor_Squirrel_attributes.json",
+  "parent_plan_sha256": "e3e851c530ba396f71d2093d8027ab66ae9d344f9591d27f994bb17fa9fa4b21",
+  "replay_sha256": "b0833962d39114c261cfae137d3b181687d7fe88c8cf7a91adc3c4e48f3b6410",
+  "selection_csv_sha256": "abad2e0f006684a317872bfc1c558ab8e18fec82a78fe3c6e9aa1ad313bdfa5d",
+  "jobs": [
+    {
+      "seed": 271401,
+      "config": "h2_center_no_refine",
+      "routes": [
+        "attributes"
+      ]
+    },
+    {
+      "seed": 271404,
+      "config": "h2_center_no_refine",
+      "routes": [
+        "attributes",
+        "all_including_attributes"
+      ]
+    },
+    {
+      "seed": 271406,
+      "config": "h2_raw_b0.5_t0.05_n3_none",
+      "routes": [
+        "attributes"
+      ]
+    },
+    {
+      "seed": 271409,
+      "config": "h2_center_no_refine",
+      "routes": [
+        "attributes"
+      ]
+    },
+    {
+      "seed": 271413,
+      "config": "h2_center_b0.5_t0.05_n3_none",
+      "routes": [
+        "attributes",
+        "all_including_attributes"
+      ]
+    },
+    {
+      "seed": 271416,
+      "config": "h2_raw_no_refine",
+      "routes": [
+        "attributes"
+      ]
+    }
+  ]
+}

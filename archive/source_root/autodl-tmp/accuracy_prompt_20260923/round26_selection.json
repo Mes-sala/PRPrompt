@@ -1,0 +1,43 @@
+{
+  "source": "round26_grad",
+  "candidate": "token_kd3_ref50_sym",
+  "selected_checkpoint": "GraphMAE2",
+  "dataset": "PubMed",
+  "dev_accuracy": 69.32,
+  "dev_base": 68.72,
+  "seeds": [
+    39100,
+    39101,
+    39102,
+    39103,
+    39104,
+    39105,
+    39106,
+    39107,
+    39108,
+    39109,
+    39110,
+    39111,
+    39112,
+    39113,
+    39114,
+    39115,
+    39116,
+    39117,
+    39118,
+    39119
+  ],
+  "phase": "confirm",
+  "strong_control_checkpoint": "GraphMAE",
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "rect_teacher_ref50",
+    "token_kd3_ref50",
+    "token_kd3_ref50_sym",
+    "token_kd3_ref50_protect",
+    "token_kd3_ref50_kl2"
+  ],
+  "expected_rows": 280,
+  "note": "GraphMAE sym is unselected control; same graph/query reused"
+}

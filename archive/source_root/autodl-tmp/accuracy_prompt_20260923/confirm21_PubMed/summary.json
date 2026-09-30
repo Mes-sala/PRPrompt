@@ -1,0 +1,816 @@
+[
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 71.50000005960464,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": -2.099999785423279,
+      "ci95_seed_bootstrap": [
+        -2.8999996185302734,
+        -1.25
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 17
+    },
+    "rawprop2": {
+      "delta_pp": 1.9299998879432678,
+      "ci95_seed_bootstrap": [
+        0.30000030994415283,
+        3.6799991205334663
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 73.59999984502792,
+    "frozen": {
+      "delta_pp": 2.099999785423279,
+      "ci95_seed_bootstrap": [
+        1.25,
+        2.8999996185302734
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": 4.029999673366547,
+      "ci95_seed_bootstrap": [
+        2.3197490647435193,
+        5.749998994171619
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "rawprop2",
+    "n": 20,
+    "accuracy": 69.57000017166138,
+    "frozen": {
+      "delta_pp": -1.9299998879432678,
+      "ci95_seed_bootstrap": [
+        -3.6799991205334663,
+        -0.30000030994415283
+      ],
+      "wins": 9,
+      "ties": 0,
+      "losses": 11
+    },
+    "graphprompt": {
+      "delta_pp": -4.029999673366547,
+      "ci95_seed_bootstrap": [
+        -5.749998994171619,
+        -2.3197490647435224
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 17
+    },
+    "rawprop2": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "rect_teacher_ref25",
+    "n": 20,
+    "accuracy": 70.30000001192093,
+    "frozen": {
+      "delta_pp": -1.2000000476837158,
+      "ci95_seed_bootstrap": [
+        -2.699999526143074,
+        0.1699996069073677
+      ],
+      "wins": 10,
+      "ties": 0,
+      "losses": 10
+    },
+    "graphprompt": {
+      "delta_pp": -3.2999998331069946,
+      "ci95_seed_bootstrap": [
+        -4.889999330043793,
+        -1.710000328719616
+      ],
+      "wins": 3,
+      "ties": 1,
+      "losses": 16
+    },
+    "rawprop2": {
+      "delta_pp": 0.729999840259552,
+      "ci95_seed_bootstrap": [
+        0.049998752772808075,
+        1.419999599456787
+      ],
+      "wins": 13,
+      "ties": 1,
+      "losses": 6
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "rect_teacher_ref50",
+    "n": 20,
+    "accuracy": 70.53000003099442,
+    "frozen": {
+      "delta_pp": -0.9700000286102295,
+      "ci95_seed_bootstrap": [
+        -2.330000437796116,
+        0.3102507516741716
+      ],
+      "wins": 8,
+      "ties": 0,
+      "losses": 12
+    },
+    "graphprompt": {
+      "delta_pp": -3.0699998140335083,
+      "ci95_seed_bootstrap": [
+        -4.649998851120472,
+        -1.419999897480011
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 17
+    },
+    "rawprop2": {
+      "delta_pp": 0.9599998593330383,
+      "ci95_seed_bootstrap": [
+        -0.1500004529953003,
+        2.1700000762939453
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "rect_teacher_ref50shuffle",
+    "n": 20,
+    "accuracy": 69.08999979496002,
+    "frozen": {
+      "delta_pp": -2.410000264644623,
+      "ci95_seed_bootstrap": [
+        -3.880000412464142,
+        -1.0700008273124695
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 15
+    },
+    "graphprompt": {
+      "delta_pp": -4.510000050067902,
+      "ci95_seed_bootstrap": [
+        -6.050250455737114,
+        -3.030000925064087
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 17
+    },
+    "rawprop2": {
+      "delta_pp": -0.480000376701355,
+      "ci95_seed_bootstrap": [
+        -0.979999303817749,
+        0.07999986410140991
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 15
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "token_kd3",
+    "n": 20,
+    "accuracy": 72.43000030517578,
+    "frozen": {
+      "delta_pp": 0.9300002455711365,
+      "ci95_seed_bootstrap": [
+        -1.0999998450279236,
+        2.9599997475743294
+      ],
+      "wins": 10,
+      "ties": 0,
+      "losses": 10
+    },
+    "graphprompt": {
+      "delta_pp": -1.1699995398521423,
+      "ci95_seed_bootstrap": [
+        -2.9999989345669746,
+        0.7500001937150955
+      ],
+      "wins": 7,
+      "ties": 0,
+      "losses": 13
+    },
+    "rawprop2": {
+      "delta_pp": 2.8600001335144043,
+      "ci95_seed_bootstrap": [
+        0.9600001499056816,
+        4.560250878334042
+      ],
+      "wins": 15,
+      "ties": 0,
+      "losses": 5
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "token_kd3_ref25",
+    "n": 20,
+    "accuracy": 73.34999978542328,
+    "frozen": {
+      "delta_pp": 1.849999725818634,
+      "ci95_seed_bootstrap": [
+        -0.010000169277191162,
+        3.7099993228912354
+      ],
+      "wins": 12,
+      "ties": 1,
+      "losses": 7
+    },
+    "graphprompt": {
+      "delta_pp": -0.2500000596046448,
+      "ci95_seed_bootstrap": [
+        -1.9099995493888855,
+        1.4699998572468758
+      ],
+      "wins": 9,
+      "ties": 0,
+      "losses": 11
+    },
+    "rawprop2": {
+      "delta_pp": 3.779999613761902,
+      "ci95_seed_bootstrap": [
+        2.049750447273255,
+        5.350000269711018
+      ],
+      "wins": 15,
+      "ties": 0,
+      "losses": 5
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "token_kd3_ref50",
+    "n": 20,
+    "accuracy": 74.55000072717667,
+    "frozen": {
+      "delta_pp": 3.0500006675720215,
+      "ci95_seed_bootstrap": [
+        1.4100006148219109,
+        4.650000341236591
+      ],
+      "wins": 16,
+      "ties": 0,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": 0.9500008821487427,
+      "ci95_seed_bootstrap": [
+        -0.6399980187416077,
+        2.6002513542771304
+      ],
+      "wins": 13,
+      "ties": 0,
+      "losses": 7
+    },
+    "rawprop2": {
+      "delta_pp": 4.980000555515289,
+      "ci95_seed_bootstrap": [
+        3.4700015112757683,
+        6.36000008136034
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "token_kd3_ref50shuffle",
+    "n": 20,
+    "accuracy": 72.82000064849854,
+    "frozen": {
+      "delta_pp": 1.3200005888938904,
+      "ci95_seed_bootstrap": [
+        -0.6299987509846687,
+        3.2900005653500557
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    },
+    "graphprompt": {
+      "delta_pp": -0.7799991965293884,
+      "ci95_seed_bootstrap": [
+        -2.5899991393089294,
+        1.0500007942318916
+      ],
+      "wins": 8,
+      "ties": 0,
+      "losses": 12
+    },
+    "rawprop2": {
+      "delta_pp": 3.250000476837158,
+      "ci95_seed_bootstrap": [
+        1.3900011703372002,
+        4.909999966621399
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "method": "token_ridge_kd10plainlate",
+    "n": 20,
+    "accuracy": 71.0000005364418,
+    "frozen": {
+      "delta_pp": -0.4999995231628418,
+      "ci95_seed_bootstrap": [
+        -2.9002495929598804,
+        1.899999976158142
+      ],
+      "wins": 9,
+      "ties": 0,
+      "losses": 11
+    },
+    "graphprompt": {
+      "delta_pp": -2.5999993085861206,
+      "ci95_seed_bootstrap": [
+        -4.759999215602875,
+        -0.4097492098808325
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 15
+    },
+    "rawprop2": {
+      "delta_pp": 1.430000364780426,
+      "ci95_seed_bootstrap": [
+        -0.4102494716644285,
+        3.2000008299946785
+      ],
+      "wins": 15,
+      "ties": 0,
+      "losses": 5
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 68.07000011205673,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": -0.8499997854232788,
+      "ci95_seed_bootstrap": [
+        -1.7499998211860657,
+        0.13000011444091797
+      ],
+      "wins": 7,
+      "ties": 0,
+      "losses": 13
+    },
+    "rawprop2": {
+      "delta_pp": -1.5000000596046448,
+      "ci95_seed_bootstrap": [
+        -3.8299998715519905,
+        0.9100002124905586
+      ],
+      "wins": 6,
+      "ties": 0,
+      "losses": 14
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 68.91999989748001,
+    "frozen": {
+      "delta_pp": 0.8499997854232788,
+      "ci95_seed_bootstrap": [
+        -0.13000011444091797,
+        1.7499998211860657
+      ],
+      "wins": 13,
+      "ties": 0,
+      "losses": 7
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": -0.650000274181366,
+      "ci95_seed_bootstrap": [
+        -3.3100003004074097,
+        2.03000009059906
+      ],
+      "wins": 9,
+      "ties": 0,
+      "losses": 11
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "rawprop2",
+    "n": 20,
+    "accuracy": 69.57000017166138,
+    "frozen": {
+      "delta_pp": 1.5000000596046448,
+      "ci95_seed_bootstrap": [
+        -0.9100002124905586,
+        3.8299998715519905
+      ],
+      "wins": 14,
+      "ties": 0,
+      "losses": 6
+    },
+    "graphprompt": {
+      "delta_pp": 0.650000274181366,
+      "ci95_seed_bootstrap": [
+        -2.03000009059906,
+        3.3100003004074097
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    },
+    "rawprop2": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "rect_teacher_ref25",
+    "n": 20,
+    "accuracy": 70.30000001192093,
+    "frozen": {
+      "delta_pp": 2.2299998998641968,
+      "ci95_seed_bootstrap": [
+        0.010001055896282196,
+        4.429999314248562
+      ],
+      "wins": 15,
+      "ties": 0,
+      "losses": 5
+    },
+    "graphprompt": {
+      "delta_pp": 1.380000114440918,
+      "ci95_seed_bootstrap": [
+        -1.1999985799193382,
+        3.949999213218689
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    },
+    "rawprop2": {
+      "delta_pp": 0.729999840259552,
+      "ci95_seed_bootstrap": [
+        0.049998752772808075,
+        1.419999599456787
+      ],
+      "wins": 13,
+      "ties": 1,
+      "losses": 6
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "rect_teacher_ref50",
+    "n": 20,
+    "accuracy": 70.53000003099442,
+    "frozen": {
+      "delta_pp": 2.459999918937683,
+      "ci95_seed_bootstrap": [
+        0.39000003784894943,
+        4.67025005817413
+      ],
+      "wins": 15,
+      "ties": 0,
+      "losses": 5
+    },
+    "graphprompt": {
+      "delta_pp": 1.6100001335144043,
+      "ci95_seed_bootstrap": [
+        -0.7899999693036079,
+        4.140250623226162
+      ],
+      "wins": 10,
+      "ties": 2,
+      "losses": 8
+    },
+    "rawprop2": {
+      "delta_pp": 0.9599998593330383,
+      "ci95_seed_bootstrap": [
+        -0.1500004529953003,
+        2.1700000762939453
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "rect_teacher_ref50shuffle",
+    "n": 20,
+    "accuracy": 69.08999979496002,
+    "frozen": {
+      "delta_pp": 1.0199996829032898,
+      "ci95_seed_bootstrap": [
+        -1.130000352859497,
+        3.060249634087082
+      ],
+      "wins": 14,
+      "ties": 0,
+      "losses": 6
+    },
+    "graphprompt": {
+      "delta_pp": 0.169999897480011,
+      "ci95_seed_bootstrap": [
+        -2.279999852180481,
+        2.5700003057718277
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    },
+    "rawprop2": {
+      "delta_pp": -0.480000376701355,
+      "ci95_seed_bootstrap": [
+        -0.979999303817749,
+        0.07999986410140991
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 15
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3",
+    "n": 20,
+    "accuracy": 74.05000001192093,
+    "frozen": {
+      "delta_pp": 5.979999899864197,
+      "ci95_seed_bootstrap": [
+        4.009999327361584,
+        8.15000057220459
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 5.130000114440918,
+      "ci95_seed_bootstrap": [
+        3.1799995824694633,
+        7.280000150203705
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    },
+    "rawprop2": {
+      "delta_pp": 4.479999840259552,
+      "ci95_seed_bootstrap": [
+        2.8000006079673767,
+        6.029999263584614
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3_ref25",
+    "n": 20,
+    "accuracy": 74.31999981403351,
+    "frozen": {
+      "delta_pp": 6.249999701976776,
+      "ci95_seed_bootstrap": [
+        4.329747952520847,
+        8.370000131428242
+      ],
+      "wins": 18,
+      "ties": 1,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 5.399999916553497,
+      "ci95_seed_bootstrap": [
+        3.4997487813234334,
+        7.48999984562397
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "rawprop2": {
+      "delta_pp": 4.749999642372131,
+      "ci95_seed_bootstrap": [
+        3.1100004836916924,
+        6.28000020980835
+      ],
+      "wins": 17,
+      "ties": 1,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3_ref50",
+    "n": 20,
+    "accuracy": 74.48000013828278,
+    "frozen": {
+      "delta_pp": 6.410000026226044,
+      "ci95_seed_bootstrap": [
+        4.610000811517239,
+        8.42000037431717
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 5.560000240802765,
+      "ci95_seed_bootstrap": [
+        3.7100007981061935,
+        7.599999904632568
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "rawprop2": {
+      "delta_pp": 4.909999966621399,
+      "ci95_seed_bootstrap": [
+        3.220001146197319,
+        6.519999213516712
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "token_kd3_ref50shuffle",
+    "n": 20,
+    "accuracy": 73.81000012159348,
+    "frozen": {
+      "delta_pp": 5.740000009536743,
+      "ci95_seed_bootstrap": [
+        4.089999496936798,
+        7.560000121593475
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 4.890000224113464,
+      "ci95_seed_bootstrap": [
+        3.3400005102157593,
+        6.60999983549118
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "rawprop2": {
+      "delta_pp": 4.239999949932098,
+      "ci95_seed_bootstrap": [
+        2.2900000140070915,
+        6.089999675750732
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "method": "token_ridge_kd10plainlate",
+    "n": 20,
+    "accuracy": 70.29000014066696,
+    "frozen": {
+      "delta_pp": 2.2200000286102295,
+      "ci95_seed_bootstrap": [
+        -0.3900003433227539,
+        4.900000400841236
+      ],
+      "wins": 12,
+      "ties": 1,
+      "losses": 7
+    },
+    "graphprompt": {
+      "delta_pp": 1.3700002431869507,
+      "ci95_seed_bootstrap": [
+        -1.2999990656971931,
+        3.970249846577641
+      ],
+      "wins": 12,
+      "ties": 0,
+      "losses": 8
+    },
+    "rawprop2": {
+      "delta_pp": 0.7199999690055847,
+      "ci95_seed_bootstrap": [
+        -0.6999993324279785,
+        2.110251091420647
+      ],
+      "wins": 12,
+      "ties": 1,
+      "losses": 7
+    }
+  }
+]

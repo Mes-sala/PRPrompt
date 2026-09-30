@@ -1,0 +1,56 @@
+{
+  "python": "/root/autodl-tmp/prog_env/bin/python",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "cuda": "13.0",
+  "sources": {
+    "/root/autodl-tmp/prompt_study_20260916/BayesFeaturePrompt/experiment.py": "ef06c4fa8eff6d65c4d93705162e26925c69e1c8d40d44e6eed7b94f63683e2e",
+    "/root/autodl-tmp/prompt_study_20260916/BayesFeatureSweep/run_screen.py": "5cb73c465026a777615890ded7098e5baa9fae6571065a4f1e96ceceee8bc279",
+    "/root/autodl-tmp/prompt_study_20260916/BayesFeatureSweep/experiment.py": "e4591af265df429e715542c261c02f6ee33dc3b08521ee0189a7e2544a79c4ac",
+    "/root/autodl-tmp/prompt_study_20260916/AnchorPrompt/run.py": "c47510cab1418fb65b540a8cd0ee85340831a8f927739f981dd1b2a663548855",
+    "/root/autodl-tmp/prompt_study_20260916/BayesFeatureSweep/docs/01_protocol.md": "4f42e147a8dda848f5ad6f0c4a3fc2a23bbc2a1e0fce8d3fe3b4b39ff8678c9e",
+    "/root/ProG/prompt_graph/model/gnn.py": "5fbd7e7fecab292c140d0f44ce8b0915f9b6cddcd1bfee5aaaffcc93198cf659",
+    "/root/ProG/prompt_graph/model/GCN.py": "0677389462f0d20fa5a46ef454ff6c30c153cd4b9c21f5a710c8e3161b089365",
+    "/root/ProG/prompt_graph/utils/act.py": "cf88c7436d500c1e08499f9350d168e807f911433ca06c33c32992283ac37500",
+    "/root/autodl-tmp/prompt_study_20260916/AnchorPrompt/provenance/historical_supports.json": "91592cd6f8558f1469e4863f4b46f369f43438fe704ac99c54fcc96b4d2b8742"
+  },
+  "args": {
+    "prog": "/root/ProG",
+    "output": "BayesFeatureSweep/results/stage_a",
+    "seed_count": 4,
+    "seed_start": 16092401
+  },
+  "lambdas": [
+    1e-08,
+    1e-06,
+    0.0001,
+    0.01,
+    1.0,
+    10.0
+  ],
+  "grid": [
+    [
+      5.0,
+      0.25
+    ],
+    [
+      5.0,
+      0.5
+    ],
+    [
+      5.0,
+      1.0
+    ],
+    [
+      1.0,
+      0.5
+    ],
+    [
+      20.0,
+      0.5
+    ]
+  ],
+  "selection": "joint support CV",
+  "optimizer_steps": 0,
+  "evidence": "development on historically reused graphs/query"
+}

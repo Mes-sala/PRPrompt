@@ -1,0 +1,26 @@
+downstream_task: NodeTask
+pretrain_task: NodeTask
+dataset_name: Cora
+gnn_type: GCN
+num_layer: 2
+hid_dim: 128
+prompt_type: SUPT-hard
+pre_train_model_path: Experiment/pre_trained_model/Cora/GraphMAE.GCN.128hidden_dim.pth
+device: cpu
+epochs: 100
+shot_num: 5
+task_num: 5
+batch_size: 32
+lr: 0.001
+decay: 0.00001
+seed: 42
+supt_clusters: 5
+supt_ratio: 0.4
+supt_orth_loss: false
+supt_softmax: false
+supt_branch: chem
+num_iter: 1
+param_grid:
+  learning_rate: [0.001]
+  weight_decay: [0.00001]
+  batch_size: [32]

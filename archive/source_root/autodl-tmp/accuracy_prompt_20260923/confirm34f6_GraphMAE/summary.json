@@ -1,0 +1,138 @@
+[
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "frozen",
+    "n": 5,
+    "accuracy": 20.03947377204895,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 5,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "geom_center_base",
+    "n": 5,
+    "accuracy": 24.539473950862885,
+    "frozen": {
+      "delta_pp": 4.500000178813934,
+      "ci95_seed_bootstrap": [
+        -0.8552628755569458,
+        10.065789818763733
+      ],
+      "wins": 4,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "geom_diag10_base",
+    "n": 5,
+    "accuracy": 24.499999582767487,
+    "frozen": {
+      "delta_pp": 4.460525810718536,
+      "ci95_seed_bootstrap": [
+        -0.8815795183181763,
+        9.868420958518982
+      ],
+      "wins": 4,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "geom_diag10_ce",
+    "n": 5,
+    "accuracy": 25.302631556987766,
+    "frozen": {
+      "delta_pp": 5.263157784938812,
+      "ci95_seed_bootstrap": [
+        0.288487285375596,
+        9.671051800251007
+      ],
+      "wins": 4,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "geom_diag10_gp",
+    "n": 5,
+    "accuracy": 24.921053051948547,
+    "frozen": {
+      "delta_pp": 4.881579279899597,
+      "ci95_seed_bootstrap": [
+        -0.47368377447128296,
+        9.960526525974274
+      ],
+      "wins": 4,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "geom_diag10_random",
+    "n": 5,
+    "accuracy": 24.815789461135864,
+    "frozen": {
+      "delta_pp": 4.776315689086914,
+      "ci95_seed_bootstrap": [
+        -0.14473646879196167,
+        10.144736170768738
+      ],
+      "wins": 4,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "geom_original_base",
+    "n": 5,
+    "accuracy": 20.6842103600502,
+    "frozen": {
+      "delta_pp": 0.6447365880012512,
+      "ci95_seed_bootstrap": [
+        -2.210526764392853,
+        3.2499995827674866
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "rawridge",
+    "n": 5,
+    "accuracy": 19.763157963752747,
+    "frozen": {
+      "delta_pp": -0.2763158082962036,
+      "ci95_seed_bootstrap": [
+        -1.3947367668151855,
+        0.9210523962974548
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 3
+    }
+  }
+]

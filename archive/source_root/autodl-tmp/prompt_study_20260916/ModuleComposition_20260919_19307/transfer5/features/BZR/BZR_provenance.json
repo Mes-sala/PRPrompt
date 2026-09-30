@@ -1,0 +1,131 @@
+{
+  "seeds": [
+    11,
+    23,
+    47,
+    71
+  ],
+  "kernel_sha": {
+    "WL0": "d39a577554d6ec9a1fe0281fc44f95f8a31bf04d0e46dc3d66a27279c80d4e87",
+    "WL1": "ecd0b30ac6be2c9d3bf21b7b8602fb634bc6346bc18aaead95bdbb63f8fefb12",
+    "WL2": "304423ba94427c632e85bdcfa3e8be094b378b7440ec0533cf00e9e856e22739",
+    "WL3": "c355b0bff625fa59fdb182c5e4eefdd2c566488356d8d3685ffa2fa33b1917eb",
+    "attributes_linear": "9476f7a0d36c91204d81a9582f050f19c7caa45d7534419aae3156b2b1195ed0",
+    "attributes_rbf_01": "00950e1cc090a904a356f08d2fd3b1a2081ffe07714e35842f8b0abd8f6401e5",
+    "attributes_rbf": "92350d3ed5211ff4e0983b07684b16e4fddc808c6b102441570f7e66bdd7b7c2",
+    "attributes_rbf_10": "939014e39fe6a365e9aece09c3c8c93780b3d000350a72152fcc39b77518d28c",
+    "structure": "50d6bc39bb18d952026273cd5e68c1b7e3bdbf90e38538da234481a66b797455",
+    "structure_rbf_01": "bf6361dc8ebab702bb686bb641394fdeeb12429f88610d7f8f368b36044e18fc",
+    "structure_rbf": "4417f8c523b43cf262475709b2e8097d64590756d41829d8f316d3ae1e54756e",
+    "structure_rbf_10": "364fd9edf71f178c2cdac7c65a50fa4fedb1ebb1c869d8e156cc1f7c0f1585e8",
+    "random11_mean": "a406b9053cbbc34768799527f08abdca77574a807de2855b5ae6439ae5f8346f",
+    "random11_multi": "206b021b9408706a3c41b8d052095b5aefad2a9d967eca3652fe47216c6be462",
+    "random23_mean": "10dccc67f6825e2b1928819c653255ee013195b04888904a204a290cf8d82386",
+    "random23_multi": "20c4e81632fc1fb47f587bf2f4f89780007947ee5dde73f5f68d9a0bf8bbdcc9",
+    "random47_mean": "6c5c9f07a57a922befeeccf3f2a3d0161139b1af8a7a47e3742cd1195a8ce460",
+    "random47_multi": "cd69ea3c818db23afe340b2b69d81b739d2ea343a0de4d4bb96f638ff6c2a1a3",
+    "random71_mean": "c00fab8ec3c6891cf6a1436084f0d8281cb5c0612005a1f30a5fc97bb6d0927e",
+    "random71_multi": "f83f83c6a97b7f1041a974556b9dc1788f84219543a415be1ffcf56a30a4342b",
+    "RH": "d4498afb5bf7112ef940b8c5b1a97f96ec5e3e8945ef2f2a45397c017d53f340",
+    "RM": "8acc6c8d5dfd290ab5eacfac25ced24c6e470b9e8b840ae09198e641bfff11b3"
+  },
+  "weights": {
+    "random11": {
+      "fp32_init_state": {
+        "conv_layers.0.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.0.lin.weight": "69ea70b1ffdf5b8e4595e3bf7b45b70b01779363584939dfa745ec529dc20612",
+        "conv_layers.1.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.1.lin.weight": "26e8919847452b865daecce54baf9c8e59372270d432323ea82ca12377e1616c"
+      },
+      "float64_state": {
+        "conv_layers.0.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.0.lin.weight": "c1a14388e7bb76bce7a2cec1f59b13074ce96e508943c8c32e7133e92f4897e8",
+        "conv_layers.1.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.1.lin.weight": "235247351c372f74696c0e096c91c24dc98c102d98d51c7c5de0953f7053dc13"
+      },
+      "frozen": true,
+      "zero_std_graphs_by_layer": [
+        0,
+        0
+      ]
+    },
+    "random23": {
+      "fp32_init_state": {
+        "conv_layers.0.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.0.lin.weight": "9c548175013e2b6314d5307c15ef1dcd90f61513674113656ef21e9380b1ca0a",
+        "conv_layers.1.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.1.lin.weight": "221e04ef05bf21869b932ec9d1e1fb98fc3a01e84854a99731a2c6fe9c0eec74"
+      },
+      "float64_state": {
+        "conv_layers.0.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.0.lin.weight": "ffa289f38108a390daf77628f6dcdd7e347bb9476d0386bb1a1c4bef87bc166c",
+        "conv_layers.1.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.1.lin.weight": "568bf222ab64fda8a93fc8e0a50a684cf8d24f69917c847763a76683ff5e130b"
+      },
+      "frozen": true,
+      "zero_std_graphs_by_layer": [
+        0,
+        0
+      ]
+    },
+    "random47": {
+      "fp32_init_state": {
+        "conv_layers.0.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.0.lin.weight": "3a2e4ab254628231ea2d80372be7508acd9bc3c6e00d0ac4fe3fc2b666b33e32",
+        "conv_layers.1.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.1.lin.weight": "26b4319fabf8c9ea3f03fd61e81bbeba0da963b5f7f41de76c62e220bd503cf6"
+      },
+      "float64_state": {
+        "conv_layers.0.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.0.lin.weight": "d377920903d162940d96ed895a80ad75ad0cdd3bee7de5603d42bcf72e20d29e",
+        "conv_layers.1.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.1.lin.weight": "43539f07641cafb667f7d2c35cc58088e7e6ff235586f272d253631985867f13"
+      },
+      "frozen": true,
+      "zero_std_graphs_by_layer": [
+        0,
+        0
+      ]
+    },
+    "random71": {
+      "fp32_init_state": {
+        "conv_layers.0.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.0.lin.weight": "2026d387f6a3f71b2a1b3bdd9ff77f3c07af117cd2e001a7abaa038e6bc49355",
+        "conv_layers.1.bias": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+        "conv_layers.1.lin.weight": "81c5ac3d8ebce02ddb296423cc8bee9ae42828b327b0fcaaa7819ab6c02ec1d2"
+      },
+      "float64_state": {
+        "conv_layers.0.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.0.lin.weight": "aa91c42185f9b8fba4dcb18dd1c06212c6ec7bb8b77bfd4940699d89ad038d1c",
+        "conv_layers.1.bias": "5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "conv_layers.1.lin.weight": "28e5a453c54f9821ee44f884232610ea294eb16d1618bccb213da570601ee6f4"
+      },
+      "frozen": true,
+      "zero_std_graphs_by_layer": [
+        0,
+        0
+      ]
+    }
+  },
+  "precision": "FP32 initialized weights promoted unchanged to float64; deterministic single-thread CPU encoding",
+  "variance": "centered two-pass; std <= 1e-10 * per-channel RMS set to zero",
+  "source_sha": "f60c3a50a5c0c16e4e1a14b3bf8eb52ed214d2562292694cd6cb23b1c0445ebd",
+  "model_sources": {
+    "/root/ProG/prompt_graph/model/GAT.py": "6ed9fd1b3fa1f95d6f8d778d7104257c8c48c1127c30dbd1cdce2f54cc871166",
+    "/root/ProG/prompt_graph/model/GCN.py": "0677389462f0d20fa5a46ef454ff6c30c153cd4b9c21f5a710c8e3161b089365",
+    "/root/ProG/prompt_graph/model/GCov.py": "4d3910ab3e8e4b7f96bcea0b5848d2d3822d7eea1a87d3d8ae29fcd869f5271d",
+    "/root/ProG/prompt_graph/model/GIN.py": "468ae044f55531f5a1e0592dd438eb08609ffd6f7c552bb4d639a60a7b110ea1",
+    "/root/ProG/prompt_graph/model/GraphSAGE.py": "d307614d66b5458d09da3132981b0c4e1942f595eec251dd22d0a95108e3ba6b",
+    "/root/ProG/prompt_graph/model/GraphTransformer.py": "24fff0d94ed6f5c555f492d97cc9a0739b06df811df1d5527b79a5c274536f1a",
+    "/root/ProG/prompt_graph/model/__init__.py": "85d4ea3625d881f2eae8de02762810442c71ab2adf8b1fa3a3669000d4c4d6d5",
+    "/root/ProG/prompt_graph/model/gnn.py": "5fbd7e7fecab292c140d0f44ce8b0915f9b6cddcd1bfee5aaaffcc93198cf659"
+  },
+  "raw_sha": {
+    "BZR_node_labels.txt": "3fa5cea6c33294f4a4fb1fe9ce70a9fe42045f7d555763fb40d99456766e4ba5",
+    "BZR_graph_indicator.txt": "7be0ae28ac3ce0ea0735242dc31ca8e25fba6f61e75af9f49c2c86fa21bf4712",
+    "BZR_A.txt": "ff3fea72cbb9c7791892f1f44a7f04d90c7c5ceab6a72f1208da135d247b543b",
+    "BZR_graph_labels.txt": "ba3c70e696ca733371e43444551df8402a90711e1f9d964c400461f50a762b03",
+    "README.txt": "a84ed21c2eacae1a38804c3d7780b03ced350dc1fa25ef6f53c286a7e433ebca",
+    "BZR_node_attributes.txt": "b63d1ad66f2f89dee341a2212e0311c13d180d25537844636ab01bcb56a844dc"
+  }
+}

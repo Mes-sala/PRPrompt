@@ -1,0 +1,298 @@
+{
+  "dataset": "CS",
+  "seed": 271700,
+  "protocol": "fixed20_perclass_pool_all_remaining_query",
+  "contract_sha256": "1580a3cc92ff6665e7d14341d1029ea7be47090be0d8d9ff8ee45d9f69ade927",
+  "design_sha256": "e1d89bb217cff744e5d806271548c1fecd120402570fe80adb8024c0c9b06aa2",
+  "runner_sha256": "90fc895c55ede5ebd11800811174c924e172ad4237cd8f04e26cffa6a5c839bf",
+  "dependencies": {
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e",
+    "theory/方向集中下的反馈与判别尺度_候选.md": "7172d88c0cefd0167c0dfeb3d5dd184587707b917b03a15c992b72a9775ce204",
+    "theory/池质量与方向集中_联合极限.md": "36f6c4625be7f41ec8251a22e36d4a45c696b4f1e40e8e3badcb790f52b4e8e1"
+  },
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  },
+  "input_hashes": {
+    "input": "7ffa49ef41f8f43c68d449089623b0edaf5b96b7bc5e9f8c89afac23c9b63af3",
+    "raw_input": "1306b6b97996c3decdc629b00be814d464b79fe508f4ade6fe814d3c2df3f864",
+    "graph": "f756b20488bcf4f52ff6733d2af34e24b2fd62b79ba35db176150cb1081711d0",
+    "adjacency_indices": "1d32b01362b459b0c658e740ba64cbdf084df2163be68c7bef8ef0faa93fb73f",
+    "adjacency_values": "8b3b98cb32978e1a5ddd07a7701a1094a12488c3775221a6c368e08f391208ea",
+    "propagated": "65c514c446a6268f37cd0818820176d0f3e318d807dee66a1672e41636fadf5a",
+    "representation": "194ea006fab1dc170f65f3cff509dcf5e76b40f6e515b59581744526ebef1be4",
+    "query": "544ee694b3610b8364a1ffab2e364f7a2b1c3f41e5ec0f7b6ca04828f817f936",
+    "pool": "5402dd3d468a13f4d926b8688ec42c0c087d77fbbe689075e8b6a5f01a632fda",
+    "source_sha256": "2178b8293b5af9935a64aa9a7f39565f53f182e6d0ef4af3daa8a4c00bc70007"
+  },
+  "epsilon": 0.0625,
+  "k": 4,
+  "temperature": "fixed",
+  "tau": 0.05,
+  "beta": 0.5,
+  "radius": 37.20375236704098,
+  "epsilon_radius": 2.325234522940061,
+  "epsilon_squared_radius_squared_over_tau0": 108.13431173344586,
+  "fixed_temperature_local_domain": false,
+  "rounds": {
+    "1": {
+      "metrics": {
+        "initial_contrast": {
+          "amplitude": 0.9047700593803084,
+          "predicted_amplitude": 1.0065187916515677,
+          "error": 0.23997234320665234,
+          "relative_error": 0.23841814499348654,
+          "resolution_threshold": 8.599750569898516e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "feedback": {
+          "amplitude": 0.09787912356452032,
+          "predicted_amplitude": 0.08282472017441757,
+          "error": 0.03524617981635372,
+          "relative_error": 0.42555145060713845,
+          "resolution_threshold": 8.599750569898516e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "prototype_vs_common": {
+          "amplitude": 0.048939561782260145,
+          "predicted_amplitude": 0.041412360087208784,
+          "error": 0.01762308990817684,
+          "relative_error": 0.42555145060713795,
+          "resolution_threshold": 8.599750569898516e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "score_vs_common": {
+          "amplitude": 1.1093427685355517,
+          "predicted_amplitude": 0.7928652582037786,
+          "error": 0.4454867898375525,
+          "relative_error": 0.561869479370044,
+          "resolution_threshold": 1.1548347570046482e-11,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        }
+      },
+      "ranking": {
+        "full_vs_common": {
+          "disagreement_count": 134,
+          "nodes": 18033,
+          "disagreement_fraction": 0.007430821272112239,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 134,
+          "min_physical_gap": 2.2280365175042505e-07
+        },
+        "common_vs_tangent_nearest_center": {
+          "disagreement_count": 97,
+          "nodes": 18033,
+          "disagreement_fraction": 0.005379027338767815,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 97,
+          "min_physical_gap": 2.2280365175042505e-07
+        },
+        "full_vs_predicted_corrected_common": {
+          "disagreement_count": 31,
+          "nodes": 18033,
+          "disagreement_fraction": 0.001719070592802085,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 31,
+          "min_physical_gap": 6.216024250778329e-07
+        }
+      },
+      "update_seconds": 0.02840263396501541,
+      "score_seconds": 0.016270659863948822,
+      "mass_min": 316.2541321143717,
+      "mass_max": 1614.8418568994696,
+      "logmass_min": 5.756546105930669,
+      "mass_underflow_count": 0,
+      "q_probability_zero_count": 0
+    },
+    "2": {
+      "metrics": {
+        "initial_contrast": {
+          "amplitude": 0.9047700593803084,
+          "predicted_amplitude": 1.0065187916515677,
+          "error": 0.23997234320665234,
+          "relative_error": 0.23841814499348654,
+          "resolution_threshold": 8.599750569898516e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "feedback": {
+          "amplitude": 0.048267460187113795,
+          "predicted_amplitude": 0.041412360087208784,
+          "error": 0.011958454456388067,
+          "relative_error": 0.2887653452062426,
+          "resolution_threshold": 8.599750569898516e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "prototype_vs_common": {
+          "amplitude": 0.024133730093556894,
+          "predicted_amplitude": 0.020706180043604392,
+          "error": 0.005979227228194008,
+          "relative_error": 0.28876534520624136,
+          "resolution_threshold": 8.599750569898516e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "score_vs_common": {
+          "amplitude": 0.4901826900376096,
+          "predicted_amplitude": 0.3964326291018893,
+          "error": 0.12430235720107036,
+          "relative_error": 0.31355228625523335,
+          "resolution_threshold": 1.1548347570046482e-11,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        }
+      },
+      "ranking": {
+        "full_vs_common": {
+          "disagreement_count": 81,
+          "nodes": 18033,
+          "disagreement_fraction": 0.004491765097321577,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 81,
+          "min_physical_gap": 2.2280365175042505e-07
+        },
+        "common_vs_tangent_nearest_center": {
+          "disagreement_count": 97,
+          "nodes": 18033,
+          "disagreement_fraction": 0.005379027338767815,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 97,
+          "min_physical_gap": 2.2280365175042505e-07
+        },
+        "full_vs_predicted_corrected_common": {
+          "disagreement_count": 20,
+          "nodes": 18033,
+          "disagreement_fraction": 0.0011090778018077968,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 20,
+          "min_physical_gap": 2.6184262914147327e-08
+        }
+      },
+      "update_seconds": 0.028366323560476303,
+      "score_seconds": 0.016320519149303436,
+      "mass_min": 905.8425476431796,
+      "mass_max": 1340.630461935935,
+      "logmass_min": 6.808865502466701,
+      "mass_underflow_count": 0,
+      "q_probability_zero_count": 0
+    },
+    "3": {
+      "metrics": {
+        "initial_contrast": {
+          "amplitude": 0.9047700593803084,
+          "predicted_amplitude": 1.0065187916515677,
+          "error": 0.23997234320665234,
+          "relative_error": 0.23841814499348654,
+          "resolution_threshold": 8.599750569898516e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "feedback": {
+          "amplitude": 0.04381793775210916,
+          "predicted_amplitude": 0.041412360087208784,
+          "error": 0.008543085075143765,
+          "relative_error": 0.20629312256421012,
+          "resolution_threshold": 8.599750569898516e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "prototype_vs_common": {
+          "amplitude": 0.021908968876054574,
+          "predicted_amplitude": 0.020706180043604392,
+          "error": 0.00427154253757185,
+          "relative_error": 0.20629312256420854,
+          "resolution_threshold": 8.599750569898516e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "score_vs_common": {
+          "amplitude": 0.43422859298383165,
+          "predicted_amplitude": 0.3964326291018893,
+          "error": 0.07088155492961795,
+          "relative_error": 0.17879848863651507,
+          "resolution_threshold": 1.1548347570046482e-11,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        }
+      },
+      "ranking": {
+        "full_vs_common": {
+          "disagreement_count": 74,
+          "nodes": 18033,
+          "disagreement_fraction": 0.004103587866688848,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 74,
+          "min_physical_gap": 2.2280365175042505e-07
+        },
+        "common_vs_tangent_nearest_center": {
+          "disagreement_count": 97,
+          "nodes": 18033,
+          "disagreement_fraction": 0.005379027338767815,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 97,
+          "min_physical_gap": 2.2280365175042505e-07
+        },
+        "full_vs_predicted_corrected_common": {
+          "disagreement_count": 15,
+          "nodes": 18033,
+          "disagreement_fraction": 0.0008318083513558476,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 15,
+          "min_physical_gap": 2.6184262914147327e-08
+        }
+      },
+      "update_seconds": 0.028370223939418793,
+      "score_seconds": 0.01635775715112686,
+      "mass_min": 919.3665403825654,
+      "mass_max": 1329.6371871364381,
+      "logmass_min": 6.823684889826016,
+      "mass_underflow_count": 0,
+      "q_probability_zero_count": 0
+    }
+  },
+  "r13_replay": {},
+  "pre_artifact_sha256": "0f7785557d2465ff0d10d52f62f9a86e47d2365ccbcfc50d2417bc6b76a2537d",
+  "pre_record_sha256": "6baf8e078ff3503b582770de83cd151b25116fb4cf87089cd257839f77a98717",
+  "calculation_seconds": 0.19918198883533478,
+  "status": "complete",
+  "serialization_seconds": 0.9146853536367416,
+  "artifact_sha256": "304621e5b5fba6a4871505d3b2d46ba1d38dad5b2b2b50a9aa88759ef95e25fb"
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "candidate": "GraphMAE:cons_vat_0.3",
+    "baseline": "GraphMAE:cons_none_0",
+    "delta_pp": 0.3600004315376282,
+    "ci95": [
+      0.09000062197446823,
+      0.6299999356269836
+    ],
+    "wins": 11,
+    "scope": "same graph repeatedquery support-sampling interval"
+  },
+  {
+    "candidate": "GraphMAE:cons_vat_0.3",
+    "baseline": "GraphMAE:cons_rpt_0.3",
+    "delta_pp": 0.3800004720687866,
+    "ci95": [
+      0.09974964708089851,
+      0.6500008702278137
+    ],
+    "wins": 13,
+    "scope": "same graph repeatedquery support-sampling interval"
+  },
+  {
+    "candidate": "GraphMAE:cons_vat_0.3",
+    "baseline": "GraphMAE:graphprompt",
+    "delta_pp": 0.4300001263618469,
+    "ci95": [
+      -1.0400000214576721,
+      1.9802512750029528
+    ],
+    "wins": 10,
+    "scope": "same graph repeatedquery support-sampling interval"
+  },
+  {
+    "candidate": "GraphMAE:cons_vat_0.3",
+    "baseline": "GraphMAE:rect_teacher_ref50",
+    "delta_pp": 3.7699997425079346,
+    "ci95": [
+      2.2399991750717163,
+      5.240000210702419
+    ],
+    "wins": 17,
+    "scope": "same graph repeatedquery support-sampling interval"
+  },
+  {
+    "candidate": "GraphMAE:cons_vat_0.3",
+    "baseline": "GraphMAE2:cons_none_0",
+    "delta_pp": -0.44000059366226196,
+    "ci95": [
+      -1.5500003099441528,
+      0.7499989941716194
+    ],
+    "wins": 7,
+    "scope": "same graph repeatedquery support-sampling interval"
+  }
+]

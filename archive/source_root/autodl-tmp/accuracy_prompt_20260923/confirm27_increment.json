@@ -1,0 +1,58 @@
+[
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "candidate": "rect_teacher_ref50_sinkuniform",
+    "baseline": "rect_teacher_ref50",
+    "n": 20,
+    "delta_pp": 0.05000025033950806,
+    "ci95": [
+      -0.14999926090240479,
+      0.2500000596046448
+    ],
+    "wins": 8,
+    "losses": 8
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "candidate": "rect_teacher_ref50_sinkuniform",
+    "baseline": "rect_teacher_ref50_sinkmixed",
+    "n": 20,
+    "delta_pp": -0.029999613761901855,
+    "ci95": [
+      -0.169999897480011,
+      0.12000054121017456
+    ],
+    "wins": 7,
+    "losses": 7
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "candidate": "rect_teacher_ref50_sinkuniform",
+    "baseline": "rect_teacher_ref50_sinkuniform_shuffle",
+    "n": 20,
+    "delta_pp": 5.130000114440918,
+    "ci95": [
+      4.4300007820129395,
+      5.81999958306551
+    ],
+    "wins": 20,
+    "losses": 0
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "candidate": "rect_teacher_ref50_sinkuniform",
+    "baseline": "ridge_teacher_plain",
+    "n": 20,
+    "delta_pp": 6.310000121593475,
+    "ci95": [
+      4.960000216960907,
+      7.64025084674358
+    ],
+    "wins": 19,
+    "losses": 1
+  }
+]

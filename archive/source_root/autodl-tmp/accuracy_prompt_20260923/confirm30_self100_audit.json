@@ -1,0 +1,198 @@
+[
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "candidate": "self100",
+    "baseline": "selfonly",
+    "n": 20,
+    "delta_pp": 0.04605285823345184,
+    "ci95": [
+      -0.2203946579247713,
+      0.3486844152212143
+    ],
+    "wins": 9,
+    "losses": 10
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "candidate": "self100",
+    "baseline": "self10",
+    "n": 20,
+    "delta_pp": 0.957237109541893,
+    "ci95": [
+      0.25328986160457134,
+      1.651398580521344
+    ],
+    "wins": 15,
+    "losses": 5
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "candidate": "self100",
+    "baseline": "selflearn_kd",
+    "n": 20,
+    "delta_pp": 2.115131840109825,
+    "ci95": [
+      1.177632061764598,
+      3.0328949578106403
+    ],
+    "wins": 16,
+    "losses": 4
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "candidate": "self100",
+    "baseline": "frozen",
+    "n": 20,
+    "delta_pp": 2.3519738018512726,
+    "ci95": [
+      1.2401317059993744,
+      3.4737668596208082
+    ],
+    "wins": 18,
+    "losses": 2
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "candidate": "self100",
+    "baseline": "graphprompt",
+    "n": 20,
+    "delta_pp": 1.9506580382585526,
+    "ci95": [
+      0.8881580773741007,
+      3.019736709073186
+    ],
+    "wins": 17,
+    "losses": 3
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "candidate": "self100",
+    "baseline": "raw",
+    "n": 20,
+    "delta_pp": 2.361842170357704,
+    "ci95": [
+      0.9176806677132846,
+      3.8980266470462084
+    ],
+    "wins": 13,
+    "losses": 7
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "candidate": "self100",
+    "baseline": "rawridge",
+    "n": 20,
+    "delta_pp": 2.697368785738945,
+    "ci95": [
+      1.1842108499258757,
+      4.233635712414979
+    ],
+    "wins": 14,
+    "losses": 6
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "candidate": "self100",
+    "baseline": "selfonly",
+    "n": 20,
+    "delta_pp": -0.14802634716033936,
+    "ci95": [
+      -0.3947368264198303,
+      0.12828953564167023
+    ],
+    "wins": 7,
+    "losses": 13
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "candidate": "self100",
+    "baseline": "self10",
+    "n": 20,
+    "delta_pp": 0.1940792053937912,
+    "ci95": [
+      -0.3257401771843433,
+      0.7664477098733187
+    ],
+    "wins": 10,
+    "losses": 10
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "candidate": "self100",
+    "baseline": "selflearn_kd",
+    "n": 20,
+    "delta_pp": 0.8059211075305939,
+    "ci95": [
+      -0.07574019394814961,
+      1.6973684001713991
+    ],
+    "wins": 16,
+    "losses": 4
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "candidate": "self100",
+    "baseline": "frozen",
+    "n": 20,
+    "delta_pp": 1.5493421256542206,
+    "ci95": [
+      0.4703125543892384,
+      2.572450768202542
+    ],
+    "wins": 16,
+    "losses": 4
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "candidate": "self100",
+    "baseline": "graphprompt",
+    "n": 20,
+    "delta_pp": 1.7006579786539078,
+    "ci95": [
+      0.6348685901612043,
+      2.6973683405667543
+    ],
+    "wins": 16,
+    "losses": 4
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "candidate": "self100",
+    "baseline": "raw",
+    "n": 20,
+    "delta_pp": 1.0690788179636002,
+    "ci95": [
+      -0.1546052098274231,
+      2.3124998807907104
+    ],
+    "wins": 13,
+    "losses": 7
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "candidate": "self100",
+    "baseline": "rawridge",
+    "n": 20,
+    "delta_pp": 1.404605433344841,
+    "ci95": [
+      0.029523026198148804,
+      2.7731089051812874
+    ],
+    "wins": 13,
+    "losses": 7
+  }
+]

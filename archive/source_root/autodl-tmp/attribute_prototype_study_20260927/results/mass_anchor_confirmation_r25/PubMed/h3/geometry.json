@@ -1,0 +1,32 @@
+{
+  "dataset": "PubMed",
+  "hops": 3,
+  "nodes": 19717,
+  "features": 500,
+  "classes": 3,
+  "input_hashes": {
+    "raw_input": "545b90c42b2140258ec6152835888d0647dbe96d9d66e9b4a8cedb6ce3cd493e",
+    "input": "406f21b04ef940f6e2b297547ab78a925f6cf4cc926646d65f00b1d88fd69ffe",
+    "graph": "4a1b93271d624c9b351e972c975bad1662d1f2d58f3e85689cfc802c881fa1dd",
+    "adjacency_indices": "064179b85ce64823ca809615bdc681eb893d9dc1d5d1931d71c91b64d41ac207",
+    "adjacency_values": "134596b84f5d8644060ff34251fa445b3fe9e4418ed48ddfa2fe0351e98ad119",
+    "query": "b96a6358bdf42f9d4eef91f76a29d8fa89b7fefbeec978ddbf9f5a906f89da15",
+    "pool": "0e303f8413645bd88462259afc735c24c8dd828548b1daa7d19af97f06845fb5",
+    "pool_labels": "d1f63c6f647d4e849b0dc06d0fd9c77fc61a793d6373f62a9193487e23a50587",
+    "representation": "a1990805cdf2d15cedb0025e58c47382e043906b7edd12ed929961a01fb96a32"
+  },
+  "protocol": "official_train_pool_test_query_fold0",
+  "contract_sha256": "261d2081eedc228fb6a904ae4b85b216ad233c73f61b6d9e65b4c0b3dc7668e0",
+  "load_seconds": 0.056793369352817535,
+  "incremental_propagation_seconds": 0.0041399747133255005,
+  "covariance_precompute_seconds": 0.015017438679933548,
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "library_sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  }
+}

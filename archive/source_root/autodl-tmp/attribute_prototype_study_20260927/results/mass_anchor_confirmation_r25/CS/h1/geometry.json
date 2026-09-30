@@ -1,0 +1,32 @@
+{
+  "dataset": "CS",
+  "hops": 1,
+  "nodes": 18333,
+  "features": 6805,
+  "classes": 15,
+  "input_hashes": {
+    "raw_input": "1306b6b97996c3decdc629b00be814d464b79fe508f4ade6fe814d3c2df3f864",
+    "input": "7ffa49ef41f8f43c68d449089623b0edaf5b96b7bc5e9f8c89afac23c9b63af3",
+    "graph": "f756b20488bcf4f52ff6733d2af34e24b2fd62b79ba35db176150cb1081711d0",
+    "adjacency_indices": "1d32b01362b459b0c658e740ba64cbdf084df2163be68c7bef8ef0faa93fb73f",
+    "adjacency_values": "8b3b98cb32978e1a5ddd07a7701a1094a12488c3775221a6c368e08f391208ea",
+    "query": "544ee694b3610b8364a1ffab2e364f7a2b1c3f41e5ec0f7b6ca04828f817f936",
+    "pool": "5402dd3d468a13f4d926b8688ec42c0c087d77fbbe689075e8b6a5f01a632fda",
+    "pool_labels": "b45ecc8254df8c0b563d0e1d08e5b264b7ae00e4864d09d09676ff119c70583f",
+    "representation": "8731006677b6607b0caf4b4c5985be14e12376b9cd47b9d764029bf9f11ed3f7"
+  },
+  "protocol": "fixed20_perclass_pool_all_remaining_query",
+  "contract_sha256": "261d2081eedc228fb6a904ae4b85b216ad233c73f61b6d9e65b4c0b3dc7668e0",
+  "load_seconds": 1.6797219924628735,
+  "incremental_propagation_seconds": 0.036482878029346466,
+  "covariance_precompute_seconds": 2.26546810567379,
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "library_sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  }
+}

@@ -1,0 +1,488 @@
+[
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 29.550438672304153,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 0.09868457913398743,
+      "ci95_seed_bootstrap": [
+        -0.4276318848133087,
+        0.6250005960464478
+      ],
+      "wins": 10,
+      "ties": 1,
+      "losses": 9
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "method": "geom_center_base",
+    "n": 20,
+    "accuracy": 30.592105090618134,
+    "frozen": {
+      "delta_pp": 1.04166641831398,
+      "ci95_seed_bootstrap": [
+        0.2960522472858429,
+        1.7324560917913914
+      ],
+      "wins": 13,
+      "ties": 2,
+      "losses": 5
+    },
+    "graphprompt": {
+      "delta_pp": 1.1403509974479675,
+      "ci95_seed_bootstrap": [
+        0.2850876748561859,
+        1.9736844301223755
+      ],
+      "wins": 14,
+      "ties": 1,
+      "losses": 5
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "method": "geom_full10_base",
+    "n": 20,
+    "accuracy": 33.80482494831085,
+    "frozen": {
+      "delta_pp": 4.254386276006699,
+      "ci95_seed_bootstrap": [
+        3.179825097322464,
+        5.329222440719601
+      ],
+      "wins": 18,
+      "ties": 1,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 4.353070855140686,
+      "ci95_seed_bootstrap": [
+        3.2127195559442043,
+        5.537281632423401
+      ],
+      "wins": 18,
+      "ties": 1,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "method": "geom_full10_gp",
+    "n": 20,
+    "accuracy": 33.62938612699509,
+    "frozen": {
+      "delta_pp": 4.078947454690933,
+      "ci95_seed_bootstrap": [
+        3.070175349712372,
+        5.043859634548426
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 4.177632033824921,
+      "ci95_seed_bootstrap": [
+        3.1688599288463593,
+        5.208333887159824
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "method": "geom_full50_base",
+    "n": 20,
+    "accuracy": 32.23684176802635,
+    "frozen": {
+      "delta_pp": 2.6864030957221985,
+      "ci95_seed_bootstrap": [
+        1.9078938663005829,
+        3.46491202712059
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 2.785087674856186,
+      "ci95_seed_bootstrap": [
+        1.9846485555171967,
+        3.6513160169124603
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "method": "geom_original_base",
+    "n": 20,
+    "accuracy": 29.736842066049572,
+    "frozen": {
+      "delta_pp": 0.18640339374542236,
+      "ci95_seed_bootstrap": [
+        -0.7127197086811066,
+        1.0635964572429657
+      ],
+      "wins": 10,
+      "ties": 0,
+      "losses": 10
+    },
+    "graphprompt": {
+      "delta_pp": 0.2850879728794098,
+      "ci95_seed_bootstrap": [
+        -0.6033446528017519,
+        1.1735204569995363
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 29.45175409317017,
+    "frozen": {
+      "delta_pp": -0.09868457913398743,
+      "ci95_seed_bootstrap": [
+        -0.6250005960464478,
+        0.4276318848133087
+      ],
+      "wins": 9,
+      "ties": 1,
+      "losses": 10
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "method": "raw",
+    "n": 20,
+    "accuracy": 31.940789669752125,
+    "frozen": {
+      "delta_pp": 2.3903509974479675,
+      "ci95_seed_bootstrap": [
+        1.3267546854913235,
+        3.322368562221527
+      ],
+      "wins": 17,
+      "ties": 1,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 2.489035576581955,
+      "ci95_seed_bootstrap": [
+        1.3925442099571228,
+        3.4978075325489044
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphCL",
+    "method": "rawridge",
+    "n": 20,
+    "accuracy": 32.31359660625458,
+    "frozen": {
+      "delta_pp": 2.763157933950424,
+      "ci95_seed_bootstrap": [
+        1.666666865348816,
+        3.72807040810585
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 2.8618425130844116,
+      "ci95_seed_bootstrap": [
+        1.7105261981487274,
+        3.947368860244751
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 28.45394745469093,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": -0.010965168476104736,
+      "ci95_seed_bootstrap": [
+        -0.5701757967472076,
+        0.6578947640955448
+      ],
+      "wins": 6,
+      "ties": 1,
+      "losses": 13
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "method": "geom_center_base",
+    "n": 20,
+    "accuracy": 33.32236811518669,
+    "frozen": {
+      "delta_pp": 4.868420660495758,
+      "ci95_seed_bootstrap": [
+        3.5635964572429657,
+        6.228344067931172
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 4.857455492019653,
+      "ci95_seed_bootstrap": [
+        3.618420209735632,
+        6.118420511484146
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "method": "geom_full10_base",
+    "n": 20,
+    "accuracy": 32.960526794195175,
+    "frozen": {
+      "delta_pp": 4.506579339504242,
+      "ci95_seed_bootstrap": [
+        2.8289478942751884,
+        6.283169753849503
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 4.495614171028137,
+      "ci95_seed_bootstrap": [
+        2.7302634678781033,
+        6.326754543930292
+      ],
+      "wins": 16,
+      "ties": 1,
+      "losses": 3
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "method": "geom_full10_gp",
+    "n": 20,
+    "accuracy": 33.190789222717285,
+    "frozen": {
+      "delta_pp": 4.736841768026352,
+      "ci95_seed_bootstrap": [
+        2.7631583623588085,
+        6.8749995566904545
+      ],
+      "wins": 16,
+      "ties": 0,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": 4.725876599550247,
+      "ci95_seed_bootstrap": [
+        2.6864027939736843,
+        6.92982405424118
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "method": "geom_full50_base",
+    "n": 20,
+    "accuracy": 32.46710538864136,
+    "frozen": {
+      "delta_pp": 4.013157933950424,
+      "ci95_seed_bootstrap": [
+        2.1929827257990837,
+        5.964912176132202
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 4.0021927654743195,
+      "ci95_seed_bootstrap": [
+        2.0942978523671627,
+        5.953947015106678
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "method": "geom_original_base",
+    "n": 20,
+    "accuracy": 28.793859705328938,
+    "frozen": {
+      "delta_pp": 0.3399122506380081,
+      "ci95_seed_bootstrap": [
+        -0.5153507012873888,
+        1.2612395659089048
+      ],
+      "wins": 12,
+      "ties": 0,
+      "losses": 8
+    },
+    "graphprompt": {
+      "delta_pp": 0.3289470821619034,
+      "ci95_seed_bootstrap": [
+        -0.559210630133748,
+        1.2280702628195286
+      ],
+      "wins": 11,
+      "ties": 2,
+      "losses": 7
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 28.464912623167038,
+    "frozen": {
+      "delta_pp": 0.010965168476104736,
+      "ci95_seed_bootstrap": [
+        -0.6578947640955448,
+        0.5701757967472076
+      ],
+      "wins": 13,
+      "ties": 1,
+      "losses": 6
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "method": "raw",
+    "n": 20,
+    "accuracy": 31.940789669752125,
+    "frozen": {
+      "delta_pp": 3.4868422150611877,
+      "ci95_seed_bootstrap": [
+        2.2916673086583614,
+        4.550438821315765
+      ],
+      "wins": 17,
+      "ties": 1,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 3.475877046585083,
+      "ci95_seed_bootstrap": [
+        2.236841917037964,
+        4.747806638479233
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "dataset": "Chameleon",
+    "checkpoint": "GraphMAE",
+    "method": "rawridge",
+    "n": 20,
+    "accuracy": 32.31359660625458,
+    "frozen": {
+      "delta_pp": 3.8596491515636444,
+      "ci95_seed_bootstrap": [
+        2.631578888744116,
+        5.010964721441269
+      ],
+      "wins": 17,
+      "ties": 1,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 3.8486839830875397,
+      "ci95_seed_bootstrap": [
+        2.554824348539114,
+        5.20833283662796
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    }
+  }
+]

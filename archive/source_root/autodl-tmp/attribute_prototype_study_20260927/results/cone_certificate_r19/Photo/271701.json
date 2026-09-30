@@ -1,0 +1,91 @@
+{
+  "dataset": "Photo",
+  "seed": 271701,
+  "metadata": {
+    "trace": {
+      "lambda_upper": 0.19475640705503708,
+      "trajectory": [
+        {
+          "D": 0.604806151417165,
+          "logK": 23.802603091496767,
+          "B": 1.967787780904937,
+          "next_D": 1.6383957104738278
+        },
+        {
+          "D": 1.6383957104738278,
+          "logK": 64.48030118714922,
+          "B": 1.967787780904937,
+          "next_D": 1.6383957104738278
+        },
+        {
+          "D": 1.6383957104738278,
+          "logK": 64.48030118714922,
+          "B": 1.967787780904937,
+          "next_D": 1.6383957104738278
+        }
+      ],
+      "eta": 0.9838938904524684,
+      "uncertified_pct": 100.0,
+      "axis_valid": true
+    },
+    "spectral": {
+      "lambda_upper": 0.04194346141558131,
+      "trajectory": [
+        {
+          "D": 0.604806151417165,
+          "logK": 23.802603091496767,
+          "B": 1.967787780904937,
+          "next_D": 1.6383957104738278
+        },
+        {
+          "D": 1.6383957104738278,
+          "logK": 64.48030118714922,
+          "B": 1.967787780904937,
+          "next_D": 1.6383957104738278
+        },
+        {
+          "D": 1.6383957104738278,
+          "logK": 64.48030118714922,
+          "B": 1.967787780904937,
+          "next_D": 1.6383957104738278
+        }
+      ],
+      "eta": 0.9838938904524684,
+      "uncertified_pct": 100.0,
+      "axis_valid": true
+    }
+  },
+  "spectrum": {
+    "rayleigh": 0.027981545993667575,
+    "residual": 4.171110873058982e-18,
+    "trace": 0.19475640705403707,
+    "frobenius": 0.04194346141458131,
+    "upper": 0.04194346141558131
+  },
+  "actual": [
+    {
+      "direction_diameter": 0.604806151416165,
+      "soft_diameter": 0.3142869996847066,
+      "soft_residual": 0.2254258265527883
+    },
+    {
+      "direction_diameter": 0.4608715723731294,
+      "soft_diameter": 0.2588180579156082,
+      "soft_residual": 0.17722804190460592
+    },
+    {
+      "direction_diameter": 0.4322970253925737,
+      "soft_diameter": 0.2410104301755939,
+      "soft_residual": 0.16213626090408326
+    }
+  ],
+  "disagreement_pct": 1.7890520694259011,
+  "pre_artifact_sha256": "a56c76613850906a8febf13a27d828b450d6c0ebab356d4256850ad03aba51b6",
+  "artifact_sha256": "00a35862a7a0497aa6351ea9ed8c55dc4dc6264b5f305e10b874e50ec3510270",
+  "runner_sha256": "2e91e88947d77ded60c1c42e6edfa60b2e5966d78b20c780be7248e27451d2d2",
+  "design_sha256": "8b6335079733d50a1968aef7d23b250d3046e37211b9f1cf86807c4fca5fb68d",
+  "source_sha256": "c734777ab66a71f7af06759f5eec04d55c9e2dbc97f64e4ecbf21a9f6e44854c",
+  "geometry_precompute_seconds": 0.013147559016942978,
+  "scope": "No query labels; common prediction and bounds sealed before full iteration",
+  "finished": 1790516507.125103
+}

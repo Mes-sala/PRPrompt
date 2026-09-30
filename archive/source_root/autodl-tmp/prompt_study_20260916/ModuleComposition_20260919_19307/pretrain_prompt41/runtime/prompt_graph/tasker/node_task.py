@@ -1,0 +1,825 @@
+import os
+import time
+import warnings
+
+import numpy as np
+import torch
+from torch_geometric.loader import DataLoader
+
+from prompt_graph.data import (
+    GraphDataset,
+    load4node,
+    node_sample_and_save,
+)
+from prompt_graph.utils import (
+    Gprompt_tuning_loss,
+    center_embedding,
+    constraint,
+    get_logger,
+    process,
+    sample_dir,
+)
+
+from . import strategies as _strategies  # noqa: F401 -- registers bundled strategies
+from .strategy import TaskContext, get_strategy
+from .task import BaseTask
+
+warnings.filterwarnings("ignore")
+
+logger = get_logger(__name__)
+
+
+class NodeTask(BaseTask):
+    def __init__(self, data, input_dim, output_dim, task_num=5, graphs_list=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.prompt_type == "GraphPrompter":
+            raise NotImplementedError("GraphPrompter NodeTask is disabled: author-compatible node adapter has not been verified")
+        self.task_type = "NodeTask"
+        self.task_num = task_num  # 增加task_num的参数，控制重复数量，默认为5
+        self.data = data
+        if self.dataset_name == "ogbn-arxiv":
+            self.data.y = self.data.y.squeeze()
+        self.graphs_list = graphs_list
+
+        if self.prompt_type == "MultiGprompt":
+            self.load_multigprompt_data()
+        else:
+            self.input_dim = input_dim
+            self.output_dim = output_dim
+
+        self.create_few_data_folder()
+
+    def fold_dir(self, fold):
+        from pathlib import Path
+        root = self.protocol_options.get("split_root")
+        return (Path(root) if root else sample_dir("Node", self.shot_num, self.dataset_name)) / str(fold)
+
+    def create_few_data_folder(self):
+        # 创建文件夹并保存数据
+        k = self.shot_num
+        k_shot_folder = str(self.fold_dir(1).parent)
+        os.makedirs(k_shot_folder, exist_ok=True)
+
+        for i in range(1, self.task_num + 1):
+            folder = os.path.join(k_shot_folder, str(i))
+            expected = ['train_idx.pt', 'train_labels.pt', 'test_idx.pt', 'test_labels.pt', 'protocol.json']
+            present = [os.path.exists(os.path.join(folder, name)) for name in expected]
+            if any(present) and not all(present):
+                raise RuntimeError(f'Incomplete v3 split assets in {folder}; inspect before regenerating')
+            if not all(present):
+                os.makedirs(folder, exist_ok=True)
+                if self.protocol_options:
+                    with torch.random.fork_rng(devices=[]):
+                        torch.manual_seed(self.protocol_options["split_seed"] + i)
+                        node_sample_and_save(self.data, k, folder, self.output_dim)
+                else:
+                    node_sample_and_save(self.data, k, folder, self.output_dim)
+                logger.info(str(k) + " shot " + str(i) + " th is saved!!")
+
+    def load_multigprompt_data(self):
+        adj, features, labels = process.load_data(self.dataset_name)
+        # adj, features, labels = process.load_data(self.dataset_name)
+        self.input_dim = features.shape[1]
+        self.output_dim = labels.shape[1]
+        logger.debug(f"a {self.output_dim}")
+        features, _ = process.preprocess_features(features)
+        self.sp_adj = process.sparse_mx_to_torch_sparse_tensor(adj).to(self.device)
+        self.labels = torch.FloatTensor(labels[np.newaxis])
+        self.features = torch.FloatTensor(features[np.newaxis]).to(self.device)
+        # print("labels",labels)
+        logger.debug(f"adj {self.sp_adj.shape}")
+        logger.debug(f"feature {features.shape}")
+
+    def load_data(self):
+        self.data, self.input_dim, self.output_dim = load4node(self.dataset_name)
+
+    def train(self, data, train_idx):
+        self.gnn.train()
+        self.answering.train()
+        self.optimizer.zero_grad()
+        out = self.gnn(data.x, data.edge_index, batch=None)
+        out = self.answering(out)
+        loss = self.criterion(out[train_idx], data.y[train_idx])
+        loss.backward()
+        self.optimizer.step()
+        return loss.item()
+
+    def GPPTtrain(self, data, train_idx):
+        self.prompt.train()
+        node_embedding = self.gnn(data.x, data.edge_index)
+        out = self.prompt(node_embedding, data.edge_index)
+        loss = self.criterion(out[train_idx], data.y[train_idx])
+        loss = loss + 0.001 * constraint(self.device, self.prompt.get_TaskToken())
+        self.pg_opi.zero_grad()
+        loss.backward()
+        self.pg_opi.step()
+        mid_h = self.prompt.get_mid_h()
+        self.prompt.update_StructureToken_weight(mid_h)
+        return loss.item()
+
+    def MultiGpromptTrain(self, pretrain_embs, train_lbls, train_idx):
+        self.DownPrompt.train()
+        self.optimizer.zero_grad()
+        prompt_feature = self.feature_prompt(self.features)
+        # prompt_feature = self.feature_prompt(self.data.x)
+        # embeds1 = self.gnn(prompt_feature, self.data.edge_index)
+        embeds1 = self.Preprompt.gcn(prompt_feature, self.sp_adj, True, False)
+        pretrain_embs1 = embeds1[0, train_idx]
+        logits = (
+            self.DownPrompt(pretrain_embs, pretrain_embs1, train_lbls, 1).float().to(self.device)
+        )
+        loss = self.criterion(logits, train_lbls)
+        loss.backward(retain_graph=True)
+        self.optimizer.step()
+        return loss.item()
+
+    def SUPTtrain(self, data):
+        self.gnn.train()
+        self.optimizer.zero_grad()
+        data.x = self.prompt.add(data.x)
+        out = self.gnn(data.x, data.edge_index, batch=None)
+        out = self.answering(out)
+        loss = self.criterion(out[data.train_mask], data.y[data.train_mask])
+        orth_loss = self.prompt.orthogonal_loss()
+        loss += orth_loss
+        loss.backward()
+        self.optimizer.step()
+        return loss
+
+    def GPFTrain(self, train_loader):
+        self.prompt.train()
+        total_loss = 0.0
+        for batch in train_loader:
+            self.optimizer.zero_grad()
+            batch = batch.to(self.device)
+            batch.x = self.prompt.add(batch.x)
+            out = self.gnn(
+                batch.x,
+                batch.edge_index,
+                batch.batch,
+                prompt=self.prompt,
+                prompt_type=self.prompt_type,
+            )
+            out = self.answering(out)
+            loss = self.criterion(out, batch.y)
+            loss.backward()
+            self.optimizer.step()
+            total_loss += loss.item()
+        return total_loss / len(train_loader)
+
+    def AllInOneTrain(self, train_loader, answer_epoch=1, prompt_epoch=1):
+        # we update answering and prompt alternately.
+        # tune task head
+        self.answering.train()
+        self.prompt.eval()
+        self.gnn.eval()
+        for epoch in range(1, answer_epoch + 1):
+            answer_loss = self.prompt.Tune(
+                train_loader, self.gnn, self.answering, self.criterion, self.answer_opi, self.device
+            )
+            logger.info(
+                f"frozen gnn | frozen prompt | *tune answering function... {epoch}/{answer_epoch} ,loss: {answer_loss:.4f} "
+            )
+
+        # tune prompt
+        self.answering.eval()
+        self.prompt.train()
+        for epoch in range(1, prompt_epoch + 1):
+            pg_loss = self.prompt.Tune(
+                train_loader, self.gnn, self.answering, self.criterion, self.pg_opi, self.device
+            )
+            logger.info(
+                f"frozen gnn | *tune prompt |frozen answering function... {epoch}/{prompt_epoch} ,loss: {pg_loss:.4f} "
+            )
+
+        # return pg_loss
+        return answer_loss
+
+    def GpromptTrain(self, train_loader):
+        strategy = get_strategy('Gprompt')()
+        context = self._gprompt_ctx()
+        loss = strategy.train_epoch(context, train_loader)
+        return loss, strategy.refresh_centers(context)
+
+    def _none_ctx(self):
+        """Build a TaskContext for the 'None' strategy on this NodeTask."""
+        return TaskContext(
+            gnn=self.gnn,
+            answering=self.answering,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"task_type": "NodeTask"},
+        )
+
+    def _gpf_ctx(self):
+        """Build a TaskContext for the GPF/GPF-plus strategy on this NodeTask."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            answering=self.answering,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"input_dim": self.input_dim},
+        )
+
+    def _gprompt_ctx(self):
+        """Build a TaskContext for the Gprompt strategy on this NodeTask."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            pg_opi=self.pg_opi,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+        )
+
+    def _dhbp_ctx(self):
+        """Build a TaskContext for the DHBP strategy on this NodeTask."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            answering=self.answering,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"task_type": "NodeTask"},
+        )
+
+    def _all_in_one_ctx(self):
+        """Build a TaskContext for the All-in-one strategy on this NodeTask."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            answering=self.answering,
+            criterion=self.criterion,
+            pg_opi=self.pg_opi,
+            answer_opi=self.answer_opi,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={
+                "task_type": "NodeTask",
+                "answer_epoch": getattr(self, "answer_epoch", 1),
+                "prompt_epoch": getattr(self, "prompt_epoch", 1),
+            },
+        )
+
+    def _gppt_ctx(self):
+        """Build a TaskContext for the GPPT strategy on this NodeTask."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            criterion=self.criterion,
+            pg_opi=self.pg_opi,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"task_type": "NodeTask"},
+        )
+
+    def _edge_prompt_ctx(self):
+        """Build a TaskContext for the EdgePrompt/EdgePromptplus strategy."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            answering=self.answering,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={
+                "task_type": "NodeTask",
+                "lr": self.lr,
+                "wd": self.wd,
+                "prompt_type": self.prompt_type,
+            },
+        )
+
+    def _uni_prompt_ctx(self):
+        """Build a TaskContext for the UniPrompt strategy."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            answering=self.answering,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={
+                "task_type": "NodeTask",
+                "lr": self.lr,
+                "wd": self.wd,
+                "tau": getattr(self, "tau", 0.99),
+            },
+        )
+
+    def _self_pro_ctx(self):
+        """Build a TaskContext for the SelfPro strategy."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"task_type": "NodeTask", "temp": getattr(self, "temp", 0.8),
+                   "support_idx": getattr(self, "support_idx", None),
+                   "support_labels": getattr(self, "support_labels", None),
+                   "identity_graph": self.prompt_type == "FrozenIdentityPrototype"},
+        )
+
+    def _pro_no_g_ctx(self):
+        """Build a TaskContext for the ProNoG strategy."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"task_type": "NodeTask", "data": self.data},
+        )
+
+    def _dagprompt_ctx(self):
+        """Build a TaskContext for the DAGPrompT strategy."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            param_center_embeddings=self.param_center_embeddings,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"task_type": "NodeTask"},
+        )
+
+    def _psp_ctx(self):
+        """Build a TaskContext for the PSP strategy."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            answering=self.answering,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"task_type": "NodeTask"},
+        )
+
+    def _relief_ctx(self):
+        """Build a TaskContext for the RELIEF strategy.
+
+        **Why NodeTask uses task_type='NodeTask' (single-graph path)**:
+
+        We attempted an architectural rework (P2.2) routing NodeTask RELIEF
+        through ``task_type='GraphTask'`` with induced subgraphs (mirroring
+        Gprompt/GPF/All-in-one). Empirically this was both **slower**
+        (13 min/fold vs 7 min/fold on Cora) and **less accurate**
+        (acc 0.14 vs 0.19), because:
+
+        1. The eval set has ~2400 induced subgraphs. Even with the step
+           cap at 30, each batch (~64 subgraphs of ~174 nodes ≈ 11k
+           batched nodes) makes the GNN forward dominate the savings
+           from a smaller inner loop. Net: per-iteration cost up, total
+           iterations up.
+        2. Subgraph-pool readout is semantically wrong for NodeTask —
+           each subgraph's ``batch.y`` is the center node's label, but
+           the tasknet reads whole-graph pool embedding (not the centre
+           node embedding). Loss signal is diluted.
+
+        So we keep the single-graph path with the ``attach_prompt``
+        step cap (``relief_max_attach_steps=50``). RELIEF on dense
+        single-graph NodeTasks is inherently slow — proper fix is to
+        replace it with one of the lighter-weight prompt families
+        (``Prodigy`` / ``GPPT`` / ``ProNoG``) for this scale.
+        """
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            answering=self.answering,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={
+                "task_type": "NodeTask",
+                "svd_dim_override": self.input_dim,
+                "max_num_nodes": self.data.num_nodes,
+                "relief_max_attach_steps": getattr(self, "relief_max_attach_steps", 50),
+            },
+        )
+
+    def _graph_prompter_ctx(self):
+        """Build a TaskContext for the GraphPrompter strategy."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            answering=self.answering,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"task_type": "NodeTask"},
+        )
+
+    def _prodigy_ctx(self):
+        """Build a TaskContext for the Prodigy strategy on this NodeTask."""
+        return TaskContext(
+            gnn=self.gnn,
+            prompt=self.prompt,
+            answering=self.answering,
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={"task_type": "NodeTask", "lr": self.lr, "wd": self.wd},
+        )
+
+    def _multi_gprompt_ctx(self, pretrain_embs, test_embs):
+        """Build a TaskContext for the MultiGprompt strategy on this NodeTask.
+
+        ``pretrain_embs`` / ``test_embs`` are precomputed once per fold in
+        ``run`` because they depend on the fold-specific ``idx_train`` /
+        ``idx_test`` indices.
+        """
+        return TaskContext(
+            criterion=self.criterion,
+            optimizer=self.optimizer,
+            device=self.device,
+            hid_dim=self.hid_dim,
+            output_dim=self.output_dim,
+            extra={
+                "task_type": "NodeTask",
+                "Preprompt": self.Preprompt,
+                "feature_prompt": self.feature_prompt,
+                "DownPrompt": self.DownPrompt,
+                "features": self.features,
+                "sp_adj": self.sp_adj,
+                "pretrain_embs": pretrain_embs,
+                "test_embs": test_embs,
+            },
+        )
+
+    def run(self):
+        if self.prompt_type == "RSP":
+            from .rsp import run_rsp_node
+            return run_rsp_node(self)
+        if self.prompt_type in {"SUPT-soft", "SUPT-hard", "GraphTOP"}:
+            from .input_structure import run_input_structure_node
+            return run_input_structure_node(self)
+        test_accs = []
+        f1s = []
+        rocs = []
+        prcs = []
+        batch_best_loss = []
+        if self.protocol_options:
+            self.epochs = self.protocol_options["support_passes"]
+            if self.prompt_type in {"FrozenGraphPrototype", "FrozenNodePrototype", "FrozenIdentityPrototype"}:
+                self.epochs = 1  # populate support loader once, no optimizer
+        if self.prompt_type == "All-in-one":
+            self.answer_epoch = self.protocol_options.get("answer_passes", 50)
+            self.prompt_epoch = self.protocol_options.get("prompt_passes", 50)
+            if self.protocol_options:
+                cycle = self.answer_epoch + self.prompt_epoch
+                if self.epochs % cycle:
+                    raise ValueError("All-in-one budget must be divisible by answer+prompt passes")
+                self.epochs //= cycle
+            else:
+                self.epochs = max(1, int(self.epochs / self.answer_epoch))
+        for i in range(1, self.task_num + 1):
+            sample_data_foler_path = str(self.fold_dir(i))
+
+            if not os.path.exists(sample_data_foler_path):
+                logger.warning(
+                    f"Failed to find sample_data for shot {self.shot_num}, id {i}, path: {sample_data_foler_path}, skipping..."
+                )
+                continue
+
+            if self.protocol_options:
+                from prompt_graph.utils import seed_everything
+                seed_everything(self.protocol_options["train_seed"] + i)
+            self.initialize_gnn()
+            if self.protocol_options:
+                seed_everything(self.protocol_options["train_seed"] + 10000 + i)
+            self.answering = torch.nn.Sequential(
+                torch.nn.Linear(self.hid_dim, self.output_dim)
+            ).to(self.device)
+            if self.protocol_options:
+                seed_everything(self.protocol_options["train_seed"] + 20000 + i)
+            self.initialize_prompt()
+            self.initialize_optimizer()
+
+            idx_train = (
+                torch.load(f"{sample_data_foler_path}/train_idx.pt")
+                .type(torch.long)
+                .to(self.device)
+            )
+            logger.debug(f"idx_train {idx_train}")
+            train_lbls = (
+                torch.load(f"{sample_data_foler_path}/train_labels.pt")
+                .type(torch.long)
+                .squeeze()
+                .to(self.device)
+            )
+            logger.debug(f"true {i} {train_lbls}")
+            idx_test = (
+                torch.load(f"{sample_data_foler_path}/test_idx.pt").type(torch.long).to(self.device)
+            )
+            test_lbls = (
+                torch.load(f"{sample_data_foler_path}/test_labels.pt")
+                .type(torch.long)
+                .squeeze()
+                .to(self.device)
+            )
+
+            from prompt_graph.data.load4data import audit_node_indices
+            audit_node_indices(idx_train, idx_test, self.data.y, self.shot_num, self.output_dim)
+            if not torch.equal(train_lbls.view(-1), self.data.y.view(-1)[idx_train]):
+                raise ValueError('Saved support labels do not match dataset')
+            if not torch.equal(test_lbls.view(-1), self.data.y.view(-1)[idx_test]):
+                raise ValueError('Saved query labels do not match dataset')
+
+            audit = None
+            if self.protocol_options:
+                # One support pass equals one full-support batch. Fail on OOM;
+                # do not silently change prototype or optimizer semantics.
+                self.batch_size = len(idx_train)
+            self.support_idx = idx_train
+            self.support_labels = train_lbls.clone()
+
+            # GPPT prompt initialtion
+            if self.prompt_type == "GPPT":
+                node_embedding = self.gnn(self.data.x, self.data.edge_index)
+                self.prompt.weight_init(
+                    node_embedding, self.data.edge_index, self.data.y, idx_train
+                )
+
+            if self.protocol_options:
+                from .audit import FoldAudit
+                audit = FoldAudit(self, i)
+
+            if self.prompt_type in [
+                "Gprompt",
+                "FrozenGraph",
+                "FrozenGraphPrototype",
+                "All-in-one",
+                "GPF",
+                "GPF-plus",
+                "DAGPrompT",
+            ]:
+                train_graphs = []
+                test_graphs = []
+                # self.graphs_list.to(self.device)
+                logger.info("distinguishing the train dataset and test dataset...")
+                for graph in self.graphs_list:
+                    if graph.index in idx_train:
+                        train_graphs.append(graph)
+                    elif graph.index in idx_test:
+                        test_graphs.append(graph)
+                logger.info("Done!!!")
+
+                train_dataset = GraphDataset(train_graphs)
+                test_dataset = GraphDataset(test_graphs)
+
+                # 创建数据加载器
+                train_loader = DataLoader(train_dataset, batch_size=self.batch_size, shuffle=True)
+                test_loader = DataLoader(test_dataset, batch_size=self.batch_size, shuffle=False)
+                logger.info("prepare induced graph data is finished!")
+
+            if self.prompt_type == "MultiGprompt":
+                embeds, _ = self.Preprompt.embed(self.features, self.sp_adj, True, None, False)
+                pretrain_embs = embeds[0, idx_train]
+                test_embs = embeds[0, idx_test]
+
+            patience = 20
+            best = 1e9
+            cnt_wait = 0
+
+            # Stateful strategies (e.g. Gprompt's mean_centers) need a single
+            # instance reused across this fold's train_epoch + evaluate calls.
+            gprompt_strategy = get_strategy(self.prompt_type)() if self.prompt_type in {"Gprompt", "FrozenGraphPrototype"} else None
+            dagprompt_strategy = (
+                get_strategy("DAGPrompT")() if self.prompt_type == "DAGPrompT" else None
+            )
+
+            if self.protocol_options:
+                seed_everything(self.protocol_options["train_seed"] + 30000 + i)
+            original_labels = self.data.y
+            if self.protocol_options:
+                self.data.y = torch.full_like(original_labels, -1)
+                self.data.y[idx_train] = train_lbls
+            for epoch in range(1, self.epochs + 1):
+                t0 = time.time()
+
+                if self.prompt_type in {"None", "Frozen"}:
+                    loss = get_strategy(self.prompt_type)().train_epoch(
+                        self._none_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type == "GPPT":
+                    loss = get_strategy("GPPT")().train_epoch(
+                        self._gppt_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type == "Prodigy":
+                    loss = get_strategy("Prodigy")().train_epoch(
+                        self._prodigy_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type in ("EdgePrompt", "EdgePromptplus"):
+                    loss = get_strategy(self.prompt_type)().train_epoch(
+                        self._edge_prompt_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type == "UniPrompt":
+                    loss = get_strategy("UniPrompt")().train_epoch(
+                        self._uni_prompt_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type in {"SelfPro", "FrozenNodePrototype", "FrozenIdentityPrototype"}:
+                    loss = get_strategy(self.prompt_type)().train_epoch(
+                        self._self_pro_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type == "ProNoG":
+                    loss = get_strategy("ProNoG")().train_epoch(
+                        self._pro_no_g_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type == "DAGPrompT":
+                    loss = dagprompt_strategy.train_epoch(self._dagprompt_ctx(), train_loader)
+                elif self.prompt_type == "PSP":
+                    loss = get_strategy("PSP")().train_epoch(
+                        self._psp_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type == "RELIEF":
+                    loss = get_strategy("RELIEF")().train_epoch(
+                        self._relief_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type == "GraphPrompter":
+                    loss = get_strategy("GraphPrompter")().train_epoch(
+                        self._graph_prompter_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type == "All-in-one":
+                    loss = get_strategy("All-in-one")().train_epoch(
+                        self._all_in_one_ctx(), train_loader
+                    )
+                elif self.prompt_type in ["GPF", "GPF-plus", "FrozenGraph"]:
+                    loss = get_strategy(self.prompt_type)().train_epoch(
+                        self._gpf_ctx(), train_loader
+                    )
+                elif self.prompt_type in {"Gprompt", "FrozenGraphPrototype"}:
+                    loss = gprompt_strategy.train_epoch(self._gprompt_ctx(), train_loader)
+                elif self.prompt_type == "DHBP":
+                    loss = get_strategy("DHBP")().train_epoch(
+                        self._dhbp_ctx(), (self.data, idx_train)
+                    )
+                elif self.prompt_type == "MultiGprompt":
+                    loss = get_strategy("MultiGprompt")().train_epoch(
+                        self._multi_gprompt_ctx(pretrain_embs, test_embs),
+                        (train_lbls, idx_train),
+                    )
+
+                if self.protocol_options and not np.isfinite(loss):
+                    raise FloatingPointError(f"Nonfinite loss at fold {i} epoch {epoch}")
+                if loss < best:
+                    best = loss
+                    # best_t = epoch
+                    cnt_wait = 0
+                    # torch.save(model.state_dict(), args.save_name)
+                else:
+                    cnt_wait += 1
+                    if cnt_wait == patience and not self.protocol_options:
+                        logger.info("-" * 100)
+                        logger.info("Early stopping at " + str(epoch) + " epoch!")
+                        break
+
+                logger.info(
+                    f"Epoch {epoch:03d} |  Time(s) {time.time() - t0:.4f} | Loss {loss:.4f}  "
+                )
+            self.data.y = original_labels
+            if self.protocol_options:
+                seed_everything(self.protocol_options["inference_seed"] + i)
+            import math
+
+            if not math.isnan(loss):
+                batch_best_loss.append(loss)
+
+                if self.prompt_type in {"None", "Frozen"}:
+                    test_acc, f1, roc, prc = get_strategy(self.prompt_type)().evaluate(
+                        self._none_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type == "GPPT":
+                    test_acc, f1, roc, prc = get_strategy("GPPT")().evaluate(
+                        self._gppt_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type == "Prodigy":
+                    test_acc, f1, roc, prc = get_strategy("Prodigy")().evaluate(
+                        self._prodigy_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type in ("EdgePrompt", "EdgePromptplus"):
+                    test_acc, f1, roc, prc = get_strategy(self.prompt_type)().evaluate(
+                        self._edge_prompt_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type == "UniPrompt":
+                    test_acc, f1, roc, prc = get_strategy("UniPrompt")().evaluate(
+                        self._uni_prompt_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type in {"SelfPro", "FrozenNodePrototype", "FrozenIdentityPrototype"}:
+                    test_acc, f1, roc, prc = get_strategy(self.prompt_type)().evaluate(
+                        self._self_pro_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type == "ProNoG":
+                    test_acc, f1, roc, prc = get_strategy("ProNoG")().evaluate(
+                        self._pro_no_g_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type == "DAGPrompT":
+                    test_acc, f1, roc, prc = dagprompt_strategy.evaluate(
+                        self._dagprompt_ctx(), test_loader
+                    )
+                elif self.prompt_type == "PSP":
+                    test_acc, f1, roc, prc = get_strategy("PSP")().evaluate(
+                        self._psp_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type == "RELIEF":
+                    test_acc, f1, roc, prc = get_strategy("RELIEF")().evaluate(
+                        self._relief_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type == "GraphPrompter":
+                    test_acc, f1, roc, prc = get_strategy("GraphPrompter")().evaluate(
+                        self._graph_prompter_ctx(), (self.data, idx_test)
+                    )
+                elif self.prompt_type == "All-in-one":
+                    test_acc, f1, roc, prc = get_strategy("All-in-one")().evaluate(
+                        self._all_in_one_ctx(), test_loader
+                    )
+                elif self.prompt_type in ["GPF", "GPF-plus", "FrozenGraph"]:
+                    test_acc, f1, roc, prc = get_strategy(self.prompt_type)().evaluate(
+                        self._gpf_ctx(), test_loader
+                    )
+                elif self.prompt_type in {"Gprompt", "FrozenGraphPrototype"}:
+                    test_acc, f1, roc, prc = gprompt_strategy.evaluate(
+                        self._gprompt_ctx(), test_loader
+                    )
+                elif self.prompt_type == "DHBP":
+                    test_acc, f1, roc, prc = get_strategy("DHBP")().evaluate(
+                        self._dhbp_ctx(), (self.data, idx_test, idx_train)
+                    )
+                elif self.prompt_type == "MultiGprompt":
+                    test_acc, f1, roc, prc = get_strategy("MultiGprompt")().evaluate(
+                        self._multi_gprompt_ctx(pretrain_embs, test_embs),
+                        (test_lbls, idx_test),
+                    )
+
+                logger.info(
+                    f"Final True Accuracy: {test_acc:.4f} | Macro F1 Score: {f1:.4f} | AUROC: {roc:.4f} | AUPRC: {prc:.4f}"
+                )
+                logger.info(f"best_loss {batch_best_loss}")
+
+                if audit is not None:
+                    self.run_diagnostics.append(audit.finish(
+                        0 if self.prompt_type in {"FrozenGraphPrototype", "FrozenNodePrototype", "FrozenIdentityPrototype"} else epoch,
+                        (test_acc, f1, roc, prc), len(idx_train), len(idx_test)))
+                test_accs.append(test_acc)
+                f1s.append(f1)
+                rocs.append(roc)
+                prcs.append(prc)
+
+        mean_test_acc = np.mean(test_accs)
+        std_test_acc = np.std(test_accs)
+        mean_f1 = np.mean(f1s)
+        std_f1 = np.std(f1s)
+        mean_roc = np.mean(rocs)
+        std_roc = np.std(rocs)
+        mean_prc = np.mean(prcs)
+        std_prc = np.std(prcs)
+        logger.info(f"Acc List {test_accs}")  # 输出所有测试的Acc结果
+        print(f" Final best | test Accuracy {mean_test_acc:.4f}±{std_test_acc:.4f}(std)")
+        print(f" Final best | test F1 {mean_f1:.4f}±{std_f1:.4f}(std)")
+        print(f" Final best | AUROC {mean_roc:.4f}±{std_roc:.4f}(std)")
+        print(f" Final best | AUPRC {mean_prc:.4f}±{std_prc:.4f}(std)")
+
+        logger.info(f"{self.pre_train_type} {self.gnn_type} {self.prompt_type} Node Task completed")
+        mean_best = np.mean(batch_best_loss)
+
+        return (
+            mean_best,
+            mean_test_acc,
+            std_test_acc,
+            mean_f1,
+            std_f1,
+            mean_roc,
+            std_roc,
+            mean_prc,
+            std_prc,
+        )

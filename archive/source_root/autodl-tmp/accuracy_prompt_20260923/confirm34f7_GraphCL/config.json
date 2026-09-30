@@ -1,0 +1,26 @@
+{
+  "out": "/root/autodl-tmp/accuracy_prompt_20260923/confirm34f7_GraphCL",
+  "datasets": [
+    "Actor"
+  ],
+  "checkpoints": [
+    "GraphCL"
+  ],
+  "methods": [
+    "geom_center_base",
+    "geom_diag10_base"
+  ],
+  "seeds": [
+    52800,
+    52801,
+    52802,
+    52803,
+    52804
+  ],
+  "fold": 7,
+  "steps": 100,
+  "phase": "confirm",
+  "source_sha256": "a9f659d9815d2d84af99127400c85ded0794305247f1fe301e31276af6a3f7cc",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+}

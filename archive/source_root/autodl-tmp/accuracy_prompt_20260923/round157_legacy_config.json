@@ -1,0 +1,25 @@
+{
+  "dataset": "CiteSeer",
+  "checkpoints": [
+    "GraphMAE",
+    "GraphMAE2"
+  ],
+  "seeds": [
+    227100,
+    227101,
+    227102,
+    227103,
+    227104
+  ],
+  "methods": [
+    "directcenter_mean",
+    "head_posttdnone_mean",
+    "head_posttdnone_qeps-50",
+    "head_posttdboth_mean",
+    "head_posttdboth_qeps-50",
+    "head_ins1_mean",
+    "head_ins1_qeps-50"
+  ],
+  "expected": 65,
+  "selected": "GraphMAE/head_l4_qeps-50"
+}

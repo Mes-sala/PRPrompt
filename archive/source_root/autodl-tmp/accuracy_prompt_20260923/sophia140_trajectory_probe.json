@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "query_labels_used": false,
+  "accuracy_evaluated": false,
+  "seed": 208199,
+  "results": [
+    {
+      "checkpoint": "GraphMAE",
+      "mode": "rho001",
+      "rho": 0.01,
+      "steps": 100,
+      "hvp_calls": 10,
+      "max_state_error": 0.0,
+      "initial_loss": 2.1651248931884766,
+      "final_loss": 0.17135250568389893,
+      "mean_clipped_fraction": 0.99921875,
+      "last_clipped_fraction": 1.0,
+      "seconds": 0.5743758678436279,
+      "sha256": "f39dd8119a917d9645698b3460986705eaa72cd315f43cf4b146e09e118a3005"
+    },
+    {
+      "checkpoint": "GraphMAE",
+      "mode": "rho1",
+      "rho": 1.0,
+      "steps": 100,
+      "hvp_calls": 10,
+      "max_state_error": 0.0,
+      "initial_loss": 2.1651251316070557,
+      "final_loss": 0.17153015732765198,
+      "mean_clipped_fraction": 0.9391294642857143,
+      "last_clipped_fraction": 0.9017857142857143,
+      "seconds": 0.3845176696777344,
+      "sha256": "a31a66266ef74aabc1ec5f6750fc787085da173ec1f3388e1b5c830530f4cf27"
+    },
+    {
+      "checkpoint": "GraphMAE",
+      "mode": "sign",
+      "rho": 1.0,
+      "steps": 100,
+      "hvp_calls": 0,
+      "max_state_error": 0.0,
+      "initial_loss": 2.1651251316070557,
+      "final_loss": 0.1712910681962967,
+      "mean_clipped_fraction": 1.0,
+      "last_clipped_fraction": 1.0,
+      "seconds": 0.3649885654449463,
+      "sha256": "68e8e52ec14a47a4990bf409c47cb0f64ea5c3cd14ffc8695dfdc122df1d2482"
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "mode": "rho001",
+      "rho": 0.01,
+      "steps": 100,
+      "hvp_calls": 10,
+      "max_state_error": 0.0,
+      "initial_loss": 2.8350095748901367,
+      "final_loss": 0.1366935670375824,
+      "mean_clipped_fraction": 0.9992410714285714,
+      "last_clipped_fraction": 0.9988839285714286,
+      "seconds": 0.38695597648620605,
+      "sha256": "ca5d4c524422f7f65a13dd252ab0e0d561f802c85164c076e4a63823c66e6dc7"
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "mode": "rho1",
+      "rho": 1.0,
+      "steps": 100,
+      "hvp_calls": 10,
+      "max_state_error": 0.0,
+      "initial_loss": 2.8350095748901367,
+      "final_loss": 0.13692398369312286,
+      "mean_clipped_fraction": 0.9380803571428571,
+      "last_clipped_fraction": 0.8549107142857143,
+      "seconds": 0.38107752799987793,
+      "sha256": "0147e837e64b52ed1ce3690d790a7136e1971459ca1484a4c8cff930810a7aae"
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "mode": "sign",
+      "rho": 1.0,
+      "steps": 100,
+      "hvp_calls": 0,
+      "max_state_error": 0.0,
+      "initial_loss": 2.8350095748901367,
+      "final_loss": 0.13675735890865326,
+      "mean_clipped_fraction": 1.0,
+      "last_clipped_fraction": 1.0,
+      "seconds": 0.35900211334228516,
+      "sha256": "4b94d341ac9df451a2a27db24102d165474036f8b1df1c6268309203f6c1f981"
+    }
+  ],
+  "sources": {
+    "probe140_trajectory.py": "3273454011e1baa15413915bdaf3d5c2f5a23303e07499dbd386a7ae0daf8739",
+    "sophia140_draft.py": "2be0bae769be70ff9da3a00d6fef8b418bad00bc9ec32f9c48abf57902b94994"
+  }
+}

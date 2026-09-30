@@ -1,0 +1,41 @@
+{
+  "out": "confirm32_Actor_center",
+  "datasets": [
+    "Actor"
+  ],
+  "checkpoints": [
+    "GraphCL",
+    "GraphMAE"
+  ],
+  "methods": [
+    "geom_center_base"
+  ],
+  "seeds": [
+    50100,
+    50101,
+    50102,
+    50103,
+    50104,
+    50105,
+    50106,
+    50107,
+    50108,
+    50109,
+    50110,
+    50111,
+    50112,
+    50113,
+    50114,
+    50115,
+    50116,
+    50117,
+    50118,
+    50119
+  ],
+  "fold": 0,
+  "steps": 100,
+  "phase": "confirm",
+  "source_sha256": "a9f659d9815d2d84af99127400c85ded0794305247f1fe301e31276af6a3f7cc",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+}

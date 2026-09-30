@@ -1,0 +1,38 @@
+{
+  "source": "round27_sinkhorn",
+  "candidate": "rect_teacher_ref50_sinkuniform",
+  "dataset": "CiteSeer",
+  "checkpoint": "GraphMAE",
+  "methods": [
+    "rect_teacher_ref50",
+    "rect_teacher_ref50_sinkuniform",
+    "rect_teacher_ref50_sinkmixed",
+    "rect_teacher_ref50_sinkuniform_shuffle",
+    "ridge_teacher_plain"
+  ],
+  "seeds": [
+    40100,
+    40101,
+    40102,
+    40103,
+    40104,
+    40105,
+    40106,
+    40107,
+    40108,
+    40109,
+    40110,
+    40111,
+    40112,
+    40113,
+    40114,
+    40115,
+    40116,
+    40117,
+    40118,
+    40119
+  ],
+  "phase": "confirm",
+  "expected_rows": 100,
+  "scope": "NONPROMPT direct teacher; same graph reused query/new support"
+}

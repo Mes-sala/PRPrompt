@@ -1,0 +1,515 @@
+[
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "frozen",
+    "n": 5,
+    "accuracy": 41.69491529464722,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 5,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 4.745762944221497,
+      "ci95_seed_bootstrap": [
+        2.0338988304138184,
+        7.796609997749329
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_center_base",
+    "n": 5,
+    "accuracy": 48.81355881690979,
+    "frozen": {
+      "delta_pp": 7.118643522262573,
+      "ci95_seed_bootstrap": [
+        0.33898234367370605,
+        13.89830470085144
+      ],
+      "wins": 3,
+      "ties": 1,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 11.86440646648407,
+      "ci95_seed_bootstrap": [
+        6.440677046775818,
+        17.288135886192322
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_center_ce",
+    "n": 5,
+    "accuracy": 63.05084705352784,
+    "frozen": {
+      "delta_pp": 21.355931758880615,
+      "ci95_seed_bootstrap": [
+        16.949152946472168,
+        25.084744691848755
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 26.101694703102112,
+      "ci95_seed_bootstrap": [
+        21.694915890693665,
+        31.864407062530518
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_center_gp",
+    "n": 5,
+    "accuracy": 43.050846457481384,
+    "frozen": {
+      "delta_pp": 1.3559311628341675,
+      "ci95_seed_bootstrap": [
+        -5.084746479988098,
+        7.796608805656433
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 6.101694107055664,
+      "ci95_seed_bootstrap": [
+        0.3389817476272583,
+        11.525422930717468
+      ],
+      "wins": 3,
+      "ties": 1,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_diag10_base",
+    "n": 5,
+    "accuracy": 48.13559293746948,
+    "frozen": {
+      "delta_pp": 6.440677642822266,
+      "ci95_seed_bootstrap": [
+        -0.33898353576660156,
+        13.220338821411133
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 11.186440587043762,
+      "ci95_seed_bootstrap": [
+        5.084745287895203,
+        16.610170006752014
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_diag10_ce",
+    "n": 5,
+    "accuracy": 64.06779646873474,
+    "frozen": {
+      "delta_pp": 22.372881174087524,
+      "ci95_seed_bootstrap": [
+        17.288135886192322,
+        27.11864411830902
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 27.11864411830902,
+      "ci95_seed_bootstrap": [
+        22.03389883041382,
+        34.23728704452515
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_diag10_gp",
+    "n": 5,
+    "accuracy": 41.69491529464722,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        -7.118644118309021,
+        7.118644118309021
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 3
+    },
+    "graphprompt": {
+      "delta_pp": 4.745762944221497,
+      "ci95_seed_bootstrap": [
+        -2.372881770133972,
+        10.508475303649902
+      ],
+      "wins": 3,
+      "ties": 1,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_full10_base",
+    "n": 5,
+    "accuracy": 31.525424122810364,
+    "frozen": {
+      "delta_pp": -10.169491171836853,
+      "ci95_seed_bootstrap": [
+        -13.898305296897888,
+        -4.745762348175049
+      ],
+      "wins": 0,
+      "ties": 1,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": -5.4237282276153564,
+      "ci95_seed_bootstrap": [
+        -9.152542352676392,
+        -1.0169482231140137
+      ],
+      "wins": 1,
+      "ties": 0,
+      "losses": 4
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_full10_ce",
+    "n": 5,
+    "accuracy": 67.11864352226257,
+    "frozen": {
+      "delta_pp": 25.423728227615356,
+      "ci95_seed_bootstrap": [
+        22.372880578041077,
+        28.47457528114319
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 30.169491171836853,
+      "ci95_seed_bootstrap": [
+        27.118642926216125,
+        35.59321939945221
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_full10_gp",
+    "n": 5,
+    "accuracy": 29.15254235267639,
+    "frozen": {
+      "delta_pp": -12.542372941970825,
+      "ci95_seed_bootstrap": [
+        -19.661016762256622,
+        -4.067797362804413
+      ],
+      "wins": 1,
+      "ties": 0,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": -7.796609997749329,
+      "ci95_seed_bootstrap": [
+        -13.89830619096756,
+        -0.6779652833938599
+      ],
+      "wins": 1,
+      "ties": 0,
+      "losses": 4
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_full50_base",
+    "n": 5,
+    "accuracy": 38.30508470535278,
+    "frozen": {
+      "delta_pp": -3.3898305892944336,
+      "ci95_seed_bootstrap": [
+        -9.8305082321167,
+        7.1186429262161255
+      ],
+      "wins": 1,
+      "ties": 0,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": 1.355932354927063,
+      "ci95_seed_bootstrap": [
+        -5.084746479988098,
+        10.847457647323608
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 3
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_full50_ce",
+    "n": 5,
+    "accuracy": 64.40678000450134,
+    "frozen": {
+      "delta_pp": 22.711864709854126,
+      "ci95_seed_bootstrap": [
+        17.966102957725525,
+        26.440677642822266
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 27.457627654075623,
+      "ci95_seed_bootstrap": [
+        22.71186649799347,
+        32.88135647773743
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_full50_gp",
+    "n": 5,
+    "accuracy": 31.86440706253052,
+    "frozen": {
+      "delta_pp": -9.8305082321167,
+      "ci95_seed_bootstrap": [
+        -16.610169410705566,
+        -3.050847053527832
+      ],
+      "wins": 1,
+      "ties": 0,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": -5.084745287895203,
+      "ci95_seed_bootstrap": [
+        -11.525424122810364,
+        0.3389841318130493
+      ],
+      "wins": 1,
+      "ties": 0,
+      "losses": 4
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_original_base",
+    "n": 5,
+    "accuracy": 42.37288057804108,
+    "frozen": {
+      "delta_pp": 0.6779652833938599,
+      "ci95_seed_bootstrap": [
+        -6.440678238868713,
+        10.847455263137817
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 3
+    },
+    "graphprompt": {
+      "delta_pp": 5.4237282276153564,
+      "ci95_seed_bootstrap": [
+        -1.6949158906936646,
+        14.237287044525146
+      ],
+      "wins": 4,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_original_ce",
+    "n": 5,
+    "accuracy": 67.79660940170288,
+    "frozen": {
+      "delta_pp": 26.101694107055664,
+      "ci95_seed_bootstrap": [
+        19.661014676094055,
+        32.88135290145874
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 30.84745705127716,
+      "ci95_seed_bootstrap": [
+        24.406779408454895,
+        37.288134694099426
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "geom_original_gp",
+    "n": 5,
+    "accuracy": 42.03389823436737,
+    "frozen": {
+      "delta_pp": 0.3389829397201538,
+      "ci95_seed_bootstrap": [
+        -6.440677642822266,
+        7.118643522262573
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 3
+    },
+    "graphprompt": {
+      "delta_pp": 5.08474588394165,
+      "ci95_seed_bootstrap": [
+        -5.960464477539062e-07,
+        10.169492363929749
+      ],
+      "wins": 4,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "graphprompt",
+    "n": 5,
+    "accuracy": 36.94915235042572,
+    "frozen": {
+      "delta_pp": -4.745762944221497,
+      "ci95_seed_bootstrap": [
+        -7.796609997749329,
+        -2.0338988304138184
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 5
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 5,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "raw",
+    "n": 5,
+    "accuracy": 68.81356000900269,
+    "frozen": {
+      "delta_pp": 27.11864471435547,
+      "ci95_seed_bootstrap": [
+        20.000000596046448,
+        34.23728942871094
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 31.864407658576965,
+      "ci95_seed_bootstrap": [
+        24.067797660827637,
+        39.661017656326294
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cornell",
+    "checkpoint": "GraphCL",
+    "method": "rawridge",
+    "n": 5,
+    "accuracy": 71.52542352676392,
+    "frozen": {
+      "delta_pp": 29.8305082321167,
+      "ci95_seed_bootstrap": [
+        24.40678119659424,
+        34.23728704452515
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 34.576271176338196,
+      "ci95_seed_bootstrap": [
+        29.15254294872284,
+        40.3389835357666
+      ],
+      "wins": 5,
+      "ties": 0,
+      "losses": 0
+    }
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "dataset": "Physics",
+  "hops": 1,
+  "nodes": 34493,
+  "features": 8415,
+  "classes": 5,
+  "input_hashes": {
+    "raw_input": "9df20be681bfe193a8565f272f2031f31d73871f09d1f56f24bd11d4d683e945",
+    "input": "bf409b1921232384f0a3c1d733d1c55a00ab0fe6f42030dd72862893bb0fcc32",
+    "graph": "4d60a81d0b097e915c45442b4f6f119b49673fe5ab8d858ce86075ca8e59bda2",
+    "adjacency_indices": "1b57360470b64c50a463ef8335f03cf4377b4d31a3c7af5a9494d103a47a8801",
+    "adjacency_values": "b5c14985069d341974b7e591b38d2d749bf9b2ead779c05c9752c3a06b170baa",
+    "query": "5a54f461c9d859349ca4720cdb16647c0e1a4b62005de5c4e6bd495b08ff3e56",
+    "pool": "923abc7150aa9dbf031c87dd749c21f932f841b5864a825c3205939f8e5b34c2",
+    "pool_labels": "1ee3f235dd345dfda333a9d9df44102a57d62fa39a1773559796fc68e7383604",
+    "representation": "b2fe6c2508131879bf995723e5cda4bfadb50bf43e73d7f43d829a75ee245ecb"
+  },
+  "protocol": "fixed20_perclass_pool_all_remaining_query",
+  "contract_sha256": "261d2081eedc228fb6a904ae4b85b216ad233c73f61b6d9e65b4c0b3dc7668e0",
+  "load_seconds": 3.9198779202997684,
+  "incremental_propagation_seconds": 0.0872538574039936,
+  "covariance_precompute_seconds": 6.422670815140009,
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "library_sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  }
+}

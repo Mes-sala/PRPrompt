@@ -1,0 +1,138 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "shape": [
+        11,
+        7
+      ],
+      "rank": 1,
+      "kind": "principal",
+      "gradient_error": 0.0,
+      "observed_update_rank": 2,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        11,
+        7
+      ],
+      "rank": 1,
+      "kind": "random",
+      "gradient_error": 0.0,
+      "observed_update_rank": 2,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        11,
+        7
+      ],
+      "rank": 1,
+      "kind": "zero",
+      "gradient_error": 0.0,
+      "observed_update_rank": 1,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        11,
+        7
+      ],
+      "rank": 2,
+      "kind": "principal",
+      "gradient_error": 4.440892098500626e-16,
+      "observed_update_rank": 4,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        11,
+        7
+      ],
+      "rank": 2,
+      "kind": "random",
+      "gradient_error": 5.828670879282072e-16,
+      "observed_update_rank": 4,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        11,
+        7
+      ],
+      "rank": 2,
+      "kind": "zero",
+      "gradient_error": 0.0,
+      "observed_update_rank": 2,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        128,
+        128
+      ],
+      "rank": 1,
+      "kind": "principal",
+      "gradient_error": 0.0,
+      "observed_update_rank": 2,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        128,
+        128
+      ],
+      "rank": 1,
+      "kind": "random",
+      "gradient_error": 0.0,
+      "observed_update_rank": 2,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        128,
+        128
+      ],
+      "rank": 1,
+      "kind": "zero",
+      "gradient_error": 0.0,
+      "observed_update_rank": 1,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        128,
+        128
+      ],
+      "rank": 2,
+      "kind": "principal",
+      "gradient_error": 7.993605777301127e-15,
+      "observed_update_rank": 4,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        128,
+        128
+      ],
+      "rank": 2,
+      "kind": "random",
+      "gradient_error": 1.0658141036401503e-14,
+      "observed_update_rank": 4,
+      "no_op_exact": true
+    },
+    {
+      "shape": [
+        128,
+        128
+      ],
+      "rank": 2,
+      "kind": "zero",
+      "gradient_error": 0.0,
+      "observed_update_rank": 2,
+      "no_op_exact": true
+    }
+  ],
+  "scope": "matrix primitive; no query/graph evaluation"
+}

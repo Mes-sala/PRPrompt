@@ -1,0 +1,50 @@
+{
+  "checkpoints": [
+    "GraphMAE",
+    "GraphMAE2"
+  ],
+  "seeds": [
+    203100,
+    203101,
+    203102,
+    203103,
+    203104,
+    203105,
+    203106,
+    203107,
+    203108,
+    203109,
+    203110,
+    203111,
+    203112,
+    203113,
+    203114,
+    203115,
+    203116,
+    203117,
+    203118,
+    203119
+  ],
+  "methods": [
+    "ridge_teacherplain",
+    "frozen",
+    "graphprompt",
+    "head_base_qeps-50",
+    "head_gp_qeps-50",
+    "head_token_mean",
+    "head_token_qeps-50",
+    "head_scale2_mean",
+    "head_scale2_qeps-50",
+    "head_gsh_mean",
+    "head_gsh_qeps-50",
+    "head_nmm_mean",
+    "head_nmm_qeps-50",
+    "head_nmg_mean",
+    "head_nmg_qeps-50",
+    "head_nmc_mean",
+    "head_nmc_qeps-50"
+  ],
+  "expected": 660,
+  "phase": "confirm",
+  "selected": "GraphMAE/head_nmm_qeps-50"
+}

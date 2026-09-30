@@ -1,0 +1,35 @@
+{
+  "out": "round10_depth",
+  "datasets": [
+    "Cora",
+    "CiteSeer",
+    "PubMed"
+  ],
+  "checkpoints": [
+    "GraphMAE",
+    "GraphMAE2",
+    "Random_s20260923"
+  ],
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "ridge_teacher",
+    "token_kd3",
+    "token_ridge_kd10",
+    "token_ridge_kd10late",
+    "token_ridge_kd10deep",
+    "token_ridge_kd10output"
+  ],
+  "seeds": [
+    14100,
+    14101,
+    14102,
+    14103,
+    14104
+  ],
+  "steps": 100,
+  "phase": "dev",
+  "source_sha256": "ba8413afecc8a8bf08c648414a9b9336459ac72822683c948653e6d976fbfa5e",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+}

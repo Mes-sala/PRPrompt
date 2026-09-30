@@ -1,0 +1,58 @@
+{
+  "frozen_at": "2026-09-27T00:19:52.781296",
+  "runner_sha256": "fdbacf1b29bfc9deac990324475f0c2f04a118f03854a5635cc67a3a1ec6749e",
+  "core_runner_sha256": "78a37d5e324661a006610be32742f7579eeeedb62c1b597eaf522a24f70d8395",
+  "jobs": 21,
+  "seeds": [
+    26092740,
+    26092741,
+    26092742,
+    26092743,
+    26092744,
+    26092745,
+    26092746,
+    26092747,
+    26092748,
+    26092749,
+    26092750,
+    26092751,
+    26092752,
+    26092753,
+    26092754,
+    26092755,
+    26092756,
+    26092757,
+    26092758,
+    26092759
+  ],
+  "final_result_packages": 420,
+  "prediction_views": 5880,
+  "k": [
+    10,
+    25,
+    50,
+    100
+  ],
+  "alpha": [
+    0.5,
+    0.9,
+    0.95
+  ],
+  "include_no_propagation": true,
+  "candidates_per_source": 13,
+  "sources": [
+    "Prompt",
+    "Teacher_uncentered",
+    "Teacher_centered",
+    "AttributeProto",
+    "Frozen"
+  ],
+  "selection": "per-class4train1valid; refit all5; minimum validation CE, ties alpha then k; no query labels",
+  "prompt_recipe": {
+    "steps": 100,
+    "lr": 0.01,
+    "optimizer": "gshampoo",
+    "gate_temperature": 0.1
+  },
+  "authorization": "2026-09-27 user requested teacher attribute propagation graph as new M3 candidate and further optimization"
+}

@@ -1,0 +1,241 @@
+{
+  "dataset": "Photo",
+  "hops": 3,
+  "seed": 271900,
+  "classes": 8,
+  "n_unlabeled": 7610,
+  "protocol": "fixed20_perclass_pool_all_remaining_query",
+  "invalid": {},
+  "mass2_valid": true,
+  "node_eta_upper": 0.9469987089138234,
+  "predeclared_local_domain": false,
+  "node_radius": 1.231038446074454,
+  "covariance_trace": 0.1563713179602992,
+  "covariance_sha256": "c969e4ca5cca6e14f2b41027a9035e2dc5898da3a31da489da62d2f1a1c67980",
+  "support_sha256": "318a2c16ebb0f1ed4d31145ecebd3a64741feb43fc1b6b92f3db74dd80a67819",
+  "input_hashes": {
+    "raw_input": "81b341d81e4e9f863fbcf151f132382287048c68e40896d5e1c4ba489033b9c5",
+    "input": "b5fc3930333d75d0d7ee01a8f99c5d9ebd004373608a012e990f59c544244bdf",
+    "graph": "e8c8d72c84c653e2b5937696273e6dc3b3df88038383407973d8a951f3fa9c07",
+    "adjacency_indices": "cc03e77e889aed7ca1d65cbd8a7bb7dcb498b23497c8d74760e911dafcd04dcf",
+    "adjacency_values": "2205777877a4affdaed8b1852d3c4159dedd56688197f8b03d8f4bd45d13b8a7",
+    "query": "49902400cb5477b7f92e8a418f1006c430801ffa712577cb4241f0e31b4dd18b",
+    "pool": "027549acf764355304850117bfbb92116a5dd141abff631894e32a2bebc0b992",
+    "pool_labels": "30be695682ac7dc1d20241582b333456f1c26af774d107e41c3476755f58166a",
+    "representation": "9e8475e2f4ba368174b12ad7b0afa9b5607b6e4cb8e0d83de247f1e83a3cae96"
+  },
+  "geometry_sha256": "e9172e83040a2bec77d0884aa5366bd463ed6aa64274977eaf14290624f2fd5a",
+  "contract_sha256": "261d2081eedc228fb6a904ae4b85b216ad233c73f61b6d9e65b4c0b3dc7668e0",
+  "runner_sha256": "57e4834652df6739bc854a8d46df6ed986cb9da0ab950e974847d27a1239e6c4",
+  "design_sha256": "3457430f2f0c5637ec034dd3d7653d315a9ee151143a143e5b0073e617c6c240",
+  "dependencies": {
+    "code/run_mass_anchor_r22.py": "0658ae7d0599b75ef6dead26a4963b80196a4072a449e265c52fa44d98995c67",
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e"
+  },
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "library_sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  },
+  "support_geometry_seconds": 0.0019228495657444,
+  "moment_terms_seconds": 0.0003753937780857086,
+  "pre_query_dot_seconds": 0.0021896101534366608,
+  "pre_branch_seconds": {
+    "common_mass0__r1": 8.47354531288147e-05,
+    "common_mass0__r8": 6.547197699546814e-05,
+    "moment_mass0__r1": 6.247684359550476e-05,
+    "moment_mass0__r8": 7.247552275657654e-05,
+    "moment_mass2__r1": 6.150081753730774e-05,
+    "moment_mass2__r8": 5.9489160776138306e-05,
+    "common_equalmass__r1": 6.107613444328308e-05,
+    "common_equalmass__r8": 6.186962127685547e-05
+  },
+  "pre_score_seconds": {
+    "common_mass0__r1": 0.0009894073009490967,
+    "common_mass0__r8": 0.0010263659060001373,
+    "moment_mass0__r1": 0.0010238811373710632,
+    "moment_mass0__r8": 0.0010231956839561462,
+    "moment_mass2__r1": 0.0010228753089904785,
+    "moment_mass2__r8": 0.0010227449238300323,
+    "common_equalmass__r1": 0.0010258927941322327,
+    "common_equalmass__r8": 0.001026831567287445
+  },
+  "load_seconds": 0.04842744395136833,
+  "incremental_propagation_seconds": 0.0018156208097934723,
+  "covariance_precompute_seconds": 0.013103503733873367,
+  "endpoint": {
+    "common_mass0__r1": {
+      "disagreement_pct": 23.2977303070761,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 23.2977303070761,
+      "prototype_max_error": 0.016394238284188026
+    },
+    "common_mass0__r8": {
+      "disagreement_pct": 27.2630173564753,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 27.2630173564753,
+      "prototype_max_error": 0.01648096567461077
+    },
+    "moment_mass0__r1": {
+      "disagreement_pct": 0.7076101468624832,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.7076101468624832,
+      "prototype_max_error": 0.0010662616308025335
+    },
+    "moment_mass0__r8": {
+      "disagreement_pct": 0.6942590120160214,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.6942590120160214,
+      "prototype_max_error": 0.0010776181878074849
+    },
+    "moment_mass2__r1": {
+      "disagreement_pct": 0.6942590120160214,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.6942590120160214,
+      "prototype_max_error": 0.001072999196784488
+    },
+    "moment_mass2__r8": {
+      "disagreement_pct": 0.6942590120160214,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.6942590120160214,
+      "prototype_max_error": 0.0010784690247019517
+    },
+    "common_equalmass__r1": {
+      "disagreement_pct": 24.285714285714285,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 24.285714285714285,
+      "prototype_max_error": 0.01652731209538126
+    },
+    "common_equalmass__r8": {
+      "disagreement_pct": 28.317757009345794,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 28.317757009345794,
+      "prototype_max_error": 0.016497749248023236
+    },
+    "full_ren__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0,
+      "prototype_max_error": 0.0
+    },
+    "full_ren__r8": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0,
+      "prototype_max_error": 0.0
+    },
+    "common_true_mass__r1": {
+      "disagreement_pct": 23.35113484646195,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 23.35113484646195,
+      "prototype_max_error": 0.01640133038912123
+    },
+    "common_true_mass__r8": {
+      "disagreement_pct": 27.32977303070761,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 27.32977303070761,
+      "prototype_max_error": 0.016481860960794428
+    }
+  },
+  "replication_intervention": {
+    "common_mass0__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_mass0__r8": {
+      "disagreement_pct": 0.26702269692923897,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.26702269692923897
+    },
+    "moment_mass0__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "moment_mass0__r8": {
+      "disagreement_pct": 4.806408544726302,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 4.806408544726302
+    },
+    "moment_mass2__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "moment_mass2__r8": {
+      "disagreement_pct": 4.819759679572764,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 4.819759679572764
+    },
+    "common_equalmass__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_equalmass__r8": {
+      "disagreement_pct": 0.20026702269692925,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.20026702269692925
+    },
+    "full_ren__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "full_ren__r8": {
+      "disagreement_pct": 4.686248331108144,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 4.686248331108144
+    },
+    "common_true_mass__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_true_mass__r8": {
+      "disagreement_pct": 0.2803738317757009,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.2803738317757009
+    }
+  },
+  "diagnostics": {
+    "mass0_probability_l1_error": 0.001200859630931418,
+    "mass2_probability_l1_error": 4.673285232701096e-05,
+    "common_location_error": 0.026084801380314927,
+    "moment_location_error": 0.0015334691057729399,
+    "support_weight_r1_mean": 0.0052401655811459445,
+    "support_weight_r8_mean": 0.0006580446474121603,
+    "zero_assignments": 0
+  },
+  "full_assignment_seconds": 0.0018894076347351074,
+  "post_query_dot_seconds": 0.0009376220405101776,
+  "post_branch_seconds": {
+    "full_ren__r1": 8.386000990867615e-05,
+    "full_ren__r8": 6.862357258796692e-05,
+    "common_true_mass__r1": 6.946548819541931e-05,
+    "common_true_mass__r8": 6.21303915977478e-05
+  },
+  "post_score_seconds": {
+    "full_ren__r1": 0.0009706728160381317,
+    "full_ren__r8": 0.001025177538394928,
+    "common_true_mass__r1": 0.0010258927941322327,
+    "common_true_mass__r8": 0.0010279975831508636
+  },
+  "diagnostic_seconds": 0.0015753842890262604,
+  "pre_serialization_seconds": 0.12420760095119476,
+  "post_serialization_seconds": 0.059622086584568024,
+  "draw_total_seconds": 0.21482334285974503,
+  "pre_artifact_sha256": "a17f0fc32531d8caf3bb19796756ef8d86feead375ac6570ceb1ff206fce3705",
+  "pre_record_sha256": "9001f8e888b4a0bbbc7c14a0f63a5ba938f98782c47c71f161a5bfcb4b465d5b",
+  "post_artifact_sha256": "0aa9d8f61837d6a0ea2b3850bf6f172d933968f311cd36f9d360bfe4b6e90136",
+  "scope": "New support draws and h1/h2/h3 conditions on the same 14 graphs; no query labels or accuracy; disjoint pre/post archives.",
+  "finished": 1790521099.2623906
+}

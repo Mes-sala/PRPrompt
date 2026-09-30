@@ -1,0 +1,187 @@
+import argparse
+
+from prompt_graph.data import load4graph
+from prompt_graph.defines import GRAPH_TASKS, NODE_TASKS
+from prompt_graph.pretrain import (
+    DGI,
+    S2GAE,
+    Bandana,
+    Edgepred_GPPT,
+    Edgepred_Gprompt,
+    GraphCL,
+    GraphMAE,
+    GraphMAE2,
+    NodePrePrompt,
+    SimGRACE,
+)
+from prompt_graph.pretrain.MultiGPrompt import GraphPrePrompt
+from prompt_graph.utils import get_args, resolve_device, seed_everything
+
+
+def get_pretrain_task_by_dataset_name(dataset_name: str) -> str:
+    if dataset_name in GRAPH_TASKS:
+        return "GraphTask"
+    elif dataset_name in NODE_TASKS:
+        return "NodeTask"
+    else:
+        raise ValueError(f"Does not support this kind of dataset {dataset_name}.")
+
+
+def get_pretrain_task_delegate(args: argparse.Namespace):
+    seed_everything(args.seed)
+    args.device = resolve_device(args.device)
+    if args.pretrain_task == "SimGRACE":
+        pt = SimGRACE(
+            dataset_name=args.dataset_name,
+            gnn_type=args.gnn_type,
+            hid_dim=args.hid_dim,
+            gln=args.num_layer,
+            num_epoch=args.epochs,
+            device=args.device,
+            num_workers=args.num_workers,
+        )
+    elif args.pretrain_task == "GraphCL":
+        pt = GraphCL(
+            dataset_name=args.dataset_name,
+            gnn_type=args.gnn_type,
+            hid_dim=args.hid_dim,
+            gln=args.num_layer,
+            num_epoch=args.epochs,
+            device=args.device,
+            num_workers=args.num_workers,
+        )
+    elif args.pretrain_task == "Edgepred_GPPT":
+        pt = Edgepred_GPPT(
+            dataset_name=args.dataset_name,
+            gnn_type=args.gnn_type,
+            hid_dim=args.hid_dim,
+            gln=args.num_layer,
+            num_epoch=args.epochs,
+            device=args.device,
+            num_workers=args.num_workers,
+        )
+    elif args.pretrain_task == "Edgepred_Gprompt":
+        pt = Edgepred_Gprompt(
+            dataset_name=args.dataset_name,
+            gnn_type=args.gnn_type,
+            hid_dim=args.hid_dim,
+            gln=args.num_layer,
+            num_epoch=args.epochs,
+            device=args.device,
+            num_workers=args.num_workers,
+        )
+    elif args.pretrain_task == "DGI":
+        pt = DGI(
+            dataset_name=args.dataset_name,
+            gnn_type=args.gnn_type,
+            hid_dim=args.hid_dim,
+            gln=args.num_layer,
+            num_epoch=args.epochs,
+            device=args.device,
+            num_workers=args.num_workers,
+        )
+    elif args.pretrain_task in ("NodeMultiGprompt", "MultiGprompt", "GraphMultiGprompt"):
+        if args.pretrain_task == "NodeMultiGprompt" or args.dataset_name in NODE_TASKS:
+            nonlinearity = "prelu"
+            pt = NodePrePrompt(
+                args.dataset_name,
+                args.hid_dim,
+                nonlinearity,
+                0.9,
+                0.9,
+                0.1,
+                0.001,
+                1,
+                0.3,
+                device=args.device,
+            )
+        elif args.pretrain_task == "GraphMultiGprompt" or args.dataset_name in GRAPH_TASKS:
+            nonlinearity = "prelu"
+            input_dim, out_dim, graph_list = load4graph(args.dataset_name, pretrained=True)
+            pt = GraphPrePrompt(
+                graph_list,
+                input_dim,
+                out_dim,
+                args.dataset_name,
+                args.hid_dim,
+                nonlinearity,
+                0.9,
+                0.9,
+                0.1,
+                args.num_layer,
+                0.3,
+                args.device,
+            )
+        else:
+            raise ValueError(
+                f"Unsupported args.pretrain_task type for MultiGprompt {args.pretrain_task}"
+            )
+    elif args.pretrain_task == "GraphMAE":
+        pt = GraphMAE(
+            dataset_name=args.dataset_name,
+            gnn_type=args.gnn_type,
+            hid_dim=args.hid_dim,
+            gln=args.num_layer,
+            num_epoch=args.epochs,
+            device=args.device,
+            mask_rate=0.75,
+            drop_edge_rate=0.0,
+            replace_rate=0.1,
+            loss_fn="sce",
+            alpha_l=2,
+            num_workers=args.num_workers,
+        )
+    elif args.pretrain_task == "GraphMAE2":
+        pt = GraphMAE2(
+            dataset_name=args.dataset_name,
+            gnn_type=args.gnn_type,
+            hid_dim=args.hid_dim,
+            gln=args.num_layer,
+            num_epoch=args.epochs,
+            device=args.device,
+            mask_rate=getattr(args, "graphmae2_mask_rate", 0.5),
+            remask_rate=getattr(args, "graphmae2_remask_rate", 0.5),
+            num_remasking=getattr(args, "graphmae2_num_remasking", 3),
+            lam=getattr(args, "graphmae2_lam", 1.0),
+            momentum=getattr(args, "graphmae2_momentum", 0.996),
+            replace_rate=getattr(args, "graphmae2_replace_rate", 0.0),
+            num_workers=args.num_workers,
+        )
+    elif args.pretrain_task == "S2GAE":
+        pt = S2GAE(
+            dataset_name=args.dataset_name,
+            gnn_type=args.gnn_type,
+            hid_dim=args.hid_dim,
+            gln=args.num_layer,
+            num_epoch=args.epochs,
+            device=args.device,
+            mask_ratio=getattr(args, "s2gae_mask_ratio", 0.8),
+            mask_type=getattr(args, "s2gae_mask_type", "dm"),
+            neg_ratio=getattr(args, "s2gae_neg_ratio", 1.0),
+            num_workers=args.num_workers,
+        )
+    elif args.pretrain_task == "Bandana":
+        if args.gnn_type != "GCN":
+            raise ValueError("Bandana requires --gnn_type GCN in the current ProG port")
+        pt = Bandana(
+            dataset_name=args.dataset_name,
+            gnn_type=args.gnn_type,
+            hid_dim=args.hid_dim,
+            gln=args.num_layer,
+            num_epoch=args.epochs,
+            device=args.device,
+            temp=getattr(args, "bandana_temp", (1.0,)),
+            neg_ratio=getattr(args, "bandana_neg_ratio", 0.5),
+            decoder_hidden_dim=getattr(args, "bandana_decoder_hidden_dim", None),
+            num_workers=args.num_workers,
+        )
+    else:
+        raise ValueError(f"Unexpected args.pretrain_task type: {args.pretrain_task}.")
+    return pt
+
+
+if __name__ == "__main__":
+    args = get_args()
+
+    pt = get_pretrain_task_delegate(args=args)
+    pt.pretrain()

@@ -1,0 +1,45 @@
+{
+  "checkpoints": [
+    "GraphMAE2"
+  ],
+  "seeds": [
+    155100,
+    155101,
+    155102,
+    155103,
+    155104,
+    155105,
+    155106,
+    155107,
+    155108,
+    155109,
+    155110,
+    155111,
+    155112,
+    155113,
+    155114,
+    155115,
+    155116,
+    155117,
+    155118,
+    155119
+  ],
+  "methods": [
+    "directcenter_mean",
+    "frozen",
+    "graphprompt",
+    "head_tr1_mean",
+    "head_tr1_qeps-50",
+    "head_gsh_mean",
+    "head_gsh_qeps-50",
+    "head_dcl_mean",
+    "head_dcl_qeps-50",
+    "head_dcs_mean",
+    "head_dcs_qeps-50",
+    "head_dcp_mean",
+    "head_dcp_qeps-50"
+  ],
+  "expected": 260,
+  "phase": "confirm",
+  "candidate": "head_dcl_qeps-50"
+}

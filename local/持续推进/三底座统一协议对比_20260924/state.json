@@ -1,0 +1,60 @@
+{
+  "status": "complete_audited_synced",
+  "remote": "/root/autodl-tmp/unified_three_backbone_20260924",
+  "pipeline_pid": null,
+  "new_methods": [
+    "EdgePrompt",
+    "GraphTOP",
+    "UniPrompt",
+    "MTG",
+    "DAPrompt-fixed"
+  ],
+  "datasets": [
+    "Cora",
+    "CiteSeer"
+  ],
+  "checkpoints": 6,
+  "expected_results": 1680,
+  "fits": 1560,
+  "seeds": [
+    24092800,
+    24092801,
+    24092802,
+    24092803,
+    24092804,
+    24092805,
+    24092806,
+    24092807,
+    24092808,
+    24092809,
+    24092810,
+    24092811,
+    24092812,
+    24092813,
+    24092814,
+    24092815,
+    24092816,
+    24092817,
+    24092818,
+    24092819
+  ],
+  "no_query_tuning": true,
+  "completed_results": 1680,
+  "metrics": [
+    "accuracy",
+    "macro_f1",
+    "micro_f1",
+    "roc_auc_macro_ovr",
+    "auprc_macro"
+  ],
+  "server_audits_passed": true,
+  "local_prediction_audits_passed": true,
+  "local_metrics_recomputed": true,
+  "canonical_metrics_unchanged": true,
+  "extension_results": 240,
+  "formal_failures": 0,
+  "report": "结论与完成状态.md",
+  "full_table": "统一协议多指标对比.md",
+  "archive_receipt": "archive_transport_verified.json",
+  "completed_at": "20260924_162420"
+}

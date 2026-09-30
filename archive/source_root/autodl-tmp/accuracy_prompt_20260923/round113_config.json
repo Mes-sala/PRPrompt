@@ -1,0 +1,48 @@
+{
+  "checkpoints": [
+    "GraphMAE2"
+  ],
+  "seeds": [
+    179100,
+    179101,
+    179102,
+    179103,
+    179104,
+    179105,
+    179106,
+    179107,
+    179108,
+    179109,
+    179110,
+    179111,
+    179112,
+    179113,
+    179114,
+    179115,
+    179116,
+    179117,
+    179118,
+    179119
+  ],
+  "methods": [
+    "directcenter_mean",
+    "frozen",
+    "graphprompt",
+    "head_tr1_mean",
+    "head_tr1_qeps-50",
+    "head_gsh_mean",
+    "head_gsh_qeps-50",
+    "head_jsr_mean",
+    "head_jsr_qeps-50",
+    "head_jsc_mean",
+    "head_jsc_qeps-50",
+    "head_jsp_mean",
+    "head_jsp_qeps-50"
+  ],
+  "expected": 300,
+  "primary": "head_jsp_qeps-50",
+  "long_methods": [
+    "head_gsh_mean",
+    "head_gsh_qeps-50"
+  ]
+}

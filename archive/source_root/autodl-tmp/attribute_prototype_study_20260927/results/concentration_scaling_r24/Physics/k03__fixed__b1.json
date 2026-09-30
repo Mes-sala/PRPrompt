@@ -1,0 +1,241 @@
+{
+  "dataset": "Physics",
+  "seed": 271700,
+  "protocol": "fixed20_perclass_pool_all_remaining_query",
+  "contract_sha256": "1580a3cc92ff6665e7d14341d1029ea7be47090be0d8d9ff8ee45d9f69ade927",
+  "design_sha256": "e1d89bb217cff744e5d806271548c1fecd120402570fe80adb8024c0c9b06aa2",
+  "runner_sha256": "90fc895c55ede5ebd11800811174c924e172ad4237cd8f04e26cffa6a5c839bf",
+  "dependencies": {
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e",
+    "theory/方向集中下的反馈与判别尺度_候选.md": "7172d88c0cefd0167c0dfeb3d5dd184587707b917b03a15c992b72a9775ce204",
+    "theory/池质量与方向集中_联合极限.md": "36f6c4625be7f41ec8251a22e36d4a45c696b4f1e40e8e3badcb790f52b4e8e1"
+  },
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  },
+  "input_hashes": {
+    "input": "bf409b1921232384f0a3c1d733d1c55a00ab0fe6f42030dd72862893bb0fcc32",
+    "raw_input": "9df20be681bfe193a8565f272f2031f31d73871f09d1f56f24bd11d4d683e945",
+    "graph": "4d60a81d0b097e915c45442b4f6f119b49673fe5ab8d858ce86075ca8e59bda2",
+    "adjacency_indices": "1b57360470b64c50a463ef8335f03cf4377b4d31a3c7af5a9494d103a47a8801",
+    "adjacency_values": "b5c14985069d341974b7e591b38d2d749bf9b2ead779c05c9752c3a06b170baa",
+    "propagated": "507ef44ebee7ac8ed330cfb1d35c33e22d8dfd6769af50fc590d75d8ae67dd54",
+    "representation": "a497a70ed258b96b8b443852fe70f8b59d053f27375750dc75c56e7e2f57037c",
+    "query": "5a54f461c9d859349ca4720cdb16647c0e1a4b62005de5c4e6bd495b08ff3e56",
+    "pool": "923abc7150aa9dbf031c87dd749c21f932f841b5864a825c3205939f8e5b34c2",
+    "source_sha256": "8646d6eac110c6085bc0e6312521181192abe464f097bf8a174e836faea9764d"
+  },
+  "epsilon": 0.125,
+  "k": 3,
+  "temperature": "fixed",
+  "tau": 0.05,
+  "beta": 1.0,
+  "radius": 40.238631160107076,
+  "epsilon_radius": 5.0298288950133845,
+  "epsilon_squared_radius_squared_over_tau0": 505.9835742622313,
+  "fixed_temperature_local_domain": false,
+  "rounds": {
+    "1": {
+      "metrics": {
+        "initial_contrast": {
+          "amplitude": 0.9296009006323752,
+          "predicted_amplitude": 1.4483643125475187,
+          "error": 0.5345018245800409,
+          "relative_error": 0.36903824538448415,
+          "resolution_threshold": 4.965068306494546e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "class_contrast": {
+          "amplitude": 0.5420155241694082,
+          "predicted_amplitude": 1.744087833885669,
+          "error": 1.2458329661413075,
+          "relative_error": 0.7143177894691835,
+          "resolution_threshold": 4.965068306494546e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "centered_score": {
+          "amplitude": 25.056320051837638,
+          "predicted_amplitude": 103.25952257306693,
+          "error": 81.66205271680968,
+          "relative_error": 0.7908428267138774,
+          "resolution_threshold": 9.207892863134163e-12,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        }
+      },
+      "ranking": {
+        "full_vs_common": {
+          "disagreement_count": 28466,
+          "nodes": 34393,
+          "disagreement_fraction": 0.8276684208996017,
+          "unresolved_gap_either_count": 34393,
+          "disagreement_outside_unresolved_count": 0,
+          "min_physical_gap": 0.0
+        },
+        "full_vs_leading_margin_rule": {
+          "disagreement_count": 2575,
+          "nodes": 34393,
+          "disagreement_fraction": 0.07486988631407554,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 2575,
+          "min_physical_gap": 1.7327802922517677e-06
+        }
+      },
+      "update_seconds": 0.06071384251117706,
+      "score_seconds": 0.03581402450799942,
+      "mass_min": 3407.139783341983,
+      "mass_max": 14556.200528222309,
+      "logmass_min": 8.133628445096988,
+      "mass_underflow_count": 0,
+      "q_probability_zero_count": 0
+    },
+    "2": {
+      "metrics": {
+        "initial_contrast": {
+          "amplitude": 0.9296009006323752,
+          "predicted_amplitude": 1.4483643125475187,
+          "error": 0.5345018245800409,
+          "relative_error": 0.36903824538448415,
+          "resolution_threshold": 4.965068306494546e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "class_contrast": {
+          "amplitude": 0.4835247265266887,
+          "predicted_amplitude": 3.75608995545757,
+          "error": 3.33462786501146,
+          "relative_error": 0.8877923331325628,
+          "resolution_threshold": 4.965068306494546e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "centered_score": {
+          "amplitude": 24.390513434547895,
+          "predicted_amplitude": 240.8147573351999,
+          "error": 220.26973177041944,
+          "relative_error": 0.914685354867256,
+          "resolution_threshold": 9.207892863134163e-12,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        }
+      },
+      "ranking": {
+        "full_vs_common": {
+          "disagreement_count": 28464,
+          "nodes": 34393,
+          "disagreement_fraction": 0.8276102695315908,
+          "unresolved_gap_either_count": 34393,
+          "disagreement_outside_unresolved_count": 0,
+          "min_physical_gap": 0.0
+        },
+        "full_vs_leading_margin_rule": {
+          "disagreement_count": 9234,
+          "nodes": 34393,
+          "disagreement_fraction": 0.26848486610647515,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 9234,
+          "min_physical_gap": 7.357607364477659e-07
+        }
+      },
+      "update_seconds": 0.06068945303559303,
+      "score_seconds": 0.0358252190053463,
+      "mass_min": 4381.699349463645,
+      "mass_max": 11414.696885699437,
+      "logmass_min": 8.385191907455573,
+      "mass_underflow_count": 0,
+      "q_probability_zero_count": 0
+    },
+    "3": {
+      "metrics": {
+        "initial_contrast": {
+          "amplitude": 0.9296009006323752,
+          "predicted_amplitude": 1.4483643125475187,
+          "error": 0.5345018245800409,
+          "relative_error": 0.36903824538448415,
+          "resolution_threshold": 4.965068306494546e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "class_contrast": {
+          "amplitude": 0.4577304689295541,
+          "predicted_amplitude": 9.072590431124523,
+          "error": 8.680991901497308,
+          "relative_error": 0.9568371864022658,
+          "resolution_threshold": 4.965068306494546e-14,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        },
+        "centered_score": {
+          "amplitude": 24.206771189497193,
+          "predicted_amplitude": 590.3596958305305,
+          "error": 570.2238516723678,
+          "relative_error": 0.9658922445072488,
+          "resolution_threshold": 9.207892863134163e-12,
+          "resolved": true,
+          "zero_leading_coefficient": false,
+          "domain": false,
+          "fit_eligible": false
+        }
+      },
+      "ranking": {
+        "full_vs_common": {
+          "disagreement_count": 28418,
+          "nodes": 34393,
+          "disagreement_fraction": 0.8262727880673393,
+          "unresolved_gap_either_count": 34393,
+          "disagreement_outside_unresolved_count": 0,
+          "min_physical_gap": 0.0
+        },
+        "full_vs_leading_margin_rule": {
+          "disagreement_count": 14883,
+          "nodes": 34393,
+          "disagreement_fraction": 0.4327334050533539,
+          "unresolved_gap_either_count": 0,
+          "disagreement_outside_unresolved_count": 14883,
+          "min_physical_gap": 7.850895596128726e-08
+        }
+      },
+      "update_seconds": 0.06075715646147728,
+      "score_seconds": 0.03585143759846687,
+      "mass_min": 5005.6016016773465,
+      "mass_max": 9309.609748053388,
+      "logmass_min": 8.518312884661198,
+      "mass_underflow_count": 0,
+      "q_probability_zero_count": 0
+    }
+  },
+  "r13_replay": {},
+  "pre_artifact_sha256": "de56dc3d964a80ffa65b5e0a52b1c623f5171078772709d60e74be6cbc146d79",
+  "pre_record_sha256": "f50beabfd212844f982be2137e39208ba49e9c3ab21b6f4032c840bcc579b060",
+  "calculation_seconds": 0.3586091585457325,
+  "status": "complete",
+  "serialization_seconds": 0.4927659295499325,
+  "artifact_sha256": "1236f0aa5378e842f0b291fb7949a30eae4a1fafa2b03a8c933acf47c28b740f"
+}

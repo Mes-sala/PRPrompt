@@ -1,0 +1,52 @@
+{
+  "out": "/root/autodl-tmp/accuracy_prompt_20260923/round70_confirm",
+  "datasets": [
+    "Cora"
+  ],
+  "checkpoints": [
+    "GraphMAE",
+    "GraphMAE2"
+  ],
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "head_base_qeps-50",
+    "head_postbase_mean",
+    "head_postbase_qeps-50",
+    "head_token_mean",
+    "head_token_qeps-50",
+    "head_posttoken_mean",
+    "head_posttoken_qeps-50",
+    "head_scale2_mean",
+    "head_scale2_qeps-50",
+    "head_postscale2_mean",
+    "head_postscale2_qeps-50"
+  ],
+  "seeds": [
+    107100,
+    107101,
+    107102,
+    107103,
+    107104,
+    107105,
+    107106,
+    107107,
+    107108,
+    107109,
+    107110,
+    107111,
+    107112,
+    107113,
+    107114,
+    107115,
+    107116,
+    107117,
+    107118,
+    107119
+  ],
+  "steps": 100,
+  "phase": "confirm",
+  "source_sha256": "dcc4a374492b4ca39dc3375c020cc43eff6734905be6900f9b39bf0d23168411",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+}

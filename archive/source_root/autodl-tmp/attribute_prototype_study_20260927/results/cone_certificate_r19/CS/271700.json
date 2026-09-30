@@ -1,0 +1,91 @@
+{
+  "dataset": "CS",
+  "seed": 271700,
+  "metadata": {
+    "trace": {
+      "lambda_upper": 0.8138154755198228,
+      "trajectory": [
+        {
+          "D": 1.4010353555267763,
+          "logK": 56.03164564485264,
+          "B": 1.9996513800961597,
+          "next_D": 1.9976600644205698
+        },
+        {
+          "D": 1.9976600644205698,
+          "logK": 79.89247409563151,
+          "B": 1.9996513800961597,
+          "next_D": 1.9976600644205698
+        },
+        {
+          "D": 1.9976600644205698,
+          "logK": 79.89247409563151,
+          "B": 1.9996513800961597,
+          "next_D": 1.9976600644205698
+        }
+      ],
+      "eta": 0.9998256900480799,
+      "uncertified_pct": 100.0,
+      "axis_valid": true
+    },
+    "spectral": {
+      "lambda_upper": 0.11891932564496582,
+      "trajectory": [
+        {
+          "D": 1.4010353555267763,
+          "logK": 56.03164564485264,
+          "B": 1.9996513800961597,
+          "next_D": 1.9976600644205698
+        },
+        {
+          "D": 1.9976600644205698,
+          "logK": 79.89247409563151,
+          "B": 1.9996513800961597,
+          "next_D": 1.9976600644205698
+        },
+        {
+          "D": 1.9976600644205698,
+          "logK": 79.89247409563151,
+          "B": 1.9996513800961597,
+          "next_D": 1.9976600644205698
+        }
+      ],
+      "eta": 0.9998256900480799,
+      "uncertified_pct": 100.0,
+      "axis_valid": true
+    }
+  },
+  "spectrum": {
+    "rayleigh": 0.07848797699195646,
+    "residual": 1.2387293635989663e-17,
+    "trace": 0.8138154755188228,
+    "frobenius": 0.11891932564396582,
+    "upper": 0.11891932564496582
+  },
+  "actual": [
+    {
+      "direction_diameter": 1.4010353555257762,
+      "soft_diameter": 0.8865219569370457,
+      "soft_residual": 0.643337496160345
+    },
+    {
+      "direction_diameter": 1.383258306529975,
+      "soft_diameter": 0.883710626853715,
+      "soft_residual": 0.6386803144383421
+    },
+    {
+      "direction_diameter": 1.382829470919781,
+      "soft_diameter": 0.8826723969439592,
+      "soft_residual": 0.6376513531122521
+    }
+  ],
+  "disagreement_pct": 2.9168746187545054,
+  "pre_artifact_sha256": "0e27a0381f6a91c88dc8fe5fb538a520fc989241afe87e2e8c575335e9d17f7c",
+  "artifact_sha256": "714aca5d7d31146fcf58e46de3896c55b86231034c2a22b3dc456603dfe0654b",
+  "runner_sha256": "2e91e88947d77ded60c1c42e6edfa60b2e5966d78b20c780be7248e27451d2d2",
+  "design_sha256": "8b6335079733d50a1968aef7d23b250d3046e37211b9f1cf86807c4fca5fb68d",
+  "source_sha256": "2178b8293b5af9935a64aa9a7f39565f53f182e6d0ef4af3daa8a4c00bc70007",
+  "geometry_precompute_seconds": 2.2451220713555813,
+  "scope": "No query labels; common prediction and bounds sealed before full iteration",
+  "finished": 1790516517.8731449
+}

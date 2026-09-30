@@ -1,0 +1,45 @@
+{
+  "status": "exact_execution_only_replay_passed",
+  "cases": [
+    {
+      "job": "episode00__GPF-plus+Gprompt__lr0.001",
+      "sealed_sha256": "1e5709c2ae5874e8f4aa4f4eb7ed4eae06095d2ddd63eba2600a372b8acfc0a3",
+      "state_tensors_equal": 18
+    },
+    {
+      "job": "episode00__GPF-plus+Gprompt__lr0.01",
+      "sealed_sha256": "fc0d0de6b219b379b4ec0d7dabf81d8d32578b41766df9d4dce934511384fcf4",
+      "state_tensors_equal": 18
+    },
+    {
+      "job": "episode00__GPF-plus__lr0.001",
+      "sealed_sha256": "655d392c3c89f1ba1524ca30b82d3da3831ed91125e7e5ff746c1b72a8494bce",
+      "state_tensors_equal": 15
+    },
+    {
+      "job": "episode00__GPF-plus__lr0.01",
+      "sealed_sha256": "0d5a22960d74761e628c857b2549b17be11815e32a463f4b4ef7787697f50238",
+      "state_tensors_equal": 15
+    },
+    {
+      "job": "episode00__Gprompt__lr0.001",
+      "sealed_sha256": "2bd5bf178f87ff38f90816dfabadcc4816ec6352278fb6d4899bfc0d6e9bf967",
+      "state_tensors_equal": 9
+    },
+    {
+      "job": "episode00__Gprompt__lr0.01",
+      "sealed_sha256": "45675c10b4843b2ce8771bfc27be06cb34d9a34d2c2d257c867854072d0a4d06",
+      "state_tensors_equal": 9
+    },
+    {
+      "job": "no_prompt",
+      "sealed_sha256": "aa27b5463f26db64c3277e466be0f8947fe21ac099ba1e42031d613c72478b42",
+      "state_tensors_equal": 0
+    }
+  ],
+  "scientific_freeze_sha256": "7cb08854ba27bad3981c5a1b24e4d38904b4c390dcd8440734bc9a8857ceb73c",
+  "shard_runner_sha256": "c7e5ea09407b7ef1f465e845b50bc791b8b09a0b78421aaec693f1a408c5249f",
+  "validator_sha256": "7cab99aa9d5196ce20818de5bf381b9f76ed3b2583024aa0f946fc8b3c7d4760",
+  "scope": "Six jobs, all scores/predictions/Prompt state tensors/200-step loss trajectories, plus 20-support no-Prompt baseline; no query target access.",
+  "time": 1789910469.0358913
+}

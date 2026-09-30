@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "Edgepred_GPPT",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "Chameleon",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "4f7fee9927739c22c4996bc5b4876bf8b5649a7bf9a02ebaa240691e15311d00",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 114,
+  "best_training_loss": 0.15529868849433556,
+  "selection": "last_after_training_loss_patience_10"
+}

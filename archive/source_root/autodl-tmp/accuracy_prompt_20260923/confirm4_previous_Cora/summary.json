@@ -1,0 +1,36 @@
+[
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 64.32999938726425,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "sphered_hidden_kl",
+    "n": 20,
+    "accuracy": 66.33000046014786,
+    "frozen": {
+      "delta_pp": 2.000001072883606,
+      "ci95_seed_bootstrap": [
+        1.0100012943148613,
+        2.8900018334388733
+      ],
+      "wins": 18,
+      "ties": 1,
+      "losses": 1
+    }
+  }
+]

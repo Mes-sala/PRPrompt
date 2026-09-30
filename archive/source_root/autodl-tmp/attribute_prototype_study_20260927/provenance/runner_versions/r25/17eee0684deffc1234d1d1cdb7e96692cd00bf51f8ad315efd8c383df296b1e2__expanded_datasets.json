@@ -1,0 +1,121 @@
+{
+  "Texas": {
+    "status": "unsupported_5shot_official_fold0",
+    "traceback": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/attribute_prototype_study_20260927/code/prepare_expansion.py\", line 22, in main\n    counts=torch.bincount(d.y[pool],minlength=C);assert counts.min()>=5 and not torch.isin(pool,query).any();assert torch.isfinite(d.x).all()\n                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "support_pool_per_class": [
+      14,
+      0,
+      7,
+      46,
+      20
+    ],
+    "reason": "At least one class has fewer than five labeled candidates; no classes removed"
+  },
+  "Wisconsin": {
+    "status": "unsupported_5shot_official_fold0",
+    "traceback": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/attribute_prototype_study_20260927/code/prepare_expansion.py\", line 22, in main\n    counts=torch.bincount(d.y[pool],minlength=C);assert counts.min()>=5 and not torch.isin(pool,query).any();assert torch.isfinite(d.x).all()\n                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "support_pool_per_class": [
+      4,
+      38,
+      50,
+      17,
+      11
+    ],
+    "reason": "At least one class has fewer than five labeled candidates; no classes removed"
+  },
+  "Squirrel": {
+    "status": "ready",
+    "nodes": 5201,
+    "edges": 217073,
+    "features": 2089,
+    "classes": 5,
+    "pool_per_class": [
+      487,
+      494,
+      501,
+      514,
+      500
+    ],
+    "query": 1041,
+    "protocol": "official_train_pool_test_query_fold0",
+    "canonical_path": "/root/autodl-tmp/attribute_prototype_study_20260927/data/Squirrel/canonical.pt",
+    "sha256": "46f8c56fb34d3da798faad56fa45f39620e325bd98cda6526559dfc992837163",
+    "input_hash": "e37aa3f8a109e0ab2b0d4a0f64046ab943b49740c2db7be574b52982c2ec65c8",
+    "edge_hash": "ad2af4bf74daf1b0d561102c528bb2e12b0a0001a868104d525051c5351e8993"
+  },
+  "WikiCS": {
+    "status": "ready",
+    "nodes": 11701,
+    "edges": 431726,
+    "features": 300,
+    "classes": 10,
+    "pool_per_class": [
+      14,
+      33,
+      107,
+      96,
+      133,
+      39,
+      20,
+      43,
+      24,
+      71
+    ],
+    "query": 5847,
+    "protocol": "official_train_pool_test_query_fold0",
+    "canonical_path": "/root/autodl-tmp/attribute_prototype_study_20260927/data/WikiCS/canonical.pt",
+    "sha256": "2201455a79206d811ce04c6ca2a36729688eefb70700b2538f3f6f6d92728396",
+    "input_hash": "6eafa01f0c8c2a3d4cd185b6ee166318aa5fb625cedfe8b66e357e489b71f847",
+    "edge_hash": "ac2ecd4c27b52a60993567c32d904f6fc86091255dac7fb06e39102d35efd480"
+  },
+  "CS": {
+    "status": "ready",
+    "nodes": 18333,
+    "edges": 163788,
+    "features": 6805,
+    "classes": 15,
+    "pool_per_class": [
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "query": 18033,
+    "protocol": "fixed20_perclass_pool_all_remaining_query",
+    "canonical_path": "/root/autodl-tmp/attribute_prototype_study_20260927/data/CS/canonical.pt",
+    "sha256": "292497912dac680bec46c6198bb4cb02681cbfff68fd98c9abf97a841af476d9",
+    "input_hash": "1306b6b97996c3decdc629b00be814d464b79fe508f4ade6fe814d3c2df3f864",
+    "edge_hash": "f756b20488bcf4f52ff6733d2af34e24b2fd62b79ba35db176150cb1081711d0"
+  },
+  "Physics": {
+    "status": "ready",
+    "nodes": 34493,
+    "edges": 495924,
+    "features": 8415,
+    "classes": 5,
+    "pool_per_class": [
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "query": 34393,
+    "protocol": "fixed20_perclass_pool_all_remaining_query",
+    "canonical_path": "/root/autodl-tmp/attribute_prototype_study_20260927/data/Physics/canonical.pt",
+    "sha256": "f39be76b776ccc6f4e2f5e335040c4df45963813d870fd9246ce9dfe0f4259ca",
+    "input_hash": "9df20be681bfe193a8565f272f2031f31d73871f09d1f56f24bd11d4d683e945",
+    "edge_hash": "4d60a81d0b097e915c45442b4f6f119b49673fe5ab8d858ce86075ca8e59bda2"
+  }
+}

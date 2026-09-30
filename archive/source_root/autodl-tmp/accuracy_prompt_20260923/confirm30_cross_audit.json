@@ -1,0 +1,44 @@
+[
+  {
+    "dataset": "Actor",
+    "candidate": "GraphCL:self100",
+    "baseline": "GraphMAE:selfonly",
+    "n": 20,
+    "delta_pp": 1.1447370052337646,
+    "ci95": [
+      -0.09539447724819183,
+      2.4934215154498816
+    ],
+    "wins": 13,
+    "losses": 7,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphCL:self100",
+    "baseline": "GraphCL:selfonly",
+    "n": 20,
+    "delta_pp": 0.04605285823345184,
+    "ci95": [
+      -0.2203946579247713,
+      0.3486844152212143
+    ],
+    "wins": 9,
+    "losses": 10,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphCL:self100",
+    "baseline": "GraphMAE:graphprompt",
+    "n": 20,
+    "delta_pp": 2.993421331048012,
+    "ci95": [
+      1.7763160169124603,
+      4.30600357800722
+    ],
+    "wins": 16,
+    "losses": 4,
+    "scope": "same graph support sampling, not independent graphs"
+  }
+]

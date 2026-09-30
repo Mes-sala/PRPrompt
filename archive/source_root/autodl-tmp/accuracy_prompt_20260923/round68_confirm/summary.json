@@ -1,0 +1,657 @@
+[
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "Direct",
+    "method": "directcenter_mean",
+    "n": 20,
+    "accuracy": 68.91000002622604
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 34.2399999499321,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 0.8499998599290848,
+      "ci95_seed_bootstrap": [
+        -0.4399999286979437,
+        2.1699997819960117
+      ],
+      "wins": 10,
+      "ties": 0,
+      "losses": 10
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 33.390000090003014,
+    "frozen": {
+      "delta_pp": -0.8499998599290848,
+      "ci95_seed_bootstrap": [
+        -2.1699997819960117,
+        0.4399999286979437
+      ],
+      "wins": 10,
+      "ties": 0,
+      "losses": 10
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_posttdboth_mean",
+    "n": 20,
+    "accuracy": 66.59999996423721,
+    "frozen": {
+      "delta_pp": 32.360000014305115,
+      "ci95_seed_bootstrap": [
+        30.18999993801117,
+        34.58999962732196
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 33.2099998742342,
+      "ci95_seed_bootstrap": [
+        30.8597489669919,
+        35.659999856725335
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_posttdboth_qeps-50",
+    "n": 20,
+    "accuracy": 68.17000061273575,
+    "frozen": {
+      "delta_pp": 33.93000066280365,
+      "ci95_seed_bootstrap": [
+        31.8797502592206,
+        36.02000027894974
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 34.780000522732735,
+      "ci95_seed_bootstrap": [
+        32.480001298710704,
+        37.15000026114285
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_posttdnone_mean",
+    "n": 20,
+    "accuracy": 66.68999999761581,
+    "frozen": {
+      "delta_pp": 32.450000047683716,
+      "ci95_seed_bootstrap": [
+        30.30000015720725,
+        34.60025079920887
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 33.2999999076128,
+      "ci95_seed_bootstrap": [
+        30.95975001528859,
+        35.70999935641885
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_posttdnone_qeps-50",
+    "n": 20,
+    "accuracy": 68.26000064611435,
+    "frozen": {
+      "delta_pp": 34.02000069618225,
+      "ci95_seed_bootstrap": [
+        31.86000197380781,
+        36.21000051870942
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 34.870000556111336,
+      "ci95_seed_bootstrap": [
+        32.44000083208084,
+        37.340250924229615
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdboth_mean",
+    "n": 20,
+    "accuracy": 63.989999294281006,
+    "frozen": {
+      "delta_pp": 29.749999344348907,
+      "ci95_seed_bootstrap": [
+        27.409749384969473,
+        32.069999285042286
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 30.599999204277992,
+      "ci95_seed_bootstrap": [
+        28.039749410003424,
+        33.2499994430691
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdboth_qeps-50",
+    "n": 20,
+    "accuracy": 65.1299998164177,
+    "frozen": {
+      "delta_pp": 30.889999866485596,
+      "ci95_seed_bootstrap": [
+        28.309999991208315,
+        33.309999853372574
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 31.73999972641468,
+      "ci95_seed_bootstrap": [
+        28.989749731495976,
+        34.460250595584505
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdgate_mean",
+    "n": 20,
+    "accuracy": 63.43000024557114,
+    "frozen": {
+      "delta_pp": 29.190000295639038,
+      "ci95_seed_bootstrap": [
+        26.810000091791153,
+        31.609999544918537
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 30.040000155568123,
+      "ci95_seed_bootstrap": [
+        27.38974958099425,
+        32.76999973319471
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdgate_qeps-50",
+    "n": 20,
+    "accuracy": 64.85999912023544,
+    "frozen": {
+      "delta_pp": 30.619999170303345,
+      "ci95_seed_bootstrap": [
+        27.99999937042594,
+        33.14999879151583
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 31.46999903023243,
+      "ci95_seed_bootstrap": [
+        28.619999285787344,
+        34.239998169243336
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdnone_mean",
+    "n": 20,
+    "accuracy": 63.41999977827072,
+    "frozen": {
+      "delta_pp": 29.179999828338623,
+      "ci95_seed_bootstrap": [
+        26.799999922513962,
+        31.54000000283122
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 30.029999688267708,
+      "ci95_seed_bootstrap": [
+        27.529749277979136,
+        32.6102495342493
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdnone_qeps-50",
+    "n": 20,
+    "accuracy": 64.60000038146973,
+    "frozen": {
+      "delta_pp": 30.360000431537628,
+      "ci95_seed_bootstrap": [
+        27.800000745803118,
+        32.72000030428171
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 31.210000291466713,
+      "ci95_seed_bootstrap": [
+        28.520000863820314,
+        33.8600000962615
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 40.17000004649162,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 1.1500000953674316,
+      "ci95_seed_bootstrap": [
+        0.2000001035630703,
+        2.100000534206629
+      ],
+      "wins": 13,
+      "ties": 1,
+      "losses": 6
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 39.01999995112419,
+    "frozen": {
+      "delta_pp": -1.1500000953674316,
+      "ci95_seed_bootstrap": [
+        -2.100000534206629,
+        -0.2000001035630703
+      ],
+      "wins": 6,
+      "ties": 1,
+      "losses": 13
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_posttdboth_mean",
+    "n": 20,
+    "accuracy": 67.20999985933304,
+    "frozen": {
+      "delta_pp": 27.039999812841415,
+      "ci95_seed_bootstrap": [
+        25.039999324828386,
+        29.039999842643738
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 28.189999908208847,
+      "ci95_seed_bootstrap": [
+        25.999999940395355,
+        30.269999656826258
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_posttdboth_qeps-50",
+    "n": 20,
+    "accuracy": 68.40999960899353,
+    "frozen": {
+      "delta_pp": 28.239999562501907,
+      "ci95_seed_bootstrap": [
+        26.190000027418137,
+        30.2802495136857
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 29.38999965786934,
+      "ci95_seed_bootstrap": [
+        27.13000101596117,
+        31.53999999538064
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_posttdnone_mean",
+    "n": 20,
+    "accuracy": 67.22999960184097,
+    "frozen": {
+      "delta_pp": 27.05999955534935,
+      "ci95_seed_bootstrap": [
+        25.079999715089798,
+        29.069999031722546
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 28.20999965071678,
+      "ci95_seed_bootstrap": [
+        26.079748947173357,
+        30.270250078290697
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_posttdnone_qeps-50",
+    "n": 20,
+    "accuracy": 68.51999938488007,
+    "frozen": {
+      "delta_pp": 28.349999338388443,
+      "ci95_seed_bootstrap": [
+        26.359999623149633,
+        30.34999966621399
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 29.499999433755875,
+      "ci95_seed_bootstrap": [
+        27.320000514388084,
+        31.609999246895313
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdboth_mean",
+    "n": 20,
+    "accuracy": 66.31999969482422,
+    "frozen": {
+      "delta_pp": 26.149999648332596,
+      "ci95_seed_bootstrap": [
+        24.24974924325943,
+        28.05999994277954
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 27.299999743700027,
+      "ci95_seed_bootstrap": [
+        25.119999796152115,
+        29.350250005722042
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdboth_qeps-50",
+    "n": 20,
+    "accuracy": 67.01999962329865,
+    "frozen": {
+      "delta_pp": 26.849999576807022,
+      "ci95_seed_bootstrap": [
+        24.869749020785093,
+        28.859999775886536
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 27.999999672174454,
+      "ci95_seed_bootstrap": [
+        25.789999954402447,
+        30.11999950557947
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdgate_mean",
+    "n": 20,
+    "accuracy": 66.319999396801,
+    "frozen": {
+      "delta_pp": 26.149999350309372,
+      "ci95_seed_bootstrap": [
+        24.24999937042594,
+        28.049999475479126
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 27.299999445676804,
+      "ci95_seed_bootstrap": [
+        25.149999853223562,
+        29.32999924570322
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdgate_qeps-50",
+    "n": 20,
+    "accuracy": 67.05999970436096,
+    "frozen": {
+      "delta_pp": 26.88999965786934,
+      "ci95_seed_bootstrap": [
+        24.91000010818243,
+        28.859999030828476
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 28.03999975323677,
+      "ci95_seed_bootstrap": [
+        25.839999612420797,
+        30.13999954238534
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdnone_mean",
+    "n": 20,
+    "accuracy": 66.25999927520752,
+    "frozen": {
+      "delta_pp": 26.089999228715897,
+      "ci95_seed_bootstrap": [
+        24.269999258220196,
+        27.94999898225069
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 27.23999932408333,
+      "ci95_seed_bootstrap": [
+        25.18974846228957,
+        29.229998599737883
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdnone_qeps-50",
+    "n": 20,
+    "accuracy": 67.23999977111816,
+    "frozen": {
+      "delta_pp": 27.06999972462654,
+      "ci95_seed_bootstrap": [
+        25.169999595731497,
+        29.00025018304586
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 28.219999819993973,
+      "ci95_seed_bootstrap": [
+        26.0800000987947,
+        30.30000016093254
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  }
+]

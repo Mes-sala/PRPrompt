@@ -1,0 +1,128 @@
+[
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:mixonly_ce",
+    "baseline": "GraphMAE:mixonly_base",
+    "n": 20,
+    "delta_pp": 0.8782895654439926,
+    "ci95": [
+      -0.026398060843348427,
+      1.7236846704035997
+    ],
+    "wins": 13,
+    "losses": 7,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:mixonly_ce",
+    "baseline": "GraphMAE:mixonly_kd",
+    "n": 20,
+    "delta_pp": 0.2039474993944168,
+    "ci95": [
+      0.05921073257923126,
+      0.3750000912696123
+    ],
+    "wins": 15,
+    "losses": 4,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:mixonly_ce",
+    "baseline": "GraphMAE:mixonly_gp",
+    "n": 20,
+    "delta_pp": 1.000000238418579,
+    "ci95": [
+      0.1217108964920044,
+      1.789473745971918
+    ],
+    "wins": 14,
+    "losses": 6,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:mixonly_ce",
+    "baseline": "GraphMAE:mixonly_random",
+    "n": 20,
+    "delta_pp": 0.9111844003200531,
+    "ci95": [
+      0.14144778065383434,
+      1.6217106599360704
+    ],
+    "wins": 16,
+    "losses": 4,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:mixonly_ce",
+    "baseline": "GraphMAE:mix1_ce",
+    "n": 20,
+    "delta_pp": 2.180921286344528,
+    "ci95": [
+      0.8189967516809703,
+      3.592105582356453
+    ],
+    "wins": 13,
+    "losses": 7,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:mixonly_ce",
+    "baseline": "GraphMAE:rawridge",
+    "n": 20,
+    "delta_pp": 3.217105343937874,
+    "ci95": [
+      2.0197366159409285,
+      4.460526410490274
+    ],
+    "wins": 17,
+    "losses": 3,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:mixonly_ce",
+    "baseline": "GraphMAE:raw",
+    "n": 20,
+    "delta_pp": 2.8651317954063416,
+    "ci95": [
+      1.8585528396070004,
+      3.894819801673292
+    ],
+    "wins": 17,
+    "losses": 3,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:mixonly_ce",
+    "baseline": "GraphCL:mixonly_base",
+    "n": 20,
+    "delta_pp": -0.10197341442108154,
+    "ci95": [
+      -1.1710523180663586,
+      1.032895004376769
+    ],
+    "wins": 6,
+    "losses": 14,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:mixonly_ce",
+    "baseline": "GraphCL:mix100_gp",
+    "n": 20,
+    "delta_pp": 0.046052783727645874,
+    "ci95": [
+      -1.009868310764432,
+      1.2072368040680885
+    ],
+    "wins": 6,
+    "losses": 14,
+    "scope": "same graph support sampling, not independent graphs"
+  }
+]

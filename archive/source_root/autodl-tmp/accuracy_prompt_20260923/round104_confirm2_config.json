@@ -1,0 +1,47 @@
+{
+  "checkpoints": [
+    "GraphMAE2"
+  ],
+  "seeds": [
+    168100,
+    168101,
+    168102,
+    168103,
+    168104,
+    168105,
+    168106,
+    168107,
+    168108,
+    168109,
+    168110,
+    168111,
+    168112,
+    168113,
+    168114,
+    168115,
+    168116,
+    168117,
+    168118,
+    168119
+  ],
+  "methods": [
+    "directcenter_mean",
+    "frozen",
+    "graphprompt",
+    "head_tr1_mean",
+    "head_tr1_qeps-50",
+    "head_gsh_mean",
+    "head_gsh_qeps-50",
+    "head_cpr_mean",
+    "head_cpr_qeps-50",
+    "head_cpa_mean",
+    "head_cpa_qeps-50",
+    "head_cpp_mean",
+    "head_cpp_qeps-50",
+    "head_cps_mean",
+    "head_cps_qeps-50"
+  ],
+  "expected": 300,
+  "phase": "confirm",
+  "candidate": "head_cpr_qeps-50"
+}

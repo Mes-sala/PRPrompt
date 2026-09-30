@@ -1,0 +1,605 @@
+[
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 64.35000032186508,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 0.22000014781951904,
+      "ci95_seed_bootstrap": [
+        -0.009999573230743408,
+        0.45000016689300537
+      ],
+      "wins": 11,
+      "ties": 4,
+      "losses": 5
+    },
+    "rawprop2": {
+      "delta_pp": -4.320000410079956,
+      "ci95_seed_bootstrap": [
+        -6.840000756084919,
+        -1.510000228881836
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 17
+    },
+    "ridge_teacher": {
+      "delta_pp": -5.5699992179870605,
+      "ci95_seed_bootstrap": [
+        -7.579998970031738,
+        -3.2900002524256706
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 18
+    },
+    "token_kd10": {
+      "delta_pp": -6.889999508857727,
+      "ci95_seed_bootstrap": [
+        -8.040000207722187,
+        -5.740000009536743
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    },
+    "token_ridge10": {
+      "delta_pp": -8.319999277591705,
+      "ci95_seed_bootstrap": [
+        -9.379999339580536,
+        -7.199999384582043
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 64.13000017404556,
+    "frozen": {
+      "delta_pp": -0.22000014781951904,
+      "ci95_seed_bootstrap": [
+        -0.45000016689300537,
+        0.009999573230743408
+      ],
+      "wins": 5,
+      "ties": 4,
+      "losses": 11
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": -4.540000557899475,
+      "ci95_seed_bootstrap": [
+        -7.040000274777412,
+        -1.7700004503130913
+      ],
+      "wins": 3,
+      "ties": 0,
+      "losses": 17
+    },
+    "ridge_teacher": {
+      "delta_pp": -5.78999936580658,
+      "ci95_seed_bootstrap": [
+        -7.809999585151672,
+        -3.549748152494434
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 18
+    },
+    "token_kd10": {
+      "delta_pp": -7.109999656677246,
+      "ci95_seed_bootstrap": [
+        -8.300000734627247,
+        -5.930000238120556
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    },
+    "token_ridge10": {
+      "delta_pp": -8.539999425411224,
+      "ci95_seed_bootstrap": [
+        -9.639999270439148,
+        -7.42999941110611
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "rawprop2",
+    "n": 20,
+    "accuracy": 68.67000073194504,
+    "frozen": {
+      "delta_pp": 4.320000410079956,
+      "ci95_seed_bootstrap": [
+        1.510000228881836,
+        6.840000756084919
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    },
+    "graphprompt": {
+      "delta_pp": 4.540000557899475,
+      "ci95_seed_bootstrap": [
+        1.7700004503130913,
+        7.040000274777412
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    },
+    "rawprop2": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "ridge_teacher": {
+      "delta_pp": -1.2499988079071045,
+      "ci95_seed_bootstrap": [
+        -2.739998996257782,
+        0.1900017336010933
+      ],
+      "wins": 8,
+      "ties": 0,
+      "losses": 12
+    },
+    "token_kd10": {
+      "delta_pp": -2.569999098777771,
+      "ci95_seed_bootstrap": [
+        -4.979998767375946,
+        -0.359998919069767
+      ],
+      "wins": 8,
+      "ties": 0,
+      "losses": 12
+    },
+    "token_ridge10": {
+      "delta_pp": -3.9999988675117493,
+      "ci95_seed_bootstrap": [
+        -6.379998035728931,
+        -1.7399990558624268
+      ],
+      "wins": 5,
+      "ties": 2,
+      "losses": 13
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "ridge_teacher",
+    "n": 20,
+    "accuracy": 69.91999953985214,
+    "frozen": {
+      "delta_pp": 5.5699992179870605,
+      "ci95_seed_bootstrap": [
+        3.2900002524256706,
+        7.579998970031738
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 5.78999936580658,
+      "ci95_seed_bootstrap": [
+        3.549748152494431,
+        7.809999585151672
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "rawprop2": {
+      "delta_pp": 1.2499988079071045,
+      "ci95_seed_bootstrap": [
+        -0.1900017336010933,
+        2.739998996257782
+      ],
+      "wins": 12,
+      "ties": 0,
+      "losses": 8
+    },
+    "ridge_teacher": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "token_kd10": {
+      "delta_pp": -1.3200002908706665,
+      "ci95_seed_bootstrap": [
+        -3.500000238418579,
+        0.5602502226829492
+      ],
+      "wins": 10,
+      "ties": 1,
+      "losses": 9
+    },
+    "token_ridge10": {
+      "delta_pp": -2.7500000596046448,
+      "ci95_seed_bootstrap": [
+        -4.64000016450882,
+        -1.1299994364380836
+      ],
+      "wins": 3,
+      "ties": 1,
+      "losses": 16
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "token_kd10",
+    "n": 20,
+    "accuracy": 71.23999983072281,
+    "frozen": {
+      "delta_pp": 6.889999508857727,
+      "ci95_seed_bootstrap": [
+        5.740000009536743,
+        8.040000207722187
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 7.109999656677246,
+      "ci95_seed_bootstrap": [
+        5.930000238120556,
+        8.300000734627247
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": 2.569999098777771,
+      "ci95_seed_bootstrap": [
+        0.359998919069767,
+        4.979998767375946
+      ],
+      "wins": 12,
+      "ties": 0,
+      "losses": 8
+    },
+    "ridge_teacher": {
+      "delta_pp": 1.3200002908706665,
+      "ci95_seed_bootstrap": [
+        -0.5602502226829527,
+        3.500000238418579
+      ],
+      "wins": 9,
+      "ties": 1,
+      "losses": 10
+    },
+    "token_kd10": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "token_ridge10": {
+      "delta_pp": -1.4299997687339783,
+      "ci95_seed_bootstrap": [
+        -2.2499999403953552,
+        -0.7099995017051697
+      ],
+      "wins": 3,
+      "ties": 3,
+      "losses": 14
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "token_random_ridge10",
+    "n": 20,
+    "accuracy": 71.06999963521957,
+    "frozen": {
+      "delta_pp": 6.719999313354492,
+      "ci95_seed_bootstrap": [
+        4.139999143779278,
+        9.059999294579029
+      ],
+      "wins": 17,
+      "ties": 1,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 6.939999461174011,
+      "ci95_seed_bootstrap": [
+        4.349999405443668,
+        9.309999354183674
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "rawprop2": {
+      "delta_pp": 2.399998903274536,
+      "ci95_seed_bootstrap": [
+        0.1199987530708313,
+        4.909997880458832
+      ],
+      "wins": 12,
+      "ties": 1,
+      "losses": 7
+    },
+    "ridge_teacher": {
+      "delta_pp": 1.1500000953674316,
+      "ci95_seed_bootstrap": [
+        -1.1200004890561104,
+        3.65999998152256
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    },
+    "token_kd10": {
+      "delta_pp": -0.17000019550323486,
+      "ci95_seed_bootstrap": [
+        -2.1699997782707214,
+        1.6400000527501106
+      ],
+      "wins": 10,
+      "ties": 0,
+      "losses": 10
+    },
+    "token_ridge10": {
+      "delta_pp": -1.5999999642372131,
+      "ci95_seed_bootstrap": [
+        -3.5100001245737076,
+        0.09999990463256836
+      ],
+      "wins": 7,
+      "ties": 1,
+      "losses": 12
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "token_ridge10",
+    "n": 20,
+    "accuracy": 72.66999959945679,
+    "frozen": {
+      "delta_pp": 8.319999277591705,
+      "ci95_seed_bootstrap": [
+        7.199999384582043,
+        9.379999339580536
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 8.539999425411224,
+      "ci95_seed_bootstrap": [
+        7.42999941110611,
+        9.639999270439148
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": 3.9999988675117493,
+      "ci95_seed_bootstrap": [
+        1.7399990558624268,
+        6.379998035728931
+      ],
+      "wins": 13,
+      "ties": 2,
+      "losses": 5
+    },
+    "ridge_teacher": {
+      "delta_pp": 2.7500000596046448,
+      "ci95_seed_bootstrap": [
+        1.1299994364380836,
+        4.64000016450882
+      ],
+      "wins": 16,
+      "ties": 1,
+      "losses": 3
+    },
+    "token_kd10": {
+      "delta_pp": 1.4299997687339783,
+      "ci95_seed_bootstrap": [
+        0.7099995017051697,
+        2.2499999403953552
+      ],
+      "wins": 14,
+      "ties": 3,
+      "losses": 3
+    },
+    "token_ridge10": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "token_ridge_kd10",
+    "n": 20,
+    "accuracy": 72.95999974012375,
+    "frozen": {
+      "delta_pp": 8.609999418258667,
+      "ci95_seed_bootstrap": [
+        7.07999973744154,
+        9.929999709129333
+      ],
+      "wins": 19,
+      "ties": 1,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 8.829999566078186,
+      "ci95_seed_bootstrap": [
+        7.31999933719635,
+        10.179999776184559
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "rawprop2": {
+      "delta_pp": 4.289999008178711,
+      "ci95_seed_bootstrap": [
+        2.4399992749094963,
+        6.209998428821564
+      ],
+      "wins": 16,
+      "ties": 0,
+      "losses": 4
+    },
+    "ridge_teacher": {
+      "delta_pp": 3.0400002002716064,
+      "ci95_seed_bootstrap": [
+        1.7799997329711914,
+        4.470000267028809
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "token_kd10": {
+      "delta_pp": 1.71999990940094,
+      "ci95_seed_bootstrap": [
+        0.6599998399615288,
+        2.7399998903274536
+      ],
+      "wins": 15,
+      "ties": 1,
+      "losses": 4
+    },
+    "token_ridge10": {
+      "delta_pp": 0.29000014066696167,
+      "ci95_seed_bootstrap": [
+        -0.39999962598085403,
+        0.8799999952316284
+      ],
+      "wins": 14,
+      "ties": 0,
+      "losses": 6
+    }
+  },
+  {
+    "dataset": "Cora",
+    "checkpoint": "GraphMAE",
+    "method": "token_ridge_kd10perm",
+    "n": 20,
+    "accuracy": 51.26999944448472,
+    "frozen": {
+      "delta_pp": -13.080000877380371,
+      "ci95_seed_bootstrap": [
+        -14.780001200735569,
+        -11.380000859498978
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    },
+    "graphprompt": {
+      "delta_pp": -12.860000729560852,
+      "ci95_seed_bootstrap": [
+        -14.56000030785799,
+        -11.170001618564129
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    },
+    "rawprop2": {
+      "delta_pp": -17.400001287460327,
+      "ci95_seed_bootstrap": [
+        -20.330000676214695,
+        -14.320000551640987
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    },
+    "ridge_teacher": {
+      "delta_pp": -18.65000009536743,
+      "ci95_seed_bootstrap": [
+        -21.180251579731703,
+        -15.9200005158782
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    },
+    "token_kd10": {
+      "delta_pp": -19.970000386238098,
+      "ci95_seed_bootstrap": [
+        -21.77025133371353,
+        -18.179999738931656
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    },
+    "token_ridge10": {
+      "delta_pp": -21.400000154972076,
+      "ci95_seed_bootstrap": [
+        -23.440000277012587,
+        -19.30975010991097
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 20
+    }
+  }
+]

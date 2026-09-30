@@ -1,0 +1,49 @@
+{
+  "dataset": "CiteSeer",
+  "checkpoints": [
+    "GraphMAE"
+  ],
+  "seeds": [
+    115100,
+    115101,
+    115102,
+    115103,
+    115104,
+    115105,
+    115106,
+    115107,
+    115108,
+    115109,
+    115110,
+    115111,
+    115112,
+    115113,
+    115114,
+    115115,
+    115116,
+    115117,
+    115118,
+    115119
+  ],
+  "steps": 100,
+  "phase": "confirm",
+  "methods": [
+    "directcenter_mean",
+    "frozen",
+    "graphprompt",
+    "head_tdnone_mean",
+    "head_tdnone_qeps-50",
+    "head_posttdnone_mean",
+    "head_posttdnone_qeps-50",
+    "head_tdboth_mean",
+    "head_tdboth_qeps-50",
+    "head_posttdboth_mean",
+    "head_posttdboth_qeps-50",
+    "head_ins10_mean",
+    "head_ins10_qeps-50",
+    "head_inp10_mean",
+    "head_inp10_qeps-50",
+    "head_inr10_mean",
+    "head_inr10_qeps-50"
+  ]
+}

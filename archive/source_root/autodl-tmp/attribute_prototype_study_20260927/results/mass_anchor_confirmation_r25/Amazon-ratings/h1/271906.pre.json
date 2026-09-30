@@ -1,0 +1,76 @@
+{
+  "dataset": "Amazon-ratings",
+  "hops": 1,
+  "seed": 271906,
+  "classes": 5,
+  "n_unlabeled": 24467,
+  "protocol": "official_train_pool_test_query_fold0",
+  "invalid": {},
+  "mass2_valid": true,
+  "node_eta_upper": 0.0018821044112072164,
+  "predeclared_local_domain": true,
+  "node_radius": 0.0924083160040337,
+  "covariance_trace": 0.0004138968865279231,
+  "covariance_sha256": "7d8b7cfb71b8909dfb071b0f223d3c3c789c02a1f080f4d678eabcb5a5323193",
+  "support_sha256": "118c7d6e74920e86f135607c76769c2adc5d492c662832c0877a672564867391",
+  "input_hashes": {
+    "raw_input": "25a04546032057a38dd1b409dce05b460863db98ff6ba1210f6de8b2086ba3e5",
+    "input": "ca68b919592fd8bf0800ed9c108b14fddf26f9d29b6ae395c5e839d8f5a5b220",
+    "graph": "1d498ec447772f6b3798b7bad6fe5d8eb5ced517e7e367fee5e807a38726a3ce",
+    "adjacency_indices": "5c50d5666191ea1c7b39d39d4b51cff2343e53ba67bbb54688a78dcd985c7de8",
+    "adjacency_values": "ef5bb5e600fb0b655a6836f0da40d50e566c0ca39babb84269f8e93eb334f5fc",
+    "query": "be213612a9511453f5ae97225f84d8376ef7f3d9a9552c7ee96bae87d76ce3a9",
+    "pool": "986e67e3ddaa531ceddada3537dcfa3f32a47505d2c1eb419bd7cf674e149de5",
+    "pool_labels": "e039ad478f41b4840c71f49051e91e73ce94fb6c84611508cbb2e5c9990adbf1",
+    "representation": "c9c7727fb5bf17db3f7e582e93672e70f0b330f8086414c8c0a2c6f36952a179"
+  },
+  "geometry_sha256": "2038db2434b2e6ee63e22ff3cd1411e6eac5356bd8783ad075db8ff07d49fbf0",
+  "contract_sha256": "261d2081eedc228fb6a904ae4b85b216ad233c73f61b6d9e65b4c0b3dc7668e0",
+  "runner_sha256": "57e4834652df6739bc854a8d46df6ed986cb9da0ab950e974847d27a1239e6c4",
+  "design_sha256": "3457430f2f0c5637ec034dd3d7653d315a9ee151143a143e5b0073e617c6c240",
+  "dependencies": {
+    "code/run_mass_anchor_r22.py": "0658ae7d0599b75ef6dead26a4963b80196a4072a449e265c52fa44d98995c67",
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e"
+  },
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "library_sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  },
+  "support_geometry_seconds": 0.0014992356300354004,
+  "moment_terms_seconds": 0.00026905909180641174,
+  "pre_query_dot_seconds": 0.0008587129414081573,
+  "pre_branch_seconds": {
+    "common_mass0__r1": 6.86347484588623e-05,
+    "common_mass0__r8": 5.8904290199279785e-05,
+    "moment_mass0__r1": 5.3763389587402344e-05,
+    "moment_mass0__r8": 5.365535616874695e-05,
+    "moment_mass2__r1": 5.3182244300842285e-05,
+    "moment_mass2__r8": 5.253031849861145e-05,
+    "common_equalmass__r1": 5.523860454559326e-05,
+    "common_equalmass__r8": 5.1997601985931396e-05
+  },
+  "pre_score_seconds": {
+    "common_mass0__r1": 0.00033167749643325806,
+    "common_mass0__r8": 0.00033561140298843384,
+    "moment_mass0__r1": 0.00033236294984817505,
+    "moment_mass0__r8": 0.00033372268080711365,
+    "moment_mass2__r1": 0.00033151358366012573,
+    "moment_mass2__r8": 0.000332564115524292,
+    "common_equalmass__r1": 0.0003311522305011749,
+    "common_equalmass__r8": 0.00033283233642578125
+  },
+  "load_seconds": 0.11712256819009781,
+  "incremental_propagation_seconds": 0.0019344985485076904,
+  "covariance_precompute_seconds": 0.008677378296852112,
+  "phase": "before any full node softmax for this draw",
+  "pre_artifact_sha256": "f3b15412ad680fa6592638fbfcaae81e5646865c927f4fe296506c4458ab42a1",
+  "finished": 1790521338.4309194
+}

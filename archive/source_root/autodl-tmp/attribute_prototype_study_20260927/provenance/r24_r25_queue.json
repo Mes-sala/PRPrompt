@@ -1,0 +1,6 @@
+{
+  "queue_pid": 164662,
+  "started": 1790520269.4555974,
+  "r25_condition": "R24 process success; own frozen contract and result lock",
+  "commands": "/root/autodl-tmp/prog_env/bin/python -u code/run_concentration_scaling_r24.py --contract provenance/r24_frozen_contract.json > concentration_scaling_r24.log 2>&1 && /root/autodl-tmp/prog_env/bin/python -u code/run_mass_anchor_confirmation_r25.py --contract provenance/r25_frozen_contract.json > mass_anchor_confirmation_r25.log 2>&1"
+}

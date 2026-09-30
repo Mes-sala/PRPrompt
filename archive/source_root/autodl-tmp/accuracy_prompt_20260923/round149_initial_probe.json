@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "seed": 219199,
+  "accuracy_evaluated": false,
+  "query_labels_used": false,
+  "results": [
+    {
+      "checkpoint": "GraphMAE",
+      "kind": "disjoint",
+      "gradient_norms": [
+        0.4817977845668793,
+        0.23591257631778717,
+        0.32011109590530396
+      ],
+      "gradient_sha256": "bd85566c46f26f7bb15e8f2880c628f89cb6d0081b1ce7f5b2bc914e93baa59a",
+      "gradient_top2_energy": 0.9029201865196228,
+      "tangent_target_error": 1.8279895641626354e-07,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE",
+      "kind": "overlap",
+      "gradient_norms": [
+        0.4817977845668793,
+        0.3201110363006592,
+        0.32011109590530396
+      ],
+      "gradient_sha256": "bd85566c46f26f7bb15e8f2880c628f89cb6d0081b1ce7f5b2bc914e93baa59a",
+      "gradient_top2_energy": 0.9029201865196228,
+      "tangent_target_error": 0.33438265323638916,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE",
+      "kind": "random",
+      "gradient_norms": [
+        0.4817977845668793,
+        0.011395763605833054,
+        0.04371122643351555
+      ],
+      "gradient_sha256": "bd85566c46f26f7bb15e8f2880c628f89cb6d0081b1ce7f5b2bc914e93baa59a",
+      "gradient_top2_energy": 0.9029201865196228,
+      "tangent_target_error": 0.33263659477233887,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "kind": "disjoint",
+      "gradient_norms": [
+        0.23511949181556702,
+        0.05650879442691803,
+        0.06425021588802338
+      ],
+      "gradient_sha256": "658b1bae504b74cbf184db79f94e665f2a6071cd38e932b71f7aad5b3255a702",
+      "gradient_top2_energy": 0.6392015218734741,
+      "tangent_target_error": 3.108479873503711e-08,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "kind": "overlap",
+      "gradient_norms": [
+        0.23511949181556702,
+        0.06425021588802338,
+        0.06425021588802338
+      ],
+      "gradient_sha256": "658b1bae504b74cbf184db79f94e665f2a6071cd38e932b71f7aad5b3255a702",
+      "gradient_top2_energy": 0.6392015218734741,
+      "tangent_target_error": 0.07195113599300385,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "kind": "random",
+      "gradient_norms": [
+        0.23511949181556702,
+        0.012776937335729599,
+        0.012684131041169167
+      ],
+      "gradient_sha256": "658b1bae504b74cbf184db79f94e665f2a6071cd38e932b71f7aad5b3255a702",
+      "gradient_top2_energy": 0.6392015218734741,
+      "tangent_target_error": 0.07091239094734192,
+      "no_op_exact": true
+    }
+  ],
+  "support_sha256": "6817322d21824d0cb30c9c7b2b86ba03d227267e7c04810af16fb6c6a10143c3"
+}

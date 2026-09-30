@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "Edgepred_GPPT",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "PubMed",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "7b0bb774ae099214cd5a919f9ad9a3e0cbfec216d8a46628c15850d5fcb41a55",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 124,
+  "best_training_loss": 0.46177857033357167,
+  "selection": "last_after_training_loss_patience_10"
+}

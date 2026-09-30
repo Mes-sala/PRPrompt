@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "steps_cover_post_warmup": true,
+  "records": [
+    {
+      "method": "token_kd3_ref50",
+      "final": {
+        "step": 11,
+        "loss": 1.5534508228302002,
+        "ce": 1.4838402271270752,
+        "kd": 0.06959901750087738,
+        "gradient_norm": 0.03429318964481354,
+        "simplex_penalty": 0.10184291750192642,
+        "effective_norm_mse": 0.011430138722062111
+      }
+    },
+    {
+      "method": "token_kd3_ref50_simplex01",
+      "final": {
+        "step": 11,
+        "loss": 1.5544400215148926,
+        "ce": 1.4838594198226929,
+        "kd": 0.06959425657987595,
+        "gradient_norm": 0.03400801867246628,
+        "simplex_penalty": 0.0975271686911583,
+        "effective_norm_mse": 0.011008520610630512
+      }
+    },
+    {
+      "method": "token_kd3_ref50_simplex1",
+      "final": {
+        "step": 11,
+        "loss": 1.5631681680679321,
+        "ce": 1.4840768575668335,
+        "kd": 0.06955714523792267,
+        "gradient_norm": 0.03592974692583084,
+        "simplex_penalty": 0.09523383527994156,
+        "effective_norm_mse": 0.010624968446791172
+      }
+    },
+    {
+      "method": "token_kd3_ref50_norm1",
+      "final": {
+        "step": 11,
+        "loss": 1.5545510053634644,
+        "ce": 1.4838560819625854,
+        "kd": 0.06959768384695053,
+        "gradient_norm": 0.03391394019126892,
+        "simplex_penalty": 0.10443157702684402,
+        "effective_norm_mse": 0.010862168855965137
+      }
+    },
+    {
+      "method": "token_ridge_kd10plainlate",
+      "final": {
+        "step": 11,
+        "loss": 1.2160780429840088,
+        "ce": 0.9575384855270386,
+        "kd": 0.25852882862091064,
+        "gradient_norm": 0.2993355095386505,
+        "simplex_penalty": 0.08872420340776443,
+        "effective_norm_mse": 0.010602272115647793
+      }
+    },
+    {
+      "method": "token_ridge_kd10plainlate_simplex01",
+      "final": {
+        "step": 11,
+        "loss": 1.2169604301452637,
+        "ce": 0.9575446844100952,
+        "kd": 0.2585231363773346,
+        "gradient_norm": 0.29940634965896606,
+        "simplex_penalty": 0.08820533752441406,
+        "effective_norm_mse": 0.01057192962616682
+      }
+    },
+    {
+      "method": "token_ridge_kd10plainlate_simplex1",
+      "final": {
+        "step": 11,
+        "loss": 1.2248471975326538,
+        "ce": 0.9576422572135925,
+        "kd": 0.2584853768348694,
+        "gradient_norm": 0.300394207239151,
+        "simplex_penalty": 0.08709084987640381,
+        "effective_norm_mse": 0.010430451482534409
+      }
+    },
+    {
+      "method": "token_ridge_kd10plainlate_norm1",
+      "final": {
+        "step": 11,
+        "loss": 1.2171404361724854,
+        "ce": 0.9575461149215698,
+        "kd": 0.2585267424583435,
+        "gradient_norm": 0.29897621273994446,
+        "simplex_penalty": 0.08882267773151398,
+        "effective_norm_mse": 0.01056976430118084
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "dataset": "Cora",
+  "checkpoints": [
+    "GraphMAE",
+    "GraphMAE2"
+  ],
+  "seeds": [
+    90100,
+    90101,
+    90102,
+    90103,
+    90104
+  ],
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "head_token_mean",
+    "head_token_qeps-50",
+    "head_scale2_mean",
+    "head_scale2_qeps-50",
+    "head_lac5_mean",
+    "head_lac5_qeps-50",
+    "head_lac52_mean",
+    "head_lac52_qeps-50",
+    "head_laclow_mean",
+    "head_laclow_qeps-50",
+    "head_lachigh_mean",
+    "head_lachigh_qeps-50",
+    "head_las5_mean",
+    "head_las5_qeps-50",
+    "head_las52_mean",
+    "head_las52_qeps-50",
+    "head_laslow_mean",
+    "head_laslow_qeps-50",
+    "head_lashigh_mean",
+    "head_lashigh_qeps-50"
+  ],
+  "steps": 100,
+  "phase": "dev"
+}

@@ -1,0 +1,1630 @@
+{
+  "groups": [
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "All-in-one",
+      "accuracy_mean": 20.79111111111111,
+      "accuracy_sd_seedpairs": 3.0590539568812956,
+      "macro_f1_mean": 12.162351168129705,
+      "macro_f1_sd_seedpairs": 2.120020279278251,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "budget_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "Frozen",
+      "accuracy_mean": 22.351111111111113,
+      "accuracy_sd_seedpairs": 0.9770420211593318,
+      "macro_f1_mean": 17.279720667541646,
+      "macro_f1_sd_seedpairs": 1.6928337419884005,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "FrozenGraph",
+      "accuracy_mean": 28.486666666666665,
+      "accuracy_sd_seedpairs": 2.3359366429764323,
+      "macro_f1_mean": 22.776614546184806,
+      "macro_f1_sd_seedpairs": 2.3554209917979665,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "FrozenGraphPrototype",
+      "accuracy_mean": 58.29111111111111,
+      "accuracy_sd_seedpairs": 1.9477964757928583,
+      "macro_f1_mean": 55.22989991584968,
+      "macro_f1_sd_seedpairs": 1.1238890686700393,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "FrozenIdentityPrototype",
+      "accuracy_mean": 20.94,
+      "accuracy_sd_seedpairs": 0.762692598626732,
+      "macro_f1_mean": 19.50454246018801,
+      "macro_f1_sd_seedpairs": 0.4881303970145803,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "identity_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "FrozenNodePrototype",
+      "accuracy_mean": 38.333333333333336,
+      "accuracy_sd_seedpairs": 2.820691404602777,
+      "macro_f1_mean": 37.876022365001575,
+      "macro_f1_sd_seedpairs": 2.924654009445178,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "GPF",
+      "accuracy_mean": 39.553333333333335,
+      "accuracy_sd_seedpairs": 1.8088394069126195,
+      "macro_f1_mean": 35.03807828148382,
+      "macro_f1_sd_seedpairs": 2.0496832016414324,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "GPF-plus",
+      "accuracy_mean": 46.83111111111111,
+      "accuracy_sd_seedpairs": 2.186460864298995,
+      "macro_f1_mean": 44.984738158700736,
+      "macro_f1_sd_seedpairs": 2.230761038900189,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "GPPT",
+      "accuracy_mean": 24.65111111111111,
+      "accuracy_sd_seedpairs": 2.8522992674526852,
+      "macro_f1_mean": 13.690765294819496,
+      "macro_f1_sd_seedpairs": 6.787883230912142,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "Gprompt",
+      "accuracy_mean": 49.48222222222223,
+      "accuracy_sd_seedpairs": 1.0874485939318876,
+      "macro_f1_mean": 46.61979415598326,
+      "macro_f1_sd_seedpairs": 0.9921115920094059,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "GraphTOP",
+      "accuracy_mean": 21.595555555555556,
+      "accuracy_sd_seedpairs": 2.239258309748515,
+      "macro_f1_mean": 18.506142411546364,
+      "macro_f1_sd_seedpairs": 2.1044420857554655,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "GraphTOP-Frozen",
+      "accuracy_mean": 23.86888888888889,
+      "accuracy_sd_seedpairs": 2.3717316692895745,
+      "macro_f1_mean": 19.490772344144712,
+      "macro_f1_sd_seedpairs": 2.3946999917016547,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "None",
+      "accuracy_mean": 59.98444444444444,
+      "accuracy_sd_seedpairs": 2.747831468226861,
+      "macro_f1_mean": 57.67039969046412,
+      "macro_f1_sd_seedpairs": 2.0480077326679855,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "full_finetune"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "SUPT-hard",
+      "accuracy_mean": 40.54222222222222,
+      "accuracy_sd_seedpairs": 3.2260261072168084,
+      "macro_f1_mean": 37.91007361045284,
+      "macro_f1_sd_seedpairs": 2.7244783671117228,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "method": "SUPT-soft",
+      "accuracy_mean": 40.13777777777778,
+      "accuracy_sd_seedpairs": 3.6041010591331166,
+      "macro_f1_mean": 37.88657866682858,
+      "macro_f1_sd_seedpairs": 3.5374284780156136,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "All-in-one",
+      "accuracy_mean": 17.880000000000003,
+      "accuracy_sd_seedpairs": 3.012540456159884,
+      "macro_f1_mean": 10.967111673284512,
+      "macro_f1_sd_seedpairs": 2.5713506241677226,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "budget_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "Frozen",
+      "accuracy_mean": 31.90222222222222,
+      "accuracy_sd_seedpairs": 0.5364181619263512,
+      "macro_f1_mean": 30.048468081033498,
+      "macro_f1_sd_seedpairs": 0.3742647771950308,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "FrozenGraph",
+      "accuracy_mean": 45.608888888888885,
+      "accuracy_sd_seedpairs": 2.093731384660197,
+      "macro_f1_mean": 41.22112182117976,
+      "macro_f1_sd_seedpairs": 2.067175180762747,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "FrozenGraphPrototype",
+      "accuracy_mean": 53.31333333333333,
+      "accuracy_sd_seedpairs": 0.7937883848986456,
+      "macro_f1_mean": 48.30872760793929,
+      "macro_f1_sd_seedpairs": 0.6037361910027554,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "FrozenIdentityPrototype",
+      "accuracy_mean": 18.32,
+      "accuracy_sd_seedpairs": 1.6811603135929656,
+      "macro_f1_mean": 17.158547095598188,
+      "macro_f1_sd_seedpairs": 1.5194750014653426,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "identity_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "FrozenNodePrototype",
+      "accuracy_mean": 31.666666666666664,
+      "accuracy_sd_seedpairs": 0.40632499307819986,
+      "macro_f1_mean": 30.551738474778784,
+      "macro_f1_sd_seedpairs": 0.584759269595292,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "GPF",
+      "accuracy_mean": 34.28888888888889,
+      "accuracy_sd_seedpairs": 4.229351145401751,
+      "macro_f1_mean": 30.34774031987291,
+      "macro_f1_sd_seedpairs": 4.7180174002382955,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "GPF-plus",
+      "accuracy_mean": 54.86,
+      "accuracy_sd_seedpairs": 2.4541393603461095,
+      "macro_f1_mean": 53.781144496308784,
+      "macro_f1_sd_seedpairs": 2.217424299710222,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "GPPT",
+      "accuracy_mean": 24.64,
+      "accuracy_sd_seedpairs": 2.2986735305388644,
+      "macro_f1_mean": 17.526531656957317,
+      "macro_f1_sd_seedpairs": 1.9927259893667144,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "Gprompt",
+      "accuracy_mean": 53.22888888888889,
+      "accuracy_sd_seedpairs": 1.3998968215947583,
+      "macro_f1_mean": 49.937298300672154,
+      "macro_f1_sd_seedpairs": 1.0913584314206053,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "GraphTOP",
+      "accuracy_mean": 39.946666666666665,
+      "accuracy_sd_seedpairs": 0.8880315309717322,
+      "macro_f1_mean": 38.149152306837536,
+      "macro_f1_sd_seedpairs": 0.7633087939577203,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "GraphTOP-Frozen",
+      "accuracy_mean": 34.28888888888889,
+      "accuracy_sd_seedpairs": 0.4514544396847919,
+      "macro_f1_mean": 32.55333862557006,
+      "macro_f1_sd_seedpairs": 0.5749358057364691,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "None",
+      "accuracy_mean": 62.50222222222222,
+      "accuracy_sd_seedpairs": 3.2493452331884423,
+      "macro_f1_mean": 61.499812688606866,
+      "macro_f1_sd_seedpairs": 1.8611764594630151,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "full_finetune"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "SUPT-hard",
+      "accuracy_mean": 29.657777777777778,
+      "accuracy_sd_seedpairs": 2.3079091066253996,
+      "macro_f1_mean": 25.506167241656623,
+      "macro_f1_sd_seedpairs": 2.665313803199706,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "method": "SUPT-soft",
+      "accuracy_mean": 29.493333333333332,
+      "accuracy_sd_seedpairs": 1.4363147287415805,
+      "macro_f1_mean": 27.076252732640125,
+      "macro_f1_sd_seedpairs": 1.0561314929021715,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "All-in-one",
+      "accuracy_mean": 40.95777777777778,
+      "accuracy_sd_seedpairs": 2.777650885990614,
+      "macro_f1_mean": 35.46273741154036,
+      "macro_f1_sd_seedpairs": 3.311630390740045,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "budget_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "Frozen",
+      "accuracy_mean": 29.544444444444444,
+      "accuracy_sd_seedpairs": 0.7797934199374725,
+      "macro_f1_mean": 28.4491079882506,
+      "macro_f1_sd_seedpairs": 1.2277872210228589,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "FrozenGraph",
+      "accuracy_mean": 52.682222222222215,
+      "accuracy_sd_seedpairs": 2.2542724867336807,
+      "macro_f1_mean": 50.04578714044981,
+      "macro_f1_sd_seedpairs": 1.1521514521107092,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "FrozenGraphPrototype",
+      "accuracy_mean": 53.92666666666666,
+      "accuracy_sd_seedpairs": 1.0530432089900228,
+      "macro_f1_mean": 50.224155454541304,
+      "macro_f1_sd_seedpairs": 0.042353657447553754,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "FrozenIdentityPrototype",
+      "accuracy_mean": 19.259999999999998,
+      "accuracy_sd_seedpairs": 0.981478476585195,
+      "macro_f1_mean": 17.713997575695764,
+      "macro_f1_sd_seedpairs": 1.2305256016314674,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "identity_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "FrozenNodePrototype",
+      "accuracy_mean": 28.906666666666666,
+      "accuracy_sd_seedpairs": 0.9522079604792223,
+      "macro_f1_mean": 28.264103845746902,
+      "macro_f1_sd_seedpairs": 1.3331758772563203,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "GPF",
+      "accuracy_mean": 44.43555555555556,
+      "accuracy_sd_seedpairs": 2.965244977700454,
+      "macro_f1_mean": 40.98797572773378,
+      "macro_f1_sd_seedpairs": 2.863342587384504,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "GPF-plus",
+      "accuracy_mean": 62.05555555555555,
+      "accuracy_sd_seedpairs": 1.2692823869327796,
+      "macro_f1_mean": 61.313691666028575,
+      "macro_f1_sd_seedpairs": 1.253175169617141,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "GPPT",
+      "accuracy_mean": 35.46666666666667,
+      "accuracy_sd_seedpairs": 0.6784541251993327,
+      "macro_f1_mean": 34.72313539098439,
+      "macro_f1_sd_seedpairs": 0.6775699222161371,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "Gprompt",
+      "accuracy_mean": 54.75333333333334,
+      "accuracy_sd_seedpairs": 1.5531902652283107,
+      "macro_f1_mean": 51.29307812114437,
+      "macro_f1_sd_seedpairs": 0.42117976804896873,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "GraphTOP",
+      "accuracy_mean": 35.495555555555555,
+      "accuracy_sd_seedpairs": 1.3654221976289136,
+      "macro_f1_mean": 35.18441118303257,
+      "macro_f1_sd_seedpairs": 1.5811492185944842,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "GraphTOP-Frozen",
+      "accuracy_mean": 30.315555555555555,
+      "accuracy_sd_seedpairs": 0.6394355149487528,
+      "macro_f1_mean": 29.34589775703801,
+      "macro_f1_sd_seedpairs": 1.0388364675434332,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "None",
+      "accuracy_mean": 57.31333333333333,
+      "accuracy_sd_seedpairs": 3.028481467666595,
+      "macro_f1_mean": 56.819607744116375,
+      "macro_f1_sd_seedpairs": 2.1668458621234623,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "full_finetune"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "SUPT-hard",
+      "accuracy_mean": 47.92888888888889,
+      "accuracy_sd_seedpairs": 1.17716231298454,
+      "macro_f1_mean": 46.007920290962595,
+      "macro_f1_sd_seedpairs": 1.3714774717682539,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "method": "SUPT-soft",
+      "accuracy_mean": 45.382222222222225,
+      "accuracy_sd_seedpairs": 2.1737397370532787,
+      "macro_f1_mean": 42.596369366155926,
+      "macro_f1_sd_seedpairs": 2.560610181198128,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "All-in-one",
+      "accuracy_mean": 26.05111111111111,
+      "accuracy_sd_seedpairs": 3.548141923755461,
+      "macro_f1_mean": 15.574271806760732,
+      "macro_f1_sd_seedpairs": 2.0723460473868855,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "budget_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "Frozen",
+      "accuracy_mean": 24.944444444444446,
+      "accuracy_sd_seedpairs": 1.403273949654086,
+      "macro_f1_mean": 18.91545577412562,
+      "macro_f1_sd_seedpairs": 1.9421667187834892,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "FrozenGraph",
+      "accuracy_mean": 40.89111111111111,
+      "accuracy_sd_seedpairs": 2.31573122600856,
+      "macro_f1_mean": 31.240262198767024,
+      "macro_f1_sd_seedpairs": 1.924326751178004,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "FrozenGraphPrototype",
+      "accuracy_mean": 58.72222222222222,
+      "accuracy_sd_seedpairs": 0.8244055097125675,
+      "macro_f1_mean": 54.41336093058287,
+      "macro_f1_sd_seedpairs": 0.5557549458371197,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "FrozenIdentityPrototype",
+      "accuracy_mean": 26.066666666666666,
+      "accuracy_sd_seedpairs": 0.6187891401762001,
+      "macro_f1_mean": 24.51675166201576,
+      "macro_f1_sd_seedpairs": 0.7658150456369346,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "identity_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "FrozenNodePrototype",
+      "accuracy_mean": 41.49777777777778,
+      "accuracy_sd_seedpairs": 2.1964162730330603,
+      "macro_f1_mean": 40.561107586478485,
+      "macro_f1_sd_seedpairs": 1.8800367651632561,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "GPF",
+      "accuracy_mean": 40.49333333333333,
+      "accuracy_sd_seedpairs": 2.0759576103572055,
+      "macro_f1_mean": 34.24222409680393,
+      "macro_f1_sd_seedpairs": 1.9198542199681512,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "GPF-plus",
+      "accuracy_mean": 37.56666666666667,
+      "accuracy_sd_seedpairs": 3.1117679862097707,
+      "macro_f1_mean": 34.89645459969318,
+      "macro_f1_sd_seedpairs": 3.151877276548938,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "GPPT",
+      "accuracy_mean": 26.415555555555557,
+      "accuracy_sd_seedpairs": 6.860173305229086,
+      "macro_f1_mean": 16.2787061764114,
+      "macro_f1_sd_seedpairs": 8.411050910589191,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "Gprompt",
+      "accuracy_mean": 55.684444444444445,
+      "accuracy_sd_seedpairs": 2.3303814661505036,
+      "macro_f1_mean": 51.5944540819403,
+      "macro_f1_sd_seedpairs": 2.18506614873959,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "GraphTOP",
+      "accuracy_mean": 26.635555555555555,
+      "accuracy_sd_seedpairs": 1.9965915400446284,
+      "macro_f1_mean": 21.275743779009165,
+      "macro_f1_sd_seedpairs": 2.1104673958128686,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "GraphTOP-Frozen",
+      "accuracy_mean": 25.03333333333333,
+      "accuracy_sd_seedpairs": 2.5909843689223613,
+      "macro_f1_mean": 19.097081960534712,
+      "macro_f1_sd_seedpairs": 3.2624267430684712,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "None",
+      "accuracy_mean": 41.65777777777778,
+      "accuracy_sd_seedpairs": 1.9496523906697973,
+      "macro_f1_mean": 36.70368166503038,
+      "macro_f1_sd_seedpairs": 1.9462432317519704,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "full_finetune"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "SUPT-hard",
+      "accuracy_mean": 37.63777777777778,
+      "accuracy_sd_seedpairs": 2.552909016092123,
+      "macro_f1_mean": 33.83436262341422,
+      "macro_f1_sd_seedpairs": 2.595217478293551,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "method": "SUPT-soft",
+      "accuracy_mean": 39.16,
+      "accuracy_sd_seedpairs": 2.550784193145317,
+      "macro_f1_mean": 34.0262731492755,
+      "macro_f1_sd_seedpairs": 2.7059451482819536,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "All-in-one",
+      "accuracy_mean": 21.16888888888889,
+      "accuracy_sd_seedpairs": 1.7310722431808312,
+      "macro_f1_mean": 9.178315585424055,
+      "macro_f1_sd_seedpairs": 2.1309704781673156,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "budget_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "Frozen",
+      "accuracy_mean": 26.784444444444443,
+      "accuracy_sd_seedpairs": 1.1723812425050901,
+      "macro_f1_mean": 25.25056301828358,
+      "macro_f1_sd_seedpairs": 1.2617705885318722,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "FrozenGraph",
+      "accuracy_mean": 41.13333333333333,
+      "accuracy_sd_seedpairs": 1.6867424225411538,
+      "macro_f1_mean": 36.1415706412283,
+      "macro_f1_sd_seedpairs": 1.0933237777740565,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "FrozenGraphPrototype",
+      "accuracy_mean": 41.36,
+      "accuracy_sd_seedpairs": 1.0392304845413258,
+      "macro_f1_mean": 38.31885308787975,
+      "macro_f1_sd_seedpairs": 0.40991872846831706,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "FrozenIdentityPrototype",
+      "accuracy_mean": 21.753333333333334,
+      "accuracy_sd_seedpairs": 0.5467174773134652,
+      "macro_f1_mean": 21.015257470469034,
+      "macro_f1_sd_seedpairs": 0.4567181155832544,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "identity_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "FrozenNodePrototype",
+      "accuracy_mean": 28.646666666666665,
+      "accuracy_sd_seedpairs": 1.1065260954898428,
+      "macro_f1_mean": 27.261038648248064,
+      "macro_f1_sd_seedpairs": 0.9478105844452352,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "GPF",
+      "accuracy_mean": 28.53777777777778,
+      "accuracy_sd_seedpairs": 3.4663012627935905,
+      "macro_f1_mean": 22.1833632846568,
+      "macro_f1_sd_seedpairs": 3.739498038419651,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "GPF-plus",
+      "accuracy_mean": 45.077777777777776,
+      "accuracy_sd_seedpairs": 0.9993720250459521,
+      "macro_f1_mean": 41.07844533133016,
+      "macro_f1_sd_seedpairs": 1.5052349726943306,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "GPPT",
+      "accuracy_mean": 26.2,
+      "accuracy_sd_seedpairs": 3.896113448040238,
+      "macro_f1_mean": 19.92828876716586,
+      "macro_f1_sd_seedpairs": 4.083688626006261,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "Gprompt",
+      "accuracy_mean": 38.6,
+      "accuracy_sd_seedpairs": 1.683953681073203,
+      "macro_f1_mean": 35.705948198006205,
+      "macro_f1_sd_seedpairs": 1.0007065690801227,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "GraphTOP",
+      "accuracy_mean": 32.69555555555556,
+      "accuracy_sd_seedpairs": 0.6165044831773553,
+      "macro_f1_mean": 31.109949607635716,
+      "macro_f1_sd_seedpairs": 0.6836044241851046,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "GraphTOP-Frozen",
+      "accuracy_mean": 27.893333333333334,
+      "accuracy_sd_seedpairs": 1.247036487036366,
+      "macro_f1_mean": 26.359986566739916,
+      "macro_f1_sd_seedpairs": 1.3377222270363363,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "None",
+      "accuracy_mean": 46.43333333333334,
+      "accuracy_sd_seedpairs": 3.1796697941767484,
+      "macro_f1_mean": 42.09418602021285,
+      "macro_f1_sd_seedpairs": 3.312048161619861,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "full_finetune"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "SUPT-hard",
+      "accuracy_mean": 23.022222222222222,
+      "accuracy_sd_seedpairs": 2.3837039338903745,
+      "macro_f1_mean": 19.45222595100973,
+      "macro_f1_sd_seedpairs": 2.656525804056976,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "method": "SUPT-soft",
+      "accuracy_mean": 26.635555555555555,
+      "accuracy_sd_seedpairs": 1.358005072810031,
+      "macro_f1_mean": 20.994777196723465,
+      "macro_f1_sd_seedpairs": 2.3843603929781074,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "All-in-one",
+      "accuracy_mean": 31.93777777777778,
+      "accuracy_sd_seedpairs": 2.057339166118326,
+      "macro_f1_mean": 22.920631162745497,
+      "macro_f1_sd_seedpairs": 2.427755460735907,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "budget_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "Frozen",
+      "accuracy_mean": 25.275555555555556,
+      "accuracy_sd_seedpairs": 0.5124234360153508,
+      "macro_f1_mean": 23.08448844071503,
+      "macro_f1_sd_seedpairs": 0.13287131024524476,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "FrozenGraph",
+      "accuracy_mean": 38.784444444444446,
+      "accuracy_sd_seedpairs": 0.7584047585410939,
+      "macro_f1_mean": 34.92195877532585,
+      "macro_f1_sd_seedpairs": 0.9309313063727152,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "FrozenGraphPrototype",
+      "accuracy_mean": 37.653333333333336,
+      "accuracy_sd_seedpairs": 2.2184679398179328,
+      "macro_f1_mean": 33.88542062709995,
+      "macro_f1_sd_seedpairs": 2.3219520724508373,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "FrozenIdentityPrototype",
+      "accuracy_mean": 19.166666666666668,
+      "accuracy_sd_seedpairs": 0.9637945839233562,
+      "macro_f1_mean": 17.706367389615266,
+      "macro_f1_sd_seedpairs": 0.9132719359448654,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "identity_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "FrozenNodePrototype",
+      "accuracy_mean": 25.720000000000002,
+      "accuracy_sd_seedpairs": 0.737495762699693,
+      "macro_f1_mean": 23.598905235440665,
+      "macro_f1_sd_seedpairs": 0.490354699873435,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "GPF",
+      "accuracy_mean": 27.586666666666666,
+      "accuracy_sd_seedpairs": 3.035572433660577,
+      "macro_f1_mean": 18.679451213505747,
+      "macro_f1_sd_seedpairs": 2.9549944410039806,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "GPF-plus",
+      "accuracy_mean": 44.33111111111111,
+      "accuracy_sd_seedpairs": 2.204497927218601,
+      "macro_f1_mean": 40.78843546634437,
+      "macro_f1_sd_seedpairs": 2.6324903261780537,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "GPPT",
+      "accuracy_mean": 26.726666666666667,
+      "accuracy_sd_seedpairs": 0.837197706638043,
+      "macro_f1_mean": 25.228339095422466,
+      "macro_f1_sd_seedpairs": 0.8027861643989912,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "Gprompt",
+      "accuracy_mean": 38.526666666666664,
+      "accuracy_sd_seedpairs": 2.1491160973758503,
+      "macro_f1_mean": 34.70390248026838,
+      "macro_f1_sd_seedpairs": 2.2359703650485074,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "GraphTOP",
+      "accuracy_mean": 28.322222222222223,
+      "accuracy_sd_seedpairs": 1.6535248544985484,
+      "macro_f1_mean": 26.42658738853985,
+      "macro_f1_sd_seedpairs": 1.6843355126017001,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "GraphTOP-Frozen",
+      "accuracy_mean": 26.004444444444445,
+      "accuracy_sd_seedpairs": 0.5123258511706951,
+      "macro_f1_mean": 23.785211132695025,
+      "macro_f1_sd_seedpairs": 0.1045833387187291,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "ego"
+      ],
+      "variant": [
+        "baseline"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "None",
+      "accuracy_mean": 43.56666666666667,
+      "accuracy_sd_seedpairs": 1.772907216974426,
+      "macro_f1_mean": 39.69192299593265,
+      "macro_f1_sd_seedpairs": 2.3417122036563955,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "full_graph"
+      ],
+      "variant": [
+        "full_finetune"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "SUPT-hard",
+      "accuracy_mean": 32.906666666666666,
+      "accuracy_sd_seedpairs": 3.2021711384621514,
+      "macro_f1_mean": 28.010987856695344,
+      "macro_f1_sd_seedpairs": 3.378629900575402,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "method": "SUPT-soft",
+      "accuracy_mean": 30.644444444444442,
+      "accuracy_sd_seedpairs": 2.6564031655187015,
+      "macro_f1_mean": 24.24987858703426,
+      "macro_f1_sd_seedpairs": 3.2893912316682705,
+      "n_seed_pairs": 9,
+      "input_mode": [
+        "induced"
+      ],
+      "variant": [
+        "prog_adapted"
+      ],
+      "artifact_paths_local_available": 0
+    }
+  ],
+  "checkpoint_identity": [
+    {
+      "dataset": "Cora",
+      "family": "DGI",
+      "current_local_sha256": "fb2b361637cbcc95e5885fecaf40a7ad45c80001f554ec7e19c203a56d925de9",
+      "confirmation_sha256": "fb2b361637cbcc95e5885fecaf40a7ad45c80001f554ec7e19c203a56d925de9",
+      "current_file_matches_confirmation": true,
+      "seedgrid_run_checkpoint_hash_verified": false
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "current_local_sha256": "87bd546f7897218161bfb0876e792cf8f4682f3a42d6fc6e2227b9aa0f723493",
+      "confirmation_sha256": "87bd546f7897218161bfb0876e792cf8f4682f3a42d6fc6e2227b9aa0f723493",
+      "current_file_matches_confirmation": true,
+      "seedgrid_run_checkpoint_hash_verified": false
+    },
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_GPPT",
+      "current_local_sha256": "a279caf82ae2d2fdbfc280143494c82054738b4fa2166034380ad83c971d3f7b",
+      "confirmation_sha256": "a279caf82ae2d2fdbfc280143494c82054738b4fa2166034380ad83c971d3f7b",
+      "current_file_matches_confirmation": true,
+      "seedgrid_run_checkpoint_hash_verified": false
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "DGI",
+      "current_local_sha256": "8f4dd5622b98873830af823ef05e637a78d7d6a9e3dcd37837467e5902842f6b",
+      "confirmation_sha256": "460f97d1cd973575e7d2d28b08a1b4532d50bd55e5edc0fc777c3820ce616e5f",
+      "current_file_matches_confirmation": false,
+      "seedgrid_run_checkpoint_hash_verified": false
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "current_local_sha256": "5b3b70a23a7853be9c376db8d4ef054399566d15cc51c1b7be32e62816fac522",
+      "confirmation_sha256": "7bf67dc55e3a33541646a03e797ad32e1e16ce2f7a4be4c1fe2064d900de6e0b",
+      "current_file_matches_confirmation": false,
+      "seedgrid_run_checkpoint_hash_verified": false
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_GPPT",
+      "current_local_sha256": "71a6af7c13c889d55fe664bbfcffc318eb0782418e6eabbf21731a6d6b4b3c51",
+      "confirmation_sha256": "e5488f6ef53701dc38f4401933e1bce64cae52406ca37bd41a9a0ae53762243d",
+      "current_file_matches_confirmation": false,
+      "seedgrid_run_checkpoint_hash_verified": false
+    }
+  ],
+  "sources": [
+    {
+      "path": "/Users/shq/Research/GP/持续推进/主线03_硕士论文三模块_20260924/stage2_confirmation/confirmation_pairs.json",
+      "sha256": "1bed90edb85f88e656e39e64eada2d61179cd3b65435d6f463c150ffee74e80c"
+    },
+    {
+      "path": "/Users/shq/Research/GP/持续推进/主线03_硕士论文三模块_20260924/stage2b_gppt_confirmation/confirmation_pairs.json",
+      "sha256": "615b97b81712d2203ab28dd5d26074d601d346e556aa3008a119a46dda578b9b"
+    },
+    {
+      "path": "/Users/shq/Research/GP/持续推进/主线03_硕士论文三模块_20260924/stage2c_dgi_confirmation/confirmation_pairs.json",
+      "sha256": "74d45958a34e3f7948f653c7c8adea01055f9b4d1c7256432083bf9e29eab989"
+    },
+    {
+      "path": "/Users/shq/Research/GP/rep/ProG/results/cora_5shot_full_matrix_seedgrid.csv",
+      "sha256": "70c7f953f9b6ca61f63573e7801e6dea33cff77c1b04e0a252ba1d540d061728"
+    },
+    {
+      "path": "/Users/shq/Research/GP/rep/ProG/Experiment/pre_trained_model/Cora/DGI.GCN.128hidden_dim.pth",
+      "sha256": "fb2b361637cbcc95e5885fecaf40a7ad45c80001f554ec7e19c203a56d925de9"
+    },
+    {
+      "path": "/Users/shq/Research/GP/rep/ProG/Experiment/pre_trained_model/Cora/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+      "sha256": "87bd546f7897218161bfb0876e792cf8f4682f3a42d6fc6e2227b9aa0f723493"
+    },
+    {
+      "path": "/Users/shq/Research/GP/rep/ProG/Experiment/pre_trained_model/Cora/Edgepred_GPPT.GCN.128hidden_dim.pth",
+      "sha256": "a279caf82ae2d2fdbfc280143494c82054738b4fa2166034380ad83c971d3f7b"
+    },
+    {
+      "path": "/Users/shq/Research/GP/rep/ProG/results/citeseer_5shot_full_matrix_seedgrid.csv",
+      "sha256": "3f2cd321a875a2abd4ba133115de4f63a1e532419c7275c4d84aa8c5618a4fb1"
+    },
+    {
+      "path": "/Users/shq/Research/GP/rep/ProG/Experiment/pre_trained_model/CiteSeer/DGI.GCN.128hidden_dim.pth",
+      "sha256": "8f4dd5622b98873830af823ef05e637a78d7d6a9e3dcd37837467e5902842f6b"
+    },
+    {
+      "path": "/Users/shq/Research/GP/rep/ProG/Experiment/pre_trained_model/CiteSeer/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+      "sha256": "5b3b70a23a7853be9c376db8d4ef054399566d15cc51c1b7be32e62816fac522"
+    },
+    {
+      "path": "/Users/shq/Research/GP/rep/ProG/Experiment/pre_trained_model/CiteSeer/Edgepred_GPPT.GCN.128hidden_dim.pth",
+      "sha256": "71a6af7c13c889d55fe664bbfcffc318eb0782418e6eabbf21731a6d6b4b3c51"
+    }
+  ]
+}

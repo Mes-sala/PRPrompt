@@ -1,0 +1,91 @@
+{
+  "dataset": "WikiCS",
+  "seed": 271703,
+  "metadata": {
+    "trace": {
+      "lambda_upper": 0.0004486976282851225,
+      "trajectory": [
+        {
+          "D": 0.034269736117359964,
+          "logK": 0.14926696769147565,
+          "B": 0.0003570428580857538,
+          "next_D": 0.01736833156213975
+        },
+        {
+          "D": 0.01736833156213975,
+          "logK": 0.07565036909716567,
+          "B": 0.00016811110728412145,
+          "next_D": 0.017273554849703103
+        },
+        {
+          "D": 0.017273554849703103,
+          "logK": 0.07523755493294984,
+          "B": 0.0001671247412687753,
+          "next_D": 0.017273060043892022
+        }
+      ],
+      "eta": 8.356237063438765e-05,
+      "uncertified_pct": 8.089618607833076,
+      "axis_valid": true
+    },
+    "spectral": {
+      "lambda_upper": 0.0001413552931085278,
+      "trajectory": [
+        {
+          "D": 0.034269736117359964,
+          "logK": 0.14926696769147565,
+          "B": 0.00011248086612338283,
+          "next_D": 0.017245648204330357
+        },
+        {
+          "D": 0.017245648204330357,
+          "logK": 0.07511600335989524,
+          "B": 5.2558632809067964e-05,
+          "next_D": 0.017215588501547235
+        },
+        {
+          "D": 0.017215588501547235,
+          "logK": 0.07498507382286065,
+          "B": 5.246015243941947e-05,
+          "next_D": 0.017215539099339105
+        }
+      ],
+      "eta": 2.6230076219709734e-05,
+      "uncertified_pct": 2.9416794937574826,
+      "axis_valid": true
+    }
+  },
+  "spectrum": {
+    "rayleigh": 9.242354052372325e-05,
+    "residual": 5.1661486272444544e-15,
+    "trace": 0.0004486976272851225,
+    "frobenius": 0.00014135529210852781,
+    "upper": 0.0001413552931085278
+  },
+  "actual": [
+    {
+      "direction_diameter": 0.034269736116359965,
+      "soft_diameter": 4.659014996463806e-05,
+      "soft_residual": 3.1861115820303535e-05
+    },
+    {
+      "direction_diameter": 0.017157416163151334,
+      "soft_diameter": 2.3314931824953642e-05,
+      "soft_residual": 1.5939621626695378e-05
+    },
+    {
+      "direction_diameter": 0.01714716988885063,
+      "soft_diameter": 2.3296751974390835e-05,
+      "soft_residual": 1.5927240162027962e-05
+    }
+  ],
+  "disagreement_pct": 0.034205575508807935,
+  "pre_artifact_sha256": "8aafae23ebb3c65f75a1fb442eb296fb689a1eb66391dc2c79749a3a5eb88893",
+  "artifact_sha256": "1b6b0047ce11c5dfd6e7bef74dd3fd64ecdf691d1738fcf73b9a1e5baca646a1",
+  "runner_sha256": "2e91e88947d77ded60c1c42e6edfa60b2e5966d78b20c780be7248e27451d2d2",
+  "design_sha256": "8b6335079733d50a1968aef7d23b250d3046e37211b9f1cf86807c4fca5fb68d",
+  "source_sha256": "b8a4975d5a86522b79fd6ddb2169da54ff4d6377e62511e9e7238765e2d147a5",
+  "geometry_precompute_seconds": 0.00398080050945282,
+  "scope": "No query labels; common prediction and bounds sealed before full iteration",
+  "finished": 1790516510.680893
+}

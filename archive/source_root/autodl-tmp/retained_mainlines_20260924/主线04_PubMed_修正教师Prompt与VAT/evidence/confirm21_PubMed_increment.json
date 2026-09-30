@@ -1,0 +1,114 @@
+[
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "token_kd3_ref50",
+    "baseline": "token_kd3",
+    "n": 20,
+    "delta_pp": 2.120000422000885,
+    "ci95": [
+      1.3100007101893425,
+      2.9800006821751595
+    ],
+    "wins": 16,
+    "losses": 3
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "token_kd3_ref50",
+    "baseline": "token_kd3_ref50shuffle",
+    "n": 20,
+    "delta_pp": 1.730000078678131,
+    "ci95": [
+      0.8299994394183159,
+      2.68000066280365
+    ],
+    "wins": 13,
+    "losses": 7
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "token_kd3_ref50",
+    "baseline": "graphprompt",
+    "n": 20,
+    "delta_pp": 0.9500008821487427,
+    "ci95": [
+      -0.6399980187416077,
+      2.6002513542771304
+    ],
+    "wins": 13,
+    "losses": 7
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "token_kd3_ref50",
+    "baseline": "rect_teacher_ref50",
+    "n": 20,
+    "delta_pp": 4.020000696182251,
+    "ci95": [
+      2.8200006410479546,
+      5.210000276565552
+    ],
+    "wins": 19,
+    "losses": 1
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "candidate": "token_kd3_ref50",
+    "baseline": "token_kd3",
+    "n": 20,
+    "delta_pp": 0.4300001263618469,
+    "ci95": [
+      -0.30999958515167236,
+      1.1300003603100777
+    ],
+    "wins": 13,
+    "losses": 5
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "candidate": "token_kd3_ref50",
+    "baseline": "token_kd3_ref50shuffle",
+    "n": 20,
+    "delta_pp": 0.6700000166893005,
+    "ci95": [
+      0.04000066965818405,
+      1.3699996545910835
+    ],
+    "wins": 13,
+    "losses": 5
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "candidate": "token_kd3_ref50",
+    "baseline": "graphprompt",
+    "n": 20,
+    "delta_pp": 5.560000240802765,
+    "ci95": [
+      3.7100007981061935,
+      7.599999904632568
+    ],
+    "wins": 18,
+    "losses": 2
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE2",
+    "candidate": "token_kd3_ref50",
+    "baseline": "rect_teacher_ref50",
+    "n": 20,
+    "delta_pp": 3.9500001072883606,
+    "ci95": [
+      2.4600002095103264,
+      5.320000357925892
+    ],
+    "wins": 18,
+    "losses": 2
+  }
+]

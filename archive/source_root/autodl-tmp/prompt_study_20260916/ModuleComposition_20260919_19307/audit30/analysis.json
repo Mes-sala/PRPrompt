@@ -1,0 +1,395 @@
+{
+  "status": "CURRENT_IMPLEMENTATION_ISSUES_REPRODUCED",
+  "freeze_sha": "f71dd52b889048825dceaadb6d0b08b4c34ba5f50ea31d962e0856a742c3f488",
+  "source_inventory_sha": "a9df6a8e853dbf0176e53ede1eb25b8702ed7663a5d827d7df294d6f34dcb920",
+  "fixture_sha": "4482394ffc33afd2c8a7a354f9b3ee58358f86175a404b42e2c2d3f615302b10",
+  "methods": {
+    "DGI": {
+      "initialization": [
+        {
+          "requested_seed": 11,
+          "torch_seed_after_constructor": 12345,
+          "gnn_sha": "d65063d4911a69fcd522c43b26c185086b15d4567ed9236dd9c901c4fd886990",
+          "full_sha": "1f8906d6d980288d230546bb33b397b03818a18c0eafef197e2d4ae7b663f3fe"
+        },
+        {
+          "requested_seed": 23,
+          "torch_seed_after_constructor": 12345,
+          "gnn_sha": "d65063d4911a69fcd522c43b26c185086b15d4567ed9236dd9c901c4fd886990",
+          "full_sha": "756d7f0b0df82e575d941d5afd1c85bc9ba4b046fffae32504cddb4806bf804e"
+        }
+      ],
+      "different_requested_seeds_same_gnn_init": true,
+      "native_steps": [
+        {
+          "disc.f_k.weight": {
+            "in_optimizer": false,
+            "numel": 16384,
+            "grad_norm": 0.40518918633461,
+            "max_update": 0.0
+          },
+          "disc.f_k.bias": {
+            "in_optimizer": false,
+            "numel": 1,
+            "grad_norm": 0.05584326386451721,
+            "max_update": 0.0
+          },
+          "gnn.conv_layers.0.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 0.02156100980937481,
+            "max_update": 0.000999998184852302
+          },
+          "gnn.conv_layers.0.lin.weight": {
+            "in_optimizer": true,
+            "numel": 2688,
+            "grad_norm": 0.026884162798523903,
+            "max_update": 0.0010000020265579224
+          },
+          "gnn.conv_layers.1.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 0.03920535370707512,
+            "max_update": 0.0009999989997595549
+          },
+          "gnn.conv_layers.1.lin.weight": {
+            "in_optimizer": true,
+            "numel": 16384,
+            "grad_norm": 0.050093624740839005,
+            "max_update": 0.0010000020265579224
+          }
+        }
+      ],
+      "uncovered": [
+        "disc.f_k.weight",
+        "disc.f_k.bias"
+      ],
+      "active_gradient_but_not_updated": [
+        "disc.f_k.weight",
+        "disc.f_k.bias"
+      ],
+      "native_sidecar": {
+        "schema": "prog-pretrain-provenance-v1",
+        "method": "DGI",
+        "variant": "ProG-adapted",
+        "source_parity": "not_fully_verified",
+        "dataset": "ENZYMES",
+        "gnn": "GCN",
+        "hidden_dim": 128,
+        "checkpoint_sha256": "b5b11904ab1dff41e6a944fb7549bdfc60986eeb0958c12717e9eeb6b8410e50",
+        "labels_used": false,
+        "requested_epochs": 1,
+        "completed_epochs": 1,
+        "best_training_loss": 0.6983185410499573,
+        "selection": "last_after_training_loss_patience_20"
+      },
+      "synthetic_only": true
+    },
+    "GraphMAE": {
+      "initialization": [
+        {
+          "requested_seed": 11,
+          "torch_seed_after_constructor": 12345,
+          "gnn_sha": "d65063d4911a69fcd522c43b26c185086b15d4567ed9236dd9c901c4fd886990",
+          "full_sha": "b5d71f6744224d0385376246abc69ca358b5b3ee4846548cf7dd49ec4e3bedef"
+        },
+        {
+          "requested_seed": 23,
+          "torch_seed_after_constructor": 12345,
+          "gnn_sha": "d65063d4911a69fcd522c43b26c185086b15d4567ed9236dd9c901c4fd886990",
+          "full_sha": "b5d71f6744224d0385376246abc69ca358b5b3ee4846548cf7dd49ec4e3bedef"
+        }
+      ],
+      "different_requested_seeds_same_gnn_init": true,
+      "native_steps": [
+        {
+          "gnn.conv_layers.0.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 0.11284709721803665,
+            "max_update": 0.0009999996982514858
+          },
+          "gnn.conv_layers.0.lin.weight": {
+            "in_optimizer": true,
+            "numel": 2688,
+            "grad_norm": 0.17717541754245758,
+            "max_update": 0.0010000020265579224
+          },
+          "gnn.conv_layers.1.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 0.15538306534290314,
+            "max_update": 0.0009999996982514858
+          },
+          "gnn.conv_layers.1.lin.weight": {
+            "in_optimizer": true,
+            "numel": 16384,
+            "grad_norm": 0.264924019575119,
+            "max_update": 0.0010000020265579224
+          },
+          "decoder.conv_layers.0.bias": {
+            "in_optimizer": true,
+            "numel": 21,
+            "grad_norm": 1502370816.0,
+            "max_update": 0.0010000000474974513
+          },
+          "decoder.conv_layers.0.lin.weight": {
+            "in_optimizer": true,
+            "numel": 2688,
+            "grad_norm": 0.1908014863729477,
+            "max_update": 0.0010000020265579224
+          },
+          "decoder.conv_layers.1.bias": {
+            "in_optimizer": true,
+            "numel": 21,
+            "grad_norm": 105725640704.0,
+            "max_update": 0.0010000000474974513
+          },
+          "decoder.conv_layers.1.lin.weight": {
+            "in_optimizer": true,
+            "numel": 441,
+            "grad_norm": 0.10724647343158722,
+            "max_update": 0.0010000020265579224
+          },
+          "loss.enc_mask_token": {
+            "in_optimizer": false,
+            "numel": 21,
+            "grad_norm": 0.02481565810739994,
+            "max_update": 0.0
+          },
+          "loss.encoder_to_decoder.weight": {
+            "in_optimizer": false,
+            "numel": 16384,
+            "grad_norm": 0.4618918299674988,
+            "max_update": 0.0
+          }
+        }
+      ],
+      "uncovered": [
+        "loss.enc_mask_token",
+        "loss.encoder_to_decoder.weight"
+      ],
+      "active_gradient_but_not_updated": [
+        "loss.enc_mask_token",
+        "loss.encoder_to_decoder.weight"
+      ],
+      "native_sidecar": {
+        "schema": "prog-pretrain-provenance-v1",
+        "method": "GraphMAE",
+        "variant": "ProG-adapted",
+        "source_parity": "not_fully_verified",
+        "dataset": "ENZYMES",
+        "gnn": "GCN",
+        "hidden_dim": 128,
+        "checkpoint_sha256": "d30136c2d6076bb5d7b48b66cee7e3c496ed19596aa91406a9dc0fb5953121f7",
+        "labels_used": false,
+        "requested_epochs": 1,
+        "completed_epochs": 0,
+        "best_training_loss": 1.010230302810669,
+        "selection": "last_after_training_loss_patience_10"
+      },
+      "synthetic_only": true
+    },
+    "GraphCL": {
+      "initialization": [
+        {
+          "requested_seed": 11,
+          "torch_seed_after_constructor": 12345,
+          "gnn_sha": "d65063d4911a69fcd522c43b26c185086b15d4567ed9236dd9c901c4fd886990",
+          "full_sha": "ebb4f5adcb643396da5f3b828094d8210820875c5069838982ed4cdefd8cba46"
+        },
+        {
+          "requested_seed": 23,
+          "torch_seed_after_constructor": 12345,
+          "gnn_sha": "d65063d4911a69fcd522c43b26c185086b15d4567ed9236dd9c901c4fd886990",
+          "full_sha": "ebb4f5adcb643396da5f3b828094d8210820875c5069838982ed4cdefd8cba46"
+        }
+      ],
+      "different_requested_seeds_same_gnn_init": true,
+      "native_steps": [
+        {
+          "gnn.conv_layers.0.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 0.36982643604278564,
+            "max_update": 0.009999998845160007
+          },
+          "gnn.conv_layers.0.lin.weight": {
+            "in_optimizer": true,
+            "numel": 2688,
+            "grad_norm": 0.7401986718177795,
+            "max_update": 0.01000000536441803
+          },
+          "gnn.conv_layers.1.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 0.5553338527679443,
+            "max_update": 0.009999999776482582
+          },
+          "gnn.conv_layers.1.lin.weight": {
+            "in_optimizer": true,
+            "numel": 16384,
+            "grad_norm": 1.1475577354431152,
+            "max_update": 0.009999997913837433
+          },
+          "projection_head.0.weight": {
+            "in_optimizer": true,
+            "numel": 16384,
+            "grad_norm": 1.7366101741790771,
+            "max_update": 0.010000001639127731
+          },
+          "projection_head.0.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 0.8769055604934692,
+            "max_update": 0.010000001639127731
+          },
+          "projection_head.2.weight": {
+            "in_optimizer": true,
+            "numel": 16384,
+            "grad_norm": 1.1815667152404785,
+            "max_update": 0.009999999776482582
+          },
+          "projection_head.2.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 1.280989170074463,
+            "max_update": 0.010000001639127731
+          }
+        }
+      ],
+      "uncovered": [],
+      "active_gradient_but_not_updated": [],
+      "native_sidecar": {
+        "schema": "prog-pretrain-provenance-v1",
+        "method": "GraphCL",
+        "variant": "ProG-adapted",
+        "source_parity": "not_fully_verified",
+        "dataset": "ENZYMES",
+        "gnn": "GCN",
+        "hidden_dim": 128,
+        "checkpoint_sha256": "8dafd4759af112118f4b3c010669c19902c0ce01202b8e0e39ed08b58059afec",
+        "labels_used": false,
+        "requested_epochs": 1,
+        "completed_epochs": 1,
+        "best_training_loss": 1.92607581615448,
+        "selection": "last_after_training_loss_patience_10"
+      },
+      "synthetic_only": true
+    },
+    "SimGRACE": {
+      "initialization": [
+        {
+          "requested_seed": 11,
+          "torch_seed_after_constructor": 12345,
+          "gnn_sha": "d65063d4911a69fcd522c43b26c185086b15d4567ed9236dd9c901c4fd886990",
+          "full_sha": "ebb4f5adcb643396da5f3b828094d8210820875c5069838982ed4cdefd8cba46"
+        },
+        {
+          "requested_seed": 23,
+          "torch_seed_after_constructor": 12345,
+          "gnn_sha": "d65063d4911a69fcd522c43b26c185086b15d4567ed9236dd9c901c4fd886990",
+          "full_sha": "ebb4f5adcb643396da5f3b828094d8210820875c5069838982ed4cdefd8cba46"
+        }
+      ],
+      "different_requested_seeds_same_gnn_init": true,
+      "native_steps": [
+        {
+          "gnn.conv_layers.0.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 0.1778656244277954,
+            "max_update": 0.009999997913837433
+          },
+          "gnn.conv_layers.0.lin.weight": {
+            "in_optimizer": true,
+            "numel": 2688,
+            "grad_norm": 0.31027770042419434,
+            "max_update": 0.009999997913837433
+          },
+          "gnn.conv_layers.1.bias": {
+            "in_optimizer": true,
+            "numel": 128,
+            "grad_norm": 0.2759424149990082,
+            "max_update": 0.009999997913837433
+          },
+          "gnn.conv_layers.1.lin.weight": {
+            "in_optimizer": true,
+            "numel": 16384,
+            "grad_norm": 0.4854922592639923,
+            "max_update": 0.009999997913837433
+          },
+          "projection_head.0.weight": {
+            "in_optimizer": false,
+            "numel": 16384,
+            "grad_norm": 0.7632589340209961,
+            "max_update": 0.0
+          },
+          "projection_head.0.bias": {
+            "in_optimizer": false,
+            "numel": 128,
+            "grad_norm": 0.4451395273208618,
+            "max_update": 0.0
+          },
+          "projection_head.2.weight": {
+            "in_optimizer": false,
+            "numel": 16384,
+            "grad_norm": 0.5411052703857422,
+            "max_update": 0.0
+          },
+          "projection_head.2.bias": {
+            "in_optimizer": false,
+            "numel": 128,
+            "grad_norm": 0.6498568058013916,
+            "max_update": 0.0
+          }
+        }
+      ],
+      "uncovered": [
+        "projection_head.0.weight",
+        "projection_head.0.bias",
+        "projection_head.2.weight",
+        "projection_head.2.bias"
+      ],
+      "active_gradient_but_not_updated": [
+        "projection_head.0.weight",
+        "projection_head.0.bias",
+        "projection_head.2.weight",
+        "projection_head.2.bias"
+      ],
+      "native_sidecar": {
+        "schema": "prog-pretrain-provenance-v1",
+        "method": "SimGRACE",
+        "variant": "ProG-adapted",
+        "source_parity": "not_fully_verified",
+        "dataset": "ENZYMES",
+        "gnn": "GCN",
+        "hidden_dim": 128,
+        "checkpoint_sha256": "9804f93c47f07916b2eaf20c4d01c270d4616eb3c1946d7d8d7e0df301e32904",
+        "labels_used": false,
+        "requested_epochs": 1,
+        "completed_epochs": 1,
+        "best_training_loss": 1.9768190383911133,
+        "selection": "last_after_training_loss_patience_10"
+      },
+      "synthetic_only": true
+    }
+  },
+  "DGI_two_batch": {
+    "calls": {
+      "zero_grad": 1,
+      "step": 2
+    },
+    "gradient_norm_before_each_encoder_forward": [
+      0,
+      0,
+      0.15281215868890285,
+      0.15281215868890285
+    ],
+    "training_loss": 0.6990714073181152
+  },
+  "GraphCL_optimizer_omission": false,
+  "query_scored": false,
+  "classification_results": null,
+  "historical_training_source_identity_proven": false
+}

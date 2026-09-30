@@ -1,0 +1,86 @@
+[
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "head_token_shared-0.1",
+    "baseline": "head_token_cos",
+    "n": 20,
+    "delta_pp": -3.6500006914138794,
+    "ci95": [
+      -6.480000324547291,
+      -1.199750646948818
+    ],
+    "wins": 5,
+    "losses": 15
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "head_token_shared-0.1",
+    "baseline": "head_token_euclid",
+    "n": 20,
+    "delta_pp": -3.710000216960907,
+    "ci95": [
+      -6.620000310242176,
+      -1.0600009486079216
+    ],
+    "wins": 5,
+    "losses": 15
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "head_token_shared-0.1",
+    "baseline": "head_token_shared-1",
+    "n": 20,
+    "delta_pp": -1.8099996447563171,
+    "ci95": [
+      -3.1999999284744263,
+      -0.5299991369247437
+    ],
+    "wins": 7,
+    "losses": 13
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "head_token_shared-0.1",
+    "baseline": "head_base_shared-0.1",
+    "n": 20,
+    "delta_pp": -1.3699999451637268,
+    "ci95": [
+      -3.980000026524067,
+      0.9300002455711365
+    ],
+    "wins": 7,
+    "losses": 13
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "head_token_shared-0.1",
+    "baseline": "graphprompt",
+    "n": 20,
+    "delta_pp": -3.930000364780426,
+    "ci95": [
+      -7.260251261293888,
+      -1.0200002640485764
+    ],
+    "wins": 5,
+    "losses": 15
+  },
+  {
+    "dataset": "PubMed",
+    "checkpoint": "GraphMAE",
+    "candidate": "head_token_shared-0.1",
+    "baseline": "rect_teacher_ref50",
+    "n": 20,
+    "delta_pp": -1.3900002837181091,
+    "ci95": [
+      -4.340000458061695,
+      1.209999918937683
+    ],
+    "wins": 10,
+    "losses": 10
+  }
+]

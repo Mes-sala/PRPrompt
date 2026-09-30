@@ -1,0 +1,56 @@
+{
+  "status": "features_complete_unscored",
+  "freeze_sha": "218fe7e2247e6bbb30b067d9208807e4d598935c67e339ea6fa10072eb4e7afb",
+  "files": {
+    "ENZYMES_features.npz": {
+      "sha": "a8bfb6914210d6df7978c9bcd59d5258a2ca125d3bb28e8b36928146ebdd5c1f",
+      "bytes": 38007578
+    },
+    "ENZYMES_kernels.npz": {
+      "sha": "c92f5d77caae3faabdd551031c4a90f9ba6ab2fe660bff31d9c77a098245d1a0",
+      "bytes": 21274825
+    },
+    "PROTEINS_features.npz": {
+      "sha": "0534343d7961819f44cc481807204c483bca9c89dd02d4ca8ed038a02d3d989d",
+      "bytes": 24031166
+    },
+    "PROTEINS_kernels.npz": {
+      "sha": "a76ee2b5bd99720bbf7c703946b51427052af0a67963693d6e0f8ef9c17b3434",
+      "bytes": 73527772
+    }
+  },
+  "datasets": {
+    "ENZYMES": {
+      "graphs": 600,
+      "nodes": 19580,
+      "continuous_attributes": 18,
+      "node_labels": 3,
+      "colors": [
+        3,
+        231,
+        10416,
+        15208
+      ],
+      "sigma2": 18.911540814933577,
+      "graph_input_ids_match_old": true,
+      "numeric_target_access": false
+    },
+    "PROTEINS": {
+      "graphs": 1113,
+      "nodes": 43471,
+      "continuous_attributes": 1,
+      "node_labels": 3,
+      "colors": [
+        3,
+        297,
+        20962,
+        35676
+      ],
+      "sigma2": 0.10292618585901746,
+      "graph_input_ids_match_old": true,
+      "numeric_target_access": false
+    }
+  },
+  "node_attributes_standardized_over_unlabeled_all_nodes": true,
+  "raw_graph_targets_numerically_read": false
+}

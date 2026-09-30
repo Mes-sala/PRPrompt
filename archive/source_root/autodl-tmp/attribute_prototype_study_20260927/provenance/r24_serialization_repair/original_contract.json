@@ -1,0 +1,77 @@
+{
+  "schema": "concentration-scaling-r24-v1",
+  "runner_sha256": "4aff3ea095bbc6626e91e2cece40209ba6a1abf7adfbde7e6e65568e8ca0de14",
+  "design_sha256": "e1d89bb217cff744e5d806271548c1fecd120402570fe80adb8024c0c9b06aa2",
+  "dependencies": {
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e",
+    "theory/方向集中下的反馈与判别尺度_候选.md": "7172d88c0cefd0167c0dfeb3d5dd184587707b917b03a15c992b72a9775ce204",
+    "theory/池质量与方向集中_联合极限.md": "36f6c4625be7f41ec8251a22e36d4a45c696b4f1e40e8e3badcb790f52b4e8e1"
+  },
+  "datasets": [
+    "Cora",
+    "CiteSeer",
+    "PubMed",
+    "Computers",
+    "Photo",
+    "Actor",
+    "Chameleon",
+    "Cornell",
+    "Squirrel",
+    "WikiCS",
+    "CS",
+    "Physics",
+    "Roman-empire",
+    "Amazon-ratings"
+  ],
+  "seed": 271700,
+  "k": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "betas": [
+    0.5,
+    1.0
+  ],
+  "rounds": [
+    1,
+    2,
+    3
+  ],
+  "tau0": 0.05,
+  "temperature_branches": [
+    "fixed",
+    "scaled"
+  ],
+  "axis": "ones/sqrt(d)",
+  "axis_mass_min": 1e-14,
+  "commutation_epsilon": 0.5,
+  "domain_eps_radius": 0.1,
+  "domain_logit": 0.1,
+  "resolution_constant": 100,
+  "machine_epsilon": 2.220446049250313e-16,
+  "fitting": "all domain and resolved nonzero points, minimum 3; no extra epsilon",
+  "ren": {
+    "rounds": 1,
+    "temperature": 1.0,
+    "readout": "unnormalized squared Euclidean",
+    "replication_policies": [
+      "one",
+      "inverse_epsilon_squared"
+    ],
+    "scope": "development mechanism intervention, not holdout"
+  }
+}

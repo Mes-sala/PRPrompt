@@ -1,0 +1,49 @@
+{
+  "checkpoints": [
+    "S2GAE"
+  ],
+  "seeds": [
+    172100,
+    172101,
+    172102,
+    172103,
+    172104,
+    172105,
+    172106,
+    172107,
+    172108,
+    172109,
+    172110,
+    172111,
+    172112,
+    172113,
+    172114,
+    172115,
+    172116,
+    172117,
+    172118,
+    172119
+  ],
+  "methods": [
+    "directcenter_mean",
+    "frozen",
+    "graphprompt",
+    "head_tr1_mean",
+    "head_tr1_qeps-50",
+    "head_gsh_mean",
+    "head_gsh_qeps-50",
+    "head_cpr_mean",
+    "head_cpr_qeps-50",
+    "head_cpa_mean",
+    "head_cpa_qeps-50",
+    "head_cpp_mean",
+    "head_cpp_qeps-50",
+    "head_cps_mean",
+    "head_cps_qeps-50"
+  ],
+  "expected": 300,
+  "phase": "confirm",
+  "candidates": {
+    "S2GAE": "head_gsh_qeps-50"
+  }
+}

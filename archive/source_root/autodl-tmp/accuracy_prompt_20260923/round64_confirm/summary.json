@@ -1,0 +1,772 @@
+[
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "Direct",
+    "method": "directcenter_mean",
+    "n": 20,
+    "accuracy": 69.09999966621399
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "Direct",
+    "method": "directrect_mean",
+    "n": 20,
+    "accuracy": 67.98999965190887
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 34.19999994337559,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": -0.43999992311000824,
+      "ci95_seed_bootstrap": [
+        -1.419999897480011,
+        0.5400002002716064
+      ],
+      "wins": 9,
+      "ties": 0,
+      "losses": 11
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 34.639999866485596,
+    "frozen": {
+      "delta_pp": 0.43999992311000824,
+      "ci95_seed_bootstrap": [
+        -0.5400002002716064,
+        1.419999897480011
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_early_mean",
+    "n": 20,
+    "accuracy": 57.50000014901161,
+    "frozen": {
+      "delta_pp": 23.300000205636024,
+      "ci95_seed_bootstrap": [
+        19.229750160127878,
+        26.909999633207917
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    },
+    "graphprompt": {
+      "delta_pp": 22.860000282526016,
+      "ci95_seed_bootstrap": [
+        18.56000005826354,
+        26.630000479519367
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_early_qeps-50",
+    "n": 20,
+    "accuracy": 57.989999949932105,
+    "frozen": {
+      "delta_pp": 23.79000000655651,
+      "ci95_seed_bootstrap": [
+        18.929750081151724,
+        28.160000221803784
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 23.350000083446503,
+      "ci95_seed_bootstrap": [
+        18.270000498741865,
+        27.93999970704317
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdboth_mean",
+    "n": 20,
+    "accuracy": 63.440000712871544,
+    "frozen": {
+      "delta_pp": 29.240000769495964,
+      "ci95_seed_bootstrap": [
+        26.770001724362373,
+        31.76000058837235
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 28.800000846385956,
+      "ci95_seed_bootstrap": [
+        26.160001751035452,
+        31.49025163054466
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdboth_qeps-50",
+    "n": 20,
+    "accuracy": 65.4899999499321,
+    "frozen": {
+      "delta_pp": 31.29000000655651,
+      "ci95_seed_bootstrap": [
+        28.85000079870224,
+        33.769999669864774
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 30.850000083446503,
+      "ci95_seed_bootstrap": [
+        28.23000058531761,
+        33.54000002518296
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdgate_mean",
+    "n": 20,
+    "accuracy": 63.210000693798065,
+    "frozen": {
+      "delta_pp": 29.010000750422478,
+      "ci95_seed_bootstrap": [
+        26.540000580251217,
+        31.53000034764409
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 28.57000082731247,
+      "ci95_seed_bootstrap": [
+        25.930000688880682,
+        31.25000089406967
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdgate_qeps-50",
+    "n": 20,
+    "accuracy": 65.5799999833107,
+    "frozen": {
+      "delta_pp": 31.380000039935112,
+      "ci95_seed_bootstrap": [
+        28.790000597015023,
+        33.87999959476292
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 30.940000116825104,
+      "ci95_seed_bootstrap": [
+        28.239750172942877,
+        33.60999972000718
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdkd_mean",
+    "n": 20,
+    "accuracy": 57.92000010609627,
+    "frozen": {
+      "delta_pp": 23.72000016272068,
+      "ci95_seed_bootstrap": [
+        19.67974996380508,
+        27.329999590292573
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 23.280000239610672,
+      "ci95_seed_bootstrap": [
+        18.9800010509789,
+        27.0600003041327
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdkd_qeps-50",
+    "n": 20,
+    "accuracy": 57.899999767541885,
+    "frozen": {
+      "delta_pp": 23.699999824166298,
+      "ci95_seed_bootstrap": [
+        18.630000054836273,
+        28.249999079853296
+      ],
+      "wins": 19,
+      "ties": 1,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 23.25999990105629,
+      "ci95_seed_bootstrap": [
+        18.03999960422516,
+        27.97999993339181
+      ],
+      "wins": 19,
+      "ties": 0,
+      "losses": 1
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdnone_mean",
+    "n": 20,
+    "accuracy": 63.280000388622284,
+    "frozen": {
+      "delta_pp": 29.080000445246696,
+      "ci95_seed_bootstrap": [
+        26.590001868084073,
+        31.62000016309321
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 28.64000052213669,
+      "ci95_seed_bootstrap": [
+        26.02000042423606,
+        31.299999956041574
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdnone_qeps-50",
+    "n": 20,
+    "accuracy": 65.18000036478043,
+    "frozen": {
+      "delta_pp": 30.98000042140484,
+      "ci95_seed_bootstrap": [
+        28.510000554844737,
+        33.41000020690262
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 30.54000049829483,
+      "ci95_seed_bootstrap": [
+        27.93000027164817,
+        33.160251002758734
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdrect_mean",
+    "n": 20,
+    "accuracy": 54.030000120401375,
+    "frozen": {
+      "delta_pp": 19.830000177025795,
+      "ci95_seed_bootstrap": [
+        16.860000487416983,
+        22.690000012516975
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 19.390000253915787,
+      "ci95_seed_bootstrap": [
+        16.180000446736813,
+        22.520000338554382
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE",
+    "method": "head_tdrect_qeps-50",
+    "n": 20,
+    "accuracy": 54.099999815225594,
+    "frozen": {
+      "delta_pp": 19.899999871850014,
+      "ci95_seed_bootstrap": [
+        16.460000347346067,
+        23.14025009423494
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 19.459999948740005,
+      "ci95_seed_bootstrap": [
+        15.490000244230032,
+        23.250000327825546
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 40.70999965071678,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 0.6199994683265686,
+      "ci95_seed_bootstrap": [
+        -0.20000026002526283,
+        1.479999877512455
+      ],
+      "wins": 12,
+      "ties": 2,
+      "losses": 6
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 40.09000018239021,
+    "frozen": {
+      "delta_pp": -0.6199994683265686,
+      "ci95_seed_bootstrap": [
+        -1.479999877512455,
+        0.20000026002526283
+      ],
+      "wins": 6,
+      "ties": 2,
+      "losses": 12
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_early_mean",
+    "n": 20,
+    "accuracy": 59.61999982595444,
+    "frozen": {
+      "delta_pp": 18.910000175237656,
+      "ci95_seed_bootstrap": [
+        15.990000363439322,
+        21.68025084212422
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 19.529999643564224,
+      "ci95_seed_bootstrap": [
+        16.51000065729022,
+        22.419999986886978
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_early_qeps-50",
+    "n": 20,
+    "accuracy": 61.059999763965614,
+    "frozen": {
+      "delta_pp": 20.350000113248825,
+      "ci95_seed_bootstrap": [
+        17.249999791383743,
+        23.199999641627073
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 20.969999581575394,
+      "ci95_seed_bootstrap": [
+        17.779749393463135,
+        23.949998769909143
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdboth_mean",
+    "n": 20,
+    "accuracy": 65.94999969005585,
+    "frozen": {
+      "delta_pp": 25.240000039339066,
+      "ci95_seed_bootstrap": [
+        23.450000431388617,
+        27.129999548196793
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 25.859999507665634,
+      "ci95_seed_bootstrap": [
+        23.959998935461044,
+        27.820000056177378
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdboth_qeps-50",
+    "n": 20,
+    "accuracy": 67.26999968290329,
+    "frozen": {
+      "delta_pp": 26.560000032186508,
+      "ci95_seed_bootstrap": [
+        24.660000648349524,
+        28.569999638944864
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 27.179999500513077,
+      "ci95_seed_bootstrap": [
+        25.19999995455146,
+        29.189999110996723
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdgate_mean",
+    "n": 20,
+    "accuracy": 66.0599997639656,
+    "frozen": {
+      "delta_pp": 25.350000113248825,
+      "ci95_seed_bootstrap": [
+        23.630000047385693,
+        27.179999500513077
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 25.969999581575394,
+      "ci95_seed_bootstrap": [
+        24.089749209582806,
+        27.890250608325
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdgate_qeps-50",
+    "n": 20,
+    "accuracy": 67.33000010251999,
+    "frozen": {
+      "delta_pp": 26.620000451803207,
+      "ci95_seed_bootstrap": [
+        24.7400011010468,
+        28.619999889284372
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 27.239999920129776,
+      "ci95_seed_bootstrap": [
+        25.299999561160803,
+        29.22025018930435
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdkd_mean",
+    "n": 20,
+    "accuracy": 59.800000339746475,
+    "frozen": {
+      "delta_pp": 19.090000689029694,
+      "ci95_seed_bootstrap": [
+        16.230000406503677,
+        21.810000397264957
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 19.710000157356262,
+      "ci95_seed_bootstrap": [
+        16.759999986737967,
+        22.540250647813078
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdkd_qeps-50",
+    "n": 20,
+    "accuracy": 61.09000012278557,
+    "frozen": {
+      "delta_pp": 20.380000472068787,
+      "ci95_seed_bootstrap": [
+        17.269750017672777,
+        23.240000165998936
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 20.999999940395355,
+      "ci95_seed_bootstrap": [
+        17.790000289678574,
+        23.969999853521585
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdnone_mean",
+    "n": 20,
+    "accuracy": 65.99000006914139,
+    "frozen": {
+      "delta_pp": 25.280000418424606,
+      "ci95_seed_bootstrap": [
+        23.480001237243414,
+        27.169999938458204
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 25.899999886751175,
+      "ci95_seed_bootstrap": [
+        23.95999952405691,
+        27.860000137239695
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdnone_qeps-50",
+    "n": 20,
+    "accuracy": 67.49000042676926,
+    "frozen": {
+      "delta_pp": 26.780000776052475,
+      "ci95_seed_bootstrap": [
+        24.91000071167946,
+        28.79000097513199
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 27.400000244379044,
+      "ci95_seed_bootstrap": [
+        25.45999988541007,
+        29.390000704675913
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdrect_mean",
+    "n": 20,
+    "accuracy": 61.29000097513199,
+    "frozen": {
+      "delta_pp": 20.580001324415207,
+      "ci95_seed_bootstrap": [
+        18.23000132292509,
+        22.960000194609165
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 21.200000792741776,
+      "ci95_seed_bootstrap": [
+        18.739750146865845,
+        23.61000106111169
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "CiteSeer",
+    "checkpoint": "GraphMAE2",
+    "method": "head_tdrect_qeps-50",
+    "n": 20,
+    "accuracy": 63.14000070095063,
+    "frozen": {
+      "delta_pp": 22.43000105023384,
+      "ci95_seed_bootstrap": [
+        20.080001197755337,
+        24.840001165866852
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 23.05000051856041,
+      "ci95_seed_bootstrap": [
+        20.590000584721565,
+        25.41000083461404
+      ],
+      "wins": 20,
+      "ties": 0,
+      "losses": 0
+    }
+  }
+]

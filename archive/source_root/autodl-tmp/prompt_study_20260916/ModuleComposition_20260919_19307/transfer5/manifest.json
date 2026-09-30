@@ -1,0 +1,51 @@
+{
+  "sources": {
+    "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/run_transfer5.py": "a7655d82e758c45476061933cf4bd70ea49dce850de26c550256df73b24e9fe1",
+    "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/protocol_transfer5.md": "71e62e4c116a694bd24811b5f010be1707204f9bf0ed07d84f5e34e14c7fe8ca",
+    "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/stable_random_graph.py": "f60c3a50a5c0c16e4e1a14b3bf8eb52ed214d2562292694cd6cb23b1c0445ebd",
+    "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/run_graph1.py": "1ac21af7b773cff4a23920b86608fcf3069ad13307f5209988293d7906871554",
+    "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/run_graph2.py": "a68cb23b749587c12891700294d80c9119f2e8610c20bf47303877cf06d4eeb4",
+    "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/run_graph3.py": "9eb8cf2973d9fbd0c3956900f6c4c131bb7efbfbd3cd8d93cf84d9d6b66c8fe6",
+    "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/run_graph4.py": "9de7d88ac8a7dd2cd460d3d00d864e1d87df27dc2d234c8290f3cb447fd3eb5a",
+    "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/check_graph3.py": "78aee70707d3b51be33c374b4e455652b1bc06b2f2f542f404c713a5b862abb0"
+  },
+  "seeds": {
+    "A": [
+      11,
+      23,
+      47,
+      71
+    ],
+    "B": [
+      101,
+      103,
+      107,
+      109
+    ],
+    "C": [
+      211,
+      223,
+      227,
+      229
+    ]
+  },
+  "lambda": [
+    1e-08,
+    1e-06,
+    0.0001,
+    0.01,
+    1.0,
+    10.0
+  ],
+  "settings": [
+    "BZR",
+    "COX2",
+    "DHFR",
+    "ENZYMES_A",
+    "ENZYMES_B",
+    "ENZYMES_C",
+    "ENZYMES_ABC"
+  ],
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA vGPU-32GB"
+}

@@ -1,0 +1,139 @@
+{
+  "contract_sha256": "1580a3cc92ff6665e7d14341d1029ea7be47090be0d8d9ff8ee45d9f69ade927",
+  "fits": [
+    {
+      "replication_policy": "one",
+      "metric": "soft_position",
+      "points": [
+        [
+          0.000244140625,
+          9.526942661763317e-11
+        ],
+        [
+          0.00048828125,
+          7.621474479793601e-10
+        ],
+        [
+          0.0009765625,
+          6.096924750556558e-09
+        ],
+        [
+          0.001953125,
+          4.8767246756513966e-08
+        ]
+      ],
+      "n_points": 4,
+      "slope": 2.999899021096157,
+      "log_rmse": 4.055542797466669e-05
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "soft_position",
+      "points": [
+        [
+          0.000244140625,
+          9.526942661763317e-11
+        ],
+        [
+          0.00048828125,
+          7.621474479793601e-10
+        ],
+        [
+          0.0009765625,
+          6.096924750556558e-09
+        ],
+        [
+          0.001953125,
+          4.8767246756513966e-08
+        ]
+      ],
+      "n_points": 4,
+      "slope": 2.999899021096157,
+      "log_rmse": 4.055542797466669e-05
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "full_vs_mean",
+      "points": [
+        [
+          0.000244140625,
+          9.62025558081315e-11
+        ],
+        [
+          0.00048828125,
+          7.696124485410945e-10
+        ],
+        [
+          0.0009765625,
+          6.156643704221046e-09
+        ],
+        [
+          0.001953125,
+          4.924496477997007e-08
+        ]
+      ],
+      "n_points": 4,
+      "slope": 2.9998995882476662,
+      "log_rmse": 4.0327564854973933e-05
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "common_vs_mean",
+      "points": [
+        [
+          0.000244140625,
+          1.3606198979991303e-12
+        ],
+        [
+          0.00048828125,
+          1.0884922772880333e-11
+        ],
+        [
+          0.0009765625,
+          8.707821733982977e-11
+        ],
+        [
+          0.001953125,
+          6.965884734316418e-10
+        ]
+      ],
+      "n_points": 4,
+      "slope": 2.999967679437824,
+      "log_rmse": 1.2980989630211108e-05
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "centered_score",
+      "points": [
+        [
+          0.00048828125,
+          2.1660432570315412e-11
+        ],
+        [
+          0.0009765625,
+          3.465477074446147e-10
+        ],
+        [
+          0.001953125,
+          5.543534206856723e-09
+        ]
+      ],
+      "n_points": 3,
+      "slope": 3.9998000879383055,
+      "log_rmse": 3.9186403661623516e-05
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "common_centered_score",
+      "points": [
+        [
+          0.001953125,
+          4.905656751335747e-11
+        ]
+      ],
+      "n_points": 1,
+      "slope": null,
+      "reason": "Fewer than three predeclared domain/resolved points"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "dataset": "Squirrel",
+  "hops": 2,
+  "seed": 271901,
+  "classes": 5,
+  "n_unlabeled": 5176,
+  "protocol": "official_train_pool_test_query_fold0",
+  "invalid": {},
+  "mass2_valid": true,
+  "node_eta_upper": 0.8717756546921248,
+  "predeclared_local_domain": false,
+  "node_radius": 1.0380417968518274,
+  "covariance_trace": 0.9084688058302162,
+  "covariance_sha256": "e6f5be6542311255ced9c234c8f8fcd8254d0ffc05879a66fc60519044325e5b",
+  "support_sha256": "15efb293c4ec00ff9bc3bd89d801aabb099f75d191d570fe536de2de5b00db45",
+  "input_hashes": {
+    "raw_input": "e37aa3f8a109e0ab2b0d4a0f64046ab943b49740c2db7be574b52982c2ec65c8",
+    "input": "f4b53c38a17a02a372cce9d861fe587e82d17ced302853ab08829aaffb4d2468",
+    "graph": "ad2af4bf74daf1b0d561102c528bb2e12b0a0001a868104d525051c5351e8993",
+    "adjacency_indices": "63b986f16d8807458c25c5ad14c77df57f92e3262ad4c4bf1da3ccee5f8a0d1a",
+    "adjacency_values": "b40cf9905f3097cdfac71b8fe6dae8bd0ea7b17a5f95d01d260e2243c84c265a",
+    "query": "a70613ddd6336fba612d9bce086a4fd835ae31fa89a6080cc21897a8300d18f7",
+    "pool": "57c50a52fb5fe51cd3308d9984cb5cf0726506b7d882eda7bb19e2e450f7ce01",
+    "pool_labels": "4518a31b84e48411e252606b8d44b03b0b12a929990aa25e5048ece670accfb0",
+    "representation": "82a2d019366e55e698c9f81fd03d28ce9c7b2a386bee2aeadc0b0a1854b731da"
+  },
+  "geometry_sha256": "22c9832fe78f72a953a9f38170157b4a4b98b4c1e6a53becc09d00e3a7c347ab",
+  "contract_sha256": "261d2081eedc228fb6a904ae4b85b216ad233c73f61b6d9e65b4c0b3dc7668e0",
+  "runner_sha256": "57e4834652df6739bc854a8d46df6ed986cb9da0ab950e974847d27a1239e6c4",
+  "design_sha256": "3457430f2f0c5637ec034dd3d7653d315a9ee151143a143e5b0073e617c6c240",
+  "dependencies": {
+    "code/run_mass_anchor_r22.py": "0658ae7d0599b75ef6dead26a4963b80196a4072a449e265c52fa44d98995c67",
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e"
+  },
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "library_sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  },
+  "support_geometry_seconds": 0.0025529637932777405,
+  "moment_terms_seconds": 0.0007208921015262604,
+  "pre_query_dot_seconds": 0.0006350167095661163,
+  "pre_branch_seconds": {
+    "common_mass0__r1": 6.785616278648376e-05,
+    "common_mass0__r8": 5.7388097047805786e-05,
+    "moment_mass0__r1": 5.592033267021179e-05,
+    "moment_mass0__r8": 5.410611629486084e-05,
+    "moment_mass2__r1": 5.2284449338912964e-05,
+    "moment_mass2__r8": 5.461275577545166e-05,
+    "common_equalmass__r1": 5.4795295000076294e-05,
+    "common_equalmass__r8": 5.320459604263306e-05
+  },
+  "pre_score_seconds": {
+    "common_mass0__r1": 0.0002127029001712799,
+    "common_mass0__r8": 0.00021194666624069214,
+    "moment_mass0__r1": 0.000210493803024292,
+    "moment_mass0__r8": 0.00020930543541908264,
+    "moment_mass2__r1": 0.0002095736563205719,
+    "moment_mass2__r8": 0.0002109520137310028,
+    "common_equalmass__r1": 0.0002105310559272766,
+    "common_equalmass__r8": 0.00020995363593101501
+  },
+  "load_seconds": 0.18692559003829956,
+  "incremental_propagation_seconds": 0.0056104473769664764,
+  "covariance_precompute_seconds": 0.06716397404670715,
+  "phase": "before any full node softmax for this draw",
+  "pre_artifact_sha256": "10fd8ed5e7531b6925d4a835b26e008aae6cb9fe855a45dd9792876cc8328926",
+  "finished": 1790521113.7579803
+}

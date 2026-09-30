@@ -1,0 +1,86 @@
+[
+  {
+    "dataset": "Actor",
+    "candidate": "GraphCL:mix100_gp",
+    "baseline": "GraphCL:mix100_base",
+    "n": 20,
+    "delta_pp": 0.003289729356765747,
+    "ci95": [
+      -0.2467098869383335,
+      0.2796054631471634
+    ],
+    "wins": 8,
+    "losses": 11,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphCL:mix100_gp",
+    "baseline": "GraphCL:mixonly_base",
+    "n": 20,
+    "delta_pp": -0.14802619814872742,
+    "ci95": [
+      -0.53618423640728,
+      0.1973681915551424
+    ],
+    "wins": 8,
+    "losses": 12,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphCL:mix100_gp",
+    "baseline": "GraphCL:mixonly_gp",
+    "n": 20,
+    "delta_pp": -0.2532894164323807,
+    "ci95": [
+      -0.542762802913785,
+      0.009868443012237549
+    ],
+    "wins": 8,
+    "losses": 11,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphCL:mix100_gp",
+    "baseline": "GraphCL:graphprompt",
+    "n": 20,
+    "delta_pp": 1.917763277888298,
+    "ci95": [
+      0.9473685119301081,
+      2.842105556279421
+    ],
+    "wins": 17,
+    "losses": 3,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphCL:mix100_gp",
+    "baseline": "GraphCL:raw",
+    "n": 20,
+    "delta_pp": 2.8190790116786957,
+    "ci95": [
+      1.4638156406581402,
+      3.9902141392230974
+    ],
+    "wins": 17,
+    "losses": 3,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphCL:mix100_gp",
+    "baseline": "GraphCL:rawridge",
+    "n": 20,
+    "delta_pp": 3.171052560210228,
+    "ci95": [
+      1.7400491517037153,
+      4.417845221236347
+    ],
+    "wins": 17,
+    "losses": 3,
+    "scope": "same graph support sampling, not independent graphs"
+  }
+]

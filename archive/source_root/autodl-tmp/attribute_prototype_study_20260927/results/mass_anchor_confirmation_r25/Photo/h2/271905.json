@@ -1,0 +1,241 @@
+{
+  "dataset": "Photo",
+  "hops": 2,
+  "seed": 271905,
+  "classes": 8,
+  "n_unlabeled": 7610,
+  "protocol": "fixed20_perclass_pool_all_remaining_query",
+  "invalid": {},
+  "mass2_valid": true,
+  "node_eta_upper": 1.0889317383425383,
+  "predeclared_local_domain": false,
+  "node_radius": 1.218358342523789,
+  "covariance_trace": 0.1947406566011719,
+  "covariance_sha256": "ed6fb4baaeb39ca5c63db2be23faaa9cd240d0aeb69672c4a1a13e2e0ce61ac7",
+  "support_sha256": "63b0e6f712409fc9897c2fa96d604083a35552ceb0bc0e601ec11488687d8fc7",
+  "input_hashes": {
+    "raw_input": "81b341d81e4e9f863fbcf151f132382287048c68e40896d5e1c4ba489033b9c5",
+    "input": "b5fc3930333d75d0d7ee01a8f99c5d9ebd004373608a012e990f59c544244bdf",
+    "graph": "e8c8d72c84c653e2b5937696273e6dc3b3df88038383407973d8a951f3fa9c07",
+    "adjacency_indices": "cc03e77e889aed7ca1d65cbd8a7bb7dcb498b23497c8d74760e911dafcd04dcf",
+    "adjacency_values": "2205777877a4affdaed8b1852d3c4159dedd56688197f8b03d8f4bd45d13b8a7",
+    "query": "49902400cb5477b7f92e8a418f1006c430801ffa712577cb4241f0e31b4dd18b",
+    "pool": "027549acf764355304850117bfbb92116a5dd141abff631894e32a2bebc0b992",
+    "pool_labels": "30be695682ac7dc1d20241582b333456f1c26af774d107e41c3476755f58166a",
+    "representation": "11f90ec0b47535e69569c4e1f3e0560655244a4095dd9657c0714949d9d499bf"
+  },
+  "geometry_sha256": "d55fb85d0112d4005842910d443b12b51a1020ef724a7a8b523d9d574319867e",
+  "contract_sha256": "261d2081eedc228fb6a904ae4b85b216ad233c73f61b6d9e65b4c0b3dc7668e0",
+  "runner_sha256": "57e4834652df6739bc854a8d46df6ed986cb9da0ab950e974847d27a1239e6c4",
+  "design_sha256": "3457430f2f0c5637ec034dd3d7653d315a9ee151143a143e5b0073e617c6c240",
+  "dependencies": {
+    "code/run_mass_anchor_r22.py": "0658ae7d0599b75ef6dead26a4963b80196a4072a449e265c52fa44d98995c67",
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e"
+  },
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "library_sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  },
+  "support_geometry_seconds": 0.0017443187534809113,
+  "moment_terms_seconds": 0.00034790486097335815,
+  "pre_query_dot_seconds": 0.0021781735122203827,
+  "pre_branch_seconds": {
+    "common_mass0__r1": 8.201226592063904e-05,
+    "common_mass0__r8": 7.21178948879242e-05,
+    "moment_mass0__r1": 6.254762411117554e-05,
+    "moment_mass0__r8": 6.0189515352249146e-05,
+    "moment_mass2__r1": 5.949288606643677e-05,
+    "moment_mass2__r8": 5.957484245300293e-05,
+    "common_equalmass__r1": 5.968660116195679e-05,
+    "common_equalmass__r8": 6.377696990966797e-05
+  },
+  "pre_score_seconds": {
+    "common_mass0__r1": 0.000992845743894577,
+    "common_mass0__r8": 0.0010315924882888794,
+    "moment_mass0__r1": 0.0010282471776008606,
+    "moment_mass0__r8": 0.0010268688201904297,
+    "moment_mass2__r1": 0.001026589423418045,
+    "moment_mass2__r8": 0.0010261796414852142,
+    "common_equalmass__r1": 0.0010315589606761932,
+    "common_equalmass__r8": 0.0010337792336940765
+  },
+  "load_seconds": 0.04842744395136833,
+  "incremental_propagation_seconds": 0.0023482292890548706,
+  "covariance_precompute_seconds": 0.01311631128191948,
+  "endpoint": {
+    "common_mass0__r1": {
+      "disagreement_pct": 20.307076101468624,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 20.307076101468624,
+      "prototype_max_error": 0.016350957142302024
+    },
+    "common_mass0__r8": {
+      "disagreement_pct": 23.284379172229638,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 23.284379172229638,
+      "prototype_max_error": 0.016435089693901693
+    },
+    "moment_mass0__r1": {
+      "disagreement_pct": 0.6542056074766356,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.6542056074766356,
+      "prototype_max_error": 0.0010149435678875821
+    },
+    "moment_mass0__r8": {
+      "disagreement_pct": 0.6542056074766356,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.6542056074766356,
+      "prototype_max_error": 0.001025200818059246
+    },
+    "moment_mass2__r1": {
+      "disagreement_pct": 0.6542056074766356,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.6542056074766356,
+      "prototype_max_error": 0.0010208541672021682
+    },
+    "moment_mass2__r8": {
+      "disagreement_pct": 0.6542056074766356,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.6542056074766356,
+      "prototype_max_error": 0.0010259472810430184
+    },
+    "common_equalmass__r1": {
+      "disagreement_pct": 20.5607476635514,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 20.5607476635514,
+      "prototype_max_error": 0.016441306777568852
+    },
+    "common_equalmass__r8": {
+      "disagreement_pct": 23.56475300400534,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 23.56475300400534,
+      "prototype_max_error": 0.01644648196962276
+    },
+    "full_ren__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0,
+      "prototype_max_error": 0.0
+    },
+    "full_ren__r8": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0,
+      "prototype_max_error": 0.0
+    },
+    "common_true_mass__r1": {
+      "disagreement_pct": 20.360480640854473,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 20.360480640854473,
+      "prototype_max_error": 0.01635702915228583
+    },
+    "common_true_mass__r8": {
+      "disagreement_pct": 23.311081441922564,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 23.311081441922564,
+      "prototype_max_error": 0.016435856083640652
+    }
+  },
+  "replication_intervention": {
+    "common_mass0__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_mass0__r8": {
+      "disagreement_pct": 0.32042723631508674,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.32042723631508674
+    },
+    "moment_mass0__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "moment_mass0__r8": {
+      "disagreement_pct": 3.1375166889185584,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 3.1375166889185584
+    },
+    "moment_mass2__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "moment_mass2__r8": {
+      "disagreement_pct": 3.1642189586114817,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 3.1642189586114817
+    },
+    "common_equalmass__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_equalmass__r8": {
+      "disagreement_pct": 0.1869158878504673,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.1869158878504673
+    },
+    "full_ren__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "full_ren__r8": {
+      "disagreement_pct": 3.2576769025367156,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 3.2576769025367156
+    },
+    "common_true_mass__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_true_mass__r8": {
+      "disagreement_pct": 0.32042723631508674,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.32042723631508674
+    }
+  },
+  "diagnostics": {
+    "mass0_probability_l1_error": 0.0013290082086574902,
+    "mass2_probability_l1_error": 5.4471229836801827e-05,
+    "common_location_error": 0.027289946428140602,
+    "moment_location_error": 0.0015270333287734589,
+    "support_weight_r1_mean": 0.005245058391488373,
+    "support_weight_r8_mean": 0.0006586653358094487,
+    "zero_assignments": 0
+  },
+  "full_assignment_seconds": 0.0019341036677360535,
+  "post_query_dot_seconds": 0.0009576939046382904,
+  "post_branch_seconds": {
+    "full_ren__r1": 8.837506175041199e-05,
+    "full_ren__r8": 6.978213787078857e-05,
+    "common_true_mass__r1": 6.495416164398193e-05,
+    "common_true_mass__r8": 6.435438990592957e-05
+  },
+  "post_score_seconds": {
+    "full_ren__r1": 0.0009687840938568115,
+    "full_ren__r8": 0.0010276027023792267,
+    "common_true_mass__r1": 0.0010280981659889221,
+    "common_true_mass__r8": 0.0010326355695724487
+  },
+  "diagnostic_seconds": 0.0017525963485240936,
+  "pre_serialization_seconds": 0.1233954094350338,
+  "post_serialization_seconds": 0.05737154185771942,
+  "draw_total_seconds": 0.21191616356372833,
+  "pre_artifact_sha256": "7997113954840e86babc501d1c430323931975018bd7753c2c41b417971b7ac2",
+  "pre_record_sha256": "2344341e77c99bcedded791b6377888866b2f7568cc799a5f1ae7e281ca19aa9",
+  "post_artifact_sha256": "01819f998a84108c87b1e1734556febec5696df270bf896a9ae4ec10fa96d55e",
+  "scope": "New support draws and h1/h2/h3 conditions on the same 14 graphs; no query labels or accuracy; disjoint pre/post archives.",
+  "finished": 1790521098.0909195
+}

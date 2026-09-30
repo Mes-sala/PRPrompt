@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "manifest_sha": "44d0cb4a7c75ebf7b46f76f938a440010130805af0f9667d256a4907cc389f5a",
+  "freeze_sha": "218fe7e2247e6bbb30b067d9208807e4d598935c67e339ea6fa10072eb4e7afb",
+  "checker_sha": "b27882a407e7b73e80e17ae22c4bc4d4e13dc2b200636f8574895a40f9910ca6",
+  "maximum_errors": {
+    "raw": 0.0,
+    "standardized": 0.0,
+    "sigma2": 3.552713678800501e-15,
+    "RFF": 6.938893903907228e-18,
+    "omega": 0.0,
+    "phase": 0.0,
+    "AWL0": 4.6629367034256575e-15,
+    "AWL1": 3.885780586188048e-15,
+    "AWL2": 3.4416913763379853e-15,
+    "AWL3": 3.4416913763379853e-15,
+    "AWLperm3": 3.6637359812630166e-15,
+    "linearAWL3": 9.992007221626409e-16,
+    "globalRFF": 7.771561172376096e-16,
+    "old_WL3": 4.440892098500626e-16,
+    "product": 6.661338147750939e-16
+  },
+  "datasets": {
+    "ENZYMES": {
+      "all_8_full_kernels_checked": true,
+      "graphs": 600,
+      "WL_partitions_bijective": true
+    },
+    "PROTEINS": {
+      "all_8_full_kernels_checked": true,
+      "graphs": 1113,
+      "WL_partitions_bijective": true
+    }
+  },
+  "reference_files": {
+    "ENZYMES": {
+      "sha": "7c9e8f5820e7f3b91057ded0c8b2254d1b683e206bc011f9c5be19953d9d84c6",
+      "bytes": 21275104
+    },
+    "PROTEINS": {
+      "sha": "1bb1b754aaa2754d028cbf9b3ce2ffce03a8d37dcc11666a6ab35cb95736227c",
+      "bytes": 73533667
+    }
+  },
+  "synthetic": {
+    "placement_similarity": 0.9973157018033,
+    "isomorphic_similarity": 0.9999999999999999,
+    "global_attributes_same": true,
+    "constant_attributes_WL": true
+  },
+  "numeric_target_access": false
+}

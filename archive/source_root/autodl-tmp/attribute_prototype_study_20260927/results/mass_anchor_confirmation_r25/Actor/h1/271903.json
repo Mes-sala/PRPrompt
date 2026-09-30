@@ -1,0 +1,241 @@
+{
+  "dataset": "Actor",
+  "hops": 1,
+  "seed": 271903,
+  "classes": 5,
+  "n_unlabeled": 7575,
+  "protocol": "official_train_pool_test_query_fold0",
+  "invalid": {},
+  "mass2_valid": true,
+  "node_eta_upper": 0.7997008303370526,
+  "predeclared_local_domain": false,
+  "node_radius": 1.143491630857304,
+  "covariance_trace": 0.691233022933275,
+  "covariance_sha256": "d90e50f85220d5bc181482aabf3185e3aa46cc1dcac7d6206c358d729b2eee8e",
+  "support_sha256": "2a216b6ebb706ede058fd96124adbda7f5fb8129aa3a01d2d0951038027a0f8c",
+  "input_hashes": {
+    "raw_input": "7d80e95b495d1cb0db75066f8ab8e30f45d88065cb68535a364dbda5e1928539",
+    "input": "70c9334f56c0b1e4bf790baa221cbeb8a414ce89d400b3b8fc43866ae388540f",
+    "graph": "8607dc41df53715ace45863eb7d87e70a29dd1c4e071fb1100d633566b42d1ce",
+    "adjacency_indices": "4fe32ca5a450391cf96be72c3b3c7795910d50534262e229ee5e4827594a62b4",
+    "adjacency_values": "e454329985367fdbdbe37f4ed40d0509972f405b35bd3f5392c6fb8a6636d1cd",
+    "query": "e4e3ef2c0d399e7325f7e19410e4e578a4bdfa056b50bdfffb1ee1bddfe13b2b",
+    "pool": "d2f506bd4a41069a34a6eb7f78c1db9310c913442c2f8c98f9c13602363e7f73",
+    "pool_labels": "6030fdeae76fdbc1810cd19fc51de215aa7222f0dc0e85cfc294b0f1a9fba8fc",
+    "representation": "8630c06909c0f1bd474dc4c05c4a0740b5c087c8266f5536f00749f6e01ff427"
+  },
+  "geometry_sha256": "82327cdf2754feda890a2078a24d4eac45f0fa4ae013e505087779e35aaa13ab",
+  "contract_sha256": "261d2081eedc228fb6a904ae4b85b216ad233c73f61b6d9e65b4c0b3dc7668e0",
+  "runner_sha256": "57e4834652df6739bc854a8d46df6ed986cb9da0ab950e974847d27a1239e6c4",
+  "design_sha256": "3457430f2f0c5637ec034dd3d7653d315a9ee151143a143e5b0073e617c6c240",
+  "dependencies": {
+    "code/run_mass_anchor_r22.py": "0658ae7d0599b75ef6dead26a4963b80196a4072a449e265c52fa44d98995c67",
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e"
+  },
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "library_sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  },
+  "support_geometry_seconds": 0.001450948417186737,
+  "moment_terms_seconds": 0.00031220540404319763,
+  "pre_query_dot_seconds": 0.0008572526276111603,
+  "pre_branch_seconds": {
+    "common_mass0__r1": 7.651001214981079e-05,
+    "common_mass0__r8": 6.458908319473267e-05,
+    "moment_mass0__r1": 6.008148193359375e-05,
+    "moment_mass0__r8": 5.933642387390137e-05,
+    "moment_mass2__r1": 5.961954593658447e-05,
+    "moment_mass2__r8": 6.123259663581848e-05,
+    "common_equalmass__r1": 6.1027705669403076e-05,
+    "common_equalmass__r8": 6.109103560447693e-05
+  },
+  "pre_score_seconds": {
+    "common_mass0__r1": 0.00031056255102157593,
+    "common_mass0__r8": 0.0003124065697193146,
+    "moment_mass0__r1": 0.00031034648418426514,
+    "moment_mass0__r8": 0.00031351298093795776,
+    "moment_mass2__r1": 0.0003130808472633362,
+    "moment_mass2__r8": 0.0003100261092185974,
+    "common_equalmass__r1": 0.0003113001585006714,
+    "common_equalmass__r8": 0.00031876564025878906
+  },
+  "load_seconds": 0.03551904112100601,
+  "incremental_propagation_seconds": 0.002110835164785385,
+  "covariance_precompute_seconds": 0.020094919949769974,
+  "endpoint": {
+    "common_mass0__r1": {
+      "disagreement_pct": 28.157894736842103,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 28.157894736842103,
+      "prototype_max_error": 0.022215078693769322
+    },
+    "common_mass0__r8": {
+      "disagreement_pct": 28.749999999999996,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 28.749999999999996,
+      "prototype_max_error": 0.022280819403938862
+    },
+    "moment_mass0__r1": {
+      "disagreement_pct": 1.4473684210526316,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 1.4473684210526316,
+      "prototype_max_error": 0.0009314010959576665
+    },
+    "moment_mass0__r8": {
+      "disagreement_pct": 1.644736842105263,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 1.644736842105263,
+      "prototype_max_error": 0.0009332342109030996
+    },
+    "moment_mass2__r1": {
+      "disagreement_pct": 1.381578947368421,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 1.381578947368421,
+      "prototype_max_error": 0.0009304440542620467
+    },
+    "moment_mass2__r8": {
+      "disagreement_pct": 1.644736842105263,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 1.644736842105263,
+      "prototype_max_error": 0.0009331141566952111
+    },
+    "common_equalmass__r1": {
+      "disagreement_pct": 28.289473684210524,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 28.289473684210524,
+      "prototype_max_error": 0.022218148028221463
+    },
+    "common_equalmass__r8": {
+      "disagreement_pct": 28.881578947368418,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 28.881578947368418,
+      "prototype_max_error": 0.02228120529606182
+    },
+    "full_ren__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0,
+      "prototype_max_error": 0.0
+    },
+    "full_ren__r8": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0,
+      "prototype_max_error": 0.0
+    },
+    "common_true_mass__r1": {
+      "disagreement_pct": 28.157894736842103,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 28.157894736842103,
+      "prototype_max_error": 0.02221679782990121
+    },
+    "common_true_mass__r8": {
+      "disagreement_pct": 28.749999999999996,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 28.749999999999996,
+      "prototype_max_error": 0.02228103554939981
+    }
+  },
+  "replication_intervention": {
+    "common_mass0__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_mass0__r8": {
+      "disagreement_pct": 0.06578947368421052,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.06578947368421052
+    },
+    "moment_mass0__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "moment_mass0__r8": {
+      "disagreement_pct": 0.7894736842105263,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.7894736842105263
+    },
+    "moment_mass2__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "moment_mass2__r8": {
+      "disagreement_pct": 0.7236842105263158,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.7236842105263158
+    },
+    "common_equalmass__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_equalmass__r8": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "full_ren__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "full_ren__r8": {
+      "disagreement_pct": 0.7894736842105263,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.7894736842105263
+    },
+    "common_true_mass__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_true_mass__r8": {
+      "disagreement_pct": 0.06578947368421052,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.06578947368421052
+    }
+  },
+  "diagnostics": {
+    "mass0_probability_l1_error": 0.000845665214782436,
+    "mass2_probability_l1_error": 6.358907702306409e-05,
+    "common_location_error": 0.03640047188134081,
+    "moment_location_error": 0.0012644716957134112,
+    "support_weight_r1_mean": 0.0032900442581155413,
+    "support_weight_r8_mean": 0.0004124430766904037,
+    "zero_assignments": 0
+  },
+  "full_assignment_seconds": 0.0022383742034435272,
+  "post_query_dot_seconds": 0.00033050402998924255,
+  "post_branch_seconds": {
+    "full_ren__r1": 7.456541061401367e-05,
+    "full_ren__r8": 6.456300616264343e-05,
+    "common_true_mass__r1": 6.270036101341248e-05,
+    "common_true_mass__r8": 5.9742480516433716e-05
+  },
+  "post_score_seconds": {
+    "full_ren__r1": 0.0003134496510028839,
+    "full_ren__r8": 0.00031487271189689636,
+    "common_true_mass__r1": 0.0003141053020954132,
+    "common_true_mass__r8": 0.00031175464391708374
+  },
+  "diagnostic_seconds": 0.0010420270264148712,
+  "pre_serialization_seconds": 0.02182624861598015,
+  "post_serialization_seconds": 0.011141587048768997,
+  "draw_total_seconds": 0.05261410027742386,
+  "pre_artifact_sha256": "85888923aa644b7896efe59a1b73d4461fefb6cb77736619e871c2d4d56096ad",
+  "pre_record_sha256": "68de3d111b678a959ff6bdf7860224a29bdead1b1129773d98d356a22f32af45",
+  "post_artifact_sha256": "c3c412a5913ff7b98d0ee366ec5bdb9e88cbf47093b36ef8e706d05827fe5b57",
+  "scope": "New support draws and h1/h2/h3 conditions on the same 14 graphs; no query labels or accuracy; disjoint pre/post archives.",
+  "finished": 1790521101.785608
+}

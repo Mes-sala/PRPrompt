@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "rank": 4,
+      "frozen": false,
+      "max_forward_error": 3.552713678800501e-15,
+      "max_gradient_error": 1.3322676295501878e-15
+    },
+    {
+      "rank": 4,
+      "frozen": true,
+      "max_forward_error": 3.552713678800501e-15,
+      "max_gradient_error": 1.3322676295501878e-15
+    },
+    {
+      "rank": 16,
+      "frozen": false,
+      "max_forward_error": 7.105427357601002e-15,
+      "max_gradient_error": 1.4210854715202004e-14
+    },
+    {
+      "rank": 16,
+      "frozen": true,
+      "max_forward_error": 7.105427357601002e-15,
+      "max_gradient_error": 1.0658141036401503e-14
+    }
+  ],
+  "prefix_expected_weight_identity": true,
+  "adam_detached_prefix_parameter_drift": 0.006700581398332803,
+  "scope": "no query; official operator formula/gradient equivalence; frozen-gradient does not imply frozen-parameter with dense Adam"
+}

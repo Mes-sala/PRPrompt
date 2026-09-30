@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1550" viewBox="0 0 1800 1550"><rect width="100%" height="100%" fill="#f5f7fb"/>
+<text x="60" y="74" font-family="STHeiti, PingFang SC, sans-serif" font-size="39" fill="#26354b" text-anchor="start">三模块图提示适配：同一冻结主干上的生成、优化与读出</text>
+<text x="60" y="118" font-family="STHeiti, PingFang SC, sans-serif" font-size="25" fill="#5b6d84" text-anchor="start">实线：前向数据流    橙色虚线：训练梯度与参数更新    只有类别 token P 可学习</text>
+<rect x="60" y="150" width="1680" height="105" rx="18" fill="#eaf0fa" stroke="#d6deea" stroke-width="2"/>
+<text x="900.0" y="196" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">输入：节点属性 X、原图边 E、支持节点 S 及其标签</text>
+<text x="900.0" y="232" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">全图属性和结构可见；查询节点的真实标签不进入教师、训练或概率传播</text>
+<rect x="60" y="305" width="460" height="750" rx="18" fill="#e8f4f5" stroke="#d6deea" stroke-width="2"/>
+<text x="290.0" y="352" font-family="STHeiti, PingFang SC, sans-serif" font-size="29" fill="#26354b" text-anchor="middle">M1｜语义条件与门控锐化</text>
+<rect x="610" y="305" width="580" height="750" rx="18" fill="#eaf0fa" stroke="#d6deea" stroke-width="2"/>
+<text x="900.0" y="352" font-family="STHeiti, PingFang SC, sans-serif" font-size="29" fill="#26354b" text-anchor="middle">共享的冻结两层 GCN</text>
+<rect x="1280" y="305" width="460" height="750" rx="18" fill="#fff0e2" stroke="#d6deea" stroke-width="2"/>
+<text x="1510.0" y="352" font-family="STHeiti, PingFang SC, sans-serif" font-size="29" fill="#26354b" text-anchor="middle">M2｜方向与尺度匹配</text>
+<rect x="90" y="395" width="400" height="135" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+<text x="290.0" y="441" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">属性准备</text>
+<text x="290.0" y="477" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">原图两跳传播 → 全图中心化</text>
+<text x="290.0" y="511" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">节点向量归一化</text>
+<rect x="90" y="575" width="400" height="150" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+<text x="290.0" y="621" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">支持原型 → 修正教师</text>
+<text x="290.0" y="657" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">支持原型 + 无标签软原型</text>
+<text x="290.0" y="691" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">混合比例 0.5；修正 3 次</text>
+<rect x="90" y="775" width="400" height="170" rx="18" fill="#ffffff" stroke="#52a7ae" stroke-width="2"/>
+<text x="290.0" y="821" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">门控 Q（训练期间固定）</text>
+<text x="290.0" y="857" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">类别概率温度 0.2 → 0.1</text>
+<text x="290.0" y="891" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">按类别中心化 → 原图传播</text>
+<text x="290.0" y="925" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">输出：N × C 的门控系数</text>
+<rect x="650" y="395" width="500" height="120" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+<text x="900.0" y="441" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">冻结 GCN 第一层</text>
+<text x="900.0" y="477" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">输出预激活 U；计算各维标准差</text>
+<rect x="650" y="590" width="500" height="165" rx="18" fill="#ffffff" stroke="#7d91d7" stroke-width="2"/>
+<text x="900.0" y="636" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">提示注入与激活</text>
+<text x="900.0" y="672" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">ΔU = 10 · [Q tanh(P)] · std(U)</text>
+<text x="900.0" y="706" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">P：C × 128，零初始化</text>
+<text x="900.0" y="740" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">H = LeakyReLU(U + ΔU)</text>
+<rect x="650" y="805" width="500" height="105" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+<text x="900.0" y="851" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">冻结 GCN 第二层</text>
+<text x="900.0" y="887" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">利用原图 E 得到适配表示 Z</text>
+<rect x="650" y="960" width="500" height="75" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+<text x="900.0" y="1006" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">最终更新后重新前向</text>
+<rect x="1310" y="395" width="400" height="165" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+<text x="1510.0" y="441" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">支持集训练损失</text>
+<text x="1510.0" y="477" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">留一原型交叉熵</text>
+<text x="1510.0" y="511" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">+ 0.001 × token 均方值</text>
+<text x="1510.0" y="545" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">只使用支持标签</text>
+<rect x="1310" y="595" width="400" height="120" rx="18" fill="#ffffff" stroke="#d6deea" stroke-width="2"/>
+<text x="1510.0" y="641" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">token 梯度 G</text>
+<text x="1510.0" y="677" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">左右矩阵统计 → Shampoo方向</text>
+<rect x="1310" y="785" width="400" height="165" rx="18" fill="#ffffff" stroke="#d79654" stroke-width="2"/>
+<text x="1510.0" y="831" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">尺度匹配并更新 P</text>
+<text x="1510.0" y="867" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">同轨迹 Adam 候选方向的范数</text>
+<text x="1510.0" y="901" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">匹配矩阵方向范数；学习率 0.01</text>
+<text x="1510.0" y="935" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">重复 100 次，只更新 P</text>
+<polyline points="290,255 290,300" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="290,300 283.91048252244275,287.39374056706254 296.08951747755725,287.39374056706254" fill="#556c8b"/>
+<polyline points="900,255 900,300" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="900,300 893.9104825224427,287.39374056706254 906.0895174775573,287.39374056706254" fill="#556c8b"/>
+<polyline points="290,370 290,395" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="290,395 283.91048252244275,382.39374056706254 296.08951747755725,382.39374056706254" fill="#556c8b"/>
+<polyline points="900,370 900,395" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="900,395 893.9104825224427,382.39374056706254 906.0895174775573,382.39374056706254" fill="#556c8b"/>
+<polyline points="290,530 290,575" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="290,575 283.91048252244275,562.3937405670625 296.08951747755725,562.3937405670625" fill="#556c8b"/>
+<polyline points="290,725 290,775" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="290,775 283.91048252244275,762.3937405670625 296.08951747755725,762.3937405670625" fill="#556c8b"/>
+<polyline points="490,860 555,860 555,670 650,670" fill="none" stroke="#32939d" stroke-width="4"/>
+<polygon points="650,670 637.3937405670625,676.0895174775573 637.3937405670625,663.9104825224427" fill="#32939d"/>
+<polyline points="900,515 900,590" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="900,590 893.9104825224427,577.3937405670625 906.0895174775573,577.3937405670625" fill="#556c8b"/>
+<polyline points="900,755 900,805" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="900,805 893.9104825224427,792.3937405670625 906.0895174775573,792.3937405670625" fill="#556c8b"/>
+<polyline points="900,910 900,960" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="900,960 893.9104825224427,947.3937405670625 906.0895174775573,947.3937405670625" fill="#556c8b"/>
+<polyline points="1150,858 1235,858 1235,470 1310,470" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="1310,470 1297.3937405670624,476.08951747755725 1297.3937405670624,463.91048252244275" fill="#556c8b"/>
+<polyline points="1510,560 1510,595" fill="none" stroke="#c47c37" stroke-width="4" stroke-dasharray="10 8"/>
+<polygon points="1510,595 1503.9104825224429,582.3937405670625 1516.0895174775571,582.3937405670625" fill="#c47c37"/>
+<polyline points="1510,715 1510,785" fill="none" stroke="#c47c37" stroke-width="4" stroke-dasharray="10 8"/>
+<polygon points="1510,785 1503.9104825224429,772.3937405670625 1516.0895174775571,772.3937405670625" fill="#c47c37"/>
+<polyline points="1310,865 1260,865 1260,1080 585,1080 585,720 650,720" fill="none" stroke="#c47c37" stroke-width="4" stroke-dasharray="10 8"/>
+<polygon points="650,720 637.3937405670625,726.0895174775573 637.3937405670625,713.9104825224427" fill="#c47c37"/>
+<rect x="60" y="1150" width="1680" height="255" rx="18" fill="#eaf5ed" stroke="#d6deea" stroke-width="2"/>
+<text x="85" y="1195" font-family="STHeiti, PingFang SC, sans-serif" font-size="29" fill="#26354b" text-anchor="start">训练结束后的读出｜M3 使用适配表示，不向 token 或主干反传</text>
+<rect x="90" y="1220" width="330" height="155" rx="18" fill="#ffffff" stroke="#80b28d" stroke-width="2"/>
+<text x="255.0" y="1266" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">共同中心化</text>
+<text x="255.0" y="1302" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">Z 减去全图均值</text>
+<text x="255.0" y="1336" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">按节点归一化</text>
+<rect x="500" y="1220" width="340" height="155" rx="18" fill="#ffffff" stroke="#80b28d" stroke-width="2"/>
+<text x="670.0" y="1266" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">两项并行准备</text>
+<text x="670.0" y="1302" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">支持原型 → 初始概率 F₀</text>
+<text x="670.0" y="1336" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">余弦相似度 → 50 近邻 W</text>
+<rect x="920" y="1220" width="380" height="155" rx="18" fill="#ffffff" stroke="#80b28d" stroke-width="2"/>
+<text x="1110.0" y="1266" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">M3：支持约束传播</text>
+<text x="1110.0" y="1302" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">0.1 F₀ + 0.9 W F，20 次</text>
+<text x="1110.0" y="1336" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">初始化及每步固定支持标签</text>
+<rect x="1380" y="1220" width="330" height="155" rx="18" fill="#ffffff" stroke="#80b28d" stroke-width="2"/>
+<text x="1545.0" y="1266" font-family="STHeiti, PingFang SC, sans-serif" font-size="28" fill="#26354b" text-anchor="middle">输出预测</text>
+<text x="1545.0" y="1302" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">log 概率 / argmax</text>
+<text x="1545.0" y="1336" font-family="STHeiti, PingFang SC, sans-serif" font-size="23" fill="#26354b" text-anchor="middle">封存后才用查询标签评分</text>
+<polyline points="900,1035 900,1115 255,1115 255,1145" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="255,1145 248.91048252244278,1132.3937405670624 261.08951747755725,1132.3937405670624" fill="#556c8b"/>
+<polyline points="255,1205 255,1220" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="255,1220 248.91048252244278,1207.3937405670624 261.08951747755725,1207.3937405670624" fill="#556c8b"/>
+<polyline points="420,1300 500,1300" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="500,1300 487.39374056706254,1306.0895174775571 487.39374056706254,1293.9104825224429" fill="#556c8b"/>
+<polyline points="840,1300 920,1300" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="920,1300 907.3937405670625,1306.0895174775571 907.3937405670625,1293.9104825224429" fill="#556c8b"/>
+<polyline points="1300,1300 1380,1300" fill="none" stroke="#556c8b" stroke-width="4"/>
+<polygon points="1380,1300 1367.3937405670624,1306.0895174775571 1367.3937405670624,1293.9104825224429" fill="#556c8b"/>
+<text x="60" y="1467" font-family="STHeiti, PingFang SC, sans-serif" font-size="27" fill="#26354b" text-anchor="start">两种关系图：原图用于 GCN 与门控传播；适配表示的近邻图仅用于最终概率读出。</text>
+<text x="60" y="1515" font-family="STHeiti, PingFang SC, sans-serif" font-size="25" fill="#5b6d84" text-anchor="start">M1 调整 token 的使用方式，M2 学习这些 token，M3 利用所得表示；不是三个独立模型的投票。</text>
+</svg>

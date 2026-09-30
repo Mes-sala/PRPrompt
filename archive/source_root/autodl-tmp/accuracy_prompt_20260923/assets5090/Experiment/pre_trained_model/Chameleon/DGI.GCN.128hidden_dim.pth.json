@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "DGI",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "Chameleon",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "649de463352aff1edc08554a5b82984e465e90bc22ab0112bb4fea761a7eaac2",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 202,
+  "best_training_loss": 0.3901166021823883,
+  "selection": "last_after_training_loss_patience_20"
+}

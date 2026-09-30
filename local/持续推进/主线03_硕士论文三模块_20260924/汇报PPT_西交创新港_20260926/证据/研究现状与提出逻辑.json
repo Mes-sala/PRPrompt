@@ -1,0 +1,250 @@
+{
+  "date": "2026-09-26",
+  "purpose": "XJTU科研汇报：前置研究现状与提出逻辑",
+  "sources": [
+    {
+      "id": "R1",
+      "short": "GraphPrompt · WWW 2023",
+      "title": "GraphPrompt: Unifying Pre-Training and Downstream Tasks for Graph Neural Networks",
+      "url": "https://arxiv.org/abs/2302.08043",
+      "doi": "https://doi.org/10.1145/3543507.3583386",
+      "local_pdf": "/Users/shq/Research/GP/ref/（2023 WWW）GraphPrompt：Unifying Pre-Training and Downstream Tasks for Graph Neural Networks.pdf",
+      "verified_sections": "Abstract; Introduction; Sections 4.1 and 4.3",
+      "claim": "以子图相似度统一预训练与节点/图分类，通过任务相关提示调节读出。"
+    },
+    {
+      "id": "R2",
+      "short": "GPF / GPF-plus · NeurIPS 2023",
+      "title": "Universal Prompt Tuning for Graph Neural Networks",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/a4a1ee071ce0fe63b83bce507c9dc4d7-Abstract-Conference.html",
+      "local_pdf": "/Users/shq/Research/GP/ref/（2023 NeurIPS）（GPF+）Universal Prompt Tuning for Graph Neural Networks.pdf",
+      "verified_sections": "Abstract; Section 3.3",
+      "claim": "在输入特征空间学习提示以适配不同预训练策略；GPF-plus通过注意力组合基向量生成节点相关提示。"
+    },
+    {
+      "id": "R3",
+      "short": "MultiGPrompt · WWW 2024",
+      "title": "MultiGPrompt for Multi-Task Pre-Training and Prompting on Graphs",
+      "url": "https://smufang.github.io/paper/TheWebConf24_MultiGPrompt.pdf",
+      "doi": "https://doi.org/10.1145/3589334.3645423",
+      "local_pdf": "/Users/shq/Research/GP/ref/（2024 WWW）MultiGPrompt for Multi-Task Pre-Training and Prompting on Graphs.pdf",
+      "verified_sections": "Abstract; Introduction; Section 4",
+      "claim": "通过任务token组织多任务预训练，并以组合提示和开放提示分别提取任务相关和跨任务知识。"
+    },
+    {
+      "id": "R4",
+      "short": "DAPrompt · AAAI 2026",
+      "title": "DAPrompt: Dual Alignment Prompt of Structure and Semantics for Few-shot Graph Learning",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/39391",
+      "doi": "https://doi.org/10.1609/aaai.v40i27.39391",
+      "local_pdf": "/Users/shq/Research/GP/ref/（2026 AAAI）DAPrompt：Dual Alignment Prompt of Structure and Semantics for Few-shot Graph Learning.pdf",
+      "verified_sections": "Abstract; Sections 4.1 and 4.2",
+      "claim": "面向噪声/异配图，预训练阶段学习结构，提示阶段用结构感知和语义对齐token修正结构与语义。"
+    },
+    {
+      "id": "L1",
+      "short": "本地三阶段叙事与代码证据",
+      "title": "冻结图模型的少样本适配：语义分配、尺度匹配与结构读出",
+      "path": "/Users/shq/Research/GP/持续推进/主线03_硕士论文三模块_20260924/论文叙事重构_有限监督的三阶段适配_20260925.md",
+      "verified_sections": "Sections 2, 3, 4, 5, 8 and 10",
+      "claim": "F000已有教师和条件门控；M1新增锐化，M2改变提示矩阵更新，M3为训练后读出。"
+    }
+  ],
+  "slides": [
+    {
+      "id": "literature",
+      "title": "图提示学习：从任务对齐走向更细致的适配",
+      "layout": "四张横向或2×2卡片；每张只保留方法名、会议和一行核心设计",
+      "takeaway": "已有研究已覆盖任务、特征、知识与结构语义的适配。",
+      "cards": [
+        {
+          "title": "GraphPrompt",
+          "eyebrow": "WWW 2023",
+          "body": "统一任务模板\n提示调节读出"
+        },
+        {
+          "title": "GPF / GPF-plus",
+          "eyebrow": "NeurIPS 2023",
+          "body": "输入特征提示\n兼容不同预训练"
+        },
+        {
+          "title": "MultiGPrompt",
+          "eyebrow": "WWW 2024",
+          "body": "多任务预训练\n组合与开放提示"
+        },
+        {
+          "title": "DAPrompt",
+          "eyebrow": "AAAI 2026",
+          "body": "结构与语义\n协同对齐"
+        }
+      ],
+      "notes": "这一页是代表性路线，而不是对整个领域的穷尽分类。GraphPrompt将节点/图分类与预训练组织为子图相似度任务；GPF探索特征空间提示的通用性，GPF-plus已有节点相关提示；MultiGPrompt处理多预训练任务及其知识转移；DAPrompt直接研究结构与语义双对齐。因此后续不能以“已有方法没有节点差异化/没有结构/没有语义”作为动机。来源R1—R4，已核对本地PDF及原论文页面。",
+      "source_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ]
+    },
+    {
+      "id": "questions",
+      "title": "仍需回答：少量标签如何作用于整条适配流程？",
+      "layout": "上方一句约束；下方三个等宽问题节点，留白与字号优先",
+      "kicker": "我们的约束：已有底座冻结，每类仅少量支持标签",
+      "cards": [
+        {
+          "title": "分配给谁",
+          "body": "类别提示如何形成\n节点相关的修正？"
+        },
+        {
+          "title": "怎样学好",
+          "body": "有限更新预算下\n方向和步幅如何控制？"
+        },
+        {
+          "title": "如何判别",
+          "body": "得到适配表示后\n标签如何约束预测？"
+        }
+      ],
+      "notes": "这三项是本研究在冻结GCN与固定更新预算中的可检验问题，是对文献的研究定位，不是宣称此前无人研究。既有方法已给出节点相关提示、结构改造和语义对齐等答案；我们进一步控制同一组提示参数和同一底座，分别观察条件分配、更新方式和最终读出的增量。对于第一项，锐化保持教师类别排序，不应表述为自动纠正教师标签；对于第三项，近邻图是适配表示空间的读出图，不是原图结构首次被使用。",
+      "source_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "L1"
+      ]
+    },
+    {
+      "id": "logic",
+      "title": "提出逻辑：沿同一组提示参数连接三个作用环节",
+      "layout": "三段图示横向连接；中部贯穿一条“唯一提示矩阵P”；底部一句总结",
+      "cards": [
+        {
+          "title": "语义分配",
+          "body": "教师门控锐化\n决定提示怎样组合"
+        },
+        {
+          "title": "尺度匹配",
+          "body": "Shampoo方向\nAdam范数参照"
+        },
+        {
+          "title": "结构读出",
+          "body": "表示近邻传播\n固定支持标签"
+        }
+      ],
+      "footer": "同一冻结GCN · 一组可学习P · 训练后再传播",
+      "notes": "已有基础F000用支持标签与无标签属性构建固定教师，由类别分数形成节点门控，组合一组类别token P，并注入冻结GCN的第一层输出、激活函数之前。M1的增量是降低门控温度以锐化分配，后续处理得到的有符号门控不应称为概率凸组合。M2用Shampoo获得矩阵预条件方向，以同一实际梯度轨迹上的Adam候选方向提供整个P矩阵的Frobenius范数；沿Shampoo方向缩放后执行负向参数更新。M3在最终适配表示上建立近邻图，在训练结束后传播原型概率并固定支持标签，不回传梯度。三者功能衔接支持放在同一方案研究，是否有效及是否有统计交互仍由实验回答。",
+      "source_ids": [
+        "L1"
+      ]
+    },
+    {
+      "id": "increment",
+      "title": "实验检验的对象：已有基础上的三项增量",
+      "layout": "左侧已有基础，右侧三个简洁开关；此页也可作为方案页角标说明并入协议页",
+      "baseline": {
+        "title": "已有基础 F000",
+        "bullets": [
+          "固定教师与类别条件门控",
+          "同一冻结GCN与提示矩阵P",
+          "Adam学习，逐节点原型读出"
+        ]
+      },
+      "increments": [
+        {
+          "code": "M1",
+          "name": "普通门控 → 锐化门控"
+        },
+        {
+          "code": "M2",
+          "name": "Adam → 方向与范数分别控制"
+        },
+        {
+          "code": "M3",
+          "name": "原型读出 → 支持约束近邻传播"
+        }
+      ],
+      "footer": "F111：三项增量全部开启；收益以匹配对照分别检验。",
+      "notes": "不能把教师、软原型、类别token或条件门控的全部作用都归给M1；这些已存在于F000。F000和F111还共享输出中心化等流程，在主框架中可省略，实验定义必须保留。F111与F000之差回答系统整体收益，完整方法与移除单模块版本之差回答该背景下的组件贡献；只有八格全因子与相应交互统计才能回答超加性协同。现有最新统一协议为000、011、101、110、111五格，不能单靠这五格计算完整三因子交互。",
+      "source_ids": [
+        "L1"
+      ]
+    }
+  ],
+  "comparison_rows": [
+    {
+      "method": "GraphPrompt",
+      "venue": "WWW 2023",
+      "focus": "预训练与下游任务目标不一致",
+      "design": "子图相似度统一模板；任务提示调节读出",
+      "our_testable_question": "在固定底座下，类别条件提示的分配方式改变后，增量是否来自分配形状还是幅度？",
+      "scope": "本文提出的后续问题，不是GraphPrompt原文声称的缺陷。",
+      "source": "R1"
+    },
+    {
+      "method": "GPF / GPF-plus",
+      "venue": "NeurIPS 2023",
+      "focus": "不同预训练策略难以共用手工提示模板",
+      "design": "特征空间提示；GPF-plus注意力组合节点相关提示",
+      "our_testable_question": "节点相关条件已具备时，进一步锐化类别分配，能否在相同提示参数量下有效？",
+      "scope": "GPF-plus已有节点差异化，不能称已有方法对所有节点使用同一提示。",
+      "source": "R2"
+    },
+    {
+      "method": "MultiGPrompt",
+      "venue": "WWW 2024",
+      "focus": "单预训练任务知识有限；多任务知识转移复杂",
+      "design": "预训练任务token；组合提示与开放提示",
+      "our_testable_question": "不重做预训练、只更新一组P时，矩阵方向与更新范数分别控制是否有效？",
+      "scope": "本方案研究冻结现有checkpoint后的适配，未复现或替代其多任务预训练。",
+      "source": "R3"
+    },
+    {
+      "method": "DAPrompt",
+      "venue": "AAAI 2026",
+      "focus": "噪声/异配边造成结构不可靠和语义混杂",
+      "design": "结构学习预训练；结构感知与语义对齐提示",
+      "our_testable_question": "编码器图固定时，能否在适配表示的读出图上传播概率，并保留支持标签约束？",
+      "scope": "M3是训练后读出，与修补输入图、重新预训练和端到端结构学习不同。",
+      "source": "R4"
+    }
+  ],
+  "terminology": [
+    {
+      "term": "冻结底座",
+      "explanation": "固定已预训练的图编码器权重，适配时不更新。"
+    },
+    {
+      "term": "支持集",
+      "explanation": "每个类别少量已知标签的样本，用于提示学习与类别参照。"
+    },
+    {
+      "term": "原型",
+      "explanation": "同类样本表示的代表向量，通常通过均值得到。"
+    },
+    {
+      "term": "门控",
+      "explanation": "控制节点怎样组合类别提示的权重；本方法最终权重可以为负。"
+    },
+    {
+      "term": "Shampoo",
+      "explanation": "利用矩阵两个轴的梯度统计调整更新方向的优化方法。"
+    },
+    {
+      "term": "Adam范数",
+      "explanation": "Adam候选更新的整体长度，作为本方法步幅的参照。"
+    },
+    {
+      "term": "近邻传播",
+      "explanation": "根据表示相似度建图，在近邻间迭代交换类别概率。"
+    }
+  ],
+  "claims_to_avoid": [
+    "领域尚未研究语义或结构",
+    "M1首次提出教师/软原型/类别条件门控",
+    "锐化纠正了教师类别排序",
+    "仅参数少即可断言计算高效",
+    "功能衔接等于普遍统计协同",
+    "与移植基线的结果等于超过原论文最佳结果"
+  ]
+}

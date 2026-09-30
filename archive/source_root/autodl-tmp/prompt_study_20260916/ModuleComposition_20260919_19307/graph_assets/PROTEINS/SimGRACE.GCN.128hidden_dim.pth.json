@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "SimGRACE",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "PROTEINS",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "c0a4977b667aa5ad426d2bf876a01ccdd9132213b77d00654441c755c8c1c5c2",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 30,
+  "best_training_loss": 0.4963802153444184,
+  "selection": "last_after_training_loss_patience_10"
+}

@@ -1,0 +1,193 @@
+{
+  "round": "r06_geometry_5shot",
+  "datasets": [
+    "Cora",
+    "CiteSeer",
+    "PubMed",
+    "Computers",
+    "Photo",
+    "Actor",
+    "Chameleon",
+    "Cornell"
+  ],
+  "seeds": [
+    270600,
+    270601,
+    270602,
+    270603,
+    270604,
+    270605,
+    270606,
+    270607,
+    270608,
+    270609,
+    270610,
+    270611,
+    270612,
+    270613,
+    270614,
+    270615,
+    270616,
+    270617,
+    270618,
+    270619
+  ],
+  "shots": 5,
+  "candidates": [
+    {
+      "id": "h0_c0_b0",
+      "center": 0,
+      "hops": 0,
+      "beta": 0,
+      "tau": 0.05,
+      "rounds": 0,
+      "op": "prototype"
+    },
+    {
+      "id": "h0_c0_b0.25",
+      "center": 0,
+      "hops": 0,
+      "beta": 0.25,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype"
+    },
+    {
+      "id": "h0_c0_b0.5",
+      "center": 0,
+      "hops": 0,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype"
+    },
+    {
+      "id": "h2_c0_b0",
+      "center": 0,
+      "hops": 2,
+      "beta": 0,
+      "tau": 0.05,
+      "rounds": 0,
+      "op": "prototype"
+    },
+    {
+      "id": "h2_c0_b0.25",
+      "center": 0,
+      "hops": 2,
+      "beta": 0.25,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype"
+    },
+    {
+      "id": "h2_c0_b0.5",
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype"
+    },
+    {
+      "id": "h0_c1_b0",
+      "center": 1,
+      "hops": 0,
+      "beta": 0,
+      "tau": 0.05,
+      "rounds": 0,
+      "op": "prototype"
+    },
+    {
+      "id": "h0_c1_b0.25",
+      "center": 1,
+      "hops": 0,
+      "beta": 0.25,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype"
+    },
+    {
+      "id": "h0_c1_b0.5",
+      "center": 1,
+      "hops": 0,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype"
+    },
+    {
+      "id": "h2_c1_b0",
+      "center": 1,
+      "hops": 2,
+      "beta": 0,
+      "tau": 0.05,
+      "rounds": 0,
+      "op": "prototype"
+    },
+    {
+      "id": "h2_c1_b0.25",
+      "center": 1,
+      "hops": 2,
+      "beta": 0.25,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype"
+    },
+    {
+      "id": "h2_c1_b0.5",
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype"
+    },
+    {
+      "id": "h2_c0_tau02",
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.02,
+      "rounds": 3,
+      "op": "prototype"
+    },
+    {
+      "id": "h2_c1_tau02",
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.02,
+      "rounds": 3,
+      "op": "prototype"
+    }
+  ],
+  "fixed": [
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_base"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_base"
+    }
+  ],
+  "outputs": [
+    "cv_joint",
+    "cv_geometry",
+    "cv_geometry_no_refine",
+    "c0_base",
+    "c1_base"
+  ],
+  "runner_sha256": "fb0f452f6f395c0d5af78e889b13a44bee4cee5ad9037a097b35f115fe7e60c8",
+  "operator_sha256": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123"
+}

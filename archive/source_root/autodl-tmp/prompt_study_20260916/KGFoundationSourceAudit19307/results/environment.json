@@ -1,0 +1,34 @@
+{
+  "torch": "2.12.1+cu130",
+  "pyg": "2.8.0.post1",
+  "triton": "3.7.1",
+  "gpu": "NVIDIA vGPU-32GB",
+  "utc": "2026-09-19T02:30:49.493385+00:00",
+  "branch": "author default Triton kernels; version parsing and lazy optional extension import patched",
+  "compatibility": {
+    "patches": [
+      {
+        "file": "motif/layers.py",
+        "before_sha256": "9b0b27a488e33d503805e80cb2c3e63207dca94ffe5d9242e2a1434314f3be89",
+        "after_sha256": "0439e4e8be716283a6b2b838ad15e0b66dcfd3acef7e6debd9a938fbf76d4295",
+        "old": "pyg_version = [int(i) for i in torch_geometric.__version__.split(\".\")]",
+        "new": "from packaging.version import Version\n        pyg_version = list(Version(torch_geometric.__version__).release)",
+        "reason": "PyG 2.x.post1 suffix is not an integer; parse release components for existing author dispatch only",
+        "arithmetic_changed": false,
+        "attempt1_failure": "results/failure.json"
+      },
+      {
+        "file": "motif/rspmm/__init__.py",
+        "before_sha256": "bfc17ff9a568eaa11f62ae31d4bf6d1ecda7f119ed9b7300316a85f05f420498",
+        "after_sha256": "ace97b8ff3558dcc4a2b3f8e27f366726b3c9288bb751aba9fc5ad5708c33f8c",
+        "old": "from .rspmm import generalized_rspmm\n",
+        "new": "# Delay optional C++ extension loading when using the author Triton submodule.\ndef __getattr__(name):\n    if name == \"generalized_rspmm\":\n        from .rspmm import generalized_rspmm\n        return generalized_rspmm\n    raise AttributeError(name)\n",
+        "reason": "lazy optional C++ extension import; unchanged native Triton arithmetic",
+        "arithmetic_changed": false
+      }
+    ]
+  },
+  "easydict": "1.13 isolated vendor",
+  "source_sha": "278ae398451f719d6abd13dc5bdcaa9ee312bfedf2effb24812dc413c7e4f1b3",
+  "runner_sha": "dc33f7590ebf5c7eb3cb4abf0a41701421a379ddb92aa15f0f9f4e3a9cfb1ca4"
+}

@@ -1,0 +1,374 @@
+{
+  "round": "smoke",
+  "datasets": [
+    "Cora"
+  ],
+  "seeds": [
+    270099
+  ],
+  "shots": 5,
+  "configs": [
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_base"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 0,
+      "op": "prototype",
+      "id": "c0_no_refine"
+    },
+    {
+      "center": 0,
+      "hops": 0,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_hop0"
+    },
+    {
+      "center": 0,
+      "hops": 1,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_hop1"
+    },
+    {
+      "center": 0,
+      "hops": 4,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_hop4"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.25,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_beta0.25"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.75,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_beta0.75"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 1.0,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_beta1.0"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.02,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_tau0.02"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.1,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_tau0.1"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.2,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c0_tau0.2"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 1,
+      "op": "prototype",
+      "id": "c0_iter1"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 10,
+      "op": "prototype",
+      "id": "c0_iter10"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "module": "confidence",
+      "id": "c0_confidence"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "module": "confidence_shuffle",
+      "id": "c0_confidence_shuffle"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "module": "neighbor",
+      "id": "c0_neighbor"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "module": "neighbor_shuffle",
+      "id": "c0_neighbor_shuffle"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "ridge",
+      "id": "c0_ridge"
+    },
+    {
+      "center": 0,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "1nn",
+      "id": "c0_1nn"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_base"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 0,
+      "op": "prototype",
+      "id": "c1_no_refine"
+    },
+    {
+      "center": 1,
+      "hops": 0,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_hop0"
+    },
+    {
+      "center": 1,
+      "hops": 1,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_hop1"
+    },
+    {
+      "center": 1,
+      "hops": 4,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_hop4"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.25,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_beta0.25"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.75,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_beta0.75"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 1.0,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_beta1.0"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.02,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_tau0.02"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.1,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_tau0.1"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.2,
+      "rounds": 3,
+      "op": "prototype",
+      "id": "c1_tau0.2"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 1,
+      "op": "prototype",
+      "id": "c1_iter1"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 10,
+      "op": "prototype",
+      "id": "c1_iter10"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "module": "confidence",
+      "id": "c1_confidence"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "module": "confidence_shuffle",
+      "id": "c1_confidence_shuffle"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "module": "neighbor",
+      "id": "c1_neighbor"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "prototype",
+      "module": "neighbor_shuffle",
+      "id": "c1_neighbor_shuffle"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "ridge",
+      "id": "c1_ridge"
+    },
+    {
+      "center": 1,
+      "hops": 2,
+      "beta": 0.5,
+      "tau": 0.05,
+      "rounds": 3,
+      "op": "1nn",
+      "id": "c1_1nn"
+    },
+    {
+      "id": "labelprop",
+      "op": "labelprop",
+      "hops": 2,
+      "center": 0
+    }
+  ],
+  "runner_sha256": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+  "selection": "development_query_scored_only_after_sealing; confirmation uses new supports",
+  "excluded": [
+    "DGI",
+    "three_module_comparisons"
+  ]
+}

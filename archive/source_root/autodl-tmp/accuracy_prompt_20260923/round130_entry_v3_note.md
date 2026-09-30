@@ -1,0 +1,5 @@
+# R130入口审计纠正
+
+v2另有错误：调用129旧审计，angular checked0不能覆盖frame目标。父进程253720及其实际子进程已终止，round130_gate保留为未完整审计的工程失败批，不计普通科学/常规同步。原smoke130并未完成frame专用审计，先前启动不应描述为全部预检通过。
+
+v3保留全部原文件/日志/manifest，只改正确audit130/geometry/frame入口；先对原smoke57完整复核，包括frame checked18与36快照，再全新round130_recovery265条。禁止沿用原不完整批的子集，原driver/config和数值容差不改。

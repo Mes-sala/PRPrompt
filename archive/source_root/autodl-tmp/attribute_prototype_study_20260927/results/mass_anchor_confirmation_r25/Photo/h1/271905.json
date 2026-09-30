@@ -1,0 +1,241 @@
+{
+  "dataset": "Photo",
+  "hops": 1,
+  "seed": 271905,
+  "classes": 8,
+  "n_unlabeled": 7610,
+  "protocol": "fixed20_perclass_pool_all_remaining_query",
+  "invalid": {},
+  "mass2_valid": true,
+  "node_eta_upper": 1.159054064761836,
+  "predeclared_local_domain": false,
+  "node_radius": 1.1790547650009247,
+  "covariance_trace": 0.31487739849320395,
+  "covariance_sha256": "10599d734fdccf9fdbb98a9c86e66d411972b6c8827abcef91391f05669ef92e",
+  "support_sha256": "63b0e6f712409fc9897c2fa96d604083a35552ceb0bc0e601ec11488687d8fc7",
+  "input_hashes": {
+    "raw_input": "81b341d81e4e9f863fbcf151f132382287048c68e40896d5e1c4ba489033b9c5",
+    "input": "b5fc3930333d75d0d7ee01a8f99c5d9ebd004373608a012e990f59c544244bdf",
+    "graph": "e8c8d72c84c653e2b5937696273e6dc3b3df88038383407973d8a951f3fa9c07",
+    "adjacency_indices": "cc03e77e889aed7ca1d65cbd8a7bb7dcb498b23497c8d74760e911dafcd04dcf",
+    "adjacency_values": "2205777877a4affdaed8b1852d3c4159dedd56688197f8b03d8f4bd45d13b8a7",
+    "query": "49902400cb5477b7f92e8a418f1006c430801ffa712577cb4241f0e31b4dd18b",
+    "pool": "027549acf764355304850117bfbb92116a5dd141abff631894e32a2bebc0b992",
+    "pool_labels": "30be695682ac7dc1d20241582b333456f1c26af774d107e41c3476755f58166a",
+    "representation": "d1ebbb5b5566a34d28054c9cd3a5ce94c8c1f6ff72eeda08624e88d5d66747e7"
+  },
+  "geometry_sha256": "3259791394bc0ea8696e789321af9c63e119c17c39a282c37fe52485263d3b6c",
+  "contract_sha256": "261d2081eedc228fb6a904ae4b85b216ad233c73f61b6d9e65b4c0b3dc7668e0",
+  "runner_sha256": "57e4834652df6739bc854a8d46df6ed986cb9da0ab950e974847d27a1239e6c4",
+  "design_sha256": "3457430f2f0c5637ec034dd3d7653d315a9ee151143a143e5b0073e617c6c240",
+  "dependencies": {
+    "code/run_mass_anchor_r22.py": "0658ae7d0599b75ef6dead26a4963b80196a4072a449e265c52fa44d98995c67",
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e"
+  },
+  "runtime": {
+    "torch": "2.12.1+cu130",
+    "numpy": "1.26.4",
+    "pyg": "2.8.0.post1",
+    "library_sources": {
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/transforms/normalize_features.py": "46696332a9fbb7d502fa7d8253d6a7ec19d396c80a5ae8e96397bd9f3e2687d4",
+      "/root/autodl-tmp/prog_env/lib/python3.12/site-packages/torch_geometric/nn/conv/gcn_conv.py": "036b464769ad1d98501c9fc18ff3132b507890b2c5cb41b3e6f9e1f22d4f57f6"
+    }
+  },
+  "support_geometry_seconds": 0.0017105713486671448,
+  "moment_terms_seconds": 0.00033792853355407715,
+  "pre_query_dot_seconds": 0.0021760761737823486,
+  "pre_branch_seconds": {
+    "common_mass0__r1": 8.047372102737427e-05,
+    "common_mass0__r8": 6.623566150665283e-05,
+    "moment_mass0__r1": 6.552040576934814e-05,
+    "moment_mass0__r8": 6.261840462684631e-05,
+    "moment_mass2__r1": 6.126612424850464e-05,
+    "moment_mass2__r8": 6.2551349401474e-05,
+    "common_equalmass__r1": 6.351619958877563e-05,
+    "common_equalmass__r8": 5.9295445680618286e-05
+  },
+  "pre_score_seconds": {
+    "common_mass0__r1": 0.0009907037019729614,
+    "common_mass0__r8": 0.0010278299450874329,
+    "moment_mass0__r1": 0.0010233782231807709,
+    "moment_mass0__r8": 0.0010234974324703217,
+    "moment_mass2__r1": 0.00102229043841362,
+    "moment_mass2__r8": 0.001023661345243454,
+    "common_equalmass__r1": 0.0010260827839374542,
+    "common_equalmass__r8": 0.0010289661586284637
+  },
+  "load_seconds": 0.04842744395136833,
+  "incremental_propagation_seconds": 0.001928519457578659,
+  "covariance_precompute_seconds": 0.01315312460064888,
+  "endpoint": {
+    "common_mass0__r1": {
+      "disagreement_pct": 21.161548731642192,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 21.161548731642192,
+      "prototype_max_error": 0.012459310665819326
+    },
+    "common_mass0__r8": {
+      "disagreement_pct": 23.805073431241656,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 23.805073431241656,
+      "prototype_max_error": 0.012521272200632599
+    },
+    "moment_mass0__r1": {
+      "disagreement_pct": 0.7209612817089452,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.7209612817089452,
+      "prototype_max_error": 0.0009033008499705055
+    },
+    "moment_mass0__r8": {
+      "disagreement_pct": 1.1348464619492658,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 1.1348464619492658,
+      "prototype_max_error": 0.0009132741401070649
+    },
+    "moment_mass2__r1": {
+      "disagreement_pct": 0.7209612817089452,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.7209612817089452,
+      "prototype_max_error": 0.0009086765761747929
+    },
+    "moment_mass2__r8": {
+      "disagreement_pct": 1.1348464619492658,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 1.1348464619492658,
+      "prototype_max_error": 0.0009139535415663492
+    },
+    "common_equalmass__r1": {
+      "disagreement_pct": 21.748998664886514,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 21.748998664886514,
+      "prototype_max_error": 0.012511341543337433
+    },
+    "common_equalmass__r8": {
+      "disagreement_pct": 24.36582109479306,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 24.36582109479306,
+      "prototype_max_error": 0.012527830964857236
+    },
+    "full_ren__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0,
+      "prototype_max_error": 0.0
+    },
+    "full_ren__r8": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0,
+      "prototype_max_error": 0.0
+    },
+    "common_true_mass__r1": {
+      "disagreement_pct": 21.24165554072096,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 21.24165554072096,
+      "prototype_max_error": 0.012462723625587022
+    },
+    "common_true_mass__r8": {
+      "disagreement_pct": 23.83177570093458,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 23.83177570093458,
+      "prototype_max_error": 0.012521702901972472
+    }
+  },
+  "replication_intervention": {
+    "common_mass0__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_mass0__r8": {
+      "disagreement_pct": 0.507343124165554,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.507343124165554
+    },
+    "moment_mass0__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "moment_mass0__r8": {
+      "disagreement_pct": 3.364485981308411,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 3.364485981308411
+    },
+    "moment_mass2__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "moment_mass2__r8": {
+      "disagreement_pct": 3.364485981308411,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 3.364485981308411
+    },
+    "common_equalmass__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_equalmass__r8": {
+      "disagreement_pct": 0.3871829105473965,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.3871829105473965
+    },
+    "full_ren__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "full_ren__r8": {
+      "disagreement_pct": 3.1642189586114817,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 3.1642189586114817
+    },
+    "common_true_mass__r1": {
+      "disagreement_pct": 0.0,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.0
+    },
+    "common_true_mass__r8": {
+      "disagreement_pct": 0.520694259012016,
+      "near_tie_either_pct": 0.0,
+      "disagreement_outside_near_ties_pct": 0.520694259012016
+    }
+  },
+  "diagnostics": {
+    "mass0_probability_l1_error": 0.0012108086019136195,
+    "mass2_probability_l1_error": 5.360923209506075e-05,
+    "common_location_error": 0.023490680574463744,
+    "moment_location_error": 0.0013074458897519917,
+    "support_weight_r1_mean": 0.005249667362806051,
+    "support_weight_r8_mean": 0.0006592500317068942,
+    "zero_assignments": 0
+  },
+  "full_assignment_seconds": 0.001869983971118927,
+  "post_query_dot_seconds": 0.0010941699147224426,
+  "post_branch_seconds": {
+    "full_ren__r1": 0.00014157965779304504,
+    "full_ren__r8": 6.758049130439758e-05,
+    "common_true_mass__r1": 6.354227662086487e-05,
+    "common_true_mass__r8": 6.097555160522461e-05
+  },
+  "post_score_seconds": {
+    "full_ren__r1": 0.0009690150618553162,
+    "full_ren__r8": 0.0010273195803165436,
+    "common_true_mass__r1": 0.0010262802243232727,
+    "common_true_mass__r8": 0.0010281279683113098
+  },
+  "diagnostic_seconds": 0.001614551991224289,
+  "pre_serialization_seconds": 0.11673936620354652,
+  "post_serialization_seconds": 0.054718635976314545,
+  "draw_total_seconds": 0.20254990831017494,
+  "pre_artifact_sha256": "6bb8a5520e9447c8c207da9363713dbfbb7573d6d99d906e1b41cb974a007cb0",
+  "pre_record_sha256": "9dbc0518cd26dcca2e7cb23957f9be630dc5e9dcc4c070079ceb00e21b1ed4b5",
+  "post_artifact_sha256": "6a8847bf13767ae3ce4f09d65cb46108100e37dcaa75790131d16cb14394cfa6",
+  "scope": "New support draws and h1/h2/h3 conditions on the same 14 graphs; no query labels or accuracy; disjoint pre/post archives.",
+  "finished": 1790521095.8914657
+}

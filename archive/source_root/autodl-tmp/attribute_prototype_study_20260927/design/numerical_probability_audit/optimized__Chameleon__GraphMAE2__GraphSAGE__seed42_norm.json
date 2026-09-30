@@ -1,0 +1,66 @@
+{
+  "round": "numerical_probability_optimized",
+  "parent_plan": "/root/autodl-tmp/attribute_prototype_study_20260927/design/expanded_confirmation/expanded_confirmation_Chameleon__GraphMAE2__GraphSAGE__seed42_norm.json",
+  "parent_plan_sha256": "6418dd931d1ec1bd880dbd9d2e3d195b5e2fe2f565cc11fc6062f06f70421afe",
+  "replay_sha256": "b0833962d39114c261cfae137d3b181687d7fe88c8cf7a91adc3c4e48f3b6410",
+  "selection_csv_sha256": "abad2e0f006684a317872bfc1c558ab8e18fec82a78fe3c6e9aa1ad313bdfa5d",
+  "jobs": [
+    {
+      "seed": 271401,
+      "config": "zca001_b0.75_t0.05_n10_confidence",
+      "routes": [
+        "GraphSAGE",
+        "any_frozen",
+        "all_including_attributes"
+      ]
+    },
+    {
+      "seed": 271404,
+      "config": "zca001_b0.75_t0.02_n10_none",
+      "routes": [
+        "GraphSAGE"
+      ]
+    },
+    {
+      "seed": 271405,
+      "config": "zca001_b0.5_t0.02_n10_confidence",
+      "routes": [
+        "GraphSAGE",
+        "any_frozen"
+      ]
+    },
+    {
+      "seed": 271408,
+      "config": "zca001_b0.75_t0.02_n10_none",
+      "routes": [
+        "GraphSAGE",
+        "any_frozen"
+      ]
+    },
+    {
+      "seed": 271410,
+      "config": "zca001_b0.75_t0.1_n10_confidence",
+      "routes": [
+        "GraphSAGE",
+        "any_frozen",
+        "all_including_attributes"
+      ]
+    },
+    {
+      "seed": 271411,
+      "config": "zca001_b0.75_t0.02_n10_neighbor",
+      "routes": [
+        "GraphSAGE"
+      ]
+    },
+    {
+      "seed": 271412,
+      "config": "zca001_b0.75_t0.02_n10_none",
+      "routes": [
+        "GraphSAGE",
+        "any_frozen",
+        "all_including_attributes"
+      ]
+    }
+  ]
+}

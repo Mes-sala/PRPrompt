@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "seed": 216199,
+  "accuracy_evaluated": false,
+  "query_labels_used": false,
+  "results": [
+    {
+      "checkpoint": "GraphMAE",
+      "kind": "principal",
+      "rank": 1,
+      "parameter_count": 1152,
+      "gradient_norms": [
+        0.5275511145591736,
+        0.4029156565666199,
+        0.35411524772644043
+      ],
+      "top1_energy_fraction": 0.053237348794937134,
+      "top1_to_second": 1.1418508291244507,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE",
+      "kind": "random",
+      "rank": 1,
+      "parameter_count": 1152,
+      "gradient_norms": [
+        0.5275511145591736,
+        0.06744574010372162,
+        0.03349095582962036
+      ],
+      "top1_energy_fraction": 0.053237348794937134,
+      "top1_to_second": 1.1418508291244507,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE",
+      "kind": "zero",
+      "rank": 1,
+      "parameter_count": 1152,
+      "gradient_norms": [
+        0.5275511145591736,
+        0.0,
+        0.026553938165307045
+      ],
+      "top1_energy_fraction": 0.053237348794937134,
+      "top1_to_second": 1.1418508291244507,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE",
+      "kind": "zero",
+      "rank": 2,
+      "parameter_count": 1408,
+      "gradient_norms": [
+        0.5275511145591736,
+        0.0,
+        0.04239584133028984
+      ],
+      "top1_energy_fraction": 0.053237348794937134,
+      "top1_to_second": 1.1418508291244507,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "kind": "principal",
+      "rank": 1,
+      "parameter_count": 1152,
+      "gradient_norms": [
+        0.25226420164108276,
+        0.08127663284540176,
+        0.07337858527898788
+      ],
+      "top1_energy_fraction": 0.03227413818240166,
+      "top1_to_second": 1.028934359550476,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "kind": "random",
+      "rank": 1,
+      "parameter_count": 1152,
+      "gradient_norms": [
+        0.25226420164108276,
+        0.02159741520881653,
+        0.008959372527897358
+      ],
+      "top1_energy_fraction": 0.03227413818240166,
+      "top1_to_second": 1.028934359550476,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "kind": "zero",
+      "rank": 1,
+      "parameter_count": 1152,
+      "gradient_norms": [
+        0.25226420164108276,
+        0.0,
+        0.008052033372223377
+      ],
+      "top1_energy_fraction": 0.03227413818240166,
+      "top1_to_second": 1.028934359550476,
+      "no_op_exact": true
+    },
+    {
+      "checkpoint": "GraphMAE2",
+      "kind": "zero",
+      "rank": 2,
+      "parameter_count": 1408,
+      "gradient_norms": [
+        0.25226420164108276,
+        0.0,
+        0.011751812882721424
+      ],
+      "top1_energy_fraction": 0.03227413818240166,
+      "top1_to_second": 1.028934359550476,
+      "no_op_exact": true
+    }
+  ],
+  "support_sha256": "3ef79fb647617e043ef1822e49c556ee3129d2195853936eb9fedb6effb5d3bd"
+}

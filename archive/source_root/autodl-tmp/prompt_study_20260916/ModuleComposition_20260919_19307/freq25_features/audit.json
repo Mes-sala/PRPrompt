@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "manifest_sha": "21a525d18ece4744a97c2e5ab725f1c4258f66a7c4926083df89500eb7f8cbd4",
+  "freeze_sha": "4592936a7e26f8cadcf79888efcfc1138f56049d554bfb20125106afdbb11a0a",
+  "checker_sha": "41cfde93a11c2f38c0b9b528186ed020d3a72b50d528bb0c752368400186ff5a",
+  "reference_files": {
+    "NCI1": {
+      "sha": "1310e60eb72d69dc1fe3dda337a52710b9c7fc931db3e4faa03b8092cb1d0846",
+      "bytes": 66505467,
+      "all_weighted_feature_entries_checked": true
+    },
+    "NCI109": {
+      "sha": "1f42b65fb3bd95a0eeff0265eaf2bb1b2c343e622e6cd6ba09cf10246b6a91f6",
+      "bytes": 68228442,
+      "all_weighted_feature_entries_checked": true
+    }
+  },
+  "maximum_errors": {
+    "IDF3": 3.552713678800501e-15,
+    "countShared3": 0.0,
+    "logCount3": 8.881784197001252e-16,
+    "IDFshared3": 8.881784197001252e-16,
+    "IDFcos3": 5.551115123125783e-16,
+    "logIDF3": 8.881784197001252e-16,
+    "count3": 0.0,
+    "permIDF3": 1.7763568394002505e-15
+  },
+  "precheck_mass_audit": {
+    "NCI1": {
+      "maximum_precheck_mass_absolute_difference": 0.0,
+      "singleton_pruning_offdiagonal_difference": 0
+    },
+    "NCI109": {
+      "maximum_precheck_mass_absolute_difference": 4.76837158203125e-07,
+      "singleton_pruning_offdiagonal_difference": 0
+    }
+  },
+  "synthetic": {
+    "singleton_only_diagonal": true,
+    "constant_weight_identity": true,
+    "renaming_invariance": true
+  },
+  "numeric_target_access": false
+}

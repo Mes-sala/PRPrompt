@@ -1,0 +1,18 @@
+{
+  "created": 1790435882.1327806,
+  "runner_sha256": "0b9fee7967300dd3580cd19eb33449c9fda5acb63a0ce714ee62e98e2ef2c7df",
+  "operator_sha256": "cb3304594dc53f6078b26772b3ac452e878e989b66575b11ab8288e17a1363fe",
+  "configurations": 7,
+  "expected_final_fits": 840,
+  "lrs": [
+    0.001,
+    0.01,
+    0.1
+  ],
+  "budgets": [
+    100,
+    300,
+    1000
+  ],
+  "selection": "support only 4train1valid perclass; final refit5"
+}

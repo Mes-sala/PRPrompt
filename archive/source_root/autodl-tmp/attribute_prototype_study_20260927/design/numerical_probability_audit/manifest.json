@@ -1,0 +1,1004 @@
+{
+  "selection_rows": 1680,
+  "unique_predictions": 1120,
+  "source_csv_sha256": "abad2e0f006684a317872bfc1c558ab8e18fec82a78fe3c6e9aa1ad313bdfa5d",
+  "selection_uses_query_labels": false,
+  "plans": [
+    {
+      "source": "baseline",
+      "unit": "Actor__Bandana__GCN__seed42_norm",
+      "plan": "baseline__Actor__Bandana__GCN__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__Edgepred_GPPT__ade64f6f3b9b",
+      "plan": "baseline__Actor__Edgepred_GPPT__ade64f6f3b9b.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__Edgepred_Gprompt__30b9c2c89a1d",
+      "plan": "baseline__Actor__Edgepred_Gprompt__30b9c2c89a1d.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__GraphCL__73eda304d4ee",
+      "plan": "baseline__Actor__GraphCL__73eda304d4ee.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Actor__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__GraphMAE2__GCN__seed42_norm",
+      "plan": "baseline__Actor__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "baseline__Actor__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__Actor__S2GAE__GAT__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__S2GAE__GCN__seed42_norm",
+      "plan": "baseline__Actor__S2GAE__GCN__seed42_norm.json",
+      "predictions": 4
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "baseline__Actor__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor__SimGRACE__049c20350cd6",
+      "plan": "baseline__Actor__SimGRACE__049c20350cd6.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "Actor_attributes",
+      "plan": "baseline__Actor_attributes.json",
+      "predictions": 4
+    },
+    {
+      "source": "baseline",
+      "unit": "Amazon-ratings__Bandana__GCN__seed42_norm",
+      "plan": "baseline__Amazon-ratings__Bandana__GCN__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "baseline",
+      "unit": "Amazon-ratings__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Amazon-ratings__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "baseline",
+      "unit": "Amazon-ratings__GraphMAE2__GCN__seed42_norm",
+      "plan": "baseline__Amazon-ratings__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 9
+    },
+    {
+      "source": "baseline",
+      "unit": "Amazon-ratings__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "baseline__Amazon-ratings__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 16
+    },
+    {
+      "source": "baseline",
+      "unit": "Amazon-ratings__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__Amazon-ratings__S2GAE__GAT__seed42_norm.json",
+      "predictions": 6
+    },
+    {
+      "source": "baseline",
+      "unit": "Amazon-ratings__S2GAE__GCN__seed42_norm",
+      "plan": "baseline__Amazon-ratings__S2GAE__GCN__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "Amazon-ratings__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "baseline__Amazon-ratings__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "Amazon-ratings_attributes",
+      "plan": "baseline__Amazon-ratings_attributes.json",
+      "predictions": 9
+    },
+    {
+      "source": "baseline",
+      "unit": "CS__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__CS__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "CS_attributes",
+      "plan": "baseline__CS_attributes.json",
+      "predictions": 7
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__Bandana__GCN__seed42_norm",
+      "plan": "baseline__Chameleon__Bandana__GCN__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__GraphCL__07058ab2a2fa",
+      "plan": "baseline__Chameleon__GraphCL__07058ab2a2fa.json",
+      "predictions": 7
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Chameleon__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__GraphMAE2__GCN__seed42_norm",
+      "plan": "baseline__Chameleon__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "baseline__Chameleon__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__GraphMAE__fae19b2ebf82",
+      "plan": "baseline__Chameleon__GraphMAE__fae19b2ebf82.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__Chameleon__S2GAE__GAT__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__S2GAE__GCN__seed42_norm",
+      "plan": "baseline__Chameleon__S2GAE__GCN__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "baseline__Chameleon__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon__SimGRACE__525eec28fed1",
+      "plan": "baseline__Chameleon__SimGRACE__525eec28fed1.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "Chameleon_attributes",
+      "plan": "baseline__Chameleon_attributes.json",
+      "predictions": 6
+    },
+    {
+      "source": "baseline",
+      "unit": "CiteSeer__GraphCL__b4708f27c7e5",
+      "plan": "baseline__CiteSeer__GraphCL__b4708f27c7e5.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "CiteSeer__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__CiteSeer__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 9
+    },
+    {
+      "source": "baseline",
+      "unit": "CiteSeer__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__CiteSeer__S2GAE__GAT__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "CiteSeer__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "baseline__CiteSeer__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "CiteSeer__S2GAE__bd209ec5181e",
+      "plan": "baseline__CiteSeer__S2GAE__bd209ec5181e.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "CiteSeer__SimGRACE__86e4c3c121d2",
+      "plan": "baseline__CiteSeer__SimGRACE__86e4c3c121d2.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "CiteSeer__SimGRACE__da8250d13cc2",
+      "plan": "baseline__CiteSeer__SimGRACE__da8250d13cc2.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Computers__Edgepred_Gprompt__fd9e216e5d41",
+      "plan": "baseline__Computers__Edgepred_Gprompt__fd9e216e5d41.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Computers__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Computers__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Computers__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__Computers__S2GAE__GAT__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Computers_attributes",
+      "plan": "baseline__Computers_attributes.json",
+      "predictions": 7
+    },
+    {
+      "source": "baseline",
+      "unit": "Cora__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Cora__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 9
+    },
+    {
+      "source": "baseline",
+      "unit": "Cora__GraphMAE2__b4ccffb19908",
+      "plan": "baseline__Cora__GraphMAE2__b4ccffb19908.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "Cora__GraphMAE__fb9bb0e2e2bd",
+      "plan": "baseline__Cora__GraphMAE__fb9bb0e2e2bd.json",
+      "predictions": 12
+    },
+    {
+      "source": "baseline",
+      "unit": "Cora__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__Cora__S2GAE__GAT__seed42_norm.json",
+      "predictions": 4
+    },
+    {
+      "source": "baseline",
+      "unit": "Cora_attributes",
+      "plan": "baseline__Cora_attributes.json",
+      "predictions": 4
+    },
+    {
+      "source": "baseline",
+      "unit": "Cornell__Edgepred_Gprompt__f656050f9497",
+      "plan": "baseline__Cornell__Edgepred_Gprompt__f656050f9497.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Cornell__GraphCL__2f6b499f430b",
+      "plan": "baseline__Cornell__GraphCL__2f6b499f430b.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Cornell__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Cornell__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 4
+    },
+    {
+      "source": "baseline",
+      "unit": "Cornell__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "baseline__Cornell__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "Cornell__GraphMAE__efa244a8c256",
+      "plan": "baseline__Cornell__GraphMAE__efa244a8c256.json",
+      "predictions": 4
+    },
+    {
+      "source": "baseline",
+      "unit": "Cornell__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__Cornell__S2GAE__GAT__seed42_norm.json",
+      "predictions": 8
+    },
+    {
+      "source": "baseline",
+      "unit": "Cornell__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "baseline__Cornell__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Cornell__SimGRACE__0a9e536877f7",
+      "plan": "baseline__Cornell__SimGRACE__0a9e536877f7.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "Photo__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Photo__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Photo_attributes",
+      "plan": "baseline__Photo_attributes.json",
+      "predictions": 12
+    },
+    {
+      "source": "baseline",
+      "unit": "Physics__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Physics__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Physics__GraphMAE2__GCN__seed42_norm",
+      "plan": "baseline__Physics__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "Physics__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "baseline__Physics__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "baseline",
+      "unit": "Physics__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__Physics__S2GAE__GAT__seed42_norm.json",
+      "predictions": 10
+    },
+    {
+      "source": "baseline",
+      "unit": "Physics__S2GAE__GCN__seed42_norm",
+      "plan": "baseline__Physics__S2GAE__GCN__seed42_norm.json",
+      "predictions": 15
+    },
+    {
+      "source": "baseline",
+      "unit": "Physics__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "baseline__Physics__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 6
+    },
+    {
+      "source": "baseline",
+      "unit": "Physics_attributes",
+      "plan": "baseline__Physics_attributes.json",
+      "predictions": 11
+    },
+    {
+      "source": "baseline",
+      "unit": "PubMed__Edgepred_GPPT__7b0bb774ae09",
+      "plan": "baseline__PubMed__Edgepred_GPPT__7b0bb774ae09.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "PubMed__Edgepred_Gprompt__fb61b312c4fc",
+      "plan": "baseline__PubMed__Edgepred_Gprompt__fb61b312c4fc.json",
+      "predictions": 5
+    },
+    {
+      "source": "baseline",
+      "unit": "PubMed__GraphCL__dbcbde183804",
+      "plan": "baseline__PubMed__GraphCL__dbcbde183804.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "PubMed__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__PubMed__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 15
+    },
+    {
+      "source": "baseline",
+      "unit": "PubMed__GraphMAE__70d698a5a235",
+      "plan": "baseline__PubMed__GraphMAE__70d698a5a235.json",
+      "predictions": 7
+    },
+    {
+      "source": "baseline",
+      "unit": "PubMed__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__PubMed__S2GAE__GAT__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "PubMed__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "baseline__PubMed__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 16
+    },
+    {
+      "source": "baseline",
+      "unit": "PubMed_attributes",
+      "plan": "baseline__PubMed_attributes.json",
+      "predictions": 13
+    },
+    {
+      "source": "baseline",
+      "unit": "Roman-empire__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Roman-empire__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "Roman-empire__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "baseline__Roman-empire__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Roman-empire__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__Roman-empire__S2GAE__GAT__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "baseline",
+      "unit": "Squirrel__Bandana__GCN__seed42_norm",
+      "plan": "baseline__Squirrel__Bandana__GCN__seed42_norm.json",
+      "predictions": 4
+    },
+    {
+      "source": "baseline",
+      "unit": "Squirrel__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__Squirrel__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 12
+    },
+    {
+      "source": "baseline",
+      "unit": "Squirrel__GraphMAE2__GCN__seed42_norm",
+      "plan": "baseline__Squirrel__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "baseline",
+      "unit": "Squirrel__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "baseline__Squirrel__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 4
+    },
+    {
+      "source": "baseline",
+      "unit": "Squirrel__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__Squirrel__S2GAE__GAT__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Squirrel__S2GAE__GCN__seed42_norm",
+      "plan": "baseline__Squirrel__S2GAE__GCN__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "Squirrel__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "baseline__Squirrel__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 6
+    },
+    {
+      "source": "baseline",
+      "unit": "Squirrel_attributes",
+      "plan": "baseline__Squirrel_attributes.json",
+      "predictions": 6
+    },
+    {
+      "source": "baseline",
+      "unit": "WikiCS__GraphMAE2__GAT__seed42_norm",
+      "plan": "baseline__WikiCS__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 3
+    },
+    {
+      "source": "baseline",
+      "unit": "WikiCS__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "baseline__WikiCS__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "baseline",
+      "unit": "WikiCS__S2GAE__GAT__seed42_norm",
+      "plan": "baseline__WikiCS__S2GAE__GAT__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "WikiCS__S2GAE__GCN__seed42_norm",
+      "plan": "baseline__WikiCS__S2GAE__GCN__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "WikiCS__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "baseline__WikiCS__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "baseline",
+      "unit": "WikiCS_attributes",
+      "plan": "baseline__WikiCS_attributes.json",
+      "predictions": 14
+    },
+    {
+      "source": "optimized",
+      "unit": "Actor__Edgepred_Gprompt__30b9c2c89a1d",
+      "plan": "optimized__Actor__Edgepred_Gprompt__30b9c2c89a1d.json",
+      "predictions": 1
+    },
+    {
+      "source": "optimized",
+      "unit": "Actor__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__Actor__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 8
+    },
+    {
+      "source": "optimized",
+      "unit": "Actor__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__Actor__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 3
+    },
+    {
+      "source": "optimized",
+      "unit": "Actor__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "optimized__Actor__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 10
+    },
+    {
+      "source": "optimized",
+      "unit": "Actor__SimGRACE__049c20350cd6",
+      "plan": "optimized__Actor__SimGRACE__049c20350cd6.json",
+      "predictions": 2
+    },
+    {
+      "source": "optimized",
+      "unit": "Actor_attributes",
+      "plan": "optimized__Actor_attributes.json",
+      "predictions": 16
+    },
+    {
+      "source": "optimized",
+      "unit": "Amazon-ratings__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__Amazon-ratings__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "optimized",
+      "unit": "Amazon-ratings__S2GAE__GAT__seed42_norm",
+      "plan": "optimized__Amazon-ratings__S2GAE__GAT__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "optimized",
+      "unit": "Amazon-ratings__S2GAE__GCN__seed42_norm",
+      "plan": "optimized__Amazon-ratings__S2GAE__GCN__seed42_norm.json",
+      "predictions": 4
+    },
+    {
+      "source": "optimized",
+      "unit": "Amazon-ratings__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "optimized__Amazon-ratings__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "optimized",
+      "unit": "Amazon-ratings_attributes",
+      "plan": "optimized__Amazon-ratings_attributes.json",
+      "predictions": 11
+    },
+    {
+      "source": "optimized",
+      "unit": "CS__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__CS__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 17
+    },
+    {
+      "source": "optimized",
+      "unit": "CS__GraphMAE2__GCN__seed42_norm",
+      "plan": "optimized__CS__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 20
+    },
+    {
+      "source": "optimized",
+      "unit": "CS__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__CS__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 20
+    },
+    {
+      "source": "optimized",
+      "unit": "CS_attributes",
+      "plan": "optimized__CS_attributes.json",
+      "predictions": 13
+    },
+    {
+      "source": "optimized",
+      "unit": "Chameleon__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__Chameleon__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 8
+    },
+    {
+      "source": "optimized",
+      "unit": "Chameleon__GraphMAE2__GCN__seed42_norm",
+      "plan": "optimized__Chameleon__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "optimized",
+      "unit": "Chameleon__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__Chameleon__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "optimized",
+      "unit": "Chameleon__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "optimized__Chameleon__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 6
+    },
+    {
+      "source": "optimized",
+      "unit": "Chameleon_attributes",
+      "plan": "optimized__Chameleon_attributes.json",
+      "predictions": 14
+    },
+    {
+      "source": "optimized",
+      "unit": "CiteSeer__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__CiteSeer__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 8
+    },
+    {
+      "source": "optimized",
+      "unit": "CiteSeer__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__CiteSeer__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 19
+    },
+    {
+      "source": "optimized",
+      "unit": "CiteSeer__GraphMAE2__cf4ad5bbee38",
+      "plan": "optimized__CiteSeer__GraphMAE2__cf4ad5bbee38.json",
+      "predictions": 11
+    },
+    {
+      "source": "optimized",
+      "unit": "CiteSeer__S2GAE__GAT__seed42_norm",
+      "plan": "optimized__CiteSeer__S2GAE__GAT__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "optimized",
+      "unit": "CiteSeer__SimGRACE__da8250d13cc2",
+      "plan": "optimized__CiteSeer__SimGRACE__da8250d13cc2.json",
+      "predictions": 5
+    },
+    {
+      "source": "optimized",
+      "unit": "CiteSeer_attributes",
+      "plan": "optimized__CiteSeer_attributes.json",
+      "predictions": 20
+    },
+    {
+      "source": "optimized",
+      "unit": "Computers__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__Computers__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "optimized",
+      "unit": "Computers__GraphMAE2__GCN__seed42_norm",
+      "plan": "optimized__Computers__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 17
+    },
+    {
+      "source": "optimized",
+      "unit": "Computers__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__Computers__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 20
+    },
+    {
+      "source": "optimized",
+      "unit": "Computers__GraphMAE__61e493ff08ad",
+      "plan": "optimized__Computers__GraphMAE__61e493ff08ad.json",
+      "predictions": 2
+    },
+    {
+      "source": "optimized",
+      "unit": "Computers__S2GAE__GAT__seed42_norm",
+      "plan": "optimized__Computers__S2GAE__GAT__seed42_norm.json",
+      "predictions": 13
+    },
+    {
+      "source": "optimized",
+      "unit": "Computers_attributes",
+      "plan": "optimized__Computers_attributes.json",
+      "predictions": 13
+    },
+    {
+      "source": "optimized",
+      "unit": "Cora__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__Cora__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 20
+    },
+    {
+      "source": "optimized",
+      "unit": "Cora__GraphMAE2__b4ccffb19908",
+      "plan": "optimized__Cora__GraphMAE2__b4ccffb19908.json",
+      "predictions": 5
+    },
+    {
+      "source": "optimized",
+      "unit": "Cora__S2GAE__GAT__seed42_norm",
+      "plan": "optimized__Cora__S2GAE__GAT__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "optimized",
+      "unit": "Cora_attributes",
+      "plan": "optimized__Cora_attributes.json",
+      "predictions": 16
+    },
+    {
+      "source": "optimized",
+      "unit": "Cornell__Bandana__GCN__seed42_norm",
+      "plan": "optimized__Cornell__Bandana__GCN__seed42_norm.json",
+      "predictions": 3
+    },
+    {
+      "source": "optimized",
+      "unit": "Cornell__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__Cornell__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "optimized",
+      "unit": "Cornell__GraphMAE2__GCN__seed42_norm",
+      "plan": "optimized__Cornell__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 6
+    },
+    {
+      "source": "optimized",
+      "unit": "Cornell__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__Cornell__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 15
+    },
+    {
+      "source": "optimized",
+      "unit": "Cornell__GraphMAE__efa244a8c256",
+      "plan": "optimized__Cornell__GraphMAE__efa244a8c256.json",
+      "predictions": 1
+    },
+    {
+      "source": "optimized",
+      "unit": "Cornell__S2GAE__GAT__seed42_norm",
+      "plan": "optimized__Cornell__S2GAE__GAT__seed42_norm.json",
+      "predictions": 1
+    },
+    {
+      "source": "optimized",
+      "unit": "Cornell__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "optimized__Cornell__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "optimized",
+      "unit": "Cornell__SimGRACE__0a9e536877f7",
+      "plan": "optimized__Cornell__SimGRACE__0a9e536877f7.json",
+      "predictions": 1
+    },
+    {
+      "source": "optimized",
+      "unit": "Cornell_attributes",
+      "plan": "optimized__Cornell_attributes.json",
+      "predictions": 20
+    },
+    {
+      "source": "optimized",
+      "unit": "Photo__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__Photo__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 19
+    },
+    {
+      "source": "optimized",
+      "unit": "Photo__GraphMAE2__GCN__seed42_norm",
+      "plan": "optimized__Photo__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 6
+    },
+    {
+      "source": "optimized",
+      "unit": "Photo__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__Photo__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 20
+    },
+    {
+      "source": "optimized",
+      "unit": "Photo__GraphMAE__cf3667a6a9c1",
+      "plan": "optimized__Photo__GraphMAE__cf3667a6a9c1.json",
+      "predictions": 14
+    },
+    {
+      "source": "optimized",
+      "unit": "Photo_attributes",
+      "plan": "optimized__Photo_attributes.json",
+      "predictions": 8
+    },
+    {
+      "source": "optimized",
+      "unit": "Physics__GraphMAE2__GCN__seed42_norm",
+      "plan": "optimized__Physics__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "optimized",
+      "unit": "Physics__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__Physics__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "optimized",
+      "unit": "Physics__S2GAE__GAT__seed42_norm",
+      "plan": "optimized__Physics__S2GAE__GAT__seed42_norm.json",
+      "predictions": 9
+    },
+    {
+      "source": "optimized",
+      "unit": "Physics__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "optimized__Physics__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "optimized",
+      "unit": "Physics_attributes",
+      "plan": "optimized__Physics_attributes.json",
+      "predictions": 9
+    },
+    {
+      "source": "optimized",
+      "unit": "PubMed__Edgepred_Gprompt__fb61b312c4fc",
+      "plan": "optimized__PubMed__Edgepred_Gprompt__fb61b312c4fc.json",
+      "predictions": 5
+    },
+    {
+      "source": "optimized",
+      "unit": "PubMed__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__PubMed__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 3
+    },
+    {
+      "source": "optimized",
+      "unit": "PubMed__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__PubMed__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 4
+    },
+    {
+      "source": "optimized",
+      "unit": "PubMed_attributes",
+      "plan": "optimized__PubMed_attributes.json",
+      "predictions": 7
+    },
+    {
+      "source": "optimized",
+      "unit": "Roman-empire__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__Roman-empire__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 9
+    },
+    {
+      "source": "optimized",
+      "unit": "Roman-empire__GraphMAE2__GCN__seed42_norm",
+      "plan": "optimized__Roman-empire__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 17
+    },
+    {
+      "source": "optimized",
+      "unit": "Roman-empire__S2GAE__GAT__seed42_norm",
+      "plan": "optimized__Roman-empire__S2GAE__GAT__seed42_norm.json",
+      "predictions": 7
+    },
+    {
+      "source": "optimized",
+      "unit": "Roman-empire__S2GAE__GCN__seed42_norm",
+      "plan": "optimized__Roman-empire__S2GAE__GCN__seed42_norm.json",
+      "predictions": 3
+    },
+    {
+      "source": "optimized",
+      "unit": "Roman-empire__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "optimized__Roman-empire__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 19
+    },
+    {
+      "source": "optimized",
+      "unit": "Roman-empire_attributes",
+      "plan": "optimized__Roman-empire_attributes.json",
+      "predictions": 20
+    },
+    {
+      "source": "optimized",
+      "unit": "Squirrel__GraphMAE2__GAT__seed42_norm",
+      "plan": "optimized__Squirrel__GraphMAE2__GAT__seed42_norm.json",
+      "predictions": 2
+    },
+    {
+      "source": "optimized",
+      "unit": "Squirrel__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__Squirrel__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 6
+    },
+    {
+      "source": "optimized",
+      "unit": "Squirrel__S2GAE__GAT__seed42_norm",
+      "plan": "optimized__Squirrel__S2GAE__GAT__seed42_norm.json",
+      "predictions": 5
+    },
+    {
+      "source": "optimized",
+      "unit": "Squirrel__S2GAE__GCN__seed42_norm",
+      "plan": "optimized__Squirrel__S2GAE__GCN__seed42_norm.json",
+      "predictions": 8
+    },
+    {
+      "source": "optimized",
+      "unit": "Squirrel__S2GAE__GraphSAGE__seed42_norm",
+      "plan": "optimized__Squirrel__S2GAE__GraphSAGE__seed42_norm.json",
+      "predictions": 4
+    },
+    {
+      "source": "optimized",
+      "unit": "Squirrel_attributes",
+      "plan": "optimized__Squirrel_attributes.json",
+      "predictions": 14
+    },
+    {
+      "source": "optimized",
+      "unit": "WikiCS__GraphMAE2__GCN__seed42_norm",
+      "plan": "optimized__WikiCS__GraphMAE2__GCN__seed42_norm.json",
+      "predictions": 19
+    },
+    {
+      "source": "optimized",
+      "unit": "WikiCS__GraphMAE2__GraphSAGE__seed42_norm",
+      "plan": "optimized__WikiCS__GraphMAE2__GraphSAGE__seed42_norm.json",
+      "predictions": 12
+    },
+    {
+      "source": "optimized",
+      "unit": "WikiCS__S2GAE__GAT__seed42_norm",
+      "plan": "optimized__WikiCS__S2GAE__GAT__seed42_norm.json",
+      "predictions": 16
+    },
+    {
+      "source": "optimized",
+      "unit": "WikiCS_attributes",
+      "plan": "optimized__WikiCS_attributes.json",
+      "predictions": 6
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_base",
+    "baseline": "GraphMAE:geom_original_base",
+    "n": 20,
+    "delta_pp": 4.368420764803886,
+    "ci95": [
+      3.575657604262233,
+      5.184210093691945
+    ],
+    "wins": 20,
+    "losses": 0,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_base",
+    "baseline": "GraphMAE:frozen",
+    "n": 20,
+    "delta_pp": 6.430920958518982,
+    "ci95": [
+      5.14473676122725,
+      7.64152987115085
+    ],
+    "wins": 20,
+    "losses": 0,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_base",
+    "baseline": "GraphMAE:graphprompt",
+    "n": 20,
+    "delta_pp": 6.282894611358643,
+    "ci95": [
+      5.016447450965643,
+      7.473766336217522
+    ],
+    "wins": 20,
+    "losses": 0,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_base",
+    "baseline": "GraphMAE:raw",
+    "n": 20,
+    "delta_pp": 5.654605031013489,
+    "ci95": [
+      4.4604438822716475,
+      6.819078477099538
+    ],
+    "wins": 20,
+    "losses": 0,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_base",
+    "baseline": "GraphMAE:rawridge",
+    "n": 20,
+    "delta_pp": 6.190789490938187,
+    "ci95": [
+      4.898026360198855,
+      7.470394751057029
+    ],
+    "wins": 20,
+    "losses": 0,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_base",
+    "baseline": "GraphCL:geom_diag10_base",
+    "n": 20,
+    "delta_pp": 2.0197366923093796,
+    "ci95": [
+      0.9671054016798735,
+      3.0559209752827883
+    ],
+    "wins": 15,
+    "losses": 5,
+    "scope": "same graph support sampling, not independent graphs"
+  }
+]

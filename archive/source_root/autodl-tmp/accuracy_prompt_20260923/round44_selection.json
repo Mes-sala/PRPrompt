@@ -1,0 +1,50 @@
+{
+  "seeds": [
+    69100,
+    69101,
+    69102,
+    69103,
+    69104,
+    69105,
+    69106,
+    69107,
+    69108,
+    69109,
+    69110,
+    69111,
+    69112,
+    69113,
+    69114,
+    69115,
+    69116,
+    69117,
+    69118,
+    69119
+  ],
+  "configs": [
+    {
+      "dataset": "Cora",
+      "checkpoint": "GraphMAE",
+      "methods": [
+        "frozen",
+        "graphprompt",
+        "head_token_mean",
+        "head_token_knn-0.9-clamp",
+        "head_token_mutual-0.9-clamp",
+        "head_token_pruned-0.9-clamp",
+        "head_token_blend-0.9-clamp",
+        "head_token_mixrandom-0.9-clamp"
+      ]
+    },
+    {
+      "dataset": "Cora",
+      "checkpoint": "GraphMAE2",
+      "methods": [
+        "head_token_mean",
+        "head_token_knn-0.9-clamp"
+      ]
+    }
+  ],
+  "candidate": "GraphMAE:head_token_blend-0.9-clamp",
+  "note": "New supports, repeated confirm500. Add matched50/50randommix before confirmation; no candidate tuning."
+}

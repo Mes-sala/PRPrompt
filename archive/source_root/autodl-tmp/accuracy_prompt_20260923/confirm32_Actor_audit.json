@@ -1,0 +1,114 @@
+[
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_ce",
+    "baseline": "GraphMAE:geom_diag10_base",
+    "n": 20,
+    "delta_pp": -0.03947362303733826,
+    "ci95": [
+      -0.6282892823219299,
+      0.4769738093018532
+    ],
+    "wins": 9,
+    "losses": 10,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_ce",
+    "baseline": "GraphMAE:geom_diag10_gp",
+    "n": 20,
+    "delta_pp": -0.28618432581424713,
+    "ci95": [
+      -0.8453948050737381,
+      0.2039476502686739
+    ],
+    "wins": 6,
+    "losses": 14,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_ce",
+    "baseline": "GraphMAE:geom_diag10_random",
+    "n": 20,
+    "delta_pp": 0.055920928716659546,
+    "ci95": [
+      -0.39144739508628845,
+      0.5131576247513294
+    ],
+    "wins": 10,
+    "losses": 10,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_ce",
+    "baseline": "GraphMAE:geom_center_ce",
+    "n": 20,
+    "delta_pp": -0.3190791606903076,
+    "ci95": [
+      -0.8322368562221527,
+      0.2138980906456697
+    ],
+    "wins": 7,
+    "losses": 13,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_ce",
+    "baseline": "GraphMAE:geom_original_ce",
+    "n": 20,
+    "delta_pp": 2.638157680630684,
+    "ci95": [
+      1.5822365116328,
+      3.733552623540163
+    ],
+    "wins": 17,
+    "losses": 3,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_ce",
+    "baseline": "GraphMAE:raw",
+    "n": 20,
+    "delta_pp": 5.6151314079761505,
+    "ci95": [
+      4.506579263135791,
+      6.7105256877839565
+    ],
+    "wins": 20,
+    "losses": 0,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_ce",
+    "baseline": "GraphMAE:rawridge",
+    "n": 20,
+    "delta_pp": 6.151315867900848,
+    "ci95": [
+      4.891447424888611,
+      7.404687531292438
+    ],
+    "wins": 20,
+    "losses": 0,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Actor",
+    "candidate": "GraphMAE:geom_diag10_ce",
+    "baseline": "GraphCL:geom_diag10_base",
+    "n": 20,
+    "delta_pp": 1.9802630692720413,
+    "ci95": [
+      0.9407895058393478,
+      2.9835525266826153
+    ],
+    "wins": 15,
+    "losses": 4,
+    "scope": "same graph support sampling, not independent graphs"
+  }
+]

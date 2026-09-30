@@ -1,0 +1,66 @@
+{
+  "schema": "mass-anchor-confirmation-r25-v1",
+  "runner_sha256": "57e4834652df6739bc854a8d46df6ed986cb9da0ab950e974847d27a1239e6c4",
+  "design_sha256": "3457430f2f0c5637ec034dd3d7653d315a9ee151143a143e5b0073e617c6c240",
+  "dependencies": {
+    "code/run_mass_anchor_r22.py": "0658ae7d0599b75ef6dead26a4963b80196a4072a449e265c52fa44d98995c67",
+    "code/expanded_data.py": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8",
+    "code/run_study.py": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "provenance/expanded_datasets.json": "17eee0684deffc1234d1d1cdb7e96692cd00bf51f8ad315efd8c383df296b1e2",
+    "provenance/expanded_heterophily_datasets.json": "e9aa75911bdeff8143ed550202ee9f65e668d0e8c51f01344f44e7affd97791e"
+  },
+  "datasets": [
+    "Cora",
+    "CiteSeer",
+    "PubMed",
+    "Computers",
+    "Photo",
+    "Actor",
+    "Chameleon",
+    "Cornell",
+    "Squirrel",
+    "WikiCS",
+    "CS",
+    "Physics",
+    "Roman-empire",
+    "Amazon-ratings"
+  ],
+  "hops": [
+    1,
+    2,
+    3
+  ],
+  "seeds": [
+    271900,
+    271901,
+    271902,
+    271903,
+    271904,
+    271905,
+    271906,
+    271907,
+    271908,
+    271909
+  ],
+  "replications": [
+    1,
+    8
+  ],
+  "shots": 5,
+  "operator": {
+    "distance": "squared_euclidean",
+    "temperature": 1.0,
+    "rounds": 1,
+    "normalize_prototype": false,
+    "readout": "negative_squared_euclidean"
+  },
+  "local_eta_threshold": 0.1,
+  "pre_methods": [
+    "common_mass0",
+    "moment_mass0",
+    "moment_mass2",
+    "common_equalmass"
+  ],
+  "near_tie_normalized_gap": 1e-10,
+  "storage": "disjoint_pre_post_with_query_dots_and_canonical_argmax"
+}

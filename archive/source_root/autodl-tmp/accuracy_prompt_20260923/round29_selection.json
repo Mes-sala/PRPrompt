@@ -1,0 +1,42 @@
+{
+  "dataset": "Actor",
+  "checkpoint": "GraphCL",
+  "candidate": "token_cache10_kd10late_directgate",
+  "development": "round29_cache officialfold0 val",
+  "phase": "confirm officialfold0 test, first use in this task",
+  "seeds": [
+    43100,
+    43101,
+    43102,
+    43103,
+    43104,
+    43105,
+    43106,
+    43107,
+    43108,
+    43109,
+    43110,
+    43111,
+    43112,
+    43113,
+    43114,
+    43115,
+    43116,
+    43117,
+    43118,
+    43119
+  ],
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "raw",
+    "rawridge",
+    "cache_teacher10",
+    "token_cache10_kd10late",
+    "token_cache10_kd10late_directgate",
+    "token_random_cache10_kd10late_directgate"
+  ],
+  "expected_rows": 160,
+  "rationale": "dev21.70 vsraw21.40; add exact matchedrandomcache10, do not infer fromcache30random",
+  "caveat": "onegraph support variability, one test mask"
+}

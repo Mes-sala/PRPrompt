@@ -1,0 +1,434 @@
+[
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 20.950657948851585,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": -0.40131576359272003,
+      "ci95_seed_bootstrap": [
+        -0.6907894462347031,
+        -0.12499980628490448
+      ],
+      "wins": 4,
+      "ties": 0,
+      "losses": 16
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 21.351973712444305,
+    "frozen": {
+      "delta_pp": 0.40131576359272003,
+      "ci95_seed_bootstrap": [
+        0.12499980628490448,
+        0.6907894462347031
+      ],
+      "wins": 16,
+      "ties": 0,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "method": "raw",
+    "n": 20,
+    "accuracy": 20.940789580345154,
+    "frozen": {
+      "delta_pp": -0.00986836850643158,
+      "ci95_seed_bootstrap": [
+        -0.944078866392374,
+        0.8453948795795441
+      ],
+      "wins": 11,
+      "ties": 1,
+      "losses": 8
+    },
+    "graphprompt": {
+      "delta_pp": -0.4111841320991516,
+      "ci95_seed_bootstrap": [
+        -1.4144734311848879,
+        0.5164473541080952
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "method": "rawridge",
+    "n": 20,
+    "accuracy": 20.605262964963913,
+    "frozen": {
+      "delta_pp": -0.3453949838876724,
+      "ci95_seed_bootstrap": [
+        -1.4177633840590715,
+        0.6842101383954287
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    },
+    "graphprompt": {
+      "delta_pp": -0.7467107474803925,
+      "ci95_seed_bootstrap": [
+        -1.8421877659857273,
+        0.3618417736142874
+      ],
+      "wins": 6,
+      "ties": 2,
+      "losses": 12
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "method": "self10",
+    "n": 20,
+    "accuracy": 22.345394641160965,
+    "frozen": {
+      "delta_pp": 1.3947366923093796,
+      "ci95_seed_bootstrap": [
+        0.4933385774493218,
+        2.289473494514823
+      ],
+      "wins": 12,
+      "ties": 0,
+      "losses": 8
+    },
+    "graphprompt": {
+      "delta_pp": 0.9934209287166595,
+      "ci95_seed_bootstrap": [
+        0.20065784454345703,
+        1.809210404753685
+      ],
+      "wins": 12,
+      "ties": 0,
+      "losses": 8
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "method": "self100",
+    "n": 20,
+    "accuracy": 23.302631750702858,
+    "frozen": {
+      "delta_pp": 2.3519738018512726,
+      "ci95_seed_bootstrap": [
+        1.2401317059993744,
+        3.4737668596208082
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 1.9506580382585526,
+      "ci95_seed_bootstrap": [
+        0.8881580773741007,
+        3.019736709073186
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "method": "selflearn_kd",
+    "n": 20,
+    "accuracy": 21.187499910593033,
+    "frozen": {
+      "delta_pp": 0.23684196174144745,
+      "ci95_seed_bootstrap": [
+        -0.46052627451717854,
+        0.9802628308534622
+      ],
+      "wins": 9,
+      "ties": 0,
+      "losses": 11
+    },
+    "graphprompt": {
+      "delta_pp": -0.16447380185127258,
+      "ci95_seed_bootstrap": [
+        -0.8585528284311295,
+        0.565789120271802
+      ],
+      "wins": 7,
+      "ties": 1,
+      "losses": 12
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphCL",
+    "method": "selfonly",
+    "n": 20,
+    "accuracy": 23.256578892469406,
+    "frozen": {
+      "delta_pp": 2.3059209436178207,
+      "ci95_seed_bootstrap": [
+        1.2236020900309086,
+        3.384868137538433
+      ],
+      "wins": 18,
+      "ties": 0,
+      "losses": 2
+    },
+    "graphprompt": {
+      "delta_pp": 1.9046051800251007,
+      "ci95_seed_bootstrap": [
+        0.8518912922590972,
+        2.9671051371842623
+      ],
+      "wins": 17,
+      "ties": 0,
+      "losses": 3
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "frozen",
+    "n": 20,
+    "accuracy": 20.460526272654533,
+    "frozen": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    },
+    "graphprompt": {
+      "delta_pp": 0.1513158529996872,
+      "ci95_seed_bootstrap": [
+        -0.11513151228427887,
+        0.42434215545654297
+      ],
+      "wins": 10,
+      "ties": 2,
+      "losses": 8
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "graphprompt",
+    "n": 20,
+    "accuracy": 20.309210419654846,
+    "frozen": {
+      "delta_pp": -0.1513158529996872,
+      "ci95_seed_bootstrap": [
+        -0.42434215545654297,
+        0.11513151228427887
+      ],
+      "wins": 8,
+      "ties": 2,
+      "losses": 10
+    },
+    "graphprompt": {
+      "delta_pp": 0.0,
+      "ci95_seed_bootstrap": [
+        0.0,
+        0.0
+      ],
+      "wins": 0,
+      "ties": 20,
+      "losses": 0
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "raw",
+    "n": 20,
+    "accuracy": 20.940789580345154,
+    "frozen": {
+      "delta_pp": 0.4802633076906204,
+      "ci95_seed_bootstrap": [
+        -0.674341844394803,
+        1.6020561587065447
+      ],
+      "wins": 14,
+      "ties": 0,
+      "losses": 6
+    },
+    "graphprompt": {
+      "delta_pp": 0.6315791606903076,
+      "ci95_seed_bootstrap": [
+        -0.49999997206032276,
+        1.7467931453138579
+      ],
+      "wins": 14,
+      "ties": 0,
+      "losses": 6
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "rawridge",
+    "n": 20,
+    "accuracy": 20.605262964963913,
+    "frozen": {
+      "delta_pp": 0.14473669230937958,
+      "ci95_seed_bootstrap": [
+        -1.2335526961833239,
+        1.4177633095532656
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    },
+    "graphprompt": {
+      "delta_pp": 0.2960525453090668,
+      "ci95_seed_bootstrap": [
+        -1.0131578166037798,
+        1.5560033675283182
+      ],
+      "wins": 11,
+      "ties": 0,
+      "losses": 9
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "self10",
+    "n": 20,
+    "accuracy": 21.815789192914963,
+    "frozen": {
+      "delta_pp": 1.3552629202604294,
+      "ci95_seed_bootstrap": [
+        0.3617594595998526,
+        2.279605047777295
+      ],
+      "wins": 16,
+      "ties": 0,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": 1.5065787732601166,
+      "ci95_seed_bootstrap": [
+        0.5690786242485046,
+        2.374999748542905
+      ],
+      "wins": 15,
+      "ties": 1,
+      "losses": 4
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "self100",
+    "n": 20,
+    "accuracy": 22.009868398308754,
+    "frozen": {
+      "delta_pp": 1.5493421256542206,
+      "ci95_seed_bootstrap": [
+        0.4703125543892384,
+        2.572450768202542
+      ],
+      "wins": 16,
+      "ties": 0,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": 1.7006579786539078,
+      "ci95_seed_bootstrap": [
+        0.6348685901612043,
+        2.6973683405667543
+      ],
+      "wins": 16,
+      "ties": 0,
+      "losses": 4
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "selflearn_kd",
+    "n": 20,
+    "accuracy": 21.20394729077816,
+    "frozen": {
+      "delta_pp": 0.7434210181236267,
+      "ci95_seed_bootstrap": [
+        0.12499995157122612,
+        1.4342106152325869
+      ],
+      "wins": 13,
+      "ties": 1,
+      "losses": 6
+    },
+    "graphprompt": {
+      "delta_pp": 0.8947368711233139,
+      "ci95_seed_bootstrap": [
+        0.32565794698894024,
+        1.5230263024568558
+      ],
+      "wins": 15,
+      "ties": 0,
+      "losses": 5
+    }
+  },
+  {
+    "dataset": "Actor",
+    "checkpoint": "GraphMAE",
+    "method": "selfonly",
+    "n": 20,
+    "accuracy": 22.157894745469093,
+    "frozen": {
+      "delta_pp": 1.69736847281456,
+      "ci95_seed_bootstrap": [
+        0.6151317041367292,
+        2.74679286405444
+      ],
+      "wins": 15,
+      "ties": 1,
+      "losses": 4
+    },
+    "graphprompt": {
+      "delta_pp": 1.8486843258142471,
+      "ci95_seed_bootstrap": [
+        0.779523190110922,
+        2.8684211522340775
+      ],
+      "wins": 16,
+      "ties": 0,
+      "losses": 4
+    }
+  }
+]

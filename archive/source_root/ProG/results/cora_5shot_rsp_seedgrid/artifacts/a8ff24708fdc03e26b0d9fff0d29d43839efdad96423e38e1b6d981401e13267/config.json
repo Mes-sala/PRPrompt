@@ -1,0 +1,22 @@
+{
+  "dataset": "Cora",
+  "prompt": "RSP",
+  "checkpoint": "None",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "layers": 2,
+  "shot": 5,
+  "folds": 5,
+  "support_passes": 0,
+  "learning_rate": 0.0,
+  "weight_decay": 0.0,
+  "split_seed": 1729,
+  "train_seed": 42,
+  "inference_seed": 1000042,
+  "device": "0",
+  "subgraph_min": 100,
+  "subgraph_max": 300,
+  "output_root": "/home/shq/ProG/results/cora_5shot_rsp_seedgrid/artifacts",
+  "split_root": "/home/shq/ProG/Experiment/sample_data_v4",
+  "prompt_options": {}
+}

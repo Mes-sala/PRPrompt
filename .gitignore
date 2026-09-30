@@ -1,0 +1,104 @@
+# macOS Finder, metadata, resource forks and volume files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd/
+.TemporaryItems/
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100/
+.apdisk
+__MACOSX/
+Icon?
+.chart-data-*/
+# Windows / editors
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+~$*
+# Secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+!PRPrompt_*.key
+id_rsa*
+id_ed25519*
+.ssh/
+credentials*.json
+secrets*.json
+# Python and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+node_modules/
+# Model weights, serialized states and pretrained artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.hdf5
+*.bin
+*.pkl
+*.pickle
+checkpoints/
+pretrained_weights/
+pretrained_models/
+# Dataset arrays, predictions and caches
+*.npy
+*.npz
+*.parquet
+*.arrow
+*.lmdb
+.cache/
+cache/
+caches/
+**/data/Planetoid/
+**/data/Amazon/
+**/data/raw/
+**/data/processed/
+# Temporary execution outputs and transfer bundles
+*.log
+*.pid
+*.lock
+*.tmp
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+wandb/
+runs/
+tensorboard/
+.local/
+# Bundled third-party Python installations (reuse the ProG conda environment)
+chem_runtime/
+text_runtime/
+molecule32_vendor/
+site-packages/
+# Per-run traces and generated prediction records
+result.json
+record.json
+trace.json
+training_traces.json
+current.json
+process.json
+predictions.json
+trials_*.json

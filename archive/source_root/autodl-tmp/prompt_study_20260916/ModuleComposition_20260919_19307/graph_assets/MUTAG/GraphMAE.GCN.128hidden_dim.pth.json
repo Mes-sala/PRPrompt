@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "GraphMAE",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "MUTAG",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "7e5771ee2c75e0d9ae6a53d205911a7028d0991fabba6ea3ec07fdd66a365920",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 83,
+  "best_training_loss": 0.11114022880792618,
+  "selection": "last_after_training_loss_patience_10"
+}

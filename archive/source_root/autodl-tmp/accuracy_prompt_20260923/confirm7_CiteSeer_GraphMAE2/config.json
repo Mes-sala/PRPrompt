@@ -1,0 +1,47 @@
+{
+  "out": "confirm7_CiteSeer_GraphMAE2",
+  "datasets": [
+    "CiteSeer"
+  ],
+  "checkpoints": [
+    "GraphMAE2"
+  ],
+  "methods": [
+    "frozen",
+    "graphprompt",
+    "rawprop2",
+    "ridge_teacher",
+    "token_ridge_kd10",
+    "token_kd10",
+    "token_ridge10",
+    "token_ridge_kd10perm",
+    "token_random_ridge10"
+  ],
+  "seeds": [
+    12100,
+    12101,
+    12102,
+    12103,
+    12104,
+    12105,
+    12106,
+    12107,
+    12108,
+    12109,
+    12110,
+    12111,
+    12112,
+    12113,
+    12114,
+    12115,
+    12116,
+    12117,
+    12118,
+    12119
+  ],
+  "steps": 100,
+  "phase": "confirm",
+  "source_sha256": "75262190f021ddc67c190c52a946b71c2edee4e5b0361998633585765c2b4e31",
+  "torch": "2.12.1+cu130",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+}

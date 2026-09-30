@@ -1,0 +1,51 @@
+{
+  "methods": {
+    "Cora": [
+      "frozen",
+      "graphprompt",
+      "ridge_teacher_plain",
+      "head_base_class-1",
+      "head_token_cos",
+      "head_token_euclid",
+      "head_token_shared-1",
+      "head_token_class-1"
+    ],
+    "PubMed": [
+      "frozen",
+      "graphprompt",
+      "rect_teacher_ref50",
+      "head_base_shared-0.1",
+      "head_token_cos",
+      "head_token_euclid",
+      "head_token_shared-1",
+      "head_token_shared-0.1"
+    ]
+  },
+  "checkpoint": "GraphMAE",
+  "seeds": [
+    58100,
+    58101,
+    58102,
+    58103,
+    58104,
+    58105,
+    58106,
+    58107,
+    58108,
+    58109,
+    58110,
+    58111,
+    58112,
+    58113,
+    58114,
+    58115,
+    58116,
+    58117,
+    58118,
+    58119
+  ],
+  "phase": "confirm",
+  "rows": 320,
+  "reason": "Cora class1 76.44 vs cos76.04; PubMed shared.1 72.64 vs cos72.32. Preselected minor gains need confirmation.",
+  "caveat": "same reused confirm500; support seeds new, not fresh test"
+}

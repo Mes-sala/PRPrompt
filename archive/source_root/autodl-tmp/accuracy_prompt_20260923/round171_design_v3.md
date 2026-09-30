@@ -1,0 +1,24 @@
+# R171同checkpoint适配权重平均
+
+来源：[ICML2022 Model Soups](https://proceedings.mlr.press/v162/wortsman22a.html)，全文soups171_paper.md；作者代码提交d5398f181ea51c5cd9d95ebacc6ea7132bb108ec。已读uniform/greedy定义和误差屏障讨论；只借鉴预定权重平均，不使用query标签挑成员或贪心加权。区别R17：当时仅同一Prompt轨迹的末段平均，本轮平均两条完整Prompt+适配轨迹。
+
+固定同checkpoint、同图同支持/查询、同teacher、100步，成员为l1与l4（rank1，因子Adam .01/.0025；Prompt均.01）。每成员完整审计。只混同一checkpoint，不把不同预训练权重直接对齐。成员训练成本为2倍，最终一次GCN前向，额外合成矩阵128×128存储如实列出。
+
+主候选预定 $lambdain{.25,.5,.75}$，$T_lambda=(1-lambda)T_1+lambda T_4$，$Delta W_lambda=(1-lambda)B_1A_1+lambda B_4A_4$。由同一gate和新的单个有效GCN权重计算表示、支持原型与k50，不能直接平均旧预测。合成更新可达rank2；不称两独立Prompt创新，也不要求创新。
+
+控制：同样三权重的因子分别平均（明确可能引入交叉项）；中点仅平均T而用成员4的W；中点仅平均W而用成员4的T；原l1/l4端点。十个候选共享已审计成员，必须去重保存与完整引用SHA，不能把两个成员训练重复计算或重复文件膨胀视作独立证据。开发支持241100..104，smoke241199。候选顺序物理.25/.5/.75、因子.25/.5/.75、仅T、仅W、l1/l4。仍对最强旧根和Direct设+.20门槛，旧l4不重复追第三次确认。
+
+已直接执行作者uniform-soup字典平均语句；独立验证符号规范变换保持物理更新，而因子平均可归零；两个不同rank1成员可合成rank2。合成前向与展开式误差5.6843e−14，和成员表示平均明显不同。尚未实际GCN；成员审计、合成过程与读出必须独立核验后才能产生正式结论。
+
+
+正式封存：真实GCN两ck共4个成员训练轨迹/8首末快照、20个合成通过；probe原字段trajectories=20为旧报告模板名，不能当20次训练，已单列解释JSON。正式285包含30个实际训练轨迹（20成员+10scale2）、60快照、100合成和140邻域；smoke61包含8实际轨迹、16快照、20合成和30邻域。成员文件在members下只保存一次，两个端点也引用同一文件。每个引用验证SHA、checkpoint/图/支持/标签/步数与teacher/gate；不接受跨种子或跨ck混合。先61条12步smoke再285条100步。
+
+
+## v2共享教师修正
+
+原smoke在两成员teacher/gate逐位相等检查失败，二者差均1.4901161e−8；正式未启动，原文件不覆盖。v2预先只计算一次teacher、gate、ridge选择信息，并传给两个成员核心函数。完整损失/优化器保持原样，未放宽检查阈值；仍要求两成员teacher/gate逐位相同。新版真实GCN4成员/20合成回放通过。新目录round171v2_smoke/gate独立保存，既有smoke失败不计科学条数。
+
+
+## v3共享输入取证
+
+v2的teacher/gate共用检查及smoke训练通过，但审计错误要求CPU重算传播特征与GPU传播特征哈希完全相同，正式未启动。v3将共享raw/teacher/gate存为单份shared.pt并引用SHA；审计先校验记录哈希，再以既有数值容差检查CPU独立传播、teacher与gate。其余model/edges/support/labels/seed/steps仍要求完全相同，成员和合成引用互相绑定。仅增加可审计输入记录，不放宽阈值。原v1/v2失败文件保留。

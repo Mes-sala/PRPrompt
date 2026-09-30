@@ -1,0 +1,118 @@
+{
+  "contract_sha256": "1580a3cc92ff6665e7d14341d1029ea7be47090be0d8d9ff8ee45d9f69ade927",
+  "fits": [
+    {
+      "replication_policy": "one",
+      "metric": "soft_position",
+      "points": [
+        [
+          0.000244140625,
+          1.2994350720094998e-09
+        ],
+        [
+          0.00048828125,
+          1.0395201582893972e-08
+        ],
+        [
+          0.0009765625,
+          8.315268634747683e-08
+        ]
+      ],
+      "n_points": 3,
+      "slope": 2.9999032088516446,
+      "log_rmse": 1.897507907349205e-05
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "soft_position",
+      "points": [
+        [
+          0.000244140625,
+          1.2994350720094998e-09
+        ],
+        [
+          0.00048828125,
+          1.0395201582893972e-08
+        ],
+        [
+          0.0009765625,
+          8.315268634747683e-08
+        ]
+      ],
+      "n_points": 3,
+      "slope": 2.9999032088516446,
+      "log_rmse": 1.897507907349205e-05
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "full_vs_mean",
+      "points": [
+        [
+          0.000244140625,
+          1.2995251472707381e-09
+        ],
+        [
+          0.00048828125,
+          1.0395922177265777e-08
+        ],
+        [
+          0.0009765625,
+          8.315845085599874e-08
+        ]
+      ],
+      "n_points": 3,
+      "slope": 2.9999032128876535,
+      "log_rmse": 1.897428726707262e-05
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "common_vs_mean",
+      "points": [
+        [
+          0.000244140625,
+          1.3493531022576813e-13
+        ],
+        [
+          0.00048828125,
+          1.079473204541276e-12
+        ],
+        [
+          0.0009765625,
+          8.635488644287459e-12
+        ]
+      ],
+      "n_points": 3,
+      "slope": 2.9999689924003685,
+      "log_rmse": 6.080465463598412e-06
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "centered_score",
+      "points": [
+        [
+          0.000244140625,
+          3.005379282034756e-10
+        ],
+        [
+          0.00048828125,
+          4.808437085645533e-09
+        ],
+        [
+          0.0009765625,
+          7.692413017877209e-08
+        ]
+      ],
+      "n_points": 3,
+      "slope": 3.999872671529718,
+      "log_rmse": 2.4961913951566128e-05
+    },
+    {
+      "replication_policy": "inverse_epsilon_squared",
+      "metric": "common_centered_score",
+      "points": [],
+      "n_points": 0,
+      "slope": null,
+      "reason": "Fewer than three predeclared domain/resolved points"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "rows": 200,
+  "neighbor_refs": 100,
+  "neighbor_files": 60,
+  "neighbor_binding_verified": true,
+  "paired": [
+    {
+      "dataset": "Cora",
+      "candidate": "GraphMAE:head_token_knn-0.9-clamp",
+      "baseline": "GraphMAE:head_token_mean",
+      "delta_pp": 0.9799998998641968,
+      "ci95": [
+        0.5299997329711914,
+        1.4399993494153023
+      ],
+      "wins": 16,
+      "scope": "samegraph repeatedquery support-sampling interval"
+    },
+    {
+      "dataset": "Cora",
+      "candidate": "GraphMAE:head_token_knn-0.9-clamp",
+      "baseline": "GraphMAE:head_token_knn-0.9-free",
+      "delta_pp": 0.01999974250793457,
+      "ci95": [
+        -0.020000338554382324,
+        0.059999823570251465
+      ],
+      "wins": 3,
+      "scope": "samegraph repeatedquery support-sampling interval"
+    },
+    {
+      "dataset": "Cora",
+      "candidate": "GraphMAE:head_token_knn-0.9-clamp",
+      "baseline": "GraphMAE:head_token_random-0.9-clamp",
+      "delta_pp": 20.269999355077744,
+      "ci95": [
+        16.449999060481787,
+        24.339998990297318
+      ],
+      "wins": 20,
+      "scope": "samegraph repeatedquery support-sampling interval"
+    },
+    {
+      "dataset": "Cora",
+      "candidate": "GraphMAE:head_token_knn-0.9-clamp",
+      "baseline": "GraphMAE:head_token_knn-0.5-clamp",
+      "delta_pp": 0.7300007343292236,
+      "ci95": [
+        0.4100009799003601,
+        1.0400015115737915
+      ],
+      "wins": 13,
+      "scope": "samegraph repeatedquery support-sampling interval"
+    },
+    {
+      "dataset": "Cora",
+      "candidate": "GraphMAE:head_token_knn-0.9-clamp",
+      "baseline": "GraphMAE:head_token_orig-0.5-clamp",
+      "delta_pp": 0.5900007486343384,
+      "ci95": [
+        0.10000079870223999,
+        1.0800009965896606
+      ],
+      "wins": 13,
+      "scope": "samegraph repeatedquery support-sampling interval"
+    },
+    {
+      "dataset": "Cora",
+      "candidate": "GraphMAE:head_token_knn-0.9-clamp",
+      "baseline": "GraphMAE:graphprompt",
+      "delta_pp": 10.470000803470612,
+      "ci95": [
+        9.120000898838043,
+        11.810000538825989
+      ],
+      "wins": 20,
+      "scope": "samegraph repeatedquery support-sampling interval"
+    }
+  ]
+}

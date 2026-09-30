@@ -1,0 +1,11 @@
+pretrain_task: S2GAE
+dataset_name: Cora
+device: cpu
+gnn_type: GCN
+hid_dim: 128
+num_layer: 2
+epochs: 200
+s2gae_mask_ratio: 0.8
+s2gae_mask_type: dm
+s2gae_neg_ratio: 1.0
+num_workers: 0

@@ -1,0 +1,400 @@
+{
+  "schema": "unified-three-backbone-v1",
+  "created": 1790231310.3750558,
+  "seeds": [
+    24092800,
+    24092801,
+    24092802,
+    24092803,
+    24092804,
+    24092805,
+    24092806,
+    24092807,
+    24092808,
+    24092809,
+    24092810,
+    24092811,
+    24092812,
+    24092813,
+    24092814,
+    24092815,
+    24092816,
+    24092817,
+    24092818,
+    24092819
+  ],
+  "shots": 5,
+  "steps": 100,
+  "methods": [
+    "F000",
+    "F011",
+    "F101",
+    "F110",
+    "F111",
+    "GPPT",
+    "GPF",
+    "GPF+",
+    "GPrompt",
+    "EdgePrompt",
+    "GraphTOP",
+    "UniPrompt"
+  ],
+  "direct_methods": [],
+  "datasets": {
+    "Cora": {
+      "status": "ready",
+      "nodes": 2708,
+      "edges": 10556,
+      "features": 1433,
+      "classes": 7,
+      "pool": 140,
+      "query": 1000,
+      "pool_per_class": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "protocol": "official_train_pool_test_query_fold0",
+      "input": "NormalizeFeatures",
+      "teacher_input": "NormalizeFeatures"
+    },
+    "CiteSeer": {
+      "status": "ready",
+      "nodes": 3327,
+      "edges": 9104,
+      "features": 3703,
+      "classes": 6,
+      "pool": 120,
+      "query": 1000,
+      "pool_per_class": [
+        20,
+        20,
+        20,
+        20,
+        20,
+        20
+      ],
+      "protocol": "official_train_pool_test_query_fold0",
+      "input": "NormalizeFeatures",
+      "teacher_input": "NormalizeFeatures"
+    }
+  },
+  "jobs": [
+    {
+      "id": "Cora__Edgepred_Gprompt__87bd546f7897",
+      "dataset": "Cora",
+      "direct": false,
+      "checkpoint": {
+        "dataset": "Cora",
+        "family": "Edgepred_Gprompt",
+        "sha256": "87bd546f7897218161bfb0876e792cf8f4682f3a42d6fc6e2227b9aa0f723493",
+        "paths": [
+          "/root/ProG/Experiment/pre_trained_model/Cora/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/Cora/Edgepred_Gprompt.GCN.128hidden_dim.pth"
+        ],
+        "id": "Cora__Edgepred_Gprompt__87bd546f7897",
+        "path": "/root/ProG/Experiment/pre_trained_model/Cora/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+        "provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "Edgepred_Gprompt",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "Cora",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "87bd546f7897218161bfb0876e792cf8f4682f3a42d6fc6e2227b9aa0f723493",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 120,
+          "best_training_loss": 0.016783489756142862,
+          "selection": "last_after_training_loss_patience_10"
+        },
+        "status": "ready",
+        "reason": "Strict two-layer GCN state_dict load passed"
+      }
+    },
+    {
+      "id": "CiteSeer__Edgepred_Gprompt__7bf67dc55e3a",
+      "dataset": "CiteSeer",
+      "direct": false,
+      "checkpoint": {
+        "dataset": "CiteSeer",
+        "family": "Edgepred_Gprompt",
+        "sha256": "7bf67dc55e3a33541646a03e797ad32e1e16ce2f7a4be4c1fe2064d900de6e0b",
+        "paths": [
+          "/root/ProG/Experiment/pre_trained_model/CiteSeer/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/CiteSeer/Edgepred_Gprompt.GCN.128hidden_dim.pth"
+        ],
+        "id": "CiteSeer__Edgepred_Gprompt__7bf67dc55e3a",
+        "path": "/root/ProG/Experiment/pre_trained_model/CiteSeer/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+        "provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "Edgepred_Gprompt",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "CiteSeer",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "7bf67dc55e3a33541646a03e797ad32e1e16ce2f7a4be4c1fe2064d900de6e0b",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 76,
+          "best_training_loss": 0.01023808982796394,
+          "selection": "last_after_training_loss_patience_10"
+        },
+        "status": "ready",
+        "reason": "Strict two-layer GCN state_dict load passed"
+      }
+    },
+    {
+      "id": "Cora__Edgepred_GPPT__a279caf82ae2",
+      "dataset": "Cora",
+      "direct": false,
+      "checkpoint": {
+        "dataset": "Cora",
+        "family": "Edgepred_GPPT",
+        "sha256": "a279caf82ae2d2fdbfc280143494c82054738b4fa2166034380ad83c971d3f7b",
+        "paths": [
+          "/root/ProG/Experiment/pre_trained_model/Cora/Edgepred_GPPT.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/Cora/Edgepred_GPPT.GCN.128hidden_dim.pth"
+        ],
+        "id": "Cora__Edgepred_GPPT__a279caf82ae2",
+        "path": "/root/ProG/Experiment/pre_trained_model/Cora/Edgepred_GPPT.GCN.128hidden_dim.pth",
+        "provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "Edgepred_GPPT",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "Cora",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "a279caf82ae2d2fdbfc280143494c82054738b4fa2166034380ad83c971d3f7b",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 322,
+          "best_training_loss": 0.2796752145344561,
+          "selection": "last_after_training_loss_patience_10"
+        },
+        "status": "ready",
+        "reason": "Strict two-layer GCN state_dict load passed"
+      }
+    },
+    {
+      "id": "CiteSeer__Edgepred_GPPT__e5488f6ef537",
+      "dataset": "CiteSeer",
+      "direct": false,
+      "checkpoint": {
+        "dataset": "CiteSeer",
+        "family": "Edgepred_GPPT",
+        "sha256": "e5488f6ef53701dc38f4401933e1bce64cae52406ca37bd41a9a0ae53762243d",
+        "paths": [
+          "/root/ProG/Experiment/pre_trained_model/CiteSeer/Edgepred_GPPT.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/CiteSeer/Edgepred_GPPT.GCN.128hidden_dim.pth"
+        ],
+        "id": "CiteSeer__Edgepred_GPPT__e5488f6ef537",
+        "path": "/root/ProG/Experiment/pre_trained_model/CiteSeer/Edgepred_GPPT.GCN.128hidden_dim.pth",
+        "provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "Edgepred_GPPT",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "CiteSeer",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "e5488f6ef53701dc38f4401933e1bce64cae52406ca37bd41a9a0ae53762243d",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 251,
+          "best_training_loss": 0.22795840358002145,
+          "selection": "last_after_training_loss_patience_10"
+        },
+        "status": "ready",
+        "reason": "Strict two-layer GCN state_dict load passed"
+      }
+    },
+    {
+      "id": "Cora__DGI__fb2b361637cb",
+      "dataset": "Cora",
+      "direct": false,
+      "checkpoint": {
+        "dataset": "Cora",
+        "family": "DGI",
+        "sha256": "fb2b361637cbcc95e5885fecaf40a7ad45c80001f554ec7e19c203a56d925de9",
+        "paths": [
+          "/root/ProG/Experiment/pre_trained_model/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/AnchorPrompt/provenance/server_snapshot/Experiment/pre_trained_model/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/BayesFeatureSweep/provenance/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/ContrastSubspacePrompt/provenance/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/CrossfitGradientPrompt/provenance/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/DisagreementPrompt/provenance/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/MatchedGradientPrompt/provenance/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/StepGradientSweep/provenance/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/CirculationPrompt/provenance/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/NeighborDeletionPrompt/provenance/Cora/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/NullContextPrompt/provenance/Cora/DGI.GCN.128hidden_dim.pth"
+        ],
+        "id": "Cora__DGI__fb2b361637cb",
+        "path": "/root/ProG/Experiment/pre_trained_model/Cora/DGI.GCN.128hidden_dim.pth",
+        "provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "DGI",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "Cora",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "fb2b361637cbcc95e5885fecaf40a7ad45c80001f554ec7e19c203a56d925de9",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 309,
+          "best_training_loss": 0.09136056900024414,
+          "selection": "last_after_training_loss_patience_20"
+        },
+        "status": "ready",
+        "reason": "Strict two-layer GCN state_dict load passed"
+      }
+    },
+    {
+      "id": "CiteSeer__DGI__460f97d1cd97",
+      "dataset": "CiteSeer",
+      "direct": false,
+      "checkpoint": {
+        "dataset": "CiteSeer",
+        "family": "DGI",
+        "sha256": "460f97d1cd973575e7d2d28b08a1b4532d50bd55e5edc0fc777c3820ce616e5f",
+        "paths": [
+          "/root/ProG/Experiment/pre_trained_model/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/AnchorPrompt/provenance/server_snapshot/Experiment/pre_trained_model/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/BayesFeatureSweep/provenance/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/ContrastSubspacePrompt/provenance/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/CrossfitGradientPrompt/provenance/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/DisagreementPrompt/provenance/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/MatchedGradientPrompt/provenance/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/StepGradientSweep/provenance/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/CirculationPrompt/provenance/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/NeighborDeletionPrompt/provenance/CiteSeer/DGI.GCN.128hidden_dim.pth",
+          "/root/autodl-tmp/prompt_study_20260916/NullContextPrompt/provenance/CiteSeer/DGI.GCN.128hidden_dim.pth"
+        ],
+        "id": "CiteSeer__DGI__460f97d1cd97",
+        "path": "/root/ProG/Experiment/pre_trained_model/CiteSeer/DGI.GCN.128hidden_dim.pth",
+        "provenance": {
+          "schema": "prog-pretrain-provenance-v1",
+          "method": "DGI",
+          "variant": "ProG-adapted",
+          "source_parity": "not_fully_verified",
+          "dataset": "CiteSeer",
+          "gnn": "GCN",
+          "hidden_dim": 128,
+          "checkpoint_sha256": "460f97d1cd973575e7d2d28b08a1b4532d50bd55e5edc0fc777c3820ce616e5f",
+          "labels_used": false,
+          "requested_epochs": 1000,
+          "completed_epochs": 416,
+          "best_training_loss": 0.08958067744970322,
+          "selection": "last_after_training_loss_patience_20"
+        },
+        "status": "ready",
+        "reason": "Strict two-layer GCN state_dict load passed"
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "dataset": "Cora",
+      "family": "Edgepred_Gprompt",
+      "sha256": "87bd546f7897218161bfb0876e792cf8f4682f3a42d6fc6e2227b9aa0f723493",
+      "paths": [
+        "/root/ProG/Experiment/pre_trained_model/Cora/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+        "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/Cora/Edgepred_Gprompt.GCN.128hidden_dim.pth"
+      ],
+      "id": "Cora__Edgepred_Gprompt__87bd546f7897",
+      "path": "/root/ProG/Experiment/pre_trained_model/Cora/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+      "provenance": {
+        "schema": "prog-pretrain-provenance-v1",
+        "method": "Edgepred_Gprompt",
+        "variant": "ProG-adapted",
+        "source_parity": "not_fully_verified",
+        "dataset": "Cora",
+        "gnn": "GCN",
+        "hidden_dim": 128,
+        "checkpoint_sha256": "87bd546f7897218161bfb0876e792cf8f4682f3a42d6fc6e2227b9aa0f723493",
+        "labels_used": false,
+        "requested_epochs": 1000,
+        "completed_epochs": 120,
+        "best_training_loss": 0.016783489756142862,
+        "selection": "last_after_training_loss_patience_10"
+      },
+      "status": "ready",
+      "reason": "Strict two-layer GCN state_dict load passed"
+    },
+    {
+      "dataset": "CiteSeer",
+      "family": "Edgepred_Gprompt",
+      "sha256": "7bf67dc55e3a33541646a03e797ad32e1e16ce2f7a4be4c1fe2064d900de6e0b",
+      "paths": [
+        "/root/ProG/Experiment/pre_trained_model/CiteSeer/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+        "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/CiteSeer/Edgepred_Gprompt.GCN.128hidden_dim.pth"
+      ],
+      "id": "CiteSeer__Edgepred_Gprompt__7bf67dc55e3a",
+      "path": "/root/ProG/Experiment/pre_trained_model/CiteSeer/Edgepred_Gprompt.GCN.128hidden_dim.pth",
+      "provenance": {
+        "schema": "prog-pretrain-provenance-v1",
+        "method": "Edgepred_Gprompt",
+        "variant": "ProG-adapted",
+        "source_parity": "not_fully_verified",
+        "dataset": "CiteSeer",
+        "gnn": "GCN",
+        "hidden_dim": 128,
+        "checkpoint_sha256": "7bf67dc55e3a33541646a03e797ad32e1e16ce2f7a4be4c1fe2064d900de6e0b",
+        "labels_used": false,
+        "requested_epochs": 1000,
+        "completed_epochs": 76,
+        "best_training_loss": 0.01023808982796394,
+        "selection": "last_after_training_loss_patience_10"
+      },
+      "status": "ready",
+      "reason": "Strict two-layer GCN state_dict load passed"
+    },
+    {
+      "dataset": "Actor",
+      "family": "GraphCL",
+      "sha256": "73eda304d4ee9ddd382d6e528b2a658f8fa9ba1f64fd4b40d0d7a969ab85e224",
+      "paths": [
+        "/root/autodl-tmp/accuracy_prompt_20260923/assets5090/Experiment/pre_trained_model/Actor/GraphCL.GCN.128hidden_dim.pth",
+        "/root/autodl-tmp/prompt_study_20260916/ModuleComposition_20260919_19307/reserve5090_20260920/Experiment/pre_trained_model/Actor/GraphCL.GCN.128hidden_dim.pth"
+      ],
+      "id": "Actor__GraphCL__73eda304d4ee",
+      "path": "/root/autodl-tmp/accuracy_prompt_20260923/assets5090/Experiment/pre_trained_model/Actor/GraphCL.GCN.128hidden_dim.pth",
+      "provenance": {
+        "schema": "prog-pretrain-provenance-v1",
+        "method": "GraphCL",
+        "variant": "ProG-adapted",
+        "source_parity": "not_fully_verified",
+        "dataset": "Actor",
+        "gnn": "GCN",
+        "hidden_dim": 128,
+        "checkpoint_sha256": "73eda304d4ee9ddd382d6e528b2a658f8fa9ba1f64fd4b40d0d7a969ab85e224",
+        "labels_used": false,
+        "requested_epochs": 1000,
+        "completed_epochs": 59,
+        "best_training_loss": 0.0007103921234374866,
+        "selection": "last_after_training_loss_patience_10"
+      },
+      "status": "ready",
+      "reason": "Strict two-layer GCN state_dict load passed"
+    }
+  ],
+  "expected_results": 1440,
+  "expected_prompt_training_fits": 540,
+  "runner_sha256": "10ce0269e4155fa4dd701720a9a6193ef4c2b81b1d2bf6afd4abe6adb2c58c72",
+  "source_manifest_sha256": "e687259f62ecd9bf010b0e08ca780f126a63e9c67207415cb7ac8ab13073eef8",
+  "scope": "Fixed conditional datasets and SHA checkpoints selected from stage1; no query tuning during confirmation",
+  "selection_stage1_plan_sha256": "4fe159841f96007335df6a2ac438e88ff36f3d051bac8b7dbbbff3789a2eda07",
+  "selection_evidence_sha256": "b391c51bf5604f658dee35360aace3208136664295eff617b93c5eaa13fa3ac4",
+  "expected_jobs": 6
+}

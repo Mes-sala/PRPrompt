@@ -1,0 +1,31 @@
+{
+  "contract": {
+    "unit": {
+      "id": "Photo__GraphMAE2__GraphSAGE__seed42_norm",
+      "dataset": "Photo",
+      "family": "GraphMAE2",
+      "architecture": "GraphSAGE",
+      "seed": 42,
+      "epochs": 1000,
+      "path": "/root/autodl-tmp/attribute_prototype_study_20260927/checkpoints/Photo__GraphMAE2__GraphSAGE__seed42_norm/encoder.pth",
+      "sha256": "5c7240d8c32333d47f20557f74583e365baa2440c93864c92d1dff7095f6cce4",
+      "input_normalization": "NormalizeFeatures",
+      "labels_used": false,
+      "embedding_shape": [
+        7650,
+        128
+      ],
+      "finished": 1790496875.0364542,
+      "source_parity": "ProG-adapted; not full author parity verified",
+      "kind": "frozen",
+      "legacy": false,
+      "source_root": "/root/autodl-tmp/attribute_prototype_study_20260927/source/prog_expansion"
+    },
+    "input_sha256": "3d69dada7e7c65ad384f6eeac444dbd4488856e06c4510162ae090ae14f5fddc",
+    "edge_sha256": "e8c8d72c84c653e2b5937696273e6dc3b3df88038383407973d8a951f3fa9c07",
+    "operator_sha256": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "loader_sha256": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8"
+  },
+  "file_sha256": "a1de77d43a626512eb6e1e2b2aa993939ee9b807fa3ccb439c67624008f5e2fd",
+  "tensor_sha256": "1c7d9fed49f5d8c3c0f0f2a5d60878ff24bddaa80af54cd322cd07ddd134fd64"
+}

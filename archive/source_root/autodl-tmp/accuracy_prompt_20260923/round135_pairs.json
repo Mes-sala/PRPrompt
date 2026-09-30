@@ -1,0 +1,66 @@
+{
+  "rows": 165,
+  "seeds": [
+    200100,
+    200101,
+    200102,
+    200103,
+    200104
+  ],
+  "means": {
+    "Direct/ridge_teacherplain": 73.44000101089478,
+    "GraphMAE/frozen": 62.35999941825867,
+    "GraphMAE/graphprompt": 62.03999996185303,
+    "GraphMAE/head_base_qeps-50": 62.40000009536743,
+    "GraphMAE/head_gp_qeps-50": 62.47999906539917,
+    "GraphMAE/head_token_mean": 75.1200008392334,
+    "GraphMAE/head_token_qeps-50": 75.88000059127808,
+    "GraphMAE/head_scale2_mean": 75.04000067710876,
+    "GraphMAE/head_scale2_qeps-50": 75.64000010490417,
+    "GraphMAE/head_gsh_mean": 75.04000067710876,
+    "GraphMAE/head_gsh_qeps-50": 75.96000075340271,
+    "GraphMAE/head_gdi_mean": 74.44000005722046,
+    "GraphMAE/head_gdi_qeps-50": 75.43999910354614,
+    "GraphMAE/head_ggd_mean": 74.19999957084656,
+    "GraphMAE/head_ggd_qeps-50": 75.39999961853027,
+    "GraphMAE/head_osh_mean": 65.88000059127808,
+    "GraphMAE/head_osh_qeps-50": 67.87999987602234,
+    "GraphMAE2/frozen": 61.00000023841858,
+    "GraphMAE2/graphprompt": 57.960001826286316,
+    "GraphMAE2/head_base_qeps-50": 44.920000433921814,
+    "GraphMAE2/head_gp_qeps-50": 47.84000039100647,
+    "GraphMAE2/head_token_mean": 74.16000008583069,
+    "GraphMAE2/head_token_qeps-50": 75.1199996471405,
+    "GraphMAE2/head_scale2_mean": 74.40000057220459,
+    "GraphMAE2/head_scale2_qeps-50": 75.15999913215637,
+    "GraphMAE2/head_gsh_mean": 74.43999886512756,
+    "GraphMAE2/head_gsh_qeps-50": 75.56000113487244,
+    "GraphMAE2/head_gdi_mean": 74.44000124931335,
+    "GraphMAE2/head_gdi_qeps-50": 75.91999888420105,
+    "GraphMAE2/head_ggd_mean": 74.36000108718872,
+    "GraphMAE2/head_ggd_qeps-50": 75.95999956130981,
+    "GraphMAE2/head_osh_mean": 67.48000025749207,
+    "GraphMAE2/head_osh_qeps-50": 63.43999981880188
+  },
+  "strongest_root": "GraphMAE/head_scale2_qeps-50",
+  "selected": "GraphMAE/head_gsh_qeps-50",
+  "delta_vs_strongest": 0.32000064849853516,
+  "delta_vs_direct": 2.5199997425079346,
+  "passed": true,
+  "paired": {
+    "GraphMAE/head_scale2_qeps-50": [
+      -0.1999974250793457,
+      0.40000081062316895,
+      0.7999956607818604,
+      0.0,
+      0.6000041961669922
+    ],
+    "Direct/ridge_teacherplain": [
+      2.799999713897705,
+      4.000002145767212,
+      0.3999948501586914,
+      2.2000014781951904,
+      3.200000524520874
+    ]
+  }
+}

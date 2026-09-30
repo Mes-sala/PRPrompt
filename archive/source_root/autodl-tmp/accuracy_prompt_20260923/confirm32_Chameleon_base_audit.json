@@ -1,0 +1,100 @@
+[
+  {
+    "dataset": "Chameleon",
+    "candidate": "GraphMAE:geom_full10_base",
+    "baseline": "GraphMAE:geom_original_base",
+    "n": 20,
+    "delta_pp": 4.166667088866234,
+    "ci95": [
+      2.5986844282597303,
+      5.811403915286064
+    ],
+    "wins": 18,
+    "losses": 2,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Chameleon",
+    "candidate": "GraphMAE:geom_full10_base",
+    "baseline": "GraphMAE:geom_center_base",
+    "n": 20,
+    "delta_pp": -0.3618413209915161,
+    "ci95": [
+      -1.9846488535404205,
+      1.107731681317087
+    ],
+    "wins": 9,
+    "losses": 10,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Chameleon",
+    "candidate": "GraphMAE:geom_full10_base",
+    "baseline": "GraphMAE:geom_full50_base",
+    "n": 20,
+    "delta_pp": 0.49342140555381775,
+    "ci95": [
+      -0.41666582226753235,
+      1.3377194106578827
+    ],
+    "wins": 13,
+    "losses": 5,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Chameleon",
+    "candidate": "GraphMAE:geom_full10_base",
+    "baseline": "GraphMAE:raw",
+    "n": 20,
+    "delta_pp": 1.0197371244430542,
+    "ci95": [
+      -0.7346490137279034,
+      2.70833358541131
+    ],
+    "wins": 11,
+    "losses": 8,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Chameleon",
+    "candidate": "GraphMAE:geom_full10_base",
+    "baseline": "GraphMAE:rawridge",
+    "n": 20,
+    "delta_pp": 0.6469301879405975,
+    "ci95": [
+      -1.151315275579691,
+      2.335526943206787
+    ],
+    "wins": 12,
+    "losses": 8,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Chameleon",
+    "candidate": "GraphMAE:geom_full10_base",
+    "baseline": "GraphMAE:frozen",
+    "n": 20,
+    "delta_pp": 4.506579339504242,
+    "ci95": [
+      2.8289478942751884,
+      6.283169753849503
+    ],
+    "wins": 19,
+    "losses": 1,
+    "scope": "same graph support sampling, not independent graphs"
+  },
+  {
+    "dataset": "Chameleon",
+    "candidate": "GraphMAE:geom_full10_base",
+    "baseline": "GraphCL:geom_full10_base",
+    "n": 20,
+    "delta_pp": -0.8442981541156769,
+    "ci95": [
+      -2.3248358815908428,
+      0.6469303369522095
+    ],
+    "wins": 7,
+    "losses": 13,
+    "scope": "same graph support sampling, not independent graphs"
+  }
+]

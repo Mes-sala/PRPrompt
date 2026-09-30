@@ -1,0 +1,15 @@
+{
+  "schema": "prog-pretrain-provenance-v1",
+  "method": "Edgepred_Gprompt",
+  "variant": "ProG-adapted",
+  "source_parity": "not_fully_verified",
+  "dataset": "CiteSeer",
+  "gnn": "GCN",
+  "hidden_dim": 128,
+  "checkpoint_sha256": "7bf67dc55e3a33541646a03e797ad32e1e16ce2f7a4be4c1fe2064d900de6e0b",
+  "labels_used": false,
+  "requested_epochs": 1000,
+  "completed_epochs": 76,
+  "best_training_loss": 0.01023808982796394,
+  "selection": "last_after_training_loss_patience_10"
+}

@@ -1,0 +1,24 @@
+downstream_task: NodeTask
+pretrain_task: NodeTask
+dataset_name: Cora
+gnn_type: GCN
+num_layer: 2
+hid_dim: 128
+prompt_type: GraphTOP
+pre_train_model_path: Experiment/pre_trained_model/Cora/Edgepred_Gprompt.GCN.128hidden_dim.pth
+device: cpu
+epochs: 500
+shot_num: 5
+task_num: 5
+batch_size: 50
+lr: 0.0005
+decay: 0.0
+seed: 42
+graphtop_hops: 2
+graphtop_lambda_e: 2.0
+graphtop_lambda_s: 10.0
+num_iter: 1
+param_grid:
+  learning_rate: [0.0005]
+  weight_decay: [0.0]
+  batch_size: [50]

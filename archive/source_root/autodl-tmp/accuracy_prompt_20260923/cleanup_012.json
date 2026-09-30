@@ -1,0 +1,88 @@
+{
+  "time": 1790141757.2210164,
+  "items": [
+    {
+      "path": "round25_smoke",
+      "completed": 16,
+      "config": {
+        "out": "round25_smoke",
+        "datasets": [
+          "Cora"
+        ],
+        "checkpoints": [
+          "GraphMAE"
+        ],
+        "methods": [
+          "frozen",
+          "graphprompt",
+          "rect_teacher_ref50",
+          "ridge_teacher_plain",
+          "token_kd3_ref50",
+          "token_kd3_ref50_dkd",
+          "token_kd3_ref50_target",
+          "token_kd3_ref50_other",
+          "token_kd3_ref50_kl2",
+          "token_kd3_ref50_nodistill",
+          "token_ridge_kd10plainlate",
+          "token_ridge_kd10plainlate_dkd",
+          "token_ridge_kd10plainlate_target",
+          "token_ridge_kd10plainlate_other",
+          "token_ridge_kd10plainlate_kl2",
+          "token_ridge_kd10plainlate_nodistill"
+        ],
+        "seeds": [
+          35100
+        ],
+        "steps": 3,
+        "phase": "dev",
+        "source_sha256": "b65df8284be747fffbac70a0e1ad114fa3afd872e5fb9ae319401acd5082c7e2",
+        "torch": "2.12.1+cu130",
+        "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+      },
+      "bytes": 579589,
+      "hashes_verified": true
+    },
+    {
+      "path": "round26_smoke",
+      "completed": 16,
+      "config": {
+        "out": "round26_smoke",
+        "datasets": [
+          "Cora"
+        ],
+        "checkpoints": [
+          "GraphMAE"
+        ],
+        "methods": [
+          "frozen",
+          "graphprompt",
+          "rect_teacher_ref50",
+          "ridge_teacher_plain",
+          "token_kd3_ref50",
+          "token_kd3_ref50_protect",
+          "token_kd3_ref50_sym",
+          "token_kd3_ref50_clip",
+          "token_kd3_ref50_kl2",
+          "token_kd3_ref50_nodistill",
+          "token_ridge_kd10plainlate",
+          "token_ridge_kd10plainlate_protect",
+          "token_ridge_kd10plainlate_sym",
+          "token_ridge_kd10plainlate_clip",
+          "token_ridge_kd10plainlate_kl2",
+          "token_ridge_kd10plainlate_nodistill"
+        ],
+        "seeds": [
+          37100
+        ],
+        "steps": 3,
+        "phase": "dev",
+        "source_sha256": "31fa5eab769d32318af1b03f24db54e14ddcbfb7862bdabde1014e7374d9a371",
+        "torch": "2.12.1+cu130",
+        "gpu": "NVIDIA GeForce RTX 4080 SUPER"
+      },
+      "bytes": 581086,
+      "hashes_verified": true
+    }
+  ],
+  "formal_predictions_preserved": true
+}

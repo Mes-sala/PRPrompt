@@ -1,0 +1,31 @@
+{
+  "contract": {
+    "unit": {
+      "id": "PubMed__GraphMAE2__GraphSAGE__seed42_norm",
+      "dataset": "PubMed",
+      "family": "GraphMAE2",
+      "architecture": "GraphSAGE",
+      "seed": 42,
+      "epochs": 1000,
+      "path": "/root/autodl-tmp/attribute_prototype_study_20260927/checkpoints/PubMed__GraphMAE2__GraphSAGE__seed42_norm/encoder.pth",
+      "sha256": "37addbd6cd14cf1822b11738e2c1cce011bffef77a870d8ae177f418a6ed9c33",
+      "input_normalization": "NormalizeFeatures",
+      "labels_used": false,
+      "embedding_shape": [
+        19717,
+        128
+      ],
+      "finished": 1790496700.0591645,
+      "source_parity": "ProG-adapted; not full author parity verified",
+      "kind": "frozen",
+      "legacy": false,
+      "source_root": "/root/autodl-tmp/attribute_prototype_study_20260927/source/prog_expansion"
+    },
+    "input_sha256": "49af620f6fce5341e8f5750def1781ed55bad024dfce802de85d5f4579c974be",
+    "edge_sha256": "4a1b93271d624c9b351e972c975bad1662d1f2d58f3e85689cfc802c881fa1dd",
+    "operator_sha256": "f94391e7431e4a24e184d8eef54560045a59e5dac0f67c312c30d489eb7e7123",
+    "loader_sha256": "3ef3658e4d581ec6cfeffeae5f1a8d7b4d3961c50ea8eb8e7ea7eb0e9b2ee5a8"
+  },
+  "file_sha256": "e96e1d5f6ee179be9577628d563473af3c07afdd2227f47dde215c4a41b0c3fb",
+  "tensor_sha256": "73cf23c136701a3d3ca8aa5f39a67ce2f55c8cee15662ff3a59f78190bfe81da"
+}
