@@ -149,7 +149,7 @@ def build(main, supplement, main_delivery, supplement_delivery, output):
                     assert (jid, shot, 'F100_' + control, soft, metric) in by_aux
     resources = dict(main=resource_summary(main, manifest, 31500, plan['plan_sha256']),
                      F100_controls=resource_summary(supplement, aux_manifest, 3780, aux_plan['plan_sha256']),
-                     qualification='Per-unit elapsed times include contention from concurrent workers. Total seconds include support selection, I/O and scoring; final-fit seconds exclude CV. Sums are not wall-clock runtime. Copied references are not new fits. Unrecorded fields are null; parameter counts and fit-only times are not inferred.')
+                     qualification='Per-unit elapsed times include contention from concurrent workers. Total seconds include support selection, I/O and scoring; final-fit seconds exclude CV. Sums are not wall-clock runtime. CUDA peaks include the worker backbone, data, cached filters and allocator reservations; they are not isolated per-method memory measurements. Copied references are not new fits. Unrecorded fields are null; parameter counts and fit-only times are not inferred.')
     assert not output.exists(), 'Choose a new output directory; existing reports are preserved.'
     output.mkdir(parents=True)
     copied = {}
