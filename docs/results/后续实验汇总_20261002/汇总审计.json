@@ -1,0 +1,120 @@
+{
+  "generated_date": "2026-10-02",
+  "purpose": "local descriptive research summary; no new fitting or selection",
+  "batch_formal_cells": {
+    "v2六checkpoint": 4680,
+    "F100四checkpoint重跑": 240,
+    "五数据集配对": 5400
+  },
+  "formal_cells_total": 10320,
+  "primary_conditions": 14,
+  "primary_methods": 8,
+  "primary_table_rows": 112,
+  "supplementary_DGI_rows": 14,
+  "centered_frozen_diagnostic_rows": 10,
+  "retained_scope_cells_reaggregated": 8160,
+  "graph_checkpoint_support_query_label_hash_pairing_passed": true,
+  "F100_reference_metrics_sha256_checks": 240,
+  "core_v2_source_hashes_equal_across_three_batches": true,
+  "historical_F100_source_hash_equal_across_extensions": true,
+  "maximum_five_metric_aggregate_error": 3.3306690738754696e-16,
+  "maximum_paired_mean_error": 6.591949208711867e-17,
+  "bootstrap_intervals": "copied from existing sealed analyses; 10000 resamples of 20 support draws; no multiplicity adjustment",
+  "F100_max_accuracy_range_across_training_repeats": 0.0,
+  "F100_accuracy_condition_counts": {
+    "PRPrompt": {
+      "positive_means": 6,
+      "ci_entirely_positive": 6,
+      "ci_entirely_negative": 5,
+      "conditions": 14
+    },
+    "FullFineTune": {
+      "positive_means": 9,
+      "ci_entirely_positive": 7,
+      "ci_entirely_negative": 4,
+      "conditions": 14
+    }
+  },
+  "v2_vs_finetune_positive_means": 9,
+  "above_all_three_other_prompts_by_accuracy_mean": {
+    "F100": 12,
+    "PRPrompt": 13
+  },
+  "previous_delivery_audits": {
+    "v2": {
+      "phase": "complete",
+      "checked_files": 24192,
+      "sha256_mismatches": 0,
+      "time": 1790788659.269584,
+      "server_status": {
+        "phase": "complete",
+        "pid": 2093,
+        "started": 1790756045.8467171,
+        "finished": 1790788431.3007486,
+        "main_output": "/root/autodl-tmp/PRPrompt_v2_20260930/experiments/outputs/paper/99a143ae8c31dd31",
+        "coverage": {
+          "expected": 4680,
+          "present": 4680,
+          "missing": [],
+          "smoke": false
+        }
+      },
+      "final_report": "analysis/PRPrompt_v2_正式验证总结.md",
+      "final_report_sha256": "c363d8e130c05a32c9a11764e24306173163890c9d93fb4c35984d36e8cc2cdc",
+      "final_audit": "analysis/local_final_audit.json",
+      "metric_recomputation": "experiments/local/completed_metric_audit.json",
+      "followup_automation": "PAUSED after complete delivery and report"
+    },
+    "F100四checkpoint": {
+      "phase": "complete",
+      "manifest_files_checked": 2998,
+      "sha256_mismatches": 0,
+      "formal_units": 240,
+      "missing": [],
+      "five_metrics_recomputed_locally": true,
+      "maximum_local_metric_error": 3.3306690738754696e-16,
+      "maximum_local_aggregate_error": 2.220446049250313e-16,
+      "support_query_isolation_passed": true,
+      "checkpoint_rows_reaggregated": 4,
+      "report": "analysis/未修正Edgepred_F100验证总结.md",
+      "report_sha256": "2375888ae6e34fad932c624541436bcd1195c4ea119153d4f706632b4bb8dd6c",
+      "paired_reference_audit": {
+        "reference_files_checked": 1680,
+        "reference_sha256_mismatches": 0,
+        "all_reference_graph_support_query_hashes_match": true,
+        "checkpoint_method_rows_reaggregated": 32,
+        "paired_effects_and_intervals_recomputed": 40,
+        "maximum_aggregate_error": 2.220446049250313e-16,
+        "maximum_paired_effect_or_interval_error": 9.71445146547012e-17,
+        "original_full_chain_replay_passed": false,
+        "serialized_state_replay_passed": true
+      },
+      "original_raw_forward_absolute_tolerance_passed": false,
+      "original_all_numerical_checks_passed": false,
+      "scientific_audit_limitation": "6 units exceed original absolute-forward tolerance; original full-chain probability tolerance also exceeded, but no reconstructed class changes. Original failures preserved."
+    },
+    "五数据集": {
+      "phase": "delivery_complete_with_numerical_qualification",
+      "plan_sha256": "ab3489b8ce1955a922dfe05e427b9ca2685cfd4b4952e2cc47622c8fe3647350",
+      "files_verified": 48089,
+      "sha256_mismatches": 0,
+      "formal_units": 5400,
+      "checkpoint_method_rows": 90,
+      "paired_metric_rows": 400,
+      "five_metrics_independently_recomputed_locally": true,
+      "maximum_local_metric_error": 3.3306690738754696e-16,
+      "maximum_summary_error": 4.440892098500626e-16,
+      "maximum_paired_bootstrap_error": 1.3877787807814457e-16,
+      "predeclared_numerical_acceptance_passed": false,
+      "predeclared_mixed_forward_failure_count": 7,
+      "numerical_qualification": "Original mixed-forward criterion failed; delivery and score audits do not waive that failure",
+      "f100_strict_full_chain_passed": false,
+      "report": "analysis/五数据集F100验证总结.md",
+      "report_sha256": "b0e3382c740bca361dad93a183f1c9ece2bb07a38e49713812e17cfca0284240"
+    }
+  },
+  "scope_of_current_checks": "metrics JSON hashes, completeness, five-metric aggregation, paired hashes and paired means; prediction/state full-file audits are prior verified delivery records, not rerun here",
+  "numerical_limitations_preserved": true,
+  "submission_ready": false,
+  "human_verification_status": "not recorded"
+}
