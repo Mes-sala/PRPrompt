@@ -17,6 +17,7 @@
 - [五个新增数据集的 F100 结果](docs/validation/五数据集_F100验证_20261001.md)。
 - [F100、v2 与历史后续实验完整汇总](docs/results/后续实验汇总_20261002/后续实验汇总.md)：10,320个已完成正式单元，14个Edgepred条件，完整五指标、配对差值及负结果。
 - [进行中的软分配、分类头与 1/3/5-shot 实验](experiments/boundary_20261002/PLAN.md)：仅原 Edgepred_Gprompt，七数据集完整配对；完成后再决定论文方案。
+- [原F100配方的配对路由控制](experiments/f100_boundary_20261002/PLAN.md)：独立源码与计划，等待主实验完整审计后使用GPU；[执行记录](docs/validation/F100路由边界_20261002_运行记录.md)。
 
 ## 当前实现
 
