@@ -15,6 +15,7 @@
 - [程序验证记录](docs/validation/v2_validation.md)。
 - [Cora/CiteSeer 的原始权重 F100 结果](docs/validation/未修正Edgepred_F100验证_20261001.md)。
 - [五个新增数据集的 F100 结果](docs/validation/五数据集_F100验证_20261001.md)。
+- [进行中的软分配、分类头与 1/3/5-shot 实验](experiments/boundary_20261002/PLAN.md)：仅原 Edgepred_Gprompt，七数据集完整配对；完成后再决定论文方案。
 
 ## 当前实现
 
