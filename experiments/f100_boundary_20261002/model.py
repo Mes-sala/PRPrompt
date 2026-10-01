@@ -6,6 +6,7 @@ from torch.nn import functional as F
 from prprompt.model import normalized_adjacency
 from prprompt.train import state_hash
 from experiments.v1_f100.historical import load
+from experiments.boundary_20261002.filters import construct_filters_once
 
 CONTROLS = ['Hard', 'HardMatched', 'Shared']
 
@@ -39,22 +40,7 @@ def fit_control(kind, backbone, x, edges, s, y, classes, seed, steps):
     adj = normalized_adjacency(edges, len(x), x.dtype)
     with torch.no_grad():
         u = model.conv_layers[0](x, edges).detach(); r = torch.sparse.mm(adj, torch.sparse.mm(adj, x)).detach()
-        filter_failures = []
-        for attempt in range(3):
-            try:
-                filters = old['make_filters'](x, edges)
-                break
-            except AssertionError as error:
-                # Same construction and assertion, before optimizer or score access; no RNG is consumed here.
-                trace = error.__traceback__
-                frames = []
-                while trace is not None:
-                    frames.append(dict(function=trace.tb_frame.f_code.co_name, line=trace.tb_lineno))
-                    trace = trace.tb_next
-                assert frames[-1]['function'] == 'make_filters'
-                filter_failures.append(dict(attempt=attempt, frames=frames, original_assertion_failed=True))
-                print(json.dumps(dict(event='pre_fit_filter_assert_failure', attempt=attempt, frames=frames)), flush=True)
-                if attempt == 2: raise
+        filters, filter_audit = construct_filters_once(x, edges, old['make_filters'])
     z, prompt, trace = old['optimizer_prompt'](u, r, adj, model, edges, s, y, classes, seed,
         'token_ridge_kd10plain', steps, filters, 'none', .1, 'raw', 'adam', .01)
     with torch.no_grad(): scores = old['logits'](z-z.mean(0, keepdim=True), s, y, classes)
@@ -63,8 +49,7 @@ def fit_control(kind, backbone, x, edges, s, y, classes, seed, steps):
     return scores, z, {'prompt': prompt, 'trace': trace, 'control': info_record}, {
         'backbone_frozen': True, 'backbone_before': before, 'backbone_after': before, 'query_labels_received': False,
         'prompt_gradient_max': float(prompt['optimizer_gradients'].abs().max()), 'adam_actual_epsilon': 1e-8,
-        'one_shot_loss_adapted': shots == 1, 'pre_fit_filter_assert_failures': filter_failures,
-        'pre_fit_filter_attempts': len(filter_failures)+1, **info_record}
+        'one_shot_loss_adapted': shots == 1, **filter_audit, **info_record}
 
 def test(device):
     from prprompt.model import TwoLayerGCN

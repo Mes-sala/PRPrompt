@@ -8,6 +8,7 @@ from prprompt.model import normalized_adjacency, attribute_features, prototypes,
 from prprompt.train import seed_all, state_hash, tensor_hash, fit_predict
 from prprompt.protocol import support_folds
 from experiments.v1_f100.historical import load
+from experiments.boundary_20261002.filters import construct_filters_once
 
 ROUTES = ['Soft', 'Hard', 'HardMatched', 'Shared', 'None']
 HEADS = ['Linear', 'Prototype', 'CenteredPrototype', 'Ridge']
@@ -100,7 +101,7 @@ def fit(method, backbone, x, edges, support, sy, classes, config, seed=0):
         with torch.no_grad():
             u = model.conv_layers[0](x, edges).detach()
             r = torch.sparse.mm(adj, torch.sparse.mm(adj, x)).detach()
-            filters = old['make_filters'](x, edges)
+            filters, filter_audit = construct_filters_once(x, edges, old['make_filters'])
         z, prompt, trace = old['optimizer_prompt'](u, r, adj, model, edges, support, sy, classes, seed,
             'token_ridge_kd10plain', config['steps'], filters, 'none', .1, 'raw', 'adam', .01)
         with torch.no_grad():
@@ -113,7 +114,7 @@ def fit(method, backbone, x, edges, support, sy, classes, config, seed=0):
                  'backbone_before': before, 'backbone_after': state_hash(model), 'backbone_frozen': True,
                  'prompt_gradient_max': float(gradients.norm(dim=(1, 2)).max()),
                  'loss': 'inclusive_prototype_ce' if method == 'F100OneShotAdapt' else 'leave_one_out_prototype_ce',
-                 'adam_actual_epsilon': 1e-8, 'fit_seconds': time.perf_counter()-start}
+                 'adam_actual_epsilon': 1e-8, 'fit_seconds': time.perf_counter()-start, **filter_audit}
         return scores, z, state, audit
 
     kind, head_kind = method.split('__')

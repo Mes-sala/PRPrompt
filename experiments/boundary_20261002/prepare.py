@@ -75,6 +75,8 @@ def prepare(workspace):
                     selection=dict(learning_rates=[.001, .01], weight_decays=[0., .0001])),
         readout_probe_sources=['Soft__Linear', 'Soft__CenteredPrototype', 'F100'], probe_heads=HEADS,
         expected_units=31500, expected_probe_units=15120, bootstrap_seed=20261002,
+        filter_construction_retry=dict(max_attempts=3, only_before_fit=True,
+            original_assertion_unchanged=True, cache='exact immutable input tensor objects per worker'),
         audit_rules=dict(metric_atol=1e-12, gate_atol=2e-6, forward_atol=2e-6, forward_rtol=1e-6,
                          serialized_probability_exact=True, full_fresh_forward_is_diagnostic=True),
         environment=dict(python=sys.version, torch=str(torch.__version__), cuda=torch.version.cuda),

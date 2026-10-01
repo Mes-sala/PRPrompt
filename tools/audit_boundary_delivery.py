@@ -58,6 +58,26 @@ def main_pairs(shots):
     return set(pairs)
 
 
+def check_filter_construction(record, policy):
+    if not policy.get('cache'):
+        return False
+    audit = record['audit']
+    cached = audit['filters_acquired_from_cache']
+    assert type(cached) is bool
+    attempts = audit['pre_fit_filter_attempts']
+    origin = audit['filter_cache_origin_attempts']
+    failures = audit['pre_fit_filter_assert_failures']
+    origin_failures = audit['filter_cache_origin_failures']
+    assert 1 <= origin <= policy['max_attempts'] == 3
+    assert len(origin_failures) == origin - 1
+    assert attempts == (0 if cached else origin)
+    assert failures == ([] if cached else origin_failures)
+    for index, failed in enumerate(origin_failures, 1):
+        assert failed['attempt'] == index and failed['original_assertion_failed']
+        assert failed['frames'][-1]['function'] == 'make_filters'
+    return True
+
+
 def audit(a, report):
     root = a.workspace.resolve()
     plan = json.loads((root/'plan.json').read_text())
@@ -106,6 +126,7 @@ def audit(a, report):
     prefixes = ['smoke', 'smoke_references'] if supplement and a.smoke else ['results', 'references'] if supplement else ['smoke', 'smoke_probes'] if a.smoke else ['results', 'probes']
     groups = collections.defaultdict(lambda: collections.defaultdict(list))
     pairing, nested, checked, max_error = {}, {}, {}, 0.
+    filter_policy_units = 0
     jobmap = {j['id']: j for j in plan['jobs']}
     parent_manifest = None
     if supplement and not a.smoke:
@@ -174,6 +195,8 @@ def audit(a, report):
                 assert pr['state_sha256'] == r['parent_state_sha256'] and pr['embedding_sha256'] == r['embedding_sha256']
             else:
                 assert not r['audit']['query_labels_received']
+                if r['method'].startswith('F100'):
+                    filter_policy_units += check_filter_construction(r, plan.get('filter_construction_retry', {}))
             if references and parent_manifest is not None:
                 relative = Path('results')/p.relative_to(root/'references')
                 for name in ['metrics.json', 'seal.json', 'selection.json', 'predictions.npz']:
@@ -187,7 +210,10 @@ def audit(a, report):
     for job in plan['jobs']:
         for split in splits: assert nested[(job['id'], split, 1)] < nested[(job['id'], split, 3)] < nested[(job['id'], split, 5)]
     report.update(unit_counts=checked, maximum_independent_metric_error=max_error, paired_hashes_passed=True,
-                  support_query_and_nested_shots_passed=True, result_manifest_sha256=sha(root/'result_files_sha256.json') if not a.smoke else None)
+                  support_query_and_nested_shots_passed=True, filter_construction_policy_units_checked=filter_policy_units,
+                  result_manifest_sha256=sha(root/'result_files_sha256.json') if not a.smoke else None)
+    if plan.get('filter_construction_retry', {}).get('cache'):
+        assert filter_policy_units == (84 if supplement else 21) * (1 if a.smoke else 60)
     server_audits = []
     for job in plan['jobs']:
         for shots in plan['shots']:
