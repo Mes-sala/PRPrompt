@@ -47,6 +47,11 @@ def require_delivery(root, delivery_path, supplementary):
     assert delivery['unit_counts'] == expected
     for key in ['paired_hashes_passed', 'support_query_and_nested_shots_passed', 'server_every_unit_readout_audit_coverage_verified']:
         assert delivery[key] is True, key
+    if plan.get('prefit_order_guard'):
+        assert delivery['prefit_order_policy_units_checked'] == (5040 if supplementary else 1260)
+        assert delivery['genuine_order_reversal_rows'] == 0
+        assert type(delivery['original_argmax_assertion_failed_units']) is int
+        assert type(delivery['accepted_exact_tie_rows']) is int
     manifest_path = root / 'result_files_sha256.json'
     assert sha(manifest_path) == delivery['result_manifest_sha256']
     return plan, read(manifest_path), delivery
@@ -220,6 +225,12 @@ def build(main, supplement, main_delivery, supplement_delivery, output):
     save_text(output, 'shot完整表现.md', shots)
     audit = dict(main=scientific, F100_same_recipe=aux_scientific,
                  local_delivery_numerical_qualification=dict(main=delivery['original_numerical_acceptance_passed'], F100_same_recipe=aux_delivery['original_numerical_acceptance_passed']))
+    if plan.get('prefit_order_guard'):
+        fields = ['prefit_order_policy_units_checked', 'original_argmax_assertion_failed_units',
+                  'accepted_exact_tie_rows', 'genuine_order_reversal_rows']
+        audit['independent_exact_tie_audit'] = dict(main={k:delivery[k] for k in fields},
+            supplement_controls_and_copied_parent_references={k:aux_delivery[k] for k in fields},
+            qualification='Original argmax failures remain recorded; exact maximum-set intersection uses no tolerance. Supplement audit counts include copied parent references, which are not new fits.')
     (output / '数值与覆盖审计.json').write_text(json.dumps(audit, ensure_ascii=False, indent=2) + '\n')
     (output / '参数与实测成本.json').write_text(json.dumps(resources, ensure_ascii=False, indent=2) + '\n')
     provenance = dict(report_builder_sha256=sha(Path(__file__)), main_plan_sha256=plan['plan_sha256'],

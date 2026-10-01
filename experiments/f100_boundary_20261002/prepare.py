@@ -55,6 +55,7 @@ def prepare(workspace, parent):
         parent_plan_file_sha256=sha_file(parent / 'plan.json'), bootstrap_seed=20261002,
         audit_rules=original['audit_rules'],
         filter_construction_retry=original['filter_construction_retry'],
+        prefit_order_guard=original['prefit_order_guard'],
         recipe='Exact historical optimizer and readout; only returned gate changes; one-shot inclusive training adaptation named explicitly',
         reference_policy='Copy sealed parent F100 and None-CenteredPrototype metrics, predictions, seals and selection after own predictions are sealed; references are not new fits')
     p['plan_sha256'] = digest(p)

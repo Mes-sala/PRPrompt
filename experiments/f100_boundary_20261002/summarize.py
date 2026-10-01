@@ -75,6 +75,8 @@ def summarize(workspace):
         fresh_full_class_changes=sum(a['fresh_full_class_changes'] for a in audits),
         hardmatched_degenerate=sum(a['hardmatched_degenerate'] for a in audits),
         pre_fit_filter_assert_failure_count=sum(a['pre_fit_filter_assert_failure_count'] for a in audits))
+    scientific.update(original_argmax_assertion_failed_units=sum(a['original_argmax_assertion_failed_units'] for a in audits),
+        accepted_exact_tie_rows=sum(a['accepted_exact_tie_rows'] for a in audits))
     save_json(output / 'scientific_audit.json', scientific)
     save_json(output / 'method_comparison.json', table)
     save_json(output / 'paired_effects.json', effects)

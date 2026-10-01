@@ -11,6 +11,7 @@ from experiments.v1_f100.historical import load
 from experiments.boundary_20261002.model import saved_readout
 from experiments.boundary_20261002.state_io import load_state
 from experiments.f100_boundary_20261002.prepare import read_plan
+from experiments.boundary_20261002.order_guard import verify_order_diagnostic
 from experiments.f100_boundary_20261002.model import transform_gate
 from experiments.f100_boundary_20261002.run import parent_methods, PAIR_FIELDS
 from tools.metric_utils import numpy_metrics
@@ -73,6 +74,7 @@ def audit(a):
         with torch.no_grad():
             z = state['raw_embedding'].to(a.device)
             assert tensor_hash(z) == r['embedding_sha256']
+            verify_order_diagnostic(f, state, r['audit'])
             rebuilt = saved_readout(state, z, s, y, classes, a.device)[q].cpu().double().softmax(-1).numpy()
             assert np.array_equal(probs, rebuilt), ('saved readout drift', str(f))
             tokens, gate = state['prompt']['tokens'].to(a.device), state['prompt']['gate'].to(a.device)
@@ -117,7 +119,8 @@ def audit(a):
             fresh_full_class_changes=int(np.count_nonzero(fresh_prob.argmax(1) != probs.argmax(1))),
             hard_route_degenerate_saved=r['audit']['hard_route_degenerate'], hard_route_degenerate_fresh=degenerate,
             norm_match_feasible=r['audit']['norm_match_feasible'], soft_norm=r['audit']['soft_norm'], actual_norm=r['audit']['actual_norm'],
-            pre_fit_filter_assert_failures=r['audit']['pre_fit_filter_assert_failures']))
+            pre_fit_filter_assert_failures=r['audit']['pre_fit_filter_assert_failures'],
+            prefit_order_guard=r['audit']['prefit_order_guard']))
     assert seen == expected
     assert len(refs_seen) == len(splits)*len(seeds)*2
     summary = dict(plan_sha256=plan['plan_sha256'], checkpoint_id=job['id'], shots=a.shots, smoke=a.smoke,
@@ -127,6 +130,8 @@ def audit(a):
         fresh_full_class_changes=sum(d['fresh_full_class_changes'] for d in details),
         hardmatched_degenerate=sum(d['method'] == 'F100_HardMatched' and d['hard_route_degenerate_saved'] for d in details),
         pre_fit_filter_assert_failure_count=sum(len(d['pre_fit_filter_assert_failures']) for d in details), details=details)
+    summary.update(original_argmax_assertion_failed_units=sum(not d['prefit_order_guard']['original_argmax_assertion_passed'] for d in details),
+        accepted_exact_tie_rows=sum(d['prefit_order_guard']['accepted_exact_tie_rows'] for d in details))
     output = a.plan.parent / ('smoke_analysis' if a.smoke else 'analysis') / (job['id']+'_'+str(a.shots)+'_audit.json')
     save_json(output, summary)
     print(json.dumps({k: v for k, v in summary.items() if k != 'details'}), flush=True)

@@ -14,6 +14,7 @@ from prprompt.train import tensor_hash
 from tools.metric_utils import numpy_metrics
 from experiments.v1_f100.historical import load
 from experiments.boundary_20261002.prepare import read_plan
+from experiments.boundary_20261002.order_guard import verify_order_diagnostic
 from experiments.boundary_20261002.model import saved_readout, readout, routing, replay_baseline_embedding, BASELINES
 
 def audit(args):
@@ -90,6 +91,7 @@ def audit(args):
                         fresh = replay_baseline_embedding(r['method'], state, model, x, edges)
                         fresh_rebuilt = fresh
                     elif r['method'].startswith('F100'):
+                        detail['prefit_order_guard'] = verify_order_diagnostic(folder, state, r['audit'])
                         p = state['prompt']; gate = p['gate'].to(device); tokens = p['tokens'].to(device)
                         fresh = model.conv_layers[1](old['act'](hidden+10.*(gate@tokens.tanh())*hidden.std(0).clamp_min(1e-6)), edges)
                         cache_key = ('F100', r['support_sha256'])
@@ -125,6 +127,9 @@ def audit(args):
         probe_units=len(details)-len(main), maximum_metric_error=metric_error, saved_readout_exact=True,
         predeclared_gate_forward_failures=sum(not d['predeclared_gate_forward_passed'] for d in main),
         fresh_full_class_changes=sum(d['fresh_full_class_changes'] for d in main), details=details,
+        original_argmax_assertion_failed_units=sum(not d['prefit_order_guard']['original_argmax_assertion_passed']
+            for d in main if 'prefit_order_guard' in d),
+        accepted_exact_tie_rows=sum(d['prefit_order_guard']['accepted_exact_tie_rows'] for d in main if 'prefit_order_guard' in d),
         plan_sha256=plan['plan_sha256'])
     target = args.plan.parent/('smoke_analysis' if args.smoke else 'analysis')/(job['id']+'_'+str(shots)+'_audit.json')
     save_json(target, summary)

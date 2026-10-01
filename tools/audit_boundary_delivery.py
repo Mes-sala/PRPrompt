@@ -78,6 +78,28 @@ def check_filter_construction(record, policy):
     return True
 
 
+def check_order_guard(folder, record, policy):
+    if not policy:
+        return None
+    assert policy['policy'] == 'exact_maximum_set_intersection_without_tolerance'
+    audit = record['audit']
+    assert sha(folder/'prefit_order.npz') == audit['prefit_order_sha256']
+    with np.load(folder/'prefit_order.npz') as arrays:
+        teacher, probability = arrays['base_teacher'], arrays['gate_probability']
+    assert teacher.ndim == 2 and teacher.shape == probability.shape
+    assert teacher.dtype == probability.dtype == np.float32
+    assert np.isfinite(teacher).all() and np.isfinite(probability).all()
+    mismatch = teacher.argmax(1) != probability.argmax(1)
+    common = ((teacher == teacher.max(1, keepdims=True)) &
+              (probability == probability.max(1, keepdims=True))).any(1)
+    ours = dict(policy=policy['policy'], original_argmax_assertion_passed=not bool(mismatch.any()),
+        original_argmax_mismatch_rows=int(mismatch.sum()), exact_maximum_intersection_all_rows=bool(common.all()),
+        genuine_order_reversal_rows=int((~common).sum()), accepted_exact_tie_rows=int((mismatch & common).sum()),
+        base_teacher_sha256=array_hash(teacher), gate_probability_sha256=array_hash(probability))
+    assert common.all() and ours == audit['prefit_order_guard']
+    return ours
+
+
 def audit(a, report):
     root = a.workspace.resolve()
     plan = json.loads((root/'plan.json').read_text())
@@ -127,6 +149,7 @@ def audit(a, report):
     groups = collections.defaultdict(lambda: collections.defaultdict(list))
     pairing, nested, checked, max_error = {}, {}, {}, 0.
     filter_policy_units = 0
+    order_records = []
     jobmap = {j['id']: j for j in plan['jobs']}
     parent_manifest = None
     if supplement and not a.smoke:
@@ -197,6 +220,8 @@ def audit(a, report):
                 assert not r['audit']['query_labels_received']
                 if r['method'].startswith('F100'):
                     filter_policy_units += check_filter_construction(r, plan.get('filter_construction_retry', {}))
+                    order = check_order_guard(f, r, plan.get('prefit_order_guard', {}))
+                    if order is not None: order_records.append(order)
             if references and parent_manifest is not None:
                 relative = Path('results')/p.relative_to(root/'references')
                 for name in ['metrics.json', 'seal.json', 'selection.json', 'predictions.npz']:
@@ -212,6 +237,12 @@ def audit(a, report):
     report.update(unit_counts=checked, maximum_independent_metric_error=max_error, paired_hashes_passed=True,
                   support_query_and_nested_shots_passed=True, filter_construction_policy_units_checked=filter_policy_units,
                   result_manifest_sha256=sha(root/'result_files_sha256.json') if not a.smoke else None)
+    if plan.get('prefit_order_guard'):
+        assert len(order_records) == (84 if supplement else 21) * (1 if a.smoke else 60)
+        report.update(prefit_order_policy_units_checked=len(order_records),
+            original_argmax_assertion_failed_units=sum(not r['original_argmax_assertion_passed'] for r in order_records),
+            accepted_exact_tie_rows=sum(r['accepted_exact_tie_rows'] for r in order_records),
+            genuine_order_reversal_rows=sum(r['genuine_order_reversal_rows'] for r in order_records))
     if plan.get('filter_construction_retry', {}).get('cache'):
         assert filter_policy_units == (84 if supplement else 21) * (1 if a.smoke else 60)
     server_audits = []

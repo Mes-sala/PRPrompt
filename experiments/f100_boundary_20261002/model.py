@@ -7,6 +7,7 @@ from prprompt.model import normalized_adjacency
 from prprompt.train import state_hash
 from experiments.v1_f100.historical import load
 from experiments.boundary_20261002.filters import construct_filters_once
+from experiments.boundary_20261002.order_guard import install_order_guard, finalize_order_record
 
 CONTROLS = ['Hard', 'HardMatched', 'Shared']
 
@@ -25,6 +26,7 @@ def transform_gate(soft, info, adjacency, kind):
 def fit_control(kind, backbone, x, edges, s, y, classes, seed, steps):
     model = copy.deepcopy(backbone).eval().requires_grad_(False)
     before = state_hash(model); old = load(); shots = int(torch.bincount(y, minlength=classes).min())
+    order_record = install_order_guard(old)
     if shots == 1:
         original = old['logits']
         old['logits'] = lambda z, si, sy, c, loo=False: original(z, si, sy, c)[si] if loo else original(z, si, sy, c)
@@ -46,10 +48,11 @@ def fit_control(kind, backbone, x, edges, s, y, classes, seed, steps):
     with torch.no_grad(): scores = old['logits'](z-z.mean(0, keepdim=True), s, y, classes)
     assert state_hash(model) == before and all(p.grad is None for p in model.parameters())
     assert torch.isfinite(prompt['optimizer_gradients']).all()
+    order_audit = finalize_order_record(order_record, prompt)
     return scores, z, {'prompt': prompt, 'trace': trace, 'control': info_record}, {
         'backbone_frozen': True, 'backbone_before': before, 'backbone_after': before, 'query_labels_received': False,
         'prompt_gradient_max': float(prompt['optimizer_gradients'].abs().max()), 'adam_actual_epsilon': 1e-8,
-        'one_shot_loss_adapted': shots == 1, **filter_audit, **info_record}
+        'one_shot_loss_adapted': shots == 1, 'prefit_order_guard': order_audit, **filter_audit, **info_record}
 
 def test(device):
     from prprompt.model import TwoLayerGCN

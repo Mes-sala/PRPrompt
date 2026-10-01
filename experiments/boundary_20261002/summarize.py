@@ -87,6 +87,8 @@ def summarize(workspace):
         fresh_full_class_changes=sum(a['fresh_full_class_changes'] for a in audits),
         predeclared_numerical_acceptance_passed=all(a['predeclared_gate_forward_failures'] == 0 for a in audits),
         final_paper_choice='Requires reviewing complete paired tables, negative results and numerical qualifications; no query-wise oracle selection.')
+    scientific.update(original_argmax_assertion_failed_units=sum(a['original_argmax_assertion_failed_units'] for a in audits),
+        accepted_exact_tie_rows=sum(a['accepted_exact_tie_rows'] for a in audits))
     save_json(output/'scientific_audit.json', scientific); save_json(output/'coverage.json', dict(main=31500, probes=15120, missing=[], smoke=False))
     lines = ['# 原 Edgepred_Gprompt：路由、分类头与shot完整结果', '',
         '主实验31,500单元，固定表示分类头探针15,120单元。均值±标准差为%，先平均训练重复，再统计20个支持抽样。', '',

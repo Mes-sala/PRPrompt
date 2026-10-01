@@ -11,6 +11,7 @@ from prprompt.protocol import sample_support, seal_predictions, evaluate_sealed,
 from prprompt.train import tensor_hash, state_hash
 from experiments.boundary_20261002.prepare import read_plan, digest
 from experiments.boundary_20261002.model import select, fit, saved_readout
+from experiments.boundary_20261002.order_guard import save_order_diagnostic
 
 def run(args):
     torch.set_num_threads(1)
@@ -65,6 +66,7 @@ def run(args):
                         rebuilt = saved_readout(state, z, s, y, classes, args.device)
                         assert torch.equal(scores, rebuilt), method
                     save_state(state, folder/'state.pt.gz'); save_json(folder/'selection.json', selection)
+                    save_order_diagnostic(folder, state, audit)
                     seal = seal_predictions(folder, scores, support, query.to(args.device), dict(meta, signature=signature))
                     metrics = evaluate_sealed(folder, labels[query])
                     torch.cuda.synchronize(args.device)

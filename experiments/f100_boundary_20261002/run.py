@@ -13,6 +13,7 @@ from experiments.boundary_20261002.model import saved_readout
 from experiments.boundary_20261002.state_io import save_state
 from experiments.f100_boundary_20261002.prepare import read_plan, digest
 from experiments.f100_boundary_20261002.model import fit_control
+from experiments.boundary_20261002.order_guard import save_order_diagnostic
 
 PAIR_FIELDS = ['checkpoint_sha256', 'graph_sha256', 'support_sha256', 'query_sha256', 'support_labels_sha256']
 
@@ -36,7 +37,10 @@ def copy_references(plan, workspace, row):
         dest = workspace / ('smoke_references' if row['smoke'] else 'references') / relative
         dest.mkdir(parents=True, exist_ok=True)
         hashes = {}
-        for name in ['metrics.json', 'predictions.npz', 'seal.json', 'selection.json']:
+        names = ['metrics.json', 'predictions.npz', 'seal.json', 'selection.json']
+        if 'prefit_order_guard' in ref['audit']:
+            names.append('prefit_order.npz')
+        for name in names:
             if name == 'predictions.npz': assert sha_file(src / name) == ref['predictions_sha256']
             if name == 'selection.json': assert sha_file(src / name) == ref['selection_sha256']
             expected = sha_file(src / name)
@@ -108,6 +112,7 @@ def run(a):
                     state.update(method=method, raw_embedding=z.cpu(), support=support, support_labels=sy, query=query)
                     with torch.no_grad(): assert torch.equal(scores, saved_readout(state, z, s, y, classes, a.device))
                     save_state(state, folder / 'state.pt.gz')
+                    save_order_diagnostic(folder, state, audit)
                     selection = dict(selection='fixed_historical_recipe', trials=[], query_labels_used=False,
                         lr=.01, weight_decay=0., adam_epsilon=1e-8, prompt_penalty=.001, temperature=.1,
                         one_shot_loss_adapted=a.shots == 1)

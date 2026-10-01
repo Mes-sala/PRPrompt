@@ -1,0 +1,330 @@
+{
+  "revision": "R3",
+  "phase": "engineering_validation_passed_formal_not_started",
+  "plan_sha256": "9ca11e42e7233b6d54fa29aa3520daba4cad1f6bc5e8345016e82ffb3c761699",
+  "source_files_verified": 34,
+  "R2_formal_units_reused": 0,
+  "diagnoses": [
+    {
+      "device": "cuda:0",
+      "sha256": "91c311f08e54b77338085e20ab3646d629ca7e851ade514f538a0f2ae1c4b071",
+      "original_failures": 5,
+      "mismatch_rows": [
+        25,
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    {
+      "device": "cuda:1",
+      "sha256": "ffa0f30b2e3c8d1326241988e51a0121d54defa10f668bb8e423d851957a07bb",
+      "original_failures": 5,
+      "mismatch_rows": [
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "log_sha256": "a1b1bb778389dc1c7d808b44087c274e3cb7fe8a0e9d8eb747084be2a1f83eea",
+      "result": {
+        "device": "cpu",
+        "exact_tie_accepted": true,
+        "original_failure_flag_retained": true,
+        "untied_reversal_and_nan_rejected": true,
+        "guard_rng_unchanged": true,
+        "saved_arrays_torch_and_independent_numpy_verified": true,
+        "changed_saved_teacher_rejected": true,
+        "historical_100_step_parity": [
+          {
+            "shots": 1,
+            "errors": {
+              "scores": 0.0,
+              "embedding": 0.0,
+              "tokens": 0.0
+            },
+            "rng_exact": true
+          },
+          {
+            "shots": 3,
+            "errors": {
+              "scores": 0.0,
+              "embedding": 0.0,
+              "tokens": 0.0
+            },
+            "rng_exact": true
+          },
+          {
+            "shots": 5,
+            "errors": {
+              "scores": 0.0,
+              "embedding": 0.0,
+              "tokens": 0.0
+            },
+            "rng_exact": true
+          }
+        ]
+      }
+    },
+    {
+      "log_sha256": "bfd8de758f93eced6fee508a8906f5c75b0f3f37280aef851d0bb97234e7508f",
+      "result": {
+        "device": "cuda:0",
+        "exact_tie_accepted": true,
+        "original_failure_flag_retained": true,
+        "untied_reversal_and_nan_rejected": true,
+        "guard_rng_unchanged": true,
+        "saved_arrays_torch_and_independent_numpy_verified": true,
+        "changed_saved_teacher_rejected": true,
+        "historical_100_step_parity": [
+          {
+            "shots": 1,
+            "errors": {
+              "scores": 9.5367431640625e-07,
+              "embedding": 1.4901161193847656e-07,
+              "tokens": 1.8477439880371094e-06
+            },
+            "rng_exact": true
+          },
+          {
+            "shots": 3,
+            "errors": {
+              "scores": 1.080334186553955e-06,
+              "embedding": 1.7881393432617188e-07,
+              "tokens": 4.172325134277344e-07
+            },
+            "rng_exact": true
+          },
+          {
+            "shots": 5,
+            "errors": {
+              "scores": 9.5367431640625e-07,
+              "embedding": 1.1920928955078125e-07,
+              "tokens": 3.5762786865234375e-07
+            },
+            "rng_exact": true
+          }
+        ]
+      }
+    },
+    {
+      "log_sha256": "e21dbe547062a4c8cb6f66ec78fd599c912f7b6d0c20fcd8ac7ea31fcd080031",
+      "result": {
+        "device": "cuda:1",
+        "exact_tie_accepted": true,
+        "original_failure_flag_retained": true,
+        "untied_reversal_and_nan_rejected": true,
+        "guard_rng_unchanged": true,
+        "saved_arrays_torch_and_independent_numpy_verified": true,
+        "changed_saved_teacher_rejected": true,
+        "historical_100_step_parity": [
+          {
+            "shots": 1,
+            "errors": {
+              "scores": 9.5367431640625e-07,
+              "embedding": 1.1920928955078125e-07,
+              "tokens": 4.172325134277344e-07
+            },
+            "rng_exact": true
+          },
+          {
+            "shots": 3,
+            "errors": {
+              "scores": 9.5367431640625e-07,
+              "embedding": 2.384185791015625e-07,
+              "tokens": 2.980232238769531e-07
+            },
+            "rng_exact": true
+          },
+          {
+            "shots": 5,
+            "errors": {
+              "scores": 9.5367431640625e-07,
+              "embedding": 1.1920928955078125e-07,
+              "tokens": 3.8743019104003906e-07
+            },
+            "rng_exact": true
+          }
+        ]
+      }
+    }
+  ],
+  "actual_failed_support_cell_validations": [
+    {
+      "device": "cuda:0",
+      "validation_sha256": "86d2d66643667bc5009412f271512da60b59af09f4bc5c5a328ef6456867ee96",
+      "audit": {
+        "method": "F100OneShotAdapt",
+        "trainable_parameters": 640,
+        "prompt_parameters": 640,
+        "head_parameters": 0,
+        "backbone_parameters": 0,
+        "query_labels_received": false,
+        "backbone_before": "e8e10812d02a354afa93a0ddac011bb76a7304631fb0edde93bd4b8f92a59b7e",
+        "backbone_after": "e8e10812d02a354afa93a0ddac011bb76a7304631fb0edde93bd4b8f92a59b7e",
+        "backbone_frozen": true,
+        "prompt_gradient_max": 1.0374791622161865,
+        "loss": "inclusive_prototype_ce",
+        "adam_actual_epsilon": 1e-08,
+        "fit_seconds": 1.9727191161364317,
+        "prefit_order_guard": {
+          "policy": "exact_maximum_set_intersection_without_tolerance",
+          "original_argmax_assertion_passed": false,
+          "original_argmax_mismatch_rows": 45,
+          "exact_maximum_intersection_all_rows": true,
+          "genuine_order_reversal_rows": 0,
+          "accepted_exact_tie_rows": 45,
+          "base_teacher_sha256": "f441ee2fa352d7ee784345462e64946f3af68ff5dab52de5faf7e564e641b9ab",
+          "gate_probability_sha256": "cde0c7f0bd0b81ec87849b6bd9a9834454526c840e4e94b104b64f4f03e9909e"
+        },
+        "filters_acquired_from_cache": false,
+        "pre_fit_filter_attempts": 1,
+        "pre_fit_filter_assert_failures": [],
+        "filter_cache_origin_attempts": 1,
+        "filter_cache_origin_failures": [],
+        "prefit_order_sha256": "0df37e027753631edd1e8ecc9e0aa839048d0dc6f674ca70128b120101cfee83"
+      }
+    },
+    {
+      "device": "cuda:1",
+      "validation_sha256": "a0c0473dd18d6235dad4905c4f9678a8ce3b1e20d56f8b40dcde942063540d34",
+      "audit": {
+        "method": "F100OneShotAdapt",
+        "trainable_parameters": 640,
+        "prompt_parameters": 640,
+        "head_parameters": 0,
+        "backbone_parameters": 0,
+        "query_labels_received": false,
+        "backbone_before": "e8e10812d02a354afa93a0ddac011bb76a7304631fb0edde93bd4b8f92a59b7e",
+        "backbone_after": "e8e10812d02a354afa93a0ddac011bb76a7304631fb0edde93bd4b8f92a59b7e",
+        "backbone_frozen": true,
+        "prompt_gradient_max": 1.037479281425476,
+        "loss": "inclusive_prototype_ce",
+        "adam_actual_epsilon": 1e-08,
+        "fit_seconds": 2.0338050220161676,
+        "prefit_order_guard": {
+          "policy": "exact_maximum_set_intersection_without_tolerance",
+          "original_argmax_assertion_passed": false,
+          "original_argmax_mismatch_rows": 80,
+          "exact_maximum_intersection_all_rows": true,
+          "genuine_order_reversal_rows": 0,
+          "accepted_exact_tie_rows": 80,
+          "base_teacher_sha256": "09886f4e741249aba369bbcc0141a8bba704fae142ffec6cba2d8f494cdd4342",
+          "gate_probability_sha256": "d8c75ff9799a24b9bae86a2d82b92083b8bf82d785b0dba1989e7b02db0552da"
+        },
+        "filters_acquired_from_cache": false,
+        "pre_fit_filter_attempts": 1,
+        "pre_fit_filter_assert_failures": [],
+        "filter_cache_origin_attempts": 1,
+        "filter_cache_origin_failures": [],
+        "prefit_order_sha256": "49291920d893fec8be1c7da2282005750c12955460c45ba5e45fa635593c9c31"
+      }
+    }
+  ],
+  "original_argmax_failures_retained": true,
+  "acceptance_policy": "Exact maximum-set intersection; no epsilon; reject disjoint maxima",
+  "legacy_reference_file_bytes_unchanged": true,
+  "training_probabilities_route_and_loss_unchanged": true,
+  "CPU_original_full_prefix_diagnostic": "Stopped at unchanged historical make_filters assertion; no CPU full-prefix pass claimed",
+  "formal_smoke_and_full_integration_pending": true,
+  "all_support_prefit_grid": {
+    "no_fitting_or_query_scoring": true,
+    "checks": 420,
+    "train_seed": 0,
+    "rows": [
+      {
+        "dataset": "Cora",
+        "checks": 60,
+        "original_argmax_failures": 0,
+        "maximum_intersection_failures": 0,
+        "repeated_teacher_score_drift_checks": 0
+      },
+      {
+        "dataset": "CiteSeer",
+        "checks": 60,
+        "original_argmax_failures": 0,
+        "maximum_intersection_failures": 0,
+        "repeated_teacher_score_drift_checks": 0
+      },
+      {
+        "dataset": "PubMed",
+        "checks": 60,
+        "original_argmax_failures": 0,
+        "maximum_intersection_failures": 0,
+        "repeated_teacher_score_drift_checks": 0
+      },
+      {
+        "dataset": "Photo",
+        "checks": 60,
+        "original_argmax_failures": 0,
+        "maximum_intersection_failures": 0,
+        "repeated_teacher_score_drift_checks": 0
+      },
+      {
+        "dataset": "Computers",
+        "checks": 60,
+        "original_argmax_failures": 0,
+        "maximum_intersection_failures": 0,
+        "repeated_teacher_score_drift_checks": 0
+      },
+      {
+        "dataset": "Actor",
+        "checks": 60,
+        "original_argmax_failures": 0,
+        "maximum_intersection_failures": 0,
+        "repeated_teacher_score_drift_checks": 0
+      },
+      {
+        "dataset": "Chameleon",
+        "checks": 60,
+        "original_argmax_failures": 1,
+        "maximum_intersection_failures": 0,
+        "repeated_teacher_score_drift_checks": 0
+      }
+    ],
+    "summary_sha256": "c64a5c5c10b14a19448482f0e5e072b2e81ef0ea8abfeab4aed00c8214bd79bb",
+    "actual_coverage_and_source_reports": [
+      {
+        "dataset": "Cora",
+        "sha256": "3f660dbe497cfc6960dfbe7ddb5831cdd3d3cc59f73a8b86422f039c95eb5fc5",
+        "actual_coverage": 60
+      },
+      {
+        "dataset": "CiteSeer",
+        "sha256": "1cee8af1f1ff4ad68427ee797729a1e69d9f8b5e583b749fb92d50e7626ebee4",
+        "actual_coverage": 60
+      },
+      {
+        "dataset": "PubMed",
+        "sha256": "46161850410a1be433f220d8a68532ae965a09192f1cb22744cd54b88c3ad8a7",
+        "actual_coverage": 60
+      },
+      {
+        "dataset": "Photo",
+        "sha256": "ea5c2c59293777d1d2a3bffbbd53614e68b16ec5280d901403c7f4f7b6c82615",
+        "actual_coverage": 60
+      },
+      {
+        "dataset": "Computers",
+        "sha256": "8305231f6ba60527043fe3bb181edadaee39b958b86580f28c23fc9f9eefa48c",
+        "actual_coverage": 60
+      },
+      {
+        "dataset": "Actor",
+        "sha256": "389482967a9233c975235fba328befef9f130c2877b078be7ca7c307b9ba79d7",
+        "actual_coverage": 60
+      },
+      {
+        "dataset": "Chameleon",
+        "sha256": "ca423721699accc39da1fc56f68dbaae0412f9c235fee824f6657abfc1f10377",
+        "actual_coverage": 60
+      }
+    ]
+  }
+}

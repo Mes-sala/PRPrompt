@@ -77,6 +77,8 @@ def prepare(workspace):
         expected_units=31500, expected_probe_units=15120, bootstrap_seed=20261002,
         filter_construction_retry=dict(max_attempts=3, only_before_fit=True,
             original_assertion_unchanged=True, cache='exact immutable input tensor objects per worker'),
+        prefit_order_guard=dict(policy='exact_maximum_set_intersection_without_tolerance',
+            retain_original_argmax_failure=True, probabilities_and_training_unchanged=True),
         audit_rules=dict(metric_atol=1e-12, gate_atol=2e-6, forward_atol=2e-6, forward_rtol=1e-6,
                          serialized_probability_exact=True, full_fresh_forward_is_diagnostic=True),
         environment=dict(python=sys.version, torch=str(torch.__version__), cuda=torch.version.cuda),

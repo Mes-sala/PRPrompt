@@ -9,6 +9,7 @@ from prprompt.train import seed_all, state_hash, tensor_hash, fit_predict
 from prprompt.protocol import support_folds
 from experiments.v1_f100.historical import load
 from experiments.boundary_20261002.filters import construct_filters_once
+from experiments.boundary_20261002.order_guard import install_order_guard, finalize_order_record
 
 ROUTES = ['Soft', 'Hard', 'HardMatched', 'Shared', 'None']
 HEADS = ['Linear', 'Prototype', 'CenteredPrototype', 'Ridge']
@@ -94,6 +95,7 @@ def fit(method, backbone, x, edges, support, sy, classes, config, seed=0):
         assert bool((counts == (1 if method == 'F100OneShotAdapt' else counts[0])).all())
         assert method != 'F100Historical' or int(counts.min()) >= 2
         old = load()
+        order_record = install_order_guard(old)
         if method == 'F100OneShotAdapt':
             original = old['logits']
             old['logits'] = lambda z, s, y, c, loo=False: original(z, s, y, c, loo=False)[s] if loo else original(z, s, y, c, loo=False)
@@ -107,6 +109,7 @@ def fit(method, backbone, x, edges, support, sy, classes, config, seed=0):
         with torch.no_grad():
             scores = old['logits'](z-z.mean(0, keepdim=True), support, sy, classes)
         gradients = prompt['optimizer_gradients']
+        order_audit = finalize_order_record(order_record, prompt)
         assert torch.isfinite(gradients).all()
         state = {'prompt': prompt, 'trace': trace, 'historical_one_shot_loss_adapted': method == 'F100OneShotAdapt'}
         audit = {'method': method, 'trainable_parameters': classes*128, 'prompt_parameters': classes*128,
@@ -114,7 +117,8 @@ def fit(method, backbone, x, edges, support, sy, classes, config, seed=0):
                  'backbone_before': before, 'backbone_after': state_hash(model), 'backbone_frozen': True,
                  'prompt_gradient_max': float(gradients.norm(dim=(1, 2)).max()),
                  'loss': 'inclusive_prototype_ce' if method == 'F100OneShotAdapt' else 'leave_one_out_prototype_ce',
-                 'adam_actual_epsilon': 1e-8, 'fit_seconds': time.perf_counter()-start, **filter_audit}
+                 'adam_actual_epsilon': 1e-8, 'fit_seconds': time.perf_counter()-start,
+                 'prefit_order_guard': order_audit, **filter_audit}
         return scores, z, state, audit
 
     kind, head_kind = method.split('__')
