@@ -1,0 +1,110 @@
+{
+  "status": "passed",
+  "review_date": "2026-10-02",
+  "request": "Read graph prompt papers, restructure bilingual manuscript, use two columns and at least 20 verified references",
+  "environment": {
+    "name": "prprompt-latex",
+    "compiler": "Tectonic 0.17.0",
+    "poppler": "26.09.0",
+    "cjk_font": "Noto Serif CJK SC 2.003, external pinned cache",
+    "bibliography": "BibTeX / abbrvnat"
+  },
+  "pdfs": {
+    "en": {
+      "file": "output/pdf/PRPrompt_双栏_20261002/PRPrompt_en.pdf",
+      "sha256": "057463995dea7120735afff6de4194d3684c2959dbf226cc918349648a9b008b",
+      "bytes": 165029,
+      "pages": 9,
+      "compiler_exit_code": 0,
+      "bibliographic_entries": 22,
+      "overfull_boxes": 0,
+      "missing_characters": 0,
+      "undefined_references_or_citations": 0,
+      "bibtex_warnings": 0,
+      "underfull_hbox_warnings": 13,
+      "underfull_note": "English interword spacing warnings manually inspected; no clipped content.",
+      "rendered_page_sha256": {
+        "page-1.png": "932b8292690a3b927edc400cf3f2773a397c835365aa572b387e32394583b3ab",
+        "page-2.png": "a75bd62c39a7a16af43c64fa52e57085c21b848188383254a90e97d3acc6e2a9",
+        "page-3.png": "b93dbdfe3a1d5942ed07cdd7a98fed83699aab12be163d89a18c4144e3981386",
+        "page-4.png": "77e4d0b4cf9d799a3bce93452adcf9a96f485039c3dc1384aef73614b614e6d7",
+        "page-5.png": "4c2cba1ead8152ad45d5ab2e821cc7b933e5e3b5adaea1554ff1362984a057dd",
+        "page-6.png": "7d99551d587edb503e9cae7bf936a4fa0b1b21004dbdc2a3cf7fd5fbc9f345d9",
+        "page-7.png": "afef2d6aaf3b5ca6dd6a161e5b44106531348d9953e48c4da47f5feb79bbb8a0",
+        "page-8.png": "e55bb03ab38833dfefaef87e18ab62cd94af56e113fad870dc507cb1d335bc95",
+        "page-9.png": "29025eba8737be5323b56f5e596b81116524f115b4230ab5b6ed86d25a777ee5"
+      }
+    },
+    "zh": {
+      "file": "output/pdf/PRPrompt_双栏_20261002/PRPrompt_zh.pdf",
+      "sha256": "761aa4f27b534df1e6cb669e46f507b91e81ba1e48bb739a1bcb7430c01bac0e",
+      "bytes": 317651,
+      "pages": 9,
+      "compiler_exit_code": 0,
+      "bibliographic_entries": 22,
+      "overfull_boxes": 0,
+      "missing_characters": 0,
+      "undefined_references_or_citations": 0,
+      "bibtex_warnings": 0,
+      "underfull_hbox_warnings": 0,
+      "underfull_note": "English interword spacing warnings manually inspected; no clipped content.",
+      "rendered_page_sha256": {
+        "page-1.png": "bfa1689774cc95640163129dbbded621476f47823ed2b13e4778f6d5f8721e3f",
+        "page-2.png": "dd6cfd2903d201d97241dc07642de7bb0e12651e05e5d4b57c4b34914fb4d08a",
+        "page-3.png": "120fe607ee1ac3b36b6b29ce8e504ed59c0e07242b85f19281d951d7caa7c362",
+        "page-4.png": "9078135b2b674e61f125bf7b89e737adb98760565715db508aa9fb1e37922141",
+        "page-5.png": "9713cf896e1ebeecfd8a5f956fd658df3205b2beba7da1d40326bb0efc2b230c",
+        "page-6.png": "cfafe0cf4a0185805a966db44886b2b279cd7f276d92fddafc3c4c054d133a02",
+        "page-7.png": "2ab957138c29fb49b336226651cbc2abe9dc47dc49a4a217decf2e31401fd2bc",
+        "page-8.png": "832df4bec02f9de135613921694a5fc086cd92f08484f893513548086ca61183",
+        "page-9.png": "4b3a10ffbddb4d81f0178e3a7160ad76d25e590b0291d675b7586df724f99f57"
+      }
+    }
+  },
+  "review": {
+    "renderer": "Poppler",
+    "all_pages_reviewed": true,
+    "reviewed_pages": {
+      "en": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "zh": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "last_change": "Paired-table line spacing: pages 1-8 pixel-identical to already reviewed render; page 9 reviewed anew.",
+    "unclipped_formulas": true,
+    "readable_tables": true,
+    "no_blank_cjk": true,
+    "no_overlapping_columns": true,
+    "main_architecture": "intentional placeholder",
+    "source_documents": [
+      "bibliography/reading_manifest.json",
+      "叙事与结构参考.md"
+    ],
+    "venue_template_compliance": "not claimed; generic 10pt A4 two-column working manuscript"
+  },
+  "cjk_cross_reader_text_checks": {
+    "poppler_han_characters": 6027,
+    "pdfium_han_characters": 6027,
+    "pypdf_han_characters": 6027,
+    "cid_fonts_with_embedded_unicode_maps": 15,
+    "reader_errors": false
+  }
+}

@@ -1,0 +1,47 @@
+\usepackage[a4paper,top=19mm,bottom=20mm,left=18mm,right=18mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,graphicx}
+\usepackage[font=small,labelfont=bf,justification=raggedright,singlelinecheck=false]{caption}
+\usepackage{placeins}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{xurl}
+\setlength{\columnsep}{6mm}
+\setlist{nosep,leftmargin=*}
+\usepackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{3pt}
+\usepackage[unicode,hidelinks]{hyperref}
+\newcommand{\lang}[2]{\ifChinese#2\else#1\fi}
+\newcommand{\method}{PRPrompt}
+\newcommand{\norm}[1]{\operatorname{norm}\!\left(#1\right)}
+\newcommand{\rownorm}{\operatorname{rownorm}}
+\newcommand{\softmax}{\operatorname{softmax}}
+\newcommand{\mean}{\operatorname{mean}}
+\newcommand{\frozenname}{\lang{Frozen}{冻结预训练}}
+\newcommand{\ftname}{\lang{Full FT}{全量微调}}
+\newcommand{\sharedname}{\lang{Shared prompt}{共享提示}}
+\newcommand{\gpromptname}{\lang{GraphPrompt$^{\dagger}$}{GraphPrompt$^{\dagger}$}}
+\newcommand{\meanstd}[2]{\ensuremath{#1\,\pm\,#2}}
+\newcommand{\bestmeanstd}[2]{\ensuremath{\mathbf{#1}\,\pm\,#2}}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{1pt}
+\raggedbottom
+\setlength{\textfloatsep}{10pt}
+\setlength{\dbltextfloatsep}{10pt}
+\setlength{\floatsep}{8pt}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.75}
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.7}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+
+\pagestyle{plain}
+
+\setlength{\intextsep}{6pt}
+\captionsetup{hypcap=false}
+\urlstyle{same}

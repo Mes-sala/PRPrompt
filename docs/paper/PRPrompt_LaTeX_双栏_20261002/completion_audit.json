@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "date": "2026-10-02",
+  "scope": "Bilingual paper structure, two-column layout, verified literature, compilation and visual review",
+  "evidence": {
+    "representative_papers_read": 8,
+    "research_references": 22,
+    "all_references_cited_in_both_languages": true,
+    "pdf_pages": {
+      "en": 9,
+      "zh": 9
+    },
+    "data_files_byte_identical_to_previous_package": true,
+    "table_numeric_cells": 432,
+    "new_experiments": false,
+    "cross_condition_averages": false,
+    "classifier_controls": false,
+    "static_validation": "static_validation.json",
+    "visual_validation": "compilation_review.json",
+    "bibliographic_validation": "bibliography/verification.json"
+  },
+  "publication_status": "working draft",
+  "retained_limitations": [
+    "One checkpoint per graph with unknown pretraining seed",
+    "Reporting scope selected after experiments",
+    "Common-protocol baselines are not best published configurations",
+    "Shared-prompt control changes effective capacity"
+  ],
+  "remaining_submission_items": [
+    "Author information",
+    "Target venue and its official template",
+    "Final architecture artwork"
+  ]
+}
