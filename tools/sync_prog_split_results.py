@@ -14,7 +14,7 @@ def main(a):
     try:
         while True:
             command=['rsync','-az','--partial','--exclude=*.pt','--exclude=*.pth','--exclude=*.pt.gz',
-                     '--exclude=*.ckpt','--exclude=__pycache__/','--exclude=checkpoints/',
+                     '--exclude=*.ckpt','--exclude=*.tmp','--exclude=state.pt.gz*','--exclude=__pycache__/','--exclude=checkpoints/',
                      '--exclude=dataset_snapshots/','--exclude=input/','--exclude=*.lock',
                      '-e',f'ssh -S {a.socket} -o BatchMode=yes -o ConnectTimeout=15',a.remote.rstrip('/')+'/',str(a.local)+'/']
             with (a.control/'sync.log').open('a') as log:
