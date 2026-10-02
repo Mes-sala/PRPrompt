@@ -1,7 +1,7 @@
 {
   "status": "complete",
   "date": "2026-10-02",
-  "scope": "Bilingual paper structure, two-column layout, verified literature, compilation and visual review",
+  "scope": "Bilingual manuscript and verified references, with redesigned tables and compilation/visual/data consistency review",
   "evidence": {
     "representative_papers_read": 8,
     "research_references": 22,
@@ -17,7 +17,18 @@
     "classifier_controls": false,
     "static_validation": "static_validation.json",
     "visual_validation": "compilation_review.json",
-    "bibliographic_validation": "bibliography/verification.json"
+    "bibliographic_validation": "bibliography/verification.json",
+    "table_redesign": {
+      "reference_tables": [
+        "MultiGPrompt Table 2 (PDF page 6)",
+        "RELIEF Table 1 (PDF page 7)"
+      ],
+      "generated_files": 8,
+      "numbered_tables": 9,
+      "numeric_identity_check": "table_redesign_validation.json",
+      "data_changed": false,
+      "ranking_emphasis_checked": true
+    }
   },
   "publication_status": "working draft",
   "retained_limitations": [

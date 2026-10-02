@@ -1,26 +1,30 @@
 \begin{table*}[t]
-
 \centering
-\captionsetup{font=small}
-\caption{\lang{Accuracy (\%, higher is better). Main comparison. Within each dataset/shot/method, training seeds are averaged within each support draw; mean and sample standard deviation are then computed over 20 support draws. Bold marks the largest mean in that row. $\dagger$: common-protocol adaptation.}{Accuracy（\%，越高越好）。主比较。固定数据集、shot 与方法，在每个支持抽样内先平均训练 seed，再对 20 个支持抽样计算均值与样本标准差。粗体为该行最大均值。 $\dagger$：统一协议适配实现。}}
+\linespread{1}\selectfont
+\captionsetup{font=small,skip=5pt}
+\caption{\lang{\textbf{Accuracy on few-shot node classification.} Higher is better ($\uparrow$).}{\textbf{少样本节点分类的 Accuracy。}越高越好（$\uparrow$）。}}
 \label{tab:main-accuracy}
-\small
-\setlength{\tabcolsep}{4pt}
-\resizebox{\linewidth}{!}{%
-\begin{tabular}{lrrrrrr}
+\fontsize{9}{11}\selectfont
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\heavyrulewidth}{0.8pt}
+\setlength{\lightrulewidth}{0.4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l*{9}{r}@{}}
 \toprule
-\lang{Dataset / shot}{数据集 / shot} & \frozenname & \ftname & GPF & GPF-plus & \gpromptname & \method \\
+\lang{Method}{方法} & \multicolumn{3}{c}{\textbf{Cora}} & \multicolumn{3}{c}{\textbf{CiteSeer}} & \multicolumn{3}{c}{\textbf{PubMed}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
+ & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot \\
 \midrule
-Cora / 1 & \meanstd{23.17}{5.48} & \meanstd{45.41}{10.18} & \meanstd{15.20}{3.24} & \meanstd{30.80}{6.64} & \meanstd{21.88}{4.62} & \bestmeanstd{54.59}{9.18} \\
-Cora / 3 & \meanstd{29.42}{3.47} & \meanstd{61.54}{6.78} & \meanstd{24.32}{4.66} & \meanstd{40.21}{4.80} & \meanstd{27.75}{3.64} & \bestmeanstd{70.76}{2.76} \\
-Cora / 5 & \meanstd{33.56}{5.03} & \meanstd{67.50}{5.06} & \meanstd{28.17}{5.54} & \meanstd{53.14}{5.55} & \meanstd{31.36}{3.61} & \bestmeanstd{73.02}{1.95} \\
-CiteSeer / 1 & \meanstd{21.14}{2.87} & \meanstd{35.76}{6.80} & \meanstd{17.10}{2.64} & \meanstd{21.40}{4.60} & \meanstd{19.53}{3.34} & \bestmeanstd{47.12}{6.31} \\
-CiteSeer / 3 & \meanstd{25.29}{2.16} & \meanstd{42.22}{5.88} & \meanstd{20.36}{2.02} & \meanstd{28.92}{2.68} & \meanstd{24.83}{2.77} & \bestmeanstd{61.20}{4.98} \\
-CiteSeer / 5 & \meanstd{27.38}{2.84} & \meanstd{47.89}{4.85} & \meanstd{21.40}{2.57} & \meanstd{31.82}{2.60} & \meanstd{27.66}{2.49} & \bestmeanstd{66.17}{2.16} \\
-PubMed / 1 & \meanstd{55.44}{11.42} & \meanstd{48.77}{8.54} & \meanstd{36.29}{5.79} & \meanstd{41.12}{6.83} & \meanstd{50.24}{12.95} & \bestmeanstd{58.70}{9.78} \\
-PubMed / 3 & \meanstd{65.55}{8.11} & \meanstd{59.75}{7.97} & \meanstd{51.28}{6.93} & \meanstd{57.46}{4.96} & \meanstd{62.47}{5.54} & \bestmeanstd{68.66}{4.58} \\
-PubMed / 5 & \meanstd{68.37}{3.41} & \meanstd{63.96}{5.18} & \meanstd{55.83}{4.93} & \meanstd{61.37}{5.32} & \meanstd{66.94}{4.09} & \bestmeanstd{70.98}{2.46} \\
+\frozenname & \meanstd{23.17}{5.48} & \meanstd{29.42}{3.47} & \meanstd{33.56}{5.03} & \meanstd{21.14}{2.87} & \meanstd{25.29}{2.16} & \meanstd{27.38}{2.84} & \secondmeanstd{55.44}{11.42} & \secondmeanstd{65.55}{8.11} & \secondmeanstd{68.37}{3.41} \\
+\ftname & \secondmeanstd{45.41}{10.18} & \secondmeanstd{61.54}{6.78} & \secondmeanstd{67.50}{5.06} & \secondmeanstd{35.76}{6.80} & \secondmeanstd{42.22}{5.88} & \secondmeanstd{47.89}{4.85} & \meanstd{48.77}{8.54} & \meanstd{59.75}{7.97} & \meanstd{63.96}{5.18} \\
+\midrule
+GPF & \meanstd{15.20}{3.24} & \meanstd{24.32}{4.66} & \meanstd{28.17}{5.54} & \meanstd{17.10}{2.64} & \meanstd{20.36}{2.02} & \meanstd{21.40}{2.57} & \meanstd{36.29}{5.79} & \meanstd{51.28}{6.93} & \meanstd{55.83}{4.93} \\
+GPF-plus & \meanstd{30.80}{6.64} & \meanstd{40.21}{4.80} & \meanstd{53.14}{5.55} & \meanstd{21.40}{4.60} & \meanstd{28.92}{2.68} & \meanstd{31.82}{2.60} & \meanstd{41.12}{6.83} & \meanstd{57.46}{4.96} & \meanstd{61.37}{5.32} \\
+\gpromptname & \meanstd{21.88}{4.62} & \meanstd{27.75}{3.64} & \meanstd{31.36}{3.61} & \meanstd{19.53}{3.34} & \meanstd{24.83}{2.77} & \meanstd{27.66}{2.49} & \meanstd{50.24}{12.95} & \meanstd{62.47}{5.54} & \meanstd{66.94}{4.09} \\
+\midrule\rowcolor{black!5}
+\textbf{\method} & \bestmeanstd{54.59}{9.18} & \bestmeanstd{70.76}{2.76} & \bestmeanstd{73.02}{1.95} & \bestmeanstd{47.12}{6.31} & \bestmeanstd{61.20}{4.98} & \bestmeanstd{66.17}{2.16} & \bestmeanstd{58.70}{9.78} & \bestmeanstd{68.66}{4.58} & \bestmeanstd{70.98}{2.46} \\
 \bottomrule
-\end{tabular}
-}
+\end{tabular*}
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\fontsize{8}{9.5}\selectfont\raggedright \lang{Mean $\pm$ sample standard deviation (\%). Within each fixed condition, three training seeds are averaged per support draw, then 20 support draws are summarized. \textbf{Bold}: best; \underline{underlined}: second-best mean in each column. No averaging across columns.}{均值 $\pm$ 样本标准差（\%）。每个固定条件内，先平均支持抽样内的 3 个训练 seed，再统计 20 次支持抽样。每列\textbf{粗体}为最优均值，\underline{下划线}为次优；不跨列平均。}\lang{ $\dagger$: GraphPrompt under the common-protocol adaptation.}{ $\dagger$：GraphPrompt 的统一协议适配实现。}\end{minipage}
 \end{table*}

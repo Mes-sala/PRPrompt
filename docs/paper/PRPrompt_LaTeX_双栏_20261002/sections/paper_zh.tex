@@ -101,6 +101,7 @@ B&=\widehat A\left(Q-\mathbf1\,\mean_{v\in V}Q_v\right).
 \label{sec:protocol}
 \input{tables/main_accuracy}
 \input{tables/main_macro_f1}
+\input{tables/ablation_combined}
 在 Cora、CiteSeer、PubMed 上分别评估每类 1、3、5 个支持节点。官方训练掩码定义支持池，官方测试掩码定义固定查询集。同一次支持抽样使用相同的逐类排列，取前 1、3、5 个节点构成嵌套支持集。每个条件包含 20 个支持抽样 seed 与 3 个训练 seed；各方法共享图、预训练权重及支持／查询身份。每个数据集采用项目中原始的边预测预训练权重，其预训练 seed 未记录。
 
 主比较包含：\textbf{冻结预训练}，不添加提示并采用与 \method 相同的最终原型读出；\textbf{全量微调}，更新预训练编码器及任务读出；\textbf{GPF} 与 \textbf{GPF-plus}，在输入特征空间中适配；\textbf{GraphPrompt$^{\dagger}$}，统一节点协议下的对角读出提示实现。GPF-plus 使用 20 个提示向量。上标表示协议适配，不代表完整复现 GraphPrompt 原始的子图处理流程。这些基线遵循相应论文的提示算子思路~\citep{gpf2023,graphprompt2023}，但使用本文的编码器与选参规则。
@@ -119,10 +120,8 @@ Cora 的 5-shot Accuracy 为 73.02\%，冻结预训练与全量微调分别为 3
 
 \subsection{RQ2：原型路由的价值}
 核心消融将式~\eqref{eq:injection} 的 $B$ 替换为元素均为 $1/C$ 的常数矩阵，保留提示矩阵、尺度、注入位置、优化与最终读出，移除节点相关的提示分配。常数矩阵直接用于组合，不再中心化，否则提示会被完全消除；同时保留无提示的冻结预训练条件。
-\input{tables/ablation_accuracy}
-\input{tables/ablation_macro_f1}
 
-表~\ref{tab:ablation-accuracy} 与表~\ref{tab:ablation-macro_f1} 表明，单纯学习共享提示不足以解释完整方法的收益。5-shot 下，原型路由相对共享提示在 Cora、CiteSeer、PubMed 的 Accuracy 分别提高 36.94、40.45、3.02 个百分点，对应配对 95\% 区间为 $[34.87,39.06]$、$[39.06,41.84]$、$[1.39,4.51]$ 个百分点。在各个 1-shot 和 3-shot 条件中，两项主要指标的配对改善也均为正。
+表~\ref{tab:ablation} 表明，单纯学习共享提示不足以解释完整方法的收益。5-shot 下，原型路由相对共享提示在 Cora、CiteSeer、PubMed 的 Accuracy 分别提高 36.94、40.45、3.02 个百分点，对应配对 95\% 区间为 $[34.87,39.06]$、$[39.06,41.84]$、$[1.39,4.51]$ 个百分点。在各个 1-shot 和 3-shot 条件中，两项主要指标的配对改善也均为正。
 
 该比较支持完整原型路由构造相对共享提示的作用，不能将收益单独归因于原型校正、中心化或图聚合中的某一步。均匀组合虽然保留名义提示参数量，却降低有效自由度，因此也不能视为完全控制容量后对唯一路由机制的证明。
 

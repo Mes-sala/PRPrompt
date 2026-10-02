@@ -69,7 +69,7 @@ p_c^*&=\norm{\frac1k\sum_{i\in S_c}z_i^*},\\
 \twocolumn[{
 \section{其余逐条件指标}
 \label{app:more}
-以下表格按相同 seed 统计口径补充主比较的其余指标，每一行仍对应独立的数据集／shot 条件。
+以下表格按相同 seed 统计口径补充主比较的其余指标，每一列仍对应独立的数据集／shot 条件。
 \input{tables/main_micro_f1}
 \input{tables/main_roc_auc_macro}
 \input{tables/main_average_precision_macro}
@@ -80,5 +80,5 @@ p_c^*&=\norm{\frac1k\sum_{i\in S_c}z_i^*},\\
 \label{app:paired}
 各单元格报告 \method 减去指定对照的差值，单位为百分点，并附未经多重比较校正的 95\% 配对支持 bootstrap 区间。所有数值保留原配对记录，表格仅组织不同条件，不对其求平均。
 \par\medskip
-}]
 \input{tables/paired_all}
+}]

@@ -1,5 +1,6 @@
 \usepackage[a4paper,top=19mm,bottom=20mm,left=18mm,right=18mm]{geometry}
 \usepackage{amsmath,amssymb,booktabs,array,graphicx}
+\usepackage[table]{xcolor}
 \usepackage[font=small,labelfont=bf,justification=raggedright,singlelinecheck=false]{caption}
 \usepackage{placeins}
 \usepackage{float}
@@ -20,8 +21,11 @@
 \newcommand{\ftname}{\lang{Full FT}{全量微调}}
 \newcommand{\sharedname}{\lang{Shared prompt}{共享提示}}
 \newcommand{\gpromptname}{\lang{GraphPrompt$^{\dagger}$}{GraphPrompt$^{\dagger}$}}
-\newcommand{\meanstd}[2]{\ensuremath{#1\,\pm\,#2}}
-\newcommand{\bestmeanstd}[2]{\ensuremath{\mathbf{#1}\,\pm\,#2}}
+\newcommand{\statspread}[1]{{\fontsize{7}{8}\selectfont\textcolor{black!65}{\ensuremath{\,\pm\,#1}}}}
+\newcommand{\meanstd}[2]{\mbox{\ensuremath{#1}\statspread{#2}}}
+\newcommand{\bestmeanstd}[2]{\mbox{\ensuremath{\mathbf{#1}}\statspread{#2}}}
+\newcommand{\secondmeanstd}[2]{\mbox{\ensuremath{\underline{#1}}\statspread{#2}}}
+\newcommand{\pairedcell}[3]{\shortstack[r]{\ensuremath{#1}\\[1pt]{\fontsize{7}{8}\selectfont\textcolor{black!70}{[#2,\,#3]}}}}
 \setlength{\emergencystretch}{2em}
 \setlength{\parskip}{1pt}
 \raggedbottom

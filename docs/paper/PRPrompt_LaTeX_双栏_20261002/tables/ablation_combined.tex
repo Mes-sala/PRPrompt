@@ -1,0 +1,33 @@
+\begin{table*}[t]
+\centering
+\linespread{1}\selectfont
+\captionsetup{font=small,skip=5pt}
+\caption{\lang{\textbf{Prototype-routing ablation.} Matched prompt recipe and readout.}{\textbf{原型路由消融。}提示训练配方与读出保持一致。}}
+\label{tab:ablation}
+\fontsize{9}{11}\selectfont
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\heavyrulewidth}{0.8pt}
+\setlength{\lightrulewidth}{0.4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l*{9}{r}@{}}
+\toprule
+\lang{Method}{方法} & \multicolumn{3}{c}{\textbf{Cora}} & \multicolumn{3}{c}{\textbf{CiteSeer}} & \multicolumn{3}{c}{\textbf{PubMed}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
+ & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Accuracy (\%) $\uparrow$}} \\[2pt]
+\frozenname & \secondmeanstd{23.17}{5.48} & \meanstd{29.42}{3.47} & \meanstd{33.56}{5.03} & \secondmeanstd{21.14}{2.87} & \secondmeanstd{25.29}{2.16} & \secondmeanstd{27.38}{2.84} & \secondmeanstd{55.44}{11.42} & \secondmeanstd{65.55}{8.11} & \secondmeanstd{68.37}{3.41} \\
+\sharedname & \meanstd{22.62}{4.41} & \secondmeanstd{31.70}{4.95} & \secondmeanstd{36.08}{4.19} & \meanstd{20.72}{2.46} & \meanstd{24.01}{2.70} & \meanstd{25.73}{2.78} & \meanstd{53.84}{10.55} & \meanstd{62.96}{7.94} & \meanstd{67.95}{3.11} \\
+\midrule\rowcolor{black!5}
+\textbf{\method} & \bestmeanstd{54.59}{9.18} & \bestmeanstd{70.76}{2.76} & \bestmeanstd{73.02}{1.95} & \bestmeanstd{47.12}{6.31} & \bestmeanstd{61.20}{4.98} & \bestmeanstd{66.17}{2.16} & \bestmeanstd{58.70}{9.78} & \bestmeanstd{68.66}{4.58} & \bestmeanstd{70.98}{2.46} \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Macro-F1 (\%) $\uparrow$}} \\[2pt]
+\frozenname & \secondmeanstd{22.51}{4.82} & \meanstd{29.07}{3.47} & \meanstd{33.07}{4.47} & \secondmeanstd{20.39}{2.62} & \secondmeanstd{24.32}{1.87} & \secondmeanstd{26.45}{2.71} & \secondmeanstd{53.44}{10.49} & \secondmeanstd{63.19}{8.60} & \meanstd{66.27}{3.55} \\
+\sharedname & \meanstd{21.65}{3.66} & \secondmeanstd{30.25}{4.85} & \secondmeanstd{34.89}{4.10} & \meanstd{19.57}{2.33} & \meanstd{22.67}{2.46} & \meanstd{24.55}{2.74} & \meanstd{51.93}{9.81} & \meanstd{60.94}{8.60} & \secondmeanstd{66.29}{2.87} \\
+\midrule\rowcolor{black!5}
+\textbf{\method} & \bestmeanstd{53.34}{8.94} & \bestmeanstd{69.38}{2.91} & \bestmeanstd{72.04}{1.77} & \bestmeanstd{44.26}{5.75} & \bestmeanstd{58.19}{4.67} & \bestmeanstd{63.03}{2.12} & \bestmeanstd{57.37}{10.07} & \bestmeanstd{68.21}{4.08} & \bestmeanstd{70.39}{2.47} \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\fontsize{8}{9.5}\selectfont\raggedright \lang{Statistics and emphasis follow Table~\ref{tab:main-accuracy}. Each column is a separate dataset/shot condition.}{统计与强调规则同表~\ref{tab:main-accuracy}；每列对应独立的数据集／shot 条件。}\lang{ Frozen: no prompt; shared prompt: uniform allocation; PRPrompt: prototype routing.}{ 冻结预训练：无提示；共享提示：均匀分配；PRPrompt：原型路由。}\end{minipage}
+\end{table*}

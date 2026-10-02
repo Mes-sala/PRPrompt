@@ -1,26 +1,30 @@
 \par\medskip\noindent\begin{minipage}{\textwidth}
-
 \centering
-\captionsetup{font=small}
-\captionof{table}{\lang{Macro AP (\%, higher is better). Main comparison; seed aggregation follows Appendix~\ref{app:protocol}.}{Macro AP（\%，越高越好）。主比较；seed 统计沿用附录~\ref{app:protocol}。}}
+\linespread{1}\selectfont
+\captionsetup{font=small,skip=5pt}
+\captionof{table}{\lang{\textbf{Macro AP on few-shot node classification.} Higher is better ($\uparrow$).}{\textbf{少样本节点分类的 Macro AP。}越高越好（$\uparrow$）。}}
 \label{tab:main-average_precision_macro}
-\small
-\setlength{\tabcolsep}{4pt}
-\resizebox{\linewidth}{!}{%
-\begin{tabular}{lrrrrrr}
+\fontsize{9}{11}\selectfont
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\heavyrulewidth}{0.8pt}
+\setlength{\lightrulewidth}{0.4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l*{9}{r}@{}}
 \toprule
-\lang{Dataset / shot}{数据集 / shot} & \frozenname & \ftname & GPF & GPF-plus & \gpromptname & \method \\
+\lang{Method}{方法} & \multicolumn{3}{c}{\textbf{Cora}} & \multicolumn{3}{c}{\textbf{CiteSeer}} & \multicolumn{3}{c}{\textbf{PubMed}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
+ & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot \\
 \midrule
-Cora / 1 & \meanstd{23.64}{4.26} & \meanstd{54.01}{10.10} & \meanstd{16.64}{1.47} & \meanstd{40.37}{5.88} & \meanstd{23.15}{3.89} & \bestmeanstd{59.04}{9.07} \\
-Cora / 3 & \meanstd{29.20}{3.71} & \meanstd{70.20}{4.98} & \meanstd{24.89}{3.11} & \meanstd{44.43}{4.09} & \meanstd{27.06}{2.89} & \bestmeanstd{74.33}{3.38} \\
-Cora / 5 & \meanstd{33.16}{4.26} & \meanstd{75.99}{3.16} & \meanstd{28.68}{3.71} & \meanstd{58.84}{6.14} & \meanstd{29.92}{3.11} & \bestmeanstd{77.64}{1.87} \\
-CiteSeer / 1 & \meanstd{21.53}{2.32} & \meanstd{38.74}{5.84} & \meanstd{19.66}{1.43} & \meanstd{29.38}{4.20} & \meanstd{20.61}{2.27} & \bestmeanstd{45.99}{6.79} \\
-CiteSeer / 3 & \meanstd{24.17}{1.59} & \meanstd{45.56}{4.79} & \meanstd{21.40}{1.15} & \meanstd{30.59}{3.23} & \meanstd{23.97}{1.89} & \bestmeanstd{59.15}{4.80} \\
-CiteSeer / 5 & \meanstd{26.46}{2.07} & \meanstd{51.03}{4.40} & \meanstd{22.88}{1.45} & \meanstd{34.40}{2.70} & \meanstd{26.04}{1.65} & \bestmeanstd{64.02}{2.66} \\
-PubMed / 1 & \meanstd{57.52}{10.93} & \meanstd{55.36}{10.55} & \meanstd{43.93}{6.89} & \meanstd{52.61}{8.08} & \meanstd{52.39}{9.87} & \bestmeanstd{61.58}{11.39} \\
-PubMed / 3 & \meanstd{67.27}{8.59} & \meanstd{67.52}{6.82} & \meanstd{55.29}{5.93} & \meanstd{60.88}{5.58} & \meanstd{65.03}{5.79} & \bestmeanstd{74.22}{5.19} \\
-PubMed / 5 & \meanstd{70.34}{4.13} & \meanstd{72.33}{5.00} & \meanstd{58.42}{5.12} & \meanstd{65.42}{4.92} & \meanstd{68.42}{3.67} & \bestmeanstd{75.35}{3.34} \\
+\frozenname & \meanstd{23.64}{4.26} & \meanstd{29.20}{3.71} & \meanstd{33.16}{4.26} & \meanstd{21.53}{2.32} & \meanstd{24.17}{1.59} & \meanstd{26.46}{2.07} & \secondmeanstd{57.52}{10.93} & \meanstd{67.27}{8.59} & \meanstd{70.34}{4.13} \\
+\ftname & \secondmeanstd{54.01}{10.10} & \secondmeanstd{70.20}{4.98} & \secondmeanstd{75.99}{3.16} & \secondmeanstd{38.74}{5.84} & \secondmeanstd{45.56}{4.79} & \secondmeanstd{51.03}{4.40} & \meanstd{55.36}{10.55} & \secondmeanstd{67.52}{6.82} & \secondmeanstd{72.33}{5.00} \\
+\midrule
+GPF & \meanstd{16.64}{1.47} & \meanstd{24.89}{3.11} & \meanstd{28.68}{3.71} & \meanstd{19.66}{1.43} & \meanstd{21.40}{1.15} & \meanstd{22.88}{1.45} & \meanstd{43.93}{6.89} & \meanstd{55.29}{5.93} & \meanstd{58.42}{5.12} \\
+GPF-plus & \meanstd{40.37}{5.88} & \meanstd{44.43}{4.09} & \meanstd{58.84}{6.14} & \meanstd{29.38}{4.20} & \meanstd{30.59}{3.23} & \meanstd{34.40}{2.70} & \meanstd{52.61}{8.08} & \meanstd{60.88}{5.58} & \meanstd{65.42}{4.92} \\
+\gpromptname & \meanstd{23.15}{3.89} & \meanstd{27.06}{2.89} & \meanstd{29.92}{3.11} & \meanstd{20.61}{2.27} & \meanstd{23.97}{1.89} & \meanstd{26.04}{1.65} & \meanstd{52.39}{9.87} & \meanstd{65.03}{5.79} & \meanstd{68.42}{3.67} \\
+\midrule\rowcolor{black!5}
+\textbf{\method} & \bestmeanstd{59.04}{9.07} & \bestmeanstd{74.33}{3.38} & \bestmeanstd{77.64}{1.87} & \bestmeanstd{45.99}{6.79} & \bestmeanstd{59.15}{4.80} & \bestmeanstd{64.02}{2.66} & \bestmeanstd{61.58}{11.39} & \bestmeanstd{74.22}{5.19} & \bestmeanstd{75.35}{3.34} \\
 \bottomrule
-\end{tabular}
-}
+\end{tabular*}
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\fontsize{8}{9.5}\selectfont\raggedright \lang{Statistics and emphasis follow Table~\ref{tab:main-accuracy}. Each column is a separate dataset/shot condition.}{统计与强调规则同表~\ref{tab:main-accuracy}；每列对应独立的数据集／shot 条件。}\end{minipage}
 \end{minipage}\par

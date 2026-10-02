@@ -120,10 +120,9 @@ The same condition-wise comparison favors \method{} over each of the three promp
 
 \subsection{RQ2: Value of prototype routing}
 The central ablation replaces $B$ in Eq.~\eqref{eq:injection} by the constant matrix with entries $1/C$. This retains the prompt matrix, scale, injection point, optimization, and final readout, but removes node-dependent allocation. The constant matrix is used directly; centering it would erase the prompt. We also retain the no-prompt Frozen reference.
-\input{tables/ablation_accuracy}
-\input{tables/ablation_macro_f1}
+\input{tables/ablation_combined}
 
-Tables~\ref{tab:ablation-accuracy} and~\ref{tab:ablation-macro_f1} show that a shared prompt alone does not account for the gains. At 5 shots, routing improves accuracy over the shared prompt by 36.94 percentage points on Cora, 40.45 on CiteSeer, and 3.02 on PubMed. The respective paired 95\% intervals are $[34.87,39.06]$, $[39.06,41.84]$, and $[1.39,4.51]$ percentage points. The improvement is also positive in both primary metrics in each 1- and 3-shot condition.
+Table~\ref{tab:ablation} shows that a shared prompt alone does not account for the gains. At 5 shots, routing improves accuracy over the shared prompt by 36.94 percentage points on Cora, 40.45 on CiteSeer, and 3.02 on PubMed. The respective paired 95\% intervals are $[34.87,39.06]$, $[39.06,41.84]$, and $[1.39,4.51]$ percentage points. The improvement is also positive in both primary metrics in each 1- and 3-shot condition.
 
 This comparison supports the complete prototype-routing construction relative to a shared prompt. It does not isolate prototype refinement, centering, and graph aggregation as separate causes. A uniform mixture also reduces the effective degrees of freedom despite retaining the nominal prompt parameter count. We therefore do not interpret the comparison as a capacity-matched proof of a unique routing mechanism.
 

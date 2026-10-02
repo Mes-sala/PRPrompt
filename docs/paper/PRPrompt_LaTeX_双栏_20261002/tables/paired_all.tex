@@ -1,161 +1,64 @@
-\begin{table}[H]
-\linespread{1}\selectfont
+\par\medskip\noindent\begin{minipage}{\textwidth}
 \centering
-\captionsetup{font=footnotesize}
-\caption{\lang{\method{} minus \frozenname: paired differences and 95\% intervals (percentage points).}{\method{} 相对 \frozenname 的配对差值与 95\% 区间（百分点）。}}
-\label{tab:paired-FrozenPrototype}
-\footnotesize
-\setlength{\tabcolsep}{2pt}
-\fontsize{8}{9}\selectfont
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{lrr}
+\linespread{1}\selectfont
+\captionsetup{font=small,skip=5pt}
+\captionof{table}{\lang{\textbf{Paired Accuracy gains of \method.} Differences in percentage points.}{\textbf{\method 的 Accuracy 配对增益。}差值单位为百分点。}}
+\label{tab:paired-accuracy}
+\fontsize{9}{11}\selectfont
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\heavyrulewidth}{0.8pt}
+\setlength{\lightrulewidth}{0.4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l*{9}{r}@{}}
 \toprule
-\lang{Dataset / shot}{数据集 / shot} & Accuracy & Macro-F1 \\
+\lang{Reference}{对照方法} & \multicolumn{3}{c}{\textbf{Cora}} & \multicolumn{3}{c}{\textbf{CiteSeer}} & \multicolumn{3}{c}{\textbf{PubMed}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
+ & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot \\
 \midrule
-Cora / 1 & \shortstack{$+31.42$\\$[+28.20,\,+34.59]$} & \shortstack{$+30.84$\\$[+27.77,\,+33.84]$} \\
-Cora / 3 & \shortstack{$+41.34$\\$[+39.63,\,+43.04]$} & \shortstack{$+40.32$\\$[+38.64,\,+42.08]$} \\
-Cora / 5 & \shortstack{$+39.46$\\$[+37.23,\,+41.61]$} & \shortstack{$+38.97$\\$[+36.88,\,+40.99]$} \\
-CiteSeer / 1 & \shortstack{$+25.98$\\$[+23.72,\,+28.21]$} & \shortstack{$+23.87$\\$[+21.80,\,+25.77]$} \\
-CiteSeer / 3 & \shortstack{$+35.91$\\$[+33.05,\,+38.39]$} & \shortstack{$+33.87$\\$[+31.34,\,+36.14]$} \\
-CiteSeer / 5 & \shortstack{$+38.78$\\$[+37.37,\,+40.18]$} & \shortstack{$+36.58$\\$[+35.22,\,+37.95]$} \\
-PubMed / 1 & \shortstack{$+3.26$\\$[+0.40,\,+6.22]$} & \shortstack{$+3.93$\\$[+0.86,\,+7.00]$} \\
-PubMed / 3 & \shortstack{$+3.11$\\$[+0.38,\,+6.27]$} & \shortstack{$+5.02$\\$[+2.27,\,+8.44]$} \\
-PubMed / 5 & \shortstack{$+2.61$\\$[+1.13,\,+4.22]$} & \shortstack{$+4.12$\\$[+2.53,\,+5.91]$} \\
+\renewcommand{\arraystretch}{1.35}
+\frozenname & \pairedcell{+31.42}{28.20}{34.59} & \pairedcell{+41.34}{39.63}{43.04} & \pairedcell{+39.46}{37.23}{41.61} & \pairedcell{+25.98}{23.72}{28.21} & \pairedcell{+35.91}{33.05}{38.39} & \pairedcell{+38.78}{37.37}{40.18} & \pairedcell{+3.26}{0.40}{6.22} & \pairedcell{+3.11}{0.38}{6.27} & \pairedcell{+2.61}{1.13}{4.22} \\[2pt]
+\ftname & \pairedcell{+9.17}{6.58}{11.87} & \pairedcell{+9.22}{6.75}{11.79} & \pairedcell{+5.52}{3.73}{7.50} & \pairedcell{+11.36}{9.57}{13.18} & \pairedcell{+18.98}{16.78}{20.94} & \pairedcell{+18.28}{16.22}{20.13} & \pairedcell{+9.93}{6.77}{13.14} & \pairedcell{+8.90}{5.89}{12.26} & \pairedcell{+7.02}{4.96}{9.14} \\[2pt]
+\midrule
+GPF & \pairedcell{+39.38}{35.60}{42.98} & \pairedcell{+46.44}{44.21}{48.74} & \pairedcell{+44.86}{42.52}{47.57} & \pairedcell{+30.02}{27.04}{33.00} & \pairedcell{+40.83}{38.11}{43.06} & \pairedcell{+44.77}{43.32}{46.16} & \pairedcell{+22.40}{18.82}{26.24} & \pairedcell{+17.37}{14.16}{21.02} & \pairedcell{+15.15}{13.30}{17.01} \\[2pt]
+GPF-plus & \pairedcell{+23.78}{19.96}{27.47} & \pairedcell{+30.55}{28.29}{32.52} & \pairedcell{+19.88}{17.62}{22.16} & \pairedcell{+25.71}{22.89}{28.45} & \pairedcell{+32.27}{30.45}{34.03} & \pairedcell{+34.35}{33.05}{35.65} & \pairedcell{+17.57}{13.28}{21.86} & \pairedcell{+11.20}{9.47}{13.11} & \pairedcell{+9.61}{7.84}{11.49} \\[2pt]
+\gpromptname & \pairedcell{+32.70}{29.19}{36.29} & \pairedcell{+43.01}{41.38}{44.73} & \pairedcell{+41.66}{40.03}{43.20} & \pairedcell{+27.59}{24.97}{30.09} & \pairedcell{+36.37}{33.26}{38.82} & \pairedcell{+38.51}{37.14}{39.90} & \pairedcell{+8.45}{3.60}{13.47} & \pairedcell{+6.19}{4.04}{8.30} & \pairedcell{+4.03}{1.94}{6.36} \\[2pt]
+\midrule
+\sharedname & \pairedcell{+31.96}{28.59}{35.21} & \pairedcell{+39.06}{36.49}{41.44} & \pairedcell{+36.94}{34.87}{39.06} & \pairedcell{+26.40}{24.07}{28.73} & \pairedcell{+37.18}{34.90}{39.33} & \pairedcell{+40.45}{39.06}{41.84} & \pairedcell{+4.85}{1.26}{8.26} & \pairedcell{+5.69}{3.25}{8.27} & \pairedcell{+3.02}{1.39}{4.51} \\[2pt]
 \bottomrule
-\end{tabular}
-\end{table}
+\end{tabular*}
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\fontsize{8}{9.5}\selectfont\raggedright \lang{Each cell: PRPrompt minus the reference (top); unadjusted 95\% paired support-bootstrap interval (below). All values preserve the original condition-wise statistics.}{每格上行为 PRPrompt 减去对照的差值，下行为未经多重比较校正的 95\% 配对支持 bootstrap 区间。数值沿用原始逐条件统计。}\end{minipage}
+\end{minipage}\par
 
-\begin{table}[H]
-\linespread{1}\selectfont
-\centering
-\captionsetup{font=footnotesize}
-\caption{\lang{\method{} minus \ftname: paired differences and 95\% intervals (percentage points).}{\method{} 相对 \ftname 的配对差值与 95\% 区间（百分点）。}}
-\label{tab:paired-FullFineTune}
-\footnotesize
-\setlength{\tabcolsep}{2pt}
-\fontsize{8}{9}\selectfont
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{lrr}
-\toprule
-\lang{Dataset / shot}{数据集 / shot} & Accuracy & Macro-F1 \\
-\midrule
-Cora / 1 & \shortstack{$+9.17$\\$[+6.58,\,+11.87]$} & \shortstack{$+8.97$\\$[+6.40,\,+11.77]$} \\
-Cora / 3 & \shortstack{$+9.22$\\$[+6.75,\,+11.79]$} & \shortstack{$+8.44$\\$[+6.12,\,+10.90]$} \\
-Cora / 5 & \shortstack{$+5.52$\\$[+3.73,\,+7.50]$} & \shortstack{$+5.05$\\$[+3.34,\,+6.86]$} \\
-CiteSeer / 1 & \shortstack{$+11.36$\\$[+9.57,\,+13.18]$} & \shortstack{$+13.27$\\$[+11.17,\,+15.31]$} \\
-CiteSeer / 3 & \shortstack{$+18.98$\\$[+16.78,\,+20.94]$} & \shortstack{$+19.76$\\$[+17.45,\,+22.00]$} \\
-CiteSeer / 5 & \shortstack{$+18.28$\\$[+16.22,\,+20.13]$} & \shortstack{$+18.42$\\$[+16.07,\,+20.60]$} \\
-PubMed / 1 & \shortstack{$+9.93$\\$[+6.77,\,+13.14]$} & \shortstack{$+12.86$\\$[+9.39,\,+16.37]$} \\
-PubMed / 3 & \shortstack{$+8.90$\\$[+5.89,\,+12.26]$} & \shortstack{$+10.57$\\$[+7.08,\,+14.41]$} \\
-PubMed / 5 & \shortstack{$+7.02$\\$[+4.96,\,+9.14]$} & \shortstack{$+7.86$\\$[+5.54,\,+10.28]$} \\
-\bottomrule
-\end{tabular}
-\end{table}
 
-\begin{table}[H]
-\linespread{1}\selectfont
+\par\medskip\noindent\begin{minipage}{\textwidth}
 \centering
-\captionsetup{font=footnotesize}
-\caption{\lang{\method{} minus GPF: paired differences and 95\% intervals (percentage points).}{\method{} 相对 GPF 的配对差值与 95\% 区间（百分点）。}}
-\label{tab:paired-GPF}
-\footnotesize
-\setlength{\tabcolsep}{2pt}
-\fontsize{8}{9}\selectfont
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{lrr}
-\toprule
-\lang{Dataset / shot}{数据集 / shot} & Accuracy & Macro-F1 \\
-\midrule
-Cora / 1 & \shortstack{$+39.38$\\$[+35.60,\,+42.98]$} & \shortstack{$+46.27$\\$[+42.36,\,+49.82]$} \\
-Cora / 3 & \shortstack{$+46.44$\\$[+44.21,\,+48.74]$} & \shortstack{$+48.25$\\$[+45.22,\,+51.53]$} \\
-Cora / 5 & \shortstack{$+44.86$\\$[+42.52,\,+47.57]$} & \shortstack{$+46.17$\\$[+43.71,\,+49.32]$} \\
-CiteSeer / 1 & \shortstack{$+30.02$\\$[+27.04,\,+33.00]$} & \shortstack{$+37.48$\\$[+34.93,\,+39.92]$} \\
-CiteSeer / 3 & \shortstack{$+40.83$\\$[+38.11,\,+43.06]$} & \shortstack{$+44.38$\\$[+40.82,\,+47.90]$} \\
-CiteSeer / 5 & \shortstack{$+44.77$\\$[+43.32,\,+46.16]$} & \shortstack{$+47.77$\\$[+44.95,\,+50.72]$} \\
-PubMed / 1 & \shortstack{$+22.40$\\$[+18.82,\,+26.24]$} & \shortstack{$+31.76$\\$[+28.23,\,+35.27]$} \\
-PubMed / 3 & \shortstack{$+17.37$\\$[+14.16,\,+21.02]$} & \shortstack{$+21.33$\\$[+17.31,\,+25.89]$} \\
-PubMed / 5 & \shortstack{$+15.15$\\$[+13.30,\,+17.01]$} & \shortstack{$+17.97$\\$[+15.46,\,+20.67]$} \\
-\bottomrule
-\end{tabular}
-\end{table}
-\newpage
-\begin{table}[H]
 \linespread{1}\selectfont
-\centering
-\captionsetup{font=footnotesize}
-\caption{\lang{\method{} minus GPF-plus: paired differences and 95\% intervals (percentage points).}{\method{} 相对 GPF-plus 的配对差值与 95\% 区间（百分点）。}}
-\label{tab:paired-GPFPlus}
-\footnotesize
-\setlength{\tabcolsep}{2pt}
-\fontsize{8}{9}\selectfont
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{lrr}
+\captionsetup{font=small,skip=5pt}
+\captionof{table}{\lang{\textbf{Paired Macro-F1 gains of \method.} Differences in percentage points.}{\textbf{\method 的 Macro-F1 配对增益。}差值单位为百分点。}}
+\label{tab:paired-macro_f1}
+\fontsize{9}{11}\selectfont
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\heavyrulewidth}{0.8pt}
+\setlength{\lightrulewidth}{0.4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l*{9}{r}@{}}
 \toprule
-\lang{Dataset / shot}{数据集 / shot} & Accuracy & Macro-F1 \\
+\lang{Reference}{对照方法} & \multicolumn{3}{c}{\textbf{Cora}} & \multicolumn{3}{c}{\textbf{CiteSeer}} & \multicolumn{3}{c}{\textbf{PubMed}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
+ & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot \\
 \midrule
-Cora / 1 & \shortstack{$+23.78$\\$[+19.96,\,+27.47]$} & \shortstack{$+26.26$\\$[+22.23,\,+30.20]$} \\
-Cora / 3 & \shortstack{$+30.55$\\$[+28.29,\,+32.52]$} & \shortstack{$+30.07$\\$[+28.04,\,+31.97]$} \\
-Cora / 5 & \shortstack{$+19.88$\\$[+17.62,\,+22.16]$} & \shortstack{$+20.22$\\$[+18.02,\,+22.39]$} \\
-CiteSeer / 1 & \shortstack{$+25.71$\\$[+22.89,\,+28.45]$} & \shortstack{$+31.43$\\$[+28.61,\,+34.12]$} \\
-CiteSeer / 3 & \shortstack{$+32.27$\\$[+30.45,\,+34.03]$} & \shortstack{$+32.03$\\$[+30.10,\,+33.81]$} \\
-CiteSeer / 5 & \shortstack{$+34.35$\\$[+33.05,\,+35.65]$} & \shortstack{$+33.57$\\$[+32.22,\,+34.87]$} \\
-PubMed / 1 & \shortstack{$+17.57$\\$[+13.28,\,+21.86]$} & \shortstack{$+22.48$\\$[+18.10,\,+26.98]$} \\
-PubMed / 3 & \shortstack{$+11.20$\\$[+9.47,\,+13.11]$} & \shortstack{$+13.74$\\$[+12.07,\,+15.56]$} \\
-PubMed / 5 & \shortstack{$+9.61$\\$[+7.84,\,+11.49]$} & \shortstack{$+11.61$\\$[+9.80,\,+13.53]$} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\linespread{1}\selectfont
-\centering
-\captionsetup{font=footnotesize}
-\caption{\lang{\method{} minus \gpromptname: paired differences and 95\% intervals (percentage points).}{\method{} 相对 \gpromptname 的配对差值与 95\% 区间（百分点）。}}
-\label{tab:paired-GraphPromptDiag}
-\footnotesize
-\setlength{\tabcolsep}{2pt}
-\fontsize{8}{9}\selectfont
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{lrr}
-\toprule
-\lang{Dataset / shot}{数据集 / shot} & Accuracy & Macro-F1 \\
+\renewcommand{\arraystretch}{1.35}
+\frozenname & \pairedcell{+30.84}{27.77}{33.84} & \pairedcell{+40.32}{38.64}{42.08} & \pairedcell{+38.97}{36.88}{40.99} & \pairedcell{+23.87}{21.80}{25.77} & \pairedcell{+33.87}{31.34}{36.14} & \pairedcell{+36.58}{35.22}{37.95} & \pairedcell{+3.93}{0.86}{7.00} & \pairedcell{+5.02}{2.27}{8.44} & \pairedcell{+4.12}{2.53}{5.91} \\[2pt]
+\ftname & \pairedcell{+8.97}{6.40}{11.77} & \pairedcell{+8.44}{6.12}{10.90} & \pairedcell{+5.05}{3.34}{6.86} & \pairedcell{+13.27}{11.17}{15.31} & \pairedcell{+19.76}{17.45}{22.00} & \pairedcell{+18.42}{16.07}{20.60} & \pairedcell{+12.86}{9.39}{16.37} & \pairedcell{+10.57}{7.08}{14.41} & \pairedcell{+7.86}{5.54}{10.28} \\[2pt]
 \midrule
-Cora / 1 & \shortstack{$+32.70$\\$[+29.19,\,+36.29]$} & \shortstack{$+32.32$\\$[+28.93,\,+35.68]$} \\
-Cora / 3 & \shortstack{$+43.01$\\$[+41.38,\,+44.73]$} & \shortstack{$+42.41$\\$[+40.61,\,+44.20]$} \\
-Cora / 5 & \shortstack{$+41.66$\\$[+40.03,\,+43.20]$} & \shortstack{$+41.22$\\$[+39.64,\,+42.75]$} \\
-CiteSeer / 1 & \shortstack{$+27.59$\\$[+24.97,\,+30.09]$} & \shortstack{$+26.26$\\$[+23.90,\,+28.62]$} \\
-CiteSeer / 3 & \shortstack{$+36.37$\\$[+33.26,\,+38.82]$} & \shortstack{$+34.48$\\$[+31.80,\,+36.73]$} \\
-CiteSeer / 5 & \shortstack{$+38.51$\\$[+37.14,\,+39.90]$} & \shortstack{$+36.31$\\$[+34.99,\,+37.65]$} \\
-PubMed / 1 & \shortstack{$+8.45$\\$[+3.60,\,+13.47]$} & \shortstack{$+12.02$\\$[+7.33,\,+16.52]$} \\
-PubMed / 3 & \shortstack{$+6.19$\\$[+4.04,\,+8.30]$} & \shortstack{$+8.27$\\$[+6.21,\,+10.36]$} \\
-PubMed / 5 & \shortstack{$+4.03$\\$[+1.94,\,+6.36]$} & \shortstack{$+5.60$\\$[+3.49,\,+7.88]$} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\linespread{1}\selectfont
-\centering
-\captionsetup{font=footnotesize}
-\caption{\lang{\method{} minus \sharedname: paired differences and 95\% intervals (percentage points).}{\method{} 相对 \sharedname 的配对差值与 95\% 区间（百分点）。}}
-\label{tab:paired-NoRouting}
-\footnotesize
-\setlength{\tabcolsep}{2pt}
-\fontsize{8}{9}\selectfont
-\setlength{\tabcolsep}{2pt}
-\begin{tabular}{lrr}
-\toprule
-\lang{Dataset / shot}{数据集 / shot} & Accuracy & Macro-F1 \\
+GPF & \pairedcell{+46.27}{42.36}{49.82} & \pairedcell{+48.25}{45.22}{51.53} & \pairedcell{+46.17}{43.71}{49.32} & \pairedcell{+37.48}{34.93}{39.92} & \pairedcell{+44.38}{40.82}{47.90} & \pairedcell{+47.77}{44.95}{50.72} & \pairedcell{+31.76}{28.23}{35.27} & \pairedcell{+21.33}{17.31}{25.89} & \pairedcell{+17.97}{15.46}{20.67} \\[2pt]
+GPF-plus & \pairedcell{+26.26}{22.23}{30.20} & \pairedcell{+30.07}{28.04}{31.97} & \pairedcell{+20.22}{18.02}{22.39} & \pairedcell{+31.43}{28.61}{34.12} & \pairedcell{+32.03}{30.10}{33.81} & \pairedcell{+33.57}{32.22}{34.87} & \pairedcell{+22.48}{18.10}{26.98} & \pairedcell{+13.74}{12.07}{15.56} & \pairedcell{+11.61}{9.80}{13.53} \\[2pt]
+\gpromptname & \pairedcell{+32.32}{28.93}{35.68} & \pairedcell{+42.41}{40.61}{44.20} & \pairedcell{+41.22}{39.64}{42.75} & \pairedcell{+26.26}{23.90}{28.62} & \pairedcell{+34.48}{31.80}{36.73} & \pairedcell{+36.31}{34.99}{37.65} & \pairedcell{+12.02}{7.33}{16.52} & \pairedcell{+8.27}{6.21}{10.36} & \pairedcell{+5.60}{3.49}{7.88} \\[2pt]
 \midrule
-Cora / 1 & \shortstack{$+31.96$\\$[+28.59,\,+35.21]$} & \shortstack{$+31.70$\\$[+28.29,\,+35.00]$} \\
-Cora / 3 & \shortstack{$+39.06$\\$[+36.49,\,+41.44]$} & \shortstack{$+39.13$\\$[+36.60,\,+41.48]$} \\
-Cora / 5 & \shortstack{$+36.94$\\$[+34.87,\,+39.06]$} & \shortstack{$+37.15$\\$[+35.09,\,+39.23]$} \\
-CiteSeer / 1 & \shortstack{$+26.40$\\$[+24.07,\,+28.73]$} & \shortstack{$+24.69$\\$[+22.70,\,+26.65]$} \\
-CiteSeer / 3 & \shortstack{$+37.18$\\$[+34.90,\,+39.33]$} & \shortstack{$+35.52$\\$[+33.31,\,+37.55]$} \\
-CiteSeer / 5 & \shortstack{$+40.45$\\$[+39.06,\,+41.84]$} & \shortstack{$+38.48$\\$[+37.22,\,+39.72]$} \\
-PubMed / 1 & \shortstack{$+4.85$\\$[+1.26,\,+8.26]$} & \shortstack{$+5.44$\\$[+1.84,\,+9.07]$} \\
-PubMed / 3 & \shortstack{$+5.69$\\$[+3.25,\,+8.27]$} & \shortstack{$+7.27$\\$[+4.64,\,+10.29]$} \\
-PubMed / 5 & \shortstack{$+3.02$\\$[+1.39,\,+4.51]$} & \shortstack{$+4.10$\\$[+2.56,\,+5.58]$} \\
+\sharedname & \pairedcell{+31.70}{28.29}{35.00} & \pairedcell{+39.13}{36.60}{41.48} & \pairedcell{+37.15}{35.09}{39.23} & \pairedcell{+24.69}{22.70}{26.65} & \pairedcell{+35.52}{33.31}{37.55} & \pairedcell{+38.48}{37.22}{39.72} & \pairedcell{+5.44}{1.84}{9.07} & \pairedcell{+7.27}{4.64}{10.29} & \pairedcell{+4.10}{2.56}{5.58} \\[2pt]
 \bottomrule
-\end{tabular}
-\end{table}
+\end{tabular*}
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\fontsize{8}{9.5}\selectfont\raggedright \lang{Each cell: PRPrompt minus the reference (top); unadjusted 95\% paired support-bootstrap interval (below). All values preserve the original condition-wise statistics.}{每格上行为 PRPrompt 减去对照的差值，下行为未经多重比较校正的 95\% 配对支持 bootstrap 区间。数值沿用原始逐条件统计。}\end{minipage}
+\end{minipage}\par
