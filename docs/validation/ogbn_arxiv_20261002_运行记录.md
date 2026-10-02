@@ -14,7 +14,7 @@ CPU、CUDA:0、CUDA:1 的完整边梯度与分块累加梯度检查通过（阈�
 
 ## 运行与交付
 
-正式范围为 3 个 shot × 20 个支持抽样 × 3 个训练 seed × 7 个方法 = 1260 单元。当前已启动阶段控制器，预训练后运行 21 个两步 smoke，再派发两个 GPU 上的互斥正式分片。正式结果未完成时，不将 smoke 或中途部分单元作为最终实验结果。
+正式范围为 3 个 shot × 20 个支持抽样 × 3 个训练 seed × 7 个方法 = 1260 单元。预训练 1000/1000 步完成，耗时约 282 秒；checkpoint SHA256 为 `b1b8d3978b1f8b7b2ccc2d86263c7e07e710353c02b205c026921f57e3bb0e68`。21/21 个两步 smoke 全部通过，峰值 reserved 显存 3871342592 字节。两个 GPU 的互斥正式分片已运行，首批单元封存，启动核查时无失败。正式结果未完成时，不将 smoke 或中途部分单元作为最终实验结果。
 
 每五分钟自动同步到本地 `experiments/outputs/ogbn_arxiv_5090_20261002/`，状态见 `experiments/local/ogbn_arxiv_5090_20261002/sync_status.json`。回传排除 input、checkpoint 和 state.pt，仅保留代码、预测、指标、选参/审计、日志、表格、文档及核验清单。完成后以 `local_delivery_status.json` 确认逐文件 SHA 与独立 NumPy 复算通过；在此之前不能声称完整交付。
 
