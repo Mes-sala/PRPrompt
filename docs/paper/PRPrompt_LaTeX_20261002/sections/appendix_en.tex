@@ -55,10 +55,11 @@ Accuracy, Macro-F1, Micro-F1, macro one-vs-rest ROC-AUC, and macro average preci
 \subsection{Environment, provenance, and numerical qualification}
 The execution plan records Python 3.11.16, PyTorch 2.11.0+cu130, and CUDA 13.0 in the reused ProG environment. Per-unit records identify CUDA devices and fitting durations. An isolated total GPU-hour budget for the present reporting scope and a verified accelerator inventory are not provided by the extracted package; no efficiency comparison is inferred from these results.
 
-The tables derive from the sealed three-dataset package. It contains 3,240 main-comparison units and 540 additional shared-prompt units; \method contributes 540 units. Source-metric checksums and paired graph/checkpoint/support/query identities were verified during extraction. The source numerical audits report exact readout reproduction from saved representations for all 3,780 selected units, passing gate/forward tolerances, and no changed query classes in fresh forwards. These are archived verification results, not newly rerun experiments, and passing a tolerance does not imply bitwise-identical CUDA arithmetic.
+The tables derive from the sealed three-dataset package. It contains 3,240 main-comparison units and 540 additional shared-prompt units; \method{} contributes 540 units. Source-metric checksums and paired graph/checkpoint/support/query identities were verified during extraction. The source numerical audits report exact readout reproduction from saved representations for all 3,780 selected units, passing gate/forward tolerances, and no changed query classes in fresh forwards. These are archived verification results, not newly rerun experiments, and passing a tolerance does not imply bitwise-identical CUDA arithmetic.
 
-Source code and the table data are available in the accompanying repository at \url{https://github.com/Mes-sala/PRPrompt}. The source revision of the recorded experiments is \texttt{0328a2bb68f249a34c89557178b6233daf5ce20d}. The paper package includes table-generation and static-validation scripts, hashes, and bibliographic provenance. Model checkpoints and optimizer states remain on the experiment server and are excluded from the local paper package. This manuscript reports existing experiments; no new training or bootstrap analysis was performed for its preparation.
+Source code and the table data are available in the accompanying repository at \url{https://github.com/Mes-sala/PRPrompt}. The source revision of the recorded experiments is \texttt{0328a2bb68\allowbreak f249a34c89\allowbreak 557178b623\allowbreak 3daf5ce20d}. The paper package includes table-generation and static-validation scripts, hashes, and bibliographic provenance. Model checkpoints and optimizer states remain on the experiment server and are excluded from the local paper package. This manuscript reports existing experiments; no new training or bootstrap analysis was performed for its preparation.
 
+\clearpage
 \section{Additional Condition-Wise Metrics}
 \label{app:more}
 The following tables extend the main comparison with the remaining stored metrics under the same seed aggregation rule. Every row is a separate dataset/shot condition.
@@ -68,5 +69,5 @@ The following tables extend the main comparison with the remaining stored metric
 \clearpage
 \section{Paired Differences and Uncertainty}
 \label{app:paired}
-Each cell reports \method minus the named reference in percentage points, with its unadjusted 95\% paired support-bootstrap interval. All entries preserve the original paired statistics. Tables group conditions for readability but do not average them.
+Each cell reports \method{} minus the named reference in percentage points, with its unadjusted 95\% paired support-bootstrap interval. All entries preserve the original paired statistics. Tables group conditions for readability but do not average them.
 \input{tables/paired_all}

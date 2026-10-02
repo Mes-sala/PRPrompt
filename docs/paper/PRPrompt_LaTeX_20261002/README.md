@@ -1,6 +1,6 @@
 # PRPrompt 中英文 LaTeX 论文
 
-以已验收的三数据集叙事和数据为依据，形成完整中英文工作稿。当前采用通用论文版式，未指定投稿会议，未套用或声称符合某一会议的页数限制。按要求**不编译**，主架构图为 LaTeX 原生占位框。
+以已验收的三数据集叙事和数据为依据，形成完整中英文工作稿。当前采用通用论文版式，未指定投稿会议，未套用或声称符合某一会议的页数限制。已按后续要求在独立 Conda 环境中编译并逐页核对；主架构图仍为 LaTeX 原生占位框。
 
 ## 入口
 
@@ -31,7 +31,25 @@ python3 scripts/validate_sources.py
 
 第一个命令只从 JSON 生成 LaTeX 表格，第二个命令检查数值、引用、文件依赖、环境配对和双语一致性。两个命令都不启动训练、不重做 bootstrap，也不运行 TeX 编译器。[静态检查结果](static_validation.json)不代表排版或编译通过。
 
-源文件为 UTF-8，两版预期使用 XeLaTeX；中文使用 `ctexart` 的 Fandol 字体，英文使用 `article` 和 `fontspec`。通用依赖为 `amsmath`、`amssymb`、`booktabs`、`array`、`graphicx`、`natbib`、`hyperref`、`geometry`。本次没有生成 PDF、没有执行 BibTeX，也没有打开会自动编译的 LaTeX 预览。
+## 编译环境与 PDF
+
+独立 Conda 环境为 `prprompt-latex`，使用 Tectonic 0.17.0（XeTeX / BibTeX 自动构建）和 Poppler 26.09.0。中文使用 `ctexart` 的 Fandol 字体；英文使用 `article` 和 `fontspec`。首次编译会下载宏包与字体缓存。环境与缓存位于仓库外，不影响 ProG 实验环境。
+
+从本目录执行：
+
+```bash
+# 仅首次创建环境时执行；环境已存在时直接编译
+conda env create -f environment.yml
+python3 scripts/compile_papers.py
+```
+
+中间文件与日志写入仓库的 `experiments/local/latex_build/`；最终 PDF 写入 `output/pdf/PRPrompt_20261002/`。源码目录只保留可编辑文件。
+
+- [英文 PDF](../../../output/pdf/PRPrompt_20261002/PRPrompt_en.pdf)
+- [中文 PDF](../../../output/pdf/PRPrompt_20261002/PRPrompt_zh.pdf)
+- [编译与逐页核对记录](compilation_review.json)
+
+本次修正英文命令后的词间距、消融表缩放、表格浮动与附录分页、参考文献分页，并核对公式、中文字体、引用及表格数据。编译检查不替代实验复现，也不代表已满足特定会议模板要求。
 
 ## 研究边界
 

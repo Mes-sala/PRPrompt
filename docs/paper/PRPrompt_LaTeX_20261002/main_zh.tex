@@ -1,4 +1,4 @@
-% 中文论文工作稿。按用户要求，不编译。
+% Compiled and visually reviewed with the isolated prprompt-latex environment.
 % 未指定投稿会议，使用通用 ctexart；作者信息留空。
 \documentclass[11pt,fontset=fandol]{ctexart}
 \newif\ifChinese
@@ -10,9 +10,15 @@
 \begin{document}
 \maketitle
 \input{sections/paper_zh}
+\clearpage
+\begingroup
+\small
+\raggedright
 \bibliographystyle{plainnat}
 \bibliography{references}
+\endgroup
 \clearpage
 \appendix
+\small
 \input{sections/appendix_zh}
 \end{document}

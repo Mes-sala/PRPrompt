@@ -1,4 +1,4 @@
-% English working manuscript. No compilation was requested or performed.
+% Compiled and visually reviewed with the isolated prprompt-latex environment.
 % No venue was specified; this is a neutral article, not a submission template.
 \documentclass[11pt]{article}
 \usepackage{fontspec}
@@ -11,9 +11,14 @@
 \begin{document}
 \maketitle
 \input{sections/paper_en}
+\begingroup
+\small
+\raggedright
 \bibliographystyle{plainnat}
 \bibliography{references}
+\endgroup
 \clearpage
 \appendix
+\small
 \input{sections/appendix_en}
 \end{document}

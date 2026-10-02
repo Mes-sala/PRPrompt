@@ -1,10 +1,9 @@
-\begin{table}[htbp]
+\begin{table}[!htbp]
 \centering
 \caption{\lang{Macro-F1 (\%, higher is better). Prototype-routing ablation. Within each dataset/shot/method, training seeds are averaged within each support draw; mean and sample standard deviation are then computed over 20 support draws. Bold marks the largest mean in that row.}{Macro-F1（\%，越高越好）。原型路由消融。固定数据集、shot 与方法，在每个支持抽样内先平均训练 seed，再对 20 个支持抽样计算均值与样本标准差。粗体为该行最大均值。}}
 \label{tab:ablation-macro_f1}
 \small
 \setlength{\tabcolsep}{4pt}
-\resizebox{\linewidth}{!}{%
 \begin{tabular}{lrrr}
 \toprule
 \lang{Dataset / shot}{数据集 / shot} & \frozenname & \sharedname & \method \\
@@ -20,5 +19,4 @@ PubMed / 3 & \meanstd{63.19}{8.60} & \meanstd{60.94}{8.60} & \bestmeanstd{68.21}
 PubMed / 5 & \meanstd{66.27}{3.55} & \meanstd{66.29}{2.87} & \bestmeanstd{70.39}{2.47} \\
 \bottomrule
 \end{tabular}
-}
 \end{table}

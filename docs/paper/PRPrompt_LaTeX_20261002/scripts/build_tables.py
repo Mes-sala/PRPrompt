@@ -12,7 +12,7 @@ LABELS={'FrozenPrototype':r'\frozenname','FullFineTune':r'\ftname','GPF':'GPF','
 METRICS={'accuracy':'Accuracy','macro_f1':'Macro-F1','micro_f1':'Micro-F1','roc_auc_macro':'Macro ROC-AUC','average_precision_macro':'Macro AP'}
 def read(name):return json.loads((DATA/name).read_text())
 def table(caption,label,heads,rows,small=True):
- lines=[r'\begin{table}[htbp]',r'\centering',r'\caption{'+caption+'}',r'\label{'+label+'}',r'\small',r'\setlength{\tabcolsep}{4pt}']
+ lines=[r'\begin{table}[!htbp]',r'\centering',r'\caption{'+caption+'}',r'\label{'+label+'}',r'\small',r'\setlength{\tabcolsep}{4pt}']
  if small:lines.append(r'\resizebox{\linewidth}{!}{%')
  lines += [r'\begin{tabular}{l'+'r'*(len(heads)-1)+'}',r'\toprule',' & '.join(heads)+r' \\',r'\midrule']
  for r in rows:lines.append(' & '.join(r)+r' \\')
@@ -40,7 +40,10 @@ def render():
    en=f'{title} (\\%, higher is better). '+('Main comparison.' if group=='main' else 'Prototype-routing ablation.')+' Within each dataset/shot/method, training seeds are averaged within each support draw; mean and sample standard deviation are then computed over 20 support draws. Bold marks the largest mean in that row.'
    zh=f'{title}（\\%，越高越好）。'+('主比较。' if group=='main' else '原型路由消融。')+'固定数据集、shot 与方法，在每个支持抽样内先平均训练 seed，再对 20 个支持抽样计算均值与样本标准差。粗体为该行最大均值。'
    if group=='main':en+=' $\\dagger$: common-protocol adaptation.';zh+=' $\\dagger$：统一协议适配实现。'
-   outputs[f'{group}_{metric}.tex']=table(r'\lang{'+en+'}{'+zh+'}',f'tab:{group}-{metric}',[r'\lang{Dataset / shot}{数据集 / shot}']+[LABELS[m] for m in methods],rows)
+   if metric not in ['accuracy','macro_f1']:
+    en=f'{title} (\\%, higher is better). Main comparison; seed aggregation follows Appendix~\\ref{{app:protocol}}.'
+    zh=f'{title}（\\%，越高越好）。主比较；seed 统计沿用附录~\\ref{{app:protocol}}。'
+   outputs[f'{group}_{metric}.tex']=table(r'\lang{'+en+'}{'+zh+'}',f'tab:{group}-{metric}',[r'\lang{Dataset / shot}{数据集 / shot}']+[LABELS[m] for m in methods],rows,small=(group=='main'))
  pairs=[]
  for ref in METHODS[:-1]+['NoRouting']:
   rows=[]
@@ -55,7 +58,7 @@ def render():
     rows.append(row)
   caption=r'\lang{\method{} minus '+LABELS[ref]+r': paired differences and 95\% intervals (percentage points).}{\method{} 相对 '+LABELS[ref]+r' 的配对差值与 95\% 区间（百分点）。}'
   pairs.append(table(caption,'tab:paired-'+ref,[r'\lang{Dataset / shot}{数据集 / shot}','Accuracy','Macro-F1'],rows,False))
- outputs['paired_all.tex']='\n\\clearpage\n'.join(pairs)
+ outputs['paired_all.tex']='\n\\clearpage\n'.join('\n'.join(pairs[i:i+2]) for i in range(0,len(pairs),2))
  stats=read('datasets.json')
  outputs['datasets.tex']=table(r'\lang{Dataset dimensions and trainable prompt counts from the recorded protocol.}{记录协议中的数据维度及可学习提示参数量。}','tab:datasets',[r'\lang{Dataset}{数据集}',r'\lang{Nodes}{节点}',r'\lang{Features}{特征}',r'\lang{Classes}{类别}',r'\lang{Prompt parameters}{提示参数}'],[[d,str(stats[d]['nodes']),str(stats[d]['input_dim']),str(stats[d]['classes']),str(stats[d]['classes']*128)] for d in D],False)
  return outputs,cells

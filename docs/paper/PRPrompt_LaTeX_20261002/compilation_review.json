@@ -1,0 +1,136 @@
+{
+  "status": "passed",
+  "review_date": "2026-10-02",
+  "request": "安装独立 LaTeX 环境，编译中英文稿并自行核对",
+  "environment": {
+    "name": "prprompt-latex",
+    "platform": "macOS arm64",
+    "compiler": "Tectonic 0.17.0",
+    "bibliography": "BibTeX invoked by Tectonic",
+    "poppler": "26.09.0",
+    "rendering_and_text_validation": "PDFium via pypdfium2",
+    "note": "Poppler CJK text extraction lacked a usable language map in this installation; Chinese extraction and geometry checks used PDFium."
+  },
+  "pdfs": {
+    "en": {
+      "file": "output/pdf/PRPrompt_20261002/PRPrompt_en.pdf",
+      "sha256": "7e65c08827370e9a84a086b96d84b43600b79c6d2bd46cd9821b8ac9710f4765",
+      "bytes": 124741,
+      "pages": 14,
+      "compiler_exit_code": 0,
+      "compiler_warnings": [],
+      "all_fonts_embedded": true,
+      "embedded_font_count": 23,
+      "visual_pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "text_checks": {
+        "pages": 14,
+        "replacement_characters": 0,
+        "literal_question_pairs": 0,
+        "out_of_page_margin_characters": [],
+        "characters_per_page": [
+          3452,
+          3275,
+          2144,
+          2806,
+          3538,
+          3705,
+          3072,
+          3208,
+          3161,
+          3938,
+          3141,
+          1583,
+          1329,
+          1318
+        ],
+        "core_values_present": true
+      }
+    },
+    "zh": {
+      "file": "output/pdf/PRPrompt_20261002/PRPrompt_zh.pdf",
+      "sha256": "598a6386b13828b37751c040a0d4ba953dea4196c99b6f6757bf7d662aaef6b8",
+      "bytes": 389192,
+      "pages": 14,
+      "compiler_exit_code": 0,
+      "compiler_warnings": [],
+      "all_fonts_embedded": true,
+      "embedded_font_count": 27,
+      "visual_pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "text_checks": {
+        "pages": 14,
+        "replacement_characters": 0,
+        "literal_question_pairs": 0,
+        "out_of_page_margin_characters": [],
+        "characters_per_page": [
+          1299,
+          1186,
+          1055,
+          1322,
+          2437,
+          1673,
+          760,
+          2808,
+          1337,
+          1512,
+          2820,
+          1309,
+          1241,
+          1218
+        ],
+        "core_values_present": true
+      }
+    }
+  },
+  "visual_review": {
+    "pages_reviewed": 28,
+    "findings_remaining": [],
+    "intentional_placeholder": "main architecture figure",
+    "fixes": [
+      "English macro word spacing",
+      "Ablation table size",
+      "Table float placement and paired-table pagination",
+      "Appendix and bibliography layout",
+      "Breakable source revision identifier"
+    ],
+    "scope": "All pages rendered and visually inspected; focused full-page checks of equations, Chinese typography, and main result tables."
+  },
+  "data_preservation": {
+    "numeric_cells_validated": 432,
+    "source_json_unchanged": true,
+    "within_condition_seed_statistics_only": true,
+    "new_experiments_or_bootstrap": false
+  },
+  "private_evidence_directory": "experiments/local/latex_review_20261002",
+  "submission_ready": false,
+  "submission_note": "Neutral article format; authors and final architecture figure remain to be supplied."
+}

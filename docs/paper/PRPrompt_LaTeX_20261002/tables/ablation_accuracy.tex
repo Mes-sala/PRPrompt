@@ -1,10 +1,9 @@
-\begin{table}[htbp]
+\begin{table}[!htbp]
 \centering
 \caption{\lang{Accuracy (\%, higher is better). Prototype-routing ablation. Within each dataset/shot/method, training seeds are averaged within each support draw; mean and sample standard deviation are then computed over 20 support draws. Bold marks the largest mean in that row.}{Accuracy（\%，越高越好）。原型路由消融。固定数据集、shot 与方法，在每个支持抽样内先平均训练 seed，再对 20 个支持抽样计算均值与样本标准差。粗体为该行最大均值。}}
 \label{tab:ablation-accuracy}
 \small
 \setlength{\tabcolsep}{4pt}
-\resizebox{\linewidth}{!}{%
 \begin{tabular}{lrrr}
 \toprule
 \lang{Dataset / shot}{数据集 / shot} & \frozenname & \sharedname & \method \\
@@ -20,5 +19,4 @@ PubMed / 3 & \meanstd{65.55}{8.11} & \meanstd{62.96}{7.94} & \bestmeanstd{68.66}
 PubMed / 5 & \meanstd{68.37}{3.41} & \meanstd{67.95}{3.11} & \bestmeanstd{70.98}{2.46} \\
 \bottomrule
 \end{tabular}
-}
 \end{table}
