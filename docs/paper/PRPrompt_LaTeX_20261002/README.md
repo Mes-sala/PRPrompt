@@ -33,7 +33,7 @@ python3 scripts/validate_sources.py
 
 ## 编译环境与 PDF
 
-独立 Conda 环境为 `prprompt-latex`，使用 Tectonic 0.17.0（XeTeX / BibTeX 自动构建）和 Poppler 26.09.0。中文使用 `ctexart` 的 Fandol 字体；英文使用 `article` 和 `fontspec`。首次编译会下载宏包与字体缓存。环境与缓存位于仓库外，不影响 ProG 实验环境。
+独立 Conda 环境为 `prprompt-latex`，使用 Tectonic 0.17.0（XeTeX / BibTeX 自动构建）和 Poppler 26.09.0。中文使用 `ctexart` 和 Noto Serif CJK SC 字体；英文使用 `article` 和 `fontspec`。首次编译会下载宏包与字体缓存。中文字体固定为 [Noto Serif CJK 2.003](https://github.com/notofonts/noto-cjk/releases/tag/Serif2.003)，由 `scripts/setup_fonts.py` 下载并核验 SHA256，缓存于 `~/.cache/prprompt-latex/fonts/`。环境与缓存位于仓库外，不影响 ProG 实验环境。
 
 从本目录执行：
 
@@ -46,7 +46,7 @@ python3 scripts/compile_papers.py
 中间文件与日志写入仓库的 `experiments/local/latex_build/`；最终 PDF 写入 `output/pdf/PRPrompt_20261002/`。源码目录只保留可编辑文件。
 
 - [英文 PDF](../../../output/pdf/PRPrompt_20261002/PRPrompt_en.pdf)
-- [中文 PDF](../../../output/pdf/PRPrompt_20261002/PRPrompt_zh.pdf)
+- [中文 PDF（字体兼容修正版）](../../../output/pdf/PRPrompt_20261002/PRPrompt_zh_CJK_fixed.pdf)
 - [编译与逐页核对记录](compilation_review.json)
 
 本次修正英文命令后的词间距、消融表缩放、表格浮动与附录分页、参考文献分页，并核对公式、中文字体、引用及表格数据。编译检查不替代实验复现，也不代表已满足特定会议模板要求。
@@ -56,3 +56,9 @@ python3 scripts/compile_papers.py
 正文保留三项关键限定：基线是统一协议实现；范围在实验完成后确定；冻结权重的预训练 seed 未记录。共享提示消融也未完全排除有效容量差异。没有将这些结果表述为全部图提示方法的最优成绩。图分类、未见类别、效率优势和原型校正各步骤的独立贡献均未得到当前实验验证。
 
 [写作检查表](写作检查表.md)记录已覆盖的 ML 论文要素和投稿前仍需处理的事项。已有结果和方案不因写作发生改动。
+
+## 中文显示兼容修复
+
+首次交付的 Fandol 字体虽已嵌入，但中文 CID 字体缺少 ToUnicode 映射，并依赖阅读器提供 Adobe-GB1 映射。PDFium 能显示，缺少该映射的 Poppler 会漏掉全部中文；首次仅以 PDFium 的结果验收并不充分。现已改用 Noto Serif CJK SC，生成内嵌 Unicode 映射的 PDF。
+
+已用 Poppler 逐页渲染核对 14 页，并用 PDFium 与 pypdf 交叉检查中文文本。`compile_papers.py` 在交付前自动调用 `check_cjk_pdf.py`，检查 CID 字体映射、Poppler 错误和中文内容完整性。旧文件会被此检查拒绝，新文件通过。英文 PDF 和表格数值未变。

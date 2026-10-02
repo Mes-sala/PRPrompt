@@ -8,8 +8,8 @@
     "compiler": "Tectonic 0.17.0",
     "bibliography": "BibTeX invoked by Tectonic",
     "poppler": "26.09.0",
-    "rendering_and_text_validation": "PDFium via pypdfium2",
-    "note": "Poppler CJK text extraction lacked a usable language map in this installation; Chinese extraction and geometry checks used PDFium."
+    "rendering_and_text_validation": "Chinese: Poppler all-page visual review, PDFium rendering/text geometry, pypdf text extraction. English: previous review retained.",
+    "note": "Chinese fonts changed to Noto Serif CJK SC 2.003 with embedded ToUnicode maps; Poppler now renders and extracts CJK without reader errors."
   },
   "pdfs": {
     "en": {
@@ -63,13 +63,13 @@
     },
     "zh": {
       "file": "output/pdf/PRPrompt_20261002/PRPrompt_zh.pdf",
-      "sha256": "598a6386b13828b37751c040a0d4ba953dea4196c99b6f6757bf7d662aaef6b8",
-      "bytes": 389192,
+      "sha256": "5e9e671065b62156b9a66f5122baf43b689a054834daf3569733011ac5b976fe",
+      "bytes": 285522,
       "pages": 14,
       "compiler_exit_code": 0,
       "compiler_warnings": [],
       "all_fonts_embedded": true,
-      "embedded_font_count": 27,
+      "embedded_font_count": 26,
       "visual_pages_reviewed": [
         1,
         2,
@@ -88,27 +88,16 @@
       ],
       "text_checks": {
         "pages": 14,
+        "pdfium_han_characters": 6088,
+        "pypdf_han_characters": 6088,
+        "out_of_margin_characters": [],
         "replacement_characters": 0,
-        "literal_question_pairs": 0,
-        "out_of_page_margin_characters": [],
-        "characters_per_page": [
-          1299,
-          1186,
-          1055,
-          1322,
-          2437,
-          1673,
-          760,
-          2808,
-          1337,
-          1512,
-          2820,
-          1309,
-          1241,
-          1218
-        ],
-        "core_values_present": true
-      }
+        "question_pairs": 0,
+        "core_values_present": true,
+        "poppler_render_errors": "",
+        "sha256": "5e9e671065b62156b9a66f5122baf43b689a054834daf3569733011ac5b976fe"
+      },
+      "fresh_preview_copy": "output/pdf/PRPrompt_20261002/PRPrompt_zh_CJK_fixed.pdf"
     }
   },
   "visual_review": {
@@ -132,5 +121,31 @@
   },
   "private_evidence_directory": "experiments/local/latex_review_20261002",
   "submission_ready": false,
-  "submission_note": "Neutral article format; authors and final architecture figure remain to be supplied."
+  "submission_note": "Neutral article format; authors and final architecture figure remain to be supplied.",
+  "cjk_compatibility_fix": {
+    "cause": "Fandol CID fonts lacked embedded ToUnicode maps and relied on external Adobe-GB1 maps. The initial single-renderer review missed the defect.",
+    "font_release": "https://github.com/notofonts/noto-cjk/releases/tag/Serif2.003",
+    "poppler_pages_visually_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "pdfium_and_pypdf_han_characters": 6088,
+    "poppler_han_characters": 6088,
+    "old_pdf_rejected_by_regression_check": true,
+    "new_pdf_passed": true,
+    "private_evidence_directory": "experiments/local/latex_cjk_fix_20261002",
+    "final_recompile_pixels_match_all_reviewed_pages": true
+  }
 }
