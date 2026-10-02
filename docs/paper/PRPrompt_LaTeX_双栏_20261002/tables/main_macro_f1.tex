@@ -15,12 +15,12 @@
 \cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(l){8-10}
  & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot & 1-shot & 3-shot & 5-shot \\
 \midrule
-\frozenname & \meanstd{22.51}{4.82} & \meanstd{29.07}{3.47} & \meanstd{33.07}{4.47} & \meanstd{20.39}{2.62} & \meanstd{24.32}{1.87} & \meanstd{26.45}{2.71} & \secondmeanstd{53.44}{10.49} & \secondmeanstd{63.19}{8.60} & \secondmeanstd{66.27}{3.55} \\
-\ftname & \secondmeanstd{44.38}{10.07} & \secondmeanstd{60.94}{6.41} & \secondmeanstd{66.99}{4.52} & \secondmeanstd{30.99}{6.30} & \secondmeanstd{38.43}{5.80} & \secondmeanstd{44.62}{4.98} & \meanstd{44.52}{9.85} & \meanstd{57.64}{9.26} & \meanstd{62.53}{6.05} \\
+\frozenname & \meanstd{23.79}{4.61} & \meanstd{30.11}{2.90} & \meanstd{34.48}{2.30} & \meanstd{20.84}{3.15} & \meanstd{23.85}{3.32} & \meanstd{26.11}{3.34} & \secondmeanstd{52.29}{9.78} & \secondmeanstd{61.43}{9.05} & \secondmeanstd{64.19}{5.48} \\
+\ftname & \secondmeanstd{42.44}{7.83} & \secondmeanstd{58.11}{6.07} & \secondmeanstd{65.62}{4.62} & \secondmeanstd{28.52}{6.08} & \secondmeanstd{37.21}{6.65} & \secondmeanstd{45.91}{5.39} & \meanstd{46.50}{9.40} & \meanstd{56.26}{10.15} & \meanstd{61.97}{8.12} \\
 \midrule\rowcolor{black!5}
-\textbf{\method} & \bestmeanstd{53.34}{8.94} & \bestmeanstd{69.38}{2.91} & \bestmeanstd{72.04}{1.77} & \bestmeanstd{44.26}{5.75} & \bestmeanstd{58.19}{4.67} & \bestmeanstd{63.03}{2.12} & \bestmeanstd{57.37}{10.07} & \bestmeanstd{68.21}{4.08} & \bestmeanstd{70.39}{2.47} \\
+\textbf{\method} & \bestmeanstd{51.82}{7.47} & \bestmeanstd{68.37}{4.08} & \bestmeanstd{72.02}{2.74} & \bestmeanstd{41.48}{10.31} & \bestmeanstd{56.34}{5.54} & \bestmeanstd{61.34}{3.09} & \bestmeanstd{59.39}{7.93} & \bestmeanstd{64.82}{8.80} & \bestmeanstd{67.80}{7.59} \\
 \bottomrule
 \end{tabular*}
 \par\vspace{3pt}
-\begin{minipage}{\linewidth}\fontsize{8}{9.5}\selectfont\raggedright \lang{Local runs only: mean $\pm$ sample std. over 20 support draws after averaging three training seeds per draw. \textbf{Bold}/\underline{underline}: best/second in each column and metric panel. No cross-condition average.}{仅本地运行：先平均每次支持抽样的 3 个训练 seed，再报告 20 次抽样的均值 $\pm$ 样本标准差。\textbf{粗体}／\underline{下划线}表示同列同指标面板最优／次优；不跨条件平均。}\lang{ Literature baselines do not report this metric in Tables 4--6.}{文献表 4--6 未报告这些基线的本指标。}\end{minipage}
+\begin{minipage}{\linewidth}\fontsize{8}{9.5}\selectfont\raggedright \lang{Local original-ProG runs with support/test overlap: mean $\pm$ sample std. over 20 tasks after averaging three training seeds per task. \textbf{Bold}/\underline{underline}: best/second in each condition. No cross-condition average.}{本地原ProG实现，保留支持／测试重叠：先平均每任务3个训练seed，再报告20个任务的均值 $\pm$ 样本标准差。\textbf{粗体}／\underline{下划线}表示同条件最优／次优；不跨条件平均。}\lang{ Literature baselines do not report this metric in Tables 4--6.}{文献表 4--6 未报告这些基线的本指标。}\end{minipage}
 \end{table*}

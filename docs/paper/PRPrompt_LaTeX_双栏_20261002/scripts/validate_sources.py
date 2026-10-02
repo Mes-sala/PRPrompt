@@ -25,9 +25,9 @@ def braces(text):
 # Source equivalence and table values are checked independently of TeX expansion.
 for name,record in read(ROOT/'data/source_manifest.json').items():assert sha(ROOT/'data'/name)==record['sha256']
 main=read(ROOT/'data/main.json');abl=read(ROOT/'data/ablation.json');paired=read(ROOT/'data/paired.json')
-assert len(main)==54 and len(abl)==27 and len(paired)==270
+assert len(main)==27 and len(abl)==27 and len(paired)==135
 idx={(r['dataset'],r['shots'],r['method']):r for r in main+abl}
-assert len(idx)==63
+assert len(idx)==36
 for rows,methods in [(main,METHODS),(abl,ABLATION)]:
  assert {(r['dataset'],r['shots'],r['method']) for r in rows}=={(d,s,m) for d in D for s in SHOTS for m in methods}
  assert all(r['support_draws']==20 and r['training_repeats']==3 for r in rows)
@@ -37,9 +37,9 @@ for r in paired:
  d,s,m,k=r['dataset'],r['shots'],r['reference'],r['metric']
  assert abs(idx[d,s,'PRPrompt'][k+'_mean']-idx[d,s,m][k+'_mean']-r['mean_delta'])<1e-12
  assert r['interval_source']=='original_paired_interval'
- if k in metrics[:2]: assert r['ci95_low']>0
+ assert r['ci95_low']<=r['ci95_high']
 expected,cells=render()
-assert len(cells)==306
+assert len(cells)==426
 for name,content in expected.items(): assert (ROOT/'tables'/name).read_text()==content,name
 assert read(ROOT/'table_cell_manifest.json')==cells
 external=read(ROOT/'external/chen2026/node_classification.json')
@@ -63,21 +63,27 @@ for r in cells:
   assert (r['mean'],r['std'],r['source_table'])==(source['mean'],source['std'],source['table'])
  elif r['table']=='main':assert r['method'] in LOCAL_METHODS
  elif r['table']=='paired':assert r['reference'] in ['FrozenPrototype','FullFineTune','NoRouting']
-assert collections.Counter(r['table'] for r in cells)=={'external':63,'main':135,'ablation':54,'paired':54}
+assert collections.Counter(r['table'] for r in cells)=={'external':63,'main':135,'ablation':54,'paired':54,'extended':120}
 
 # Check the narrative's highlighted numbers against exactly identified conditions.
-for d,numbers in {'Cora':['73.02','33.56','67.50'],'CiteSeer':['66.17','27.38','47.89'],'PubMed':['70.98','68.37','63.96']}.items():
- for m,value in zip(['PRPrompt','FrozenPrototype','FullFineTune'],numbers):
-  assert f"{100*idx[d,5,m]['accuracy_mean']:.2f}"==value
+for d in D:
+ for m in LOCAL_METHODS:
+  value=f"{100*idx[d,5,m]['accuracy_mean']:.2f}"
   for lang in ['en','zh']: assert value+r'\%' in (ROOT/f'sections/paper_{lang}.tex').read_text()
-for d,mean,lo,hi in [('Cora','36.94','34.87','39.06'),('CiteSeer','40.45','39.06','41.84'),('PubMed','3.02','1.39','4.51')]:
+for d in D:
  r=next(r for r in paired if (r['dataset'],r['shots'],r['reference'],r['metric'])==(d,5,'NoRouting','accuracy'))
- assert [f"{100*r[k]:.2f}" for k in ['mean_delta','ci95_low','ci95_high']]==[mean,lo,hi]
+ mean,lo,hi=[f"{100*r[k]:.2f}" for k in ['mean_delta','ci95_low','ci95_high']]
  for lang in ['en','zh']:
   text=(ROOT/f'sections/paper_{lang}.tex').read_text();assert mean in text and f'[{lo},{hi}]' in text
 for d,c in zip(D,[7,6,3]): assert read(ROOT/'data/datasets.json')[d]['classes']==c
-for r in read(ROOT/'data/numerical_audit.json')['methods']:
- assert r['units']==540 and r['saved_readout_exact'] and r['gate_forward_failed_units']==r['fresh_query_class_changes']==0
+audit=read(ROOT/'data/numerical_audit.json')
+assert audit['completed_units']==5760 and audit['missing_units']==0 and audit['paired_support_query_indices_verified']
+assert audit['mean_std_and_bootstrap_recomputed'] and audit['saved_readout_max_error']<2e-6
+supp=read(ROOT/'data/supplementary.json');assert len(supp)==60
+assert {r['dataset'] for r in supp}=={'Photo','Computers','Actor','Chameleon','ogbn-arxiv'}
+assert all(r['support_draws']==20 and r['training_repeats']==3 for r in supp)
+inventory=read(ROOT/'data/split_inventory.json');assert len(inventory)==480
+assert sum(not r['nominal_shot_complete'] for r in inventory)==20
 
 bib=(ROOT/'references.bib').read_text();bibkeys=re.findall(r'@\w+\{([^,]+),',bib)
 normalized=[]
@@ -112,9 +118,9 @@ for lang in ['en','zh']:
  refs=re.findall(r'\\(?:eqref|ref)\{([^}]+)\}',text);assert set(refs)<=set(labels)
  cites={key.strip() for group in re.findall(r'\\cite\w*\{([^}]+)\}',text) for key in group.split(',')}
  assert cites==set(bibkeys)
- assert len(re.findall(r'\\section(?:\*)?\{',text))==11
+ assert len(re.findall(r'\\section(?:\*)?\{',text))==12
  assert r'\begin{abstract}' in text and r'\label{fig:architecture}' in text
- for ban in ['FrozenLinear','RoutedLinear','AttributeRidge','AttributePrototype','F100','F111','HardMatched','M3_original','Chameleon','Computers','Photo','TODO','CITATION NEEDED']:
+ for ban in ['FrozenLinear','RoutedLinear','AttributeRidge','AttributePrototype','F100','F111','HardMatched','M3_original','TODO','CITATION NEEDED']:
   assert ban not in text,(lang,ban)
  for stale in ['63.46','61.80','25.06']:
   assert stale not in (ROOT/f'sections/paper_{lang}.tex').read_text()
@@ -131,6 +137,6 @@ for p in ROOT.glob('*.md'):
   if '://' not in link and link!='static_validation.json': assert (p.parent/link.split('#')[0]).exists(),link
 for ext in ['*.pdf','*.aux','*.bbl','*.blg','*.log','*.pt','*.pth','*.ckpt','*.safetensors']:
  assert not list(ROOT.rglob(ext)),f'Unexpected compiled or model artifact: {ext}'
-report=dict(status='passed',scope='static source, bibliography and data validation; no compilation or rendering',languages=reports,shared_generated_table_files=len(expected),numeric_cells_verified=306,local_metric_cells=189,external_accuracy_cells=63,paired_cells=54,external_record_cells=147,external_mtg_excluded=True,external_paired_tests=False,bibliographic_records_verified=len(bibkeys),formulas_identical_between_languages=True,source_json_hashes_verified=True,within_condition_seed_statistics_only=True,no_classifier_comparisons=True,main_architecture='intentional placeholder',compilation_performed_by_this_script=False,visual_layout_verified_by_this_script=False,submission_ready=False)
+report=dict(status='passed',scope='static source, bibliography and data validation; no compilation or rendering',languages=reports,shared_generated_table_files=len(expected),numeric_cells_verified=426,local_metric_cells=309,external_accuracy_cells=63,paired_cells=54,external_record_cells=147,formal_units=5760,external_mtg_excluded=True,external_paired_tests=False,bibliographic_records_verified=len(bibkeys),formulas_identical_between_languages=True,source_json_hashes_verified=True,within_condition_seed_statistics_only=True,no_classifier_comparisons=True,main_architecture='intentional placeholder',compilation_performed_by_this_script=False,visual_layout_verified_by_this_script=False,submission_ready=False)
 (ROOT/'static_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(report,ensure_ascii=False))

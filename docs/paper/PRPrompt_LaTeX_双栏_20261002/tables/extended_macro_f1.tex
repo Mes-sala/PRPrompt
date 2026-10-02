@@ -1,0 +1,39 @@
+\par\medskip\noindent\begin{minipage}{\textwidth}
+\centering
+\linespread{1}\selectfont
+\captionsetup{font=small,skip=5pt}
+\captionof{table}{\lang{\textbf{Macro-F1 on additional datasets.}}{\textbf{扩展数据集的Macro-F1。}}}
+\label{tab:extended-macro_f1}
+\fontsize{9}{11}\selectfont
+\setlength{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\heavyrulewidth}{0.8pt}
+\setlength{\lightrulewidth}{0.4pt}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}ll*{4}{r}@{}}
+\toprule
+\lang{Dataset}{数据集} & Shot & \frozenname & \ftname & \sharedname & \textbf{\method} \\
+\midrule
+Photo & 1 & \meanstd{48.13}{4.86} & \secondmeanstd{50.48}{6.11} & \meanstd{33.00}{4.70} & \bestmeanstd{60.54}{7.59} \\
+ & 3 & \meanstd{59.13}{3.63} & \bestmeanstd{73.90}{4.73} & \meanstd{49.41}{6.56} & \secondmeanstd{71.58}{3.59} \\
+ & 5 & \meanstd{62.98}{3.93} & \bestmeanstd{79.62}{2.74} & \meanstd{51.20}{5.62} & \secondmeanstd{72.32}{4.45} \\
+\midrule
+Computers & 1 & \meanstd{36.39}{5.76} & \secondmeanstd{38.66}{8.09} & \meanstd{31.90}{5.77} & \bestmeanstd{44.77}{7.13} \\
+ & 3 & \meanstd{44.93}{3.70} & \bestmeanstd{61.51}{5.38} & \meanstd{43.38}{5.89} & \secondmeanstd{54.79}{5.46} \\
+ & 5 & \meanstd{48.50}{3.17} & \bestmeanstd{68.65}{3.88} & \meanstd{46.89}{4.24} & \secondmeanstd{59.44}{2.98} \\
+\midrule
+Actor & 1 & \secondmeanstd{19.12}{0.98} & \meanstd{16.16}{2.35} & \bestmeanstd{19.21}{0.98} & \meanstd{19.00}{1.64} \\
+ & 3 & \meanstd{19.23}{1.62} & \meanstd{18.45}{1.20} & \secondmeanstd{19.65}{0.90} & \bestmeanstd{20.06}{0.97} \\
+ & 5 & \meanstd{19.44}{1.57} & \meanstd{19.10}{0.98} & \secondmeanstd{20.16}{0.93} & \bestmeanstd{20.49}{1.51} \\
+\midrule
+Chameleon & 1 & \secondmeanstd{20.38}{2.89} & \meanstd{14.27}{2.60} & \meanstd{19.87}{3.30} & \bestmeanstd{20.72}{3.94} \\
+ & 3 & \secondmeanstd{22.04}{2.64} & \meanstd{19.98}{3.68} & \meanstd{21.55}{3.10} & \bestmeanstd{23.32}{3.93} \\
+ & 5 & \meanstd{22.75}{3.02} & \secondmeanstd{23.10}{3.33} & \meanstd{22.00}{3.37} & \bestmeanstd{26.03}{3.39} \\
+\midrule
+ogbn-arxiv & 1 & \secondmeanstd{8.35}{1.08} & \bestmeanstd{9.95}{1.45} & \meanstd{7.82}{0.98} & \meanstd{7.92}{1.05} \\
+ & 3 & \meanstd{12.77}{1.08} & \bestmeanstd{14.46}{1.25} & \meanstd{13.08}{1.18} & \secondmeanstd{14.16}{1.05} \\
+ & 5 & \meanstd{15.59}{1.01} & \secondmeanstd{16.68}{1.17} & \meanstd{16.44}{1.08} & \bestmeanstd{17.21}{0.99} \\
+\bottomrule
+\end{tabular*}
+\par\vspace{3pt}
+\begin{minipage}{\linewidth}\fontsize{8}{9.5}\selectfont\raggedright \lang{Local original-ProG runs with support/test overlap: mean $\pm$ sample std. over 20 tasks after averaging three training seeds per task. \textbf{Bold}/\underline{underline}: best/second in each condition. No cross-condition average.}{本地原ProG实现，保留支持／测试重叠：先平均每任务3个训练seed，再报告20个任务的均值 $\pm$ 样本标准差。\textbf{粗体}／\underline{下划线}表示同条件最优／次优；不跨条件平均。}\lang{ For ogbn-arxiv, shots are nominal: 7/20 three-shot and 13/20 five-shot tasks have a class shortage; see text.}{ogbn-arxiv为名义shot：3-shot中7/20、5-shot中13/20个任务存在少数类支持不足，见正文说明。}\end{minipage}
+\end{minipage}\par

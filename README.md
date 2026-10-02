@@ -8,7 +8,8 @@ PRPrompt 利用支持集锚定的类别原型构造固定的节点相关路由�
 
 ## 论文与数据
 
-- [双栏中英文 LaTeX 论文](docs/paper/PRPrompt_LaTeX_双栏_20261002/README.md)：按图 Prompt 论文的论证方式重构，含 22 篇核验文献、完整附录及共享数据表；主架构图保留占位符。
+- [原 ProG 划分复算结果](docs/results/prog_original_20261002/README.md)：5760/5760 完成，复用旧 checkpoint，保留支持／测试重叠及候选不足；同条件 seed 统计。
+- [双栏中英文 LaTeX 论文](docs/paper/PRPrompt_LaTeX_双栏_20261002/README.md)：按图 Prompt 论文的论证方式重构，含 23 篇核验文献、原 ProG 八数据集复算（正文三个、附录五个）及共享数据表；主架构图保留占位符。
 
 - [论文叙事](docs/paper/PRPrompt_三数据集_20261002/论文叙事.md)：摘要、引言、原型路由方法与结果解释。
 - [主比较表](docs/paper/PRPrompt_三数据集_20261002/主比较表.md)：冻结预训练、全量微调、GPF、GPF-plus、GraphPrompt 统一适配与 PRPrompt。

@@ -1,57 +1,13 @@
 {
-  "methods": [
-    {
-      "method": "FrozenPrototype",
-      "units": 540,
-      "saved_readout_exact": true,
-      "gate_forward_failed_units": 0,
-      "fresh_query_class_changes": 0
-    },
-    {
-      "method": "FullFineTune",
-      "units": 540,
-      "saved_readout_exact": true,
-      "gate_forward_failed_units": 0,
-      "fresh_query_class_changes": 0
-    },
-    {
-      "method": "GPF",
-      "units": 540,
-      "saved_readout_exact": true,
-      "gate_forward_failed_units": 0,
-      "fresh_query_class_changes": 0
-    },
-    {
-      "method": "GPFPlus",
-      "units": 540,
-      "saved_readout_exact": true,
-      "gate_forward_failed_units": 0,
-      "fresh_query_class_changes": 0
-    },
-    {
-      "method": "GraphPromptDiag",
-      "units": 540,
-      "saved_readout_exact": true,
-      "gate_forward_failed_units": 0,
-      "fresh_query_class_changes": 0
-    },
-    {
-      "method": "PRPrompt",
-      "units": 540,
-      "saved_readout_exact": true,
-      "gate_forward_failed_units": 0,
-      "fresh_query_class_changes": 0
-    },
-    {
-      "method": "NoRouting",
-      "units": 540,
-      "saved_readout_exact": true,
-      "gate_forward_failed_units": 0,
-      "fresh_query_class_changes": 0
-    }
-  ],
-  "cases": [],
-  "thresholds_changed": false,
-  "sealed_predictions_changed": false,
-  "qualification": "本范围全部保存读出精确通过，原门控／前向阈值全部通过，未观察到新前向类别变化；不据此声称所有浮点值逐位一致。"
+  "status": "passed",
+  "completed_units": 5760,
+  "missing_units": 0,
+  "finite_metrics": true,
+  "paired_support_query_indices_verified": true,
+  "mean_std_and_bootstrap_recomputed": true,
+  "max_summary_error": 0.0,
+  "saved_readout_max_error": 0.0,
+  "exhaustive_file_hashes": false,
+  "fresh_cuda_bitwise_audit": false,
+  "local_model_binary_files": 0
 }

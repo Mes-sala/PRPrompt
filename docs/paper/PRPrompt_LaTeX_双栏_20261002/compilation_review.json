@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "review_date": "2026-10-02",
-  "request": "Import ICML 2026 literature baseline node accuracy excluding MTG; update bilingual tables and protocol-aware narrative",
+  "review_date": "2026-10-03",
+  "request": "Original-ProG eight-dataset rerun; bilingual manuscript update",
   "environment": {
     "name": "prprompt-latex",
     "compiler": "Tectonic 0.17.0",
@@ -12,8 +12,22 @@
   "pdfs": {
     "en": {
       "file": "output/pdf/PRPrompt_双栏_20261002/PRPrompt_en.pdf",
-      "sha256": "24d6981b8f9c5be751efd8c222e37b5e7a399b6f269c3ab36b3f704252140c19",
-      "bytes": 176794,
+      "sha256": "aab5bf61f1a02b8f833d575f99ee765e6d13e41f7b83ec8809dd846526083a30",
+      "bytes": 183958,
+      "pages": 11,
+      "compiler_exit_code": 0,
+      "bibliographic_entries": 23,
+      "overfull_boxes": 0,
+      "missing_characters": 0,
+      "undefined_references_or_citations": 0,
+      "bibtex_warnings": 0,
+      "underfull_hbox_warnings": 11,
+      "underfull_note": "Spacing warnings inspected visually; no clipping."
+    },
+    "zh": {
+      "file": "output/pdf/PRPrompt_双栏_20261002/PRPrompt_zh.pdf",
+      "sha256": "806aec22d2c69d48a289c3bdd16c7cb3e388e109d7bb2aa738866de706e4135d",
+      "bytes": 341500,
       "pages": 10,
       "compiler_exit_code": 0,
       "bibliographic_entries": 23,
@@ -21,45 +35,8 @@
       "missing_characters": 0,
       "undefined_references_or_citations": 0,
       "bibtex_warnings": 0,
-      "underfull_hbox_warnings": 13,
-      "underfull_note": "English interword spacing warnings manually inspected; no clipped content.",
-      "rendered_page_sha256": {
-        "page-01.png": "de9de45a3c57e96cbebe10319a190d7d40b195cb8032bd495d53f0e9bf698c01",
-        "page-02.png": "1aa294e64f5bfdccc8067b31627c9b36d9d4e1c8bffbe7891fceb5cbbf0983ad",
-        "page-03.png": "79face789f97b5300d4f930962f37b3607629ff09e20d017e292f2bc25723512",
-        "page-04.png": "6e033470addedfb78c2b3aaaa39f16f0756375d113c78e1677637d5999b30c37",
-        "page-05.png": "6d425e0826e8055e58f87dc73e7aa0d378c5fd98ecd1a117110803b57468143a",
-        "page-06.png": "33e0ccc2868d79afdcd8be7f13c93962fdca11a6f712c68b467274bd49152218",
-        "page-07.png": "6042f79d40e26b628694258fcaa9cd3968354b075b063c5e0969aa57941bb03c",
-        "page-08.png": "da81bf121eaad5c24f70cc8fff2375f35fd0e43c350e1f939891b85a31ad1b6f",
-        "page-09.png": "306d5e7ff66305c4b6c8ec9e725f4ab2657e1de0cd2c63c4f8dfb2ffd30114e1",
-        "page-10.png": "e8270ef2e52f4d88a0e243bd8ef3952a795efc998d3b1d6c50398a4b6f0ac06b"
-      }
-    },
-    "zh": {
-      "file": "output/pdf/PRPrompt_双栏_20261002/PRPrompt_zh.pdf",
-      "sha256": "a6a51f674ea5d19fd719ae369beecb7fca357b1647f0b8361f19a1bcab2fcded",
-      "bytes": 329976,
-      "pages": 9,
-      "compiler_exit_code": 0,
-      "bibliographic_entries": 23,
-      "overfull_boxes": 0,
-      "missing_characters": 0,
-      "undefined_references_or_citations": 0,
-      "bibtex_warnings": 0,
-      "underfull_hbox_warnings": 1,
-      "underfull_note": "English interword spacing warnings manually inspected; no clipped content.",
-      "rendered_page_sha256": {
-        "page-1.png": "5b704c9ae1e7d439d283acd9c05bf21ce65b759bcf05dac62d8af2768d5dfcbb",
-        "page-2.png": "0ee766206288019d942b1fe41ceb98941f5475e3e6fbc868b4f8e7e467c946cb",
-        "page-3.png": "760f7eca65d08eab27e1aabc72f22d14893c771516fd3c99b0b3bf8ec041c587",
-        "page-4.png": "fdeadbaeb78a21d50a4bad5ffb17630af24721ec3351f57bb2de4644e771429e",
-        "page-5.png": "8fecf8cfd13a8f10326d2ec10112330e587e3cfdd3ae35ce99f801ab9aeed6f5",
-        "page-6.png": "7aa0d808f0ba985187ca9ec21524bf6127d017ba750c2220af346c442bba9891",
-        "page-7.png": "c0e085a94f2435356fa460559c728ae93033c8de5115d12c741e26a133c813ed",
-        "page-8.png": "677a5c543af6a0487b923add144b931feb269cb3c322d22f38e5eefdf162902a",
-        "page-9.png": "223010e152ebfda6dd899eadee444d5c5e562999a10efd9fe26d0fe85f630618"
-      }
+      "underfull_hbox_warnings": 3,
+      "underfull_note": "Spacing warnings inspected visually; no clipping."
     }
   },
   "review": {
@@ -76,7 +53,8 @@
         7,
         8,
         9,
-        10
+        10,
+        11
       ],
       "zh": [
         1,
@@ -87,28 +65,27 @@
         6,
         7,
         8,
-        9
+        9,
+        10
       ]
     },
-    "last_change": "External/local panel tables, bibliography and narrative updated. All pages visually inspected; main tables enlarged; every imported mean/std verified in extracted text of both PDFs.",
     "unclipped_formulas": true,
     "readable_tables": true,
     "no_blank_cjk": true,
     "no_overlapping_columns": true,
     "main_architecture": "intentional placeholder",
-    "source_documents": [
-      "bibliography/reading_manifest.json",
-      "叙事与结构参考.md",
-      "表格设计说明.md"
-    ],
-    "venue_template_compliance": "not claimed; generic 10pt A4 two-column working manuscript",
-    "render_evidence_directory": "experiments/local/mtg_import_20261002/render"
+    "render_evidence_directory": "experiments/local/prog_split_20261002/render",
+    "venue_template_compliance": "not claimed; generic 10pt A4 two-column working manuscript"
   },
   "cjk_cross_reader_text_checks": {
-    "poppler_han_characters": 6627,
-    "pdfium_han_characters": 6627,
-    "pypdf_han_characters": 6627,
-    "cid_fonts_with_embedded_unicode_maps": 15,
+    "poppler_han_characters": 7197,
+    "pdfium_han_characters": 7197,
+    "pypdf_han_characters": 7197,
     "reader_errors": false
+  },
+  "rendered_numeric_verification": {
+    "mean_std_cells": 372,
+    "paired_cells": 54,
+    "rank_emphasis_checked": true
   }
 }

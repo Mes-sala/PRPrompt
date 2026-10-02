@@ -1,27 +1,27 @@
 \section{Reproducibility}
 \label{app:protocol}
 \subsection{Graph preprocessing and fixed checkpoints}
-Table~\ref{tab:datasets} records the dataset dimensions from the execution plan. Features use the dataset loader's row normalization. Support pools and query sets come from the official training and test masks; validation labels are not used for fitting or selection. All other nodes remain visible as unlabeled graph context. Each task contains all classes of its graph, with the requested number of support nodes per class.
+Table~\ref{tab:datasets} records the main dataset dimensions. Existing graph tensors and preprocessing are retained, but official masks are no longer used. Each task follows the original ProG implementation with two independent permutations for the 90\% test set and 10\% support pool. The first $k$ members of each class are selected; other nodes provide unlabeled context. Support/test overlap is retained, with indices and counts stored in the result package.
 \input{tables/datasets}
 
-The encoder consists of two GCNConv layers of width 128 with LeakyReLU between them. The first layer includes the pretrained affine transformation and graph aggregation; the prompt is added to its output before the nonlinearity. The second convolution has no additional activation in the evaluated encoder. The same checkpoint is used by every comparison method on a dataset. Checkpoint, graph, and split hashes are preserved in the accompanying result records. The recorded pretraining family is \texttt{Edgepred\_Gprompt}; the pretraining random seed is unavailable.
+The encoder consists of two GCNConv layers of width 128 with LeakyReLU between them. The first layer includes the pretrained affine transformation and graph aggregation; the prompt is added to its output before the nonlinearity. The second convolution has no additional activation in the evaluated encoder. The same checkpoint is used by every comparison method on a dataset. Checkpoint identity is checked at preparation, and task indices are retained. The recorded pretraining family is \texttt{Edgepred\_Gprompt}; the pretraining random seed is unavailable.
 
 \subsection{Training and prediction details}
-The main text describes the active forward computation. For reproducibility, Adam uses $\beta_1=0.9$, $\beta_2=0.999$, $\epsilon=10^{-8}$, learning rate 0.01, and weight decay zero. The prompt regularizer is the mean of squared token entries multiplied by $10^{-3}$. It is separate from optimizer weight decay. The channel scale uses the sample standard deviation, with denominator $n-1$. Euclidean normalization uses the implementation's $10^{-12}$ norm floor. No distillation or query-label objective is active.
+The main text describes the active forward computation. For reproducibility, Adam uses $\beta_1=0.9$, $\beta_2=0.999$, $\epsilon=10^{-8}$, learning rate 0.01, and weight decay zero. The prompt regularizer is the mean of squared token entries multiplied by $10^{-3}$. It is separate from optimizer weight decay. The channel scale uses the sample standard deviation, with denominator $n-1$. Euclidean normalization uses the implementation's $10^{-12}$ norm floor. There is no distillation or additional test-label objective; overlapping test nodes receive supervision as support nodes.
 
-For the support loss, let $\bar z_i=\norm{Z_i}$ and $m_c=\sum_{j\in S_c}\bar z_j$. At $k>1$, the normalized prototype used for training support node $i$ is
+For the support loss, let $\bar z_i=\norm{Z_i}$ and $m_c=\sum_{j\in S_c}\bar z_j$. When $\min_c k_c>1$, the normalized prototype used for training support node $i$ is
 \begin{equation}
 \begin{aligned}
-p_c^{(-i)}&=\norm{\frac{m_c-\mathbb I[y_i=c]\bar z_i}{k-\mathbb I[y_i=c]}},\\
+p_c^{(-i)}&=\norm{\frac{m_c-\mathbb I[y_i=c]\bar z_i}{k_c-\mathbb I[y_i=c]}},\\
 \ell_{ic}&=\bar z_i^\top p_c^{(-i)}/0.2.
 \end{aligned}
 \label{eq:loo}
 \end{equation}
-For $k=1$, the inclusive class prototype $\norm{m_c/k}$ replaces $p_c^{(-i)}$. During prediction, define
+When $\min_c k_c=1$, the inclusive class prototype $\norm{m_c/k_c}$ replaces $p_c^{(-i)}$. During prediction, define
 \begin{equation}
 \begin{aligned}
 z_i^*&=\norm{Z_i-\frac1n\sum_{j\in V}Z_j},\\
-p_c^*&=\norm{\frac1k\sum_{i\in S_c}z_i^*},\\
+p_c^*&=\norm{\frac1{k_c}\sum_{i\in S_c}z_i^*},\\
 \widehat y_i&=\arg\max_c (z_i^*)^\top p_c^*.
 \end{aligned}
 \label{eq:predict}
@@ -40,12 +40,12 @@ Given a graph, a fixed checkpoint, and support labels:
 \end{enumerate}
 
 \subsection{Baseline fitting and seed control}
-The support-draw seeds are 30093000 through 30093019 and training seeds are 0, 1, and 2. A draw uses a seeded permutation in each class's support pool, taking its first $k$ entries. All methods receive the same support identities for each draw. The no-training Frozen method retains the same three seed slots for alignment, but those slots do not represent three independent fits.
+Task seeds are 30093000 through 30093019 and training seeds are 0,1,2. Each task first draws test nodes, then independently draws the support pool, selects the first $k$ nodes per class, and shuffles support order. Methods share task identities and shot-specific support sets are nested. Insufficient classes retain $k_c<k$ without replenishment. The no-training Frozen method retains three seed slots for alignment; these are not independent fits.
 
-Local Full FT uses support cross-entropy and a task readout. Its one-shot parameters are learning rate 0.01 and weight decay 0.0001. For 3 and 5 shots, each of three support-only folds holds out one node per class. Four candidate configurations are ranked by mean held-out support cross-entropy, then Full FT is refit on the complete support set. No external validation-label budget is used. This local protocol controls labeled information and final step count, but not total selection compute or readout parameterization. It does not describe the imported literature baselines.
+Local Full FT uses support cross-entropy and a task readout. Its parameters when the minimum class support count is one are learning rate 0.01 and weight decay 0.0001. When the minimum count exceeds one, each of $\min(3,\min_c k_c)$ support-only folds holds out one node per class. Four candidate configurations are ranked by mean held-out support cross-entropy, then Full FT is refit on the complete support set. No external validation-label budget is used. This local protocol controls labeled information and final step count, but not total selection compute or readout parameterization. It does not describe the imported literature baselines.
 
 \subsection{Condition-specific statistics}
-For a fixed dataset, shot count, checkpoint, and method, let $a_{st}$ denote a metric with support seed $s$ and training seed $t$. We compute
+For a fixed dataset, shot count, checkpoint, and method, let $a_{st}$ denote a metric with task seed $s$ and training seed $t$. We compute
 \begin{equation}
 \begin{aligned}
 \bar a_s&=\frac13\sum_{t=1}^{3}a_{st},\qquad
@@ -54,18 +54,18 @@ For a fixed dataset, shot count, checkpoint, and method, let $a_{st}$ denote a m
 \end{aligned}
 \label{eq:stats}
 \end{equation}
-Local cells report $100\widehat a\pm100\widehat\sigma$, not the standard error. For local paired comparisons, $d_s=\bar a_s^{\mathrm{PRPrompt}}-\bar a_s^{\mathrm{reference}}$ is resampled as a support-draw block. The percentile bounds of 10,000 resampled means form the reported 95\% interval. Existing intervals are reused without modification. Literature cells retain their source five-trial mean and standard deviation; Eq.~\eqref{eq:stats} does not apply to them. No metric average or mean effect is computed across datasets, shots, methods, or sources.
+Local cells report $100\widehat a\pm100\widehat\sigma$, not the standard error. For local paired comparisons, $d_s=\bar a_s^{\mathrm{PRPrompt}}-\bar a_s^{\mathrm{reference}}$ is resampled as a task-draw block. The percentile bounds of 10,000 resampled means form the reported 95\% interval. All intervals are recomputed for this rerun. Literature cells retain their source five-trial mean and standard deviation; Eq.~\eqref{eq:stats} does not apply to them. No metric average or mean effect is computed across datasets, shots, methods, or sources.
 
-Accuracy, Macro-F1, Micro-F1, macro one-vs-rest ROC-AUC, and macro average precision are retained in the data package. In this single-label multiclass setting, Micro-F1 coincides with Accuracy; it is included for completeness. The fixed query set is shared across support draws, so intervals concern support selection and training variation conditional on that graph, not independent samples of graphs.
+Accuracy, Macro-F1, Micro-F1, macro one-vs-rest ROC-AUC, and macro average precision are retained in the data package. In this single-label multiclass setting, Micro-F1 coincides with Accuracy; it is included for completeness. Support and test sets are redrawn across tasks; intervals reflect task sampling and training variation conditional on the graph, not independent graph samples.
 
 \subsection{Environment, provenance, and numerical qualification}
-The execution plan records Python 3.11.16, PyTorch 2.11.0+cu130, and CUDA 13.0 in the reused ProG environment. Per-unit records identify CUDA devices and fitting durations. An isolated total GPU-hour budget for the present reporting scope and a verified accelerator inventory are not provided by the extracted package; no efficiency comparison is inferred from these results.
+The existing ProG environment is reused with PyTorch 2.11.0+cu130 and the same graph inputs and checkpoints. Per-unit fitting times are recorded; concurrent wall-clock times do not establish a method-level efficiency advantage.
 
-Local table entries derive from the sealed three-dataset package. The larger archive contains 3,240 main-comparison units and 540 shared-prompt units; \method{} contributes 540 units. This manuscript displays the local Frozen, Full FT, shared-prompt, and \method{} subsets. Source numerical audits cover the archived 3,780 units, including paired identities, exact saved-representation readout reproduction, passing forward tolerances, and no changed query classes in fresh forwards. These are archived checks, not new experiments; passing tolerances does not imply bitwise-identical CUDA arithmetic.
+The eight-dataset rerun completed 5760 formal units and 96 separate two-step smoke units. Local checks cover coverage, finite metrics, paired support/test indices, and recomputed means, standard deviations, and bootstrap intervals. Saved-embedding readout uses a $2\times10^{-6}$ tolerance. An old strict filter row-sum assertion was converted to error recording without changing operator arithmetic. No exhaustive file-hash scan or fresh CUDA bitwise audit was repeated; earlier numerical audits are not presented as evidence for this rerun.
 
 External Accuracy values are transcribed from \citet{mtg2026}, Tables 4--6 (PDF pages 37--38 of arXiv:2606.03290v1). The record preserves table/page identifiers, decimal strings, source URL and PDF hash. It contains 147 node-classification cells excluding MTG; the manuscript uses 63 cells for its three datasets. Source tables combine ProG results and author reproductions, without cell-specific attribution or selected pretraining identifiers. Raw predictions are unavailable in the imported record, so no external paired tests are computed. Local historical prompt measurements remain archived but are not substituted for missing literature metrics.
 
-Source code and the table data are available in the accompanying repository at \url{https://github.com/Mes-sala/PRPrompt}. The source revision of the recorded experiments is \texttt{0328a2bb68\allowbreak f249a34c89\allowbreak 557178b623\allowbreak 3daf5ce20d}. The paper package includes table-generation and static-validation scripts, hashes, and bibliographic provenance. Model checkpoints and optimizer states remain on the experiment server and are excluded from the local paper package. This manuscript reports existing experiments; no new training or bootstrap analysis was performed for its preparation.
+Code and results are available at \url{https://github.com/Mes-sala/PRPrompt}; execution scripts are in \texttt{experiments/prog\_split\_20261002}. This work reruns adaptation and statistics under original ProG sampling without new pretraining. The first seven datasets reuse their original Edgepred\_Gprompt checkpoints with unknown pretraining seeds. ogbn-arxiv reuses its previously trained full-graph edge-prediction checkpoint with pretraining seed 42. Weights, graph snapshots, and model states remain on the server; local artifacts contain code, predictions, splits, tables, and documents.
 
 \clearpage
 \twocolumn[{
@@ -80,7 +80,17 @@ The following tables extend the main comparison with the remaining stored metric
 \twocolumn[{
 \section{Paired Differences and Uncertainty}
 \label{app:paired}
-Each cell reports \method{} minus a local reference in percentage points, with its unadjusted 95\% paired support-bootstrap interval. All entries preserve original paired statistics. Literature baselines are excluded because the runs are not paired. Tables group conditions for readability but do not average them.
+Each cell reports \method{} minus a local reference in percentage points, with its unadjusted 95\% paired task-bootstrap interval. All entries preserve original paired statistics. Literature baselines are excluded because the runs are not paired. Tables group conditions for readability but do not average them.
 \par\medskip
 \input{tables/paired_all}
 }]
+
+\clearpage
+\twocolumn[{
+\section{Additional Datasets}
+\label{app:extended}
+Photo, Computers, Actor, Chameleon, and ogbn-arxiv use the same task-level statistics. All four methods are shown without averaging datasets. Original ProG sampling is retained. On ogbn-arxiv, seven nominal 3-shot and thirteen nominal 5-shot tasks lack the requested number of supports in a minority class, with actual $k_c$ between 1 and 4. Four shortage tasks have minimum count one and retain the inclusive prototype loss; otherwise LOO uses actual class counts. Pools are not replenished.
+\input{tables/extended_accuracy}
+\input{tables/extended_macro_f1}
+}]
+\noindent Full fine-tuning outperforms \method{} on Photo and Computers at 3/5 shots, and the ogbn-arxiv 1-shot gap is particularly pronounced. Several Actor routing-effect intervals include zero; its 1-shot Macro-F1 mean difference from the shared prompt is negative. The 1-shot routing effects on Chameleon and ogbn-arxiv are also uncertain. These results do not establish universal superiority across graphs. All five metrics, paired intervals, and actual class-support counts remain in the data package.

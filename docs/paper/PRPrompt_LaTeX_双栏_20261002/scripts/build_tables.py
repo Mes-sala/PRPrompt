@@ -5,7 +5,7 @@ import json
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data'; OUT=ROOT/'tables'
 D=['Cora','CiteSeer','PubMed']; SHOTS=[1,3,5]
-METHODS=['FrozenPrototype','FullFineTune','GPF','GPFPlus','GraphPromptDiag','PRPrompt']
+METHODS=['FrozenPrototype','FullFineTune','PRPrompt']
 LOCAL_METHODS=['FrozenPrototype','FullFineTune','PRPrompt']
 EXTERNAL_METHODS=['Supervised','Fine-tuning','GPPT','Gprompt','All-in-one','GPF','GPF-plus']
 ABLATION=['FrozenPrototype','NoRouting','PRPrompt']
@@ -29,8 +29,8 @@ def end(lines,note='',static=False,narrow=False):
  lines.append(r'\end{minipage}\par' if static else (r'\end{table}' if narrow else r'\end{table*}'))
  return '\n'.join(lines)+'\n'
 
-STATS=lang(r'Mean $\pm$ std. (\%). Literature panel: \citet{mtg2026}, Tables 4--6, five trials, 90\% test allocation, best reported across pretraining strategies. Local panel: fixed edge-pretrained checkpoint and official test split; three training seeds averaged per support draw, then mean/sample std. over 20 draws. \textbf{Bold}/\underline{underline}: best/second within each panel and column only. Protocols differ; no cross-panel ranking, pairing, or pooled average.',r'均值 $\pm$ 标准差（\%）。文献面板取自 \citet{mtg2026} 表 4--6：5 次抽样、90\% 测试集、不同预训练策略中的最佳报告结果。本地面板使用固定边预测预训练权重与官方测试划分，先平均每个支持抽样的 3 个训练 seed，再统计 20 次抽样的均值／样本标准差。\textbf{粗体}／\underline{下划线}仅表示同面板同列最优／次优；不跨协议排名、配对检验或求平均。')
-SHORT=lang(r'Local runs only: mean $\pm$ sample std. over 20 support draws after averaging three training seeds per draw. \textbf{Bold}/\underline{underline}: best/second in each column and metric panel. No cross-condition average.',r'仅本地运行：先平均每次支持抽样的 3 个训练 seed，再报告 20 次抽样的均值 $\pm$ 样本标准差。\textbf{粗体}／\underline{下划线}表示同列同指标面板最优／次优；不跨条件平均。')
+STATS=lang(r'Mean $\pm$ std. (\%). Literature: \citet{mtg2026}, Tables 4--6, five trials and best reported pretraining strategy. Local: reused checkpoint and original ProG sampling (90\% test; independent support-pool draw, overlap retained); three training seeds averaged per task, then mean/sample std. over 20 tasks. \textbf{Bold}/\underline{underline}: best/second within each panel and column. Literature split identities are unavailable; other settings differ; no cross-panel pairing or pooled average.',r'均值 $\pm$ 标准差（\%）。文献：\citet{mtg2026}表4--6，5次抽样、跨预训练策略最佳报告值。本地：旧checkpoint、原ProG抽样（90\%测试；独立抽取支持池，保留重叠）；先平均每任务3个训练seed，再统计20个任务。\textbf{粗体}／\underline{下划线}仅为同面板同列最优／次优。文献具体划分未知，其他设置不一致，不跨来源配对或求平均。')
+SHORT=lang(r'Local original-ProG runs with support/test overlap: mean $\pm$ sample std. over 20 tasks after averaging three training seeds per task. \textbf{Bold}/\underline{underline}: best/second in each condition. No cross-condition average.',r'本地原ProG实现，保留支持／测试重叠：先平均每任务3个训练seed，再报告20个任务的均值 $\pm$ 样本标准差。\textbf{粗体}／\underline{下划线}表示同条件最优／次优；不跨条件平均。')
 
 def render():
  main=read('main.json');abl=read('ablation.json');effects=read('paired.json');outputs={};cells=[]
@@ -93,13 +93,32 @@ def render():
      cell=rf'\pairedcell{{{delta:+.2f}}}{{{lo:.2f}}}{{{hi:.2f}}}'
      row.append(cell);cells.append(dict(table='paired',metric=metric,dataset=d,shots=s,reference=m,mean_delta=delta,ci95_low=lo,ci95_high=hi,latex=cell))
    lines.append(' & '.join(row)+r' \\[2pt]')
-  note=lang(r'Each cell: PRPrompt minus the reference (top); unadjusted 95\% paired support-bootstrap interval (below). All values preserve the original condition-wise statistics.',r'每格上行为 PRPrompt 减去对照的差值，下行为未经多重比较校正的 95\% 配对支持 bootstrap 区间。数值沿用原始逐条件统计。')
+  note=lang(r'PRPrompt minus the reference (top); unadjusted 95\% paired task-bootstrap interval (below), recomputed for the original-ProG rerun. Support/test overlap is retained.',r'上行为PRPrompt减去对照，下行为本轮重新计算、未经多重比较校正的95\%配对任务bootstrap区间。保留支持／测试重叠。')
   pairs.append(end(lines,note,True))
  outputs['paired_all.tex']='\n\n'.join(pairs)
  stats=read('datasets.json');lines=start(lang(r'\textbf{Dataset and prompt sizes.}',r'\textbf{数据集规模与提示参数量。}'),'tab:datasets',narrow=True)
  lines += [r'\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrr@{}}',r'\toprule',lang('Dataset','数据集')+' & '+lang('Nodes','节点')+' & '+lang('Features','特征')+' & '+lang('Classes','类别')+' & '+lang(r'\shortstack{Prompt\\params.}',r'\shortstack{提示\\参数}')+r' \\',r'\midrule']
  for d in D:lines.append(' & '.join([d,f"{stats[d]['nodes']:,}",f"{stats[d]['input_dim']:,}",str(stats[d]['classes']),str(stats[d]['classes']*128)])+r' \\')
  outputs['datasets.tex']=end(lines,narrow=True)
+ sup=read('supplementary.json');si={(r['dataset'],r['shots'],r['method']):r for r in sup}
+ methods=['FrozenPrototype','FullFineTune','NoRouting','PRPrompt']
+ for metric in ['accuracy','macro_f1']:
+  title=METRICS[metric]
+  lines=start(lang(r'\textbf{'+title+r' on additional datasets.}',r'\textbf{扩展数据集的'+title+r'。}'),'tab:extended-'+metric,True)
+  lines += [r'\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}ll*{4}{r}@{}}',r'\toprule',lang('Dataset','数据集')+' & Shot & '+' & '.join(LABELS[m] for m in methods)+r' \\',r'\midrule']
+  for di,d in enumerate(['Photo','Computers','Actor','Chameleon','ogbn-arxiv']):
+   if di:lines.append(r'\midrule')
+   for s in SHOTS:
+    means=sorted({si[d,s,m][metric+'_mean'] for m in methods},reverse=True)
+    row=[d if s==1 else '',str(s)]
+    for m in methods:
+     r=si[d,s,m];rank=means.index(r[metric+'_mean'])+1;macro='bestmeanstd' if rank==1 else 'secondmeanstd' if rank==2 else 'meanstd'
+     mean,std=100*r[metric+'_mean'],100*r[metric+'_std_over_support_draws']
+     cell='\\'+macro+f'{{{mean:.2f}}}{{{std:.2f}}}';row.append(cell)
+     cells.append(dict(table='extended',metric=metric,dataset=d,shots=s,method=m,mean=mean,std=std,rank=rank,latex=cell))
+    lines.append(' & '.join(row)+r' \\')
+  note=SHORT+lang(r' For ogbn-arxiv, shots are nominal: 7/20 three-shot and 13/20 five-shot tasks have a class shortage; see text.',r'ogbn-arxiv为名义shot：3-shot中7/20、5-shot中13/20个任务存在少数类支持不足，见正文说明。')
+  outputs['extended_'+metric+'.tex']=end(lines,note,True)
  return outputs,cells
 if __name__=='__main__':
  outputs,cells=render();OUT.mkdir(exist_ok=True)

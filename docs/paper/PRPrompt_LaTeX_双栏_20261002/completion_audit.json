@@ -1,49 +1,50 @@
 {
   "status": "complete",
-  "date": "2026-10-02",
-  "scope": "Literature baseline import, source records, bilingual table and narrative update, compiled and visually checked",
+  "date": "2026-10-03",
+  "scope": "Original-ProG rerun, eight datasets, updated bilingual tables/narrative, compiled and visually checked",
   "evidence": {
-    "representative_papers_read": 9,
+    "formal_units": 5760,
+    "smoke_units_excluded": 96,
+    "original_split_parity_tasks": 480,
     "research_references": 23,
     "all_references_cited_in_both_languages": true,
     "pdf_pages": {
-      "en": 10,
-      "zh": 9
+      "en": 11,
+      "zh": 10
     },
-    "data_files_byte_identical_to_previous_package": true,
-    "table_numeric_cells": 306,
-    "new_experiments": false,
+    "table_numeric_cells": 426,
+    "local_metric_cells": 309,
+    "external_accuracy_cells": 63,
+    "local_paired_cells": 54,
+    "external_source_files_unchanged": [
+      "node_classification.json",
+      "node_classification.csv",
+      "source_rows.json",
+      "manuscript_values.md"
+    ],
+    "new_experiments": true,
+    "new_pretraining": false,
     "cross_condition_averages": false,
     "classifier_controls": false,
     "static_validation": "static_validation.json",
     "visual_validation": "compilation_review.json",
-    "bibliographic_validation": "bibliography/verification.json",
-    "table_redesign": {
-      "reference_tables": [
-        "MultiGPrompt Table 2 (PDF page 6)",
-        "RELIEF Table 1 (PDF page 7)"
-      ],
-      "generated_files": 8,
-      "numbered_tables": 9,
-      "numeric_identity_check": "external/chen2026/import_validation.json",
-      "data_changed": "Added source-labelled external values; original local data unchanged",
-      "ranking_emphasis_checked": true
-    },
-    "local_metric_cells": 189,
-    "external_accuracy_cells": 63,
-    "local_paired_cells": 54,
-    "external_import_validation": "external/chen2026/import_validation.json"
+    "result_validation": "data/numerical_audit.json",
+    "source_provenance": "data/provenance.json",
+    "generated_table_files": 10,
+    "numbered_tables": 11
   },
   "publication_status": "working draft",
   "retained_limitations": [
-    "One checkpoint per graph with unknown pretraining seed",
-    "Reporting scope selected after experiments",
-    "Shared-prompt control changes effective capacity",
-    "External literature uses different splits, five trials and pretraining selection; no paired comparison across sources"
+    "Original-ProG support/test overlap; not strictly held-out generalization",
+    "Twenty ogbn-arxiv tasks have class shortages at nominal 3/5-shot",
+    "One reused checkpoint per graph; no pretraining-run uncertainty",
+    "Shared-prompt ablation changes effective capacity",
+    "Fine-tuning wins in some conditions; some routing intervals include zero",
+    "External split identities unknown and pretraining/selection/repetition differ; no paired cross-source tests"
   ],
   "remaining_submission_items": [
     "Author information",
-    "Target venue and its official template",
+    "Target venue and official template",
     "Final architecture artwork"
   ]
 }
