@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import time
 from pathlib import Path
+from local_artifact_policy import POLICY, rsync_exclusions
 
 def run(args):
     args.destination.mkdir(parents=True, exist_ok=True); args.control.mkdir(parents=True, exist_ok=True)
@@ -22,13 +23,16 @@ def run(args):
             status(phase='waiting_for_local_space', reason='less than 10 GiB free; remote files retained')
             time.sleep(args.interval); continue
         start = time.time()
-        cmd = ['rsync', '-az', '--partial', '--exclude=__pycache__', '--exclude=*.tmp', '--exclude=*.lock',
+        status(phase='syncing', last_sync_started=start, destination=str(args.destination),
+               local_artifact_policy=POLICY, model_binaries_transferred=False)
+        cmd = ['rsync', '-az', '--partial', *rsync_exclusions(),
                '-e', ' '.join(ssh), args.host+':'+args.remote.rstrip('/')+'/', str(args.destination)+'/']
         with (args.control/'sync.log').open('a') as stream:
             stream.write(f'\n[{time.time()}] start incremental pull\n'); stream.flush()
             result = subprocess.run(cmd, stdout=stream, stderr=subprocess.STDOUT)
         status(phase='synced' if result.returncode == 0 else 'retry_pending', returncode=result.returncode,
-               last_sync_started=start, last_sync_finished=time.time(), destination=str(args.destination))
+               last_sync_started=start, last_sync_finished=time.time(), destination=str(args.destination),
+               local_artifact_policy=POLICY, model_binaries_transferred=False)
         if args.once: return result.returncode
         time.sleep(args.interval)
 

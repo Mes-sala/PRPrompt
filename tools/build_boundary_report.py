@@ -11,6 +11,9 @@ import json
 import shutil
 import statistics
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from tools.local_artifact_policy import POLICY, remote_only
 
 
 METRICS = ['accuracy', 'macro_f1', 'micro_f1', 'roc_auc_macro', 'average_precision_macro']
@@ -47,6 +50,13 @@ def require_delivery(root, delivery_path, supplementary):
     assert delivery['unit_counts'] == expected
     for key in ['paired_hashes_passed', 'support_query_and_nested_shots_passed', 'server_every_unit_readout_audit_coverage_verified']:
         assert delivery[key] is True, key
+    assert delivery['local_artifact_policy'] == POLICY
+    assert delivery['remote_model_bytes_sha256_verified'] is True
+    assert delivery['local_model_binaries_present'] == 0
+    assert delivery['remote_only_files_verified'] > 0
+    assert delivery['retained_local_files_verified'] > 0
+    assert len(delivery['remote_only_receipt_sha256']) == 64
+    assert not any(p.is_file() for p in root.rglob('*') if remote_only(p.relative_to(root)))
     if plan.get('prefit_order_guard'):
         assert delivery['prefit_order_policy_units_checked'] == (5040 if supplementary else 1260)
         assert delivery['genuine_order_reversal_rows'] == 0
@@ -245,9 +255,16 @@ def build(main, supplement, main_delivery, supplement_delivery, output):
         main_formal_units=31500, detached_readout_probes=15120, F100_new_controls=3780, F100_copied_references=2520,
         final_paper_recommendation='pending_review_of_complete_evidence', human_verification_record='not_provided', submission_ready=False,
         new_statistics=False, query_based_method_selection=False)
+    provenance['local_delivery_scope'] = {
+        'main': {k: delivery.get(k) for k in ['local_artifact_policy', 'remote_only_files_verified',
+            'retained_local_files_verified', 'remote_only_receipt_sha256']},
+        'F100_controls': {k: aux_delivery.get(k) for k in ['local_artifact_policy', 'remote_only_files_verified',
+            'retained_local_files_verified', 'remote_only_receipt_sha256']},
+        'qualification': 'Model states, checkpoints and dataset snapshots remain on the server; retained local results are individually hashed. Scientific coverage and paired audits are unchanged.'}
     (output / 'artifact_provenance.json').write_text(json.dumps(provenance, ensure_ascii=False, indent=2) + '\n')
     save_text(output, '结果索引.md', ['# 原 Edgepred_Gprompt 完整边界实验', '',
         '只在两个工作区均完整回传并通过独立审计后生成。31,500个主实验单元、15,120个固定表示探针、3,780个F100控制；2,520个父结果引用不重复计作训练。', '',
+        '本地回传范围为代码、预测与指标、选参记录、表格、文档和验收证据；checkpoint、训练状态和数据快照留在服务器，验收记录保存其远端逐文件SHA256核对凭证。', '',
         '- [软分配边界](软分配边界.md)', '- [分类头边界](分类头边界.md)', '- [1/3/5-shot表现](shot完整表现.md)',
         '- [主实验全部五指标](主实验_完整结果.md)', '- [F100同配方全部五指标](F100同配方_完整结果.md)',
         '- [数值与覆盖审计](数值与覆盖审计.json)', '- [参数与实测成本](参数与实测成本.json)', '- [来源清单](artifact_provenance.json)', '',
