@@ -1,0 +1,273 @@
+{
+  "date": "2026-10-02",
+  "evidence": {
+    "E01": {
+      "title": "当前最终方案及对照的实际代码",
+      "type": "implementation",
+      "files": {
+        "prprompt/train.py": "d878feeb319f3aa51a232cc1cd51f11cc99ff69715cb57b638166ca41a8b2272",
+        "prprompt/model.py": "db90b06dc92d044edea99de8bb0ab15f542d6ae68ef351c6559414d51aa85842",
+        "experiments/boundary_20261002/model.py": "33b8e5027ee240ac7e13758159c24cbb53d5f802dfc6025580e65236d73fece4",
+        "experiments/boundary_20261002/probes.py": "1947f660f7fd53baf90873983acf47a03f10eae77fa43ade6a3f158b78bfd6ad",
+        "experiments/v1_f100/historical.py": "045d281c7b5a2f5b8782117c45bc6be1c30ecd7d2d80b27fb17e25738d8a4740",
+        "experiments/v1_f100/reference/run_round83_graft.py": "68b59075740d2c08db4250f7c62531df5609baa7326d8018bc3039064627e6a7",
+        "experiments/v1_f100/reference/gate79.py": "555bc262c631220828d284d551d7e8d1ffaebff38ad6e8b57ae10facde7b8750",
+        "experiments/f100_boundary_20261002/model.py": "abc285c2899d18a96e71404fd7dd055d423b713503a94bfad2397099e0fcbe58"
+      }
+    },
+    "E02": {
+      "title": "七方法完整主比较",
+      "type": "results",
+      "files": {
+        "主比较数据.json": "c0767652e2d8c4b57233d52e4678e4cb3de129610ea416f27645f92c9aa63f0e"
+      }
+    },
+    "E03": {
+      "title": "同配方门控消融与分类器对照",
+      "type": "results",
+      "files": {
+        "消融数据.json": "ef310ea311fe6d32d79c8f9a78acb5e07cf7995932c1f5d4a121341b1dc1be9e"
+      }
+    },
+    "E04": {
+      "title": "配对效果和跨条件描述性汇总",
+      "type": "statistics",
+      "files": {
+        "配对差值与区间.json": "0534283c11e819f6387f1dc1d2775b4f34574451f308f5518655c2619beec975",
+        "汇总统计.json": "d512799294e65404ebc76da6f06ce0b8d739c28a70a0a385f9afd0ff3c4d6dd7"
+      }
+    },
+    "E05": {
+      "title": "冻结协议、配对身份和定向提取验收",
+      "type": "provenance",
+      "files": {
+        "数据来源与验收.json": "d90a36beff626366287ac1c4f34adeae3ce1056e3e0af6a2b23026a0165e64de"
+      }
+    },
+    "E06": {
+      "title": "选定方案及比较方法的数值复核",
+      "type": "numerical_qualification",
+      "files": {
+        "数值复核.json": "6add17d861681053e5fa45e698f267780c55f85bf802d9f6cd4e25b9c108341d"
+      }
+    }
+  },
+  "claims": [
+    {
+      "id": "C01",
+      "document": "论文叙事.md",
+      "line": 11,
+      "text_sha256": "b278d2c5371da61b7df8110f46f252901e2ca66999b48546b576cac72ca28f28",
+      "evidence": [
+        "E01"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C02",
+      "document": "论文叙事.md",
+      "line": 15,
+      "text_sha256": "3ecaa7955dfafad0259519c1b3365fdae286a8c2242e057c6a3e5bcf78700877",
+      "evidence": [
+        "E01"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C03",
+      "document": "论文叙事.md",
+      "line": 17,
+      "text_sha256": "78dbd70b3139f3f433b13b67711bdd3ea354ad4ce05bf86d64791bcd64d304c1",
+      "evidence": [
+        "E02",
+        "E03",
+        "E04"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C04",
+      "document": "论文叙事.md",
+      "line": 25,
+      "text_sha256": "f19af437c10d97a7cc3c8d227b83432af35e0e896f968a07c581a3ce511f0f96",
+      "evidence": [
+        "E01"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C05",
+      "document": "论文叙事.md",
+      "line": 27,
+      "text_sha256": "59c0d31e7895b5318dd2739d60126005888852671eef5dd44fea4c63ffaffcad",
+      "evidence": [
+        "E02",
+        "E03",
+        "E04",
+        "E05"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C06",
+      "document": "论文叙事.md",
+      "line": 33,
+      "text_sha256": "f26aa605247a85e265dd9c0caa5ea203a82737b456e9db184773bb0f04bc6471",
+      "evidence": [
+        "E01",
+        "E05"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C07",
+      "document": "论文叙事.md",
+      "line": 49,
+      "text_sha256": "27806b32f94835d101b50a2b01721125d1cc8304dcc8b5ffdbbfc6a9e742e4b9",
+      "evidence": [
+        "E01"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C08",
+      "document": "论文叙事.md",
+      "line": 57,
+      "text_sha256": "ce6b735e55e8ea1cc6f0df0c49190728d1311b861ca6945a95eaefa8f726d0a4",
+      "evidence": [
+        "E01",
+        "E05"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C09",
+      "document": "论文叙事.md",
+      "line": 59,
+      "text_sha256": "7b4bbf344ccae9d130f9f8afa75a8e58dbf14848cfc453468697cb5b8b3c2b7a",
+      "evidence": [
+        "E01"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C10",
+      "document": "论文叙事.md",
+      "line": 65,
+      "text_sha256": "bddc24c7bf75b167c5d59a81018fbbefa2e6f38a6a6d317cdeeecf3c48d3a7e7",
+      "evidence": [
+        "E02",
+        "E05"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C11",
+      "document": "论文叙事.md",
+      "line": 67,
+      "text_sha256": "bd7fe5544b9e5d12394ffc9c8d0d373e96b32bc6f073a45e9407aff6310b2f63",
+      "evidence": [
+        "E02",
+        "E04"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C12",
+      "document": "论文叙事.md",
+      "line": 69,
+      "text_sha256": "73322411a50a4ec8748b6112d4bf55f099436f7da2b005ef86abaa486038ff48",
+      "evidence": [
+        "E02",
+        "E04"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C13",
+      "document": "论文叙事.md",
+      "line": 73,
+      "text_sha256": "40436cb8d08f9d2f45748f5a33708188a31efee4859266a21d0393bf6a152e80",
+      "evidence": [
+        "E01",
+        "E03"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C14",
+      "document": "论文叙事.md",
+      "line": 75,
+      "text_sha256": "c12df47250b1a9f2871b429c287b6739c0d96501bd5043dcb4b606e5098e794b",
+      "evidence": [
+        "E03",
+        "E04"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C15",
+      "document": "论文叙事.md",
+      "line": 79,
+      "text_sha256": "28814faf6a868b1ce1e0dd2195b7d60218ee1adadb93aa467250001b59139f45",
+      "evidence": [
+        "E02",
+        "E04"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C16",
+      "document": "论文叙事.md",
+      "line": 81,
+      "text_sha256": "c2d5e696fb13c20be3d61380d6d1aa841f6980db4351deecacbbe3413fe7c2ed",
+      "evidence": [
+        "E03",
+        "E04",
+        "E05"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C17",
+      "document": "论文叙事.md",
+      "line": 87,
+      "text_sha256": "75c88f25441f1b0bd13fcbbcde110866b8bdca6c77fd1797f7fa9e4dc8730487",
+      "evidence": [
+        "E01",
+        "E05"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    },
+    {
+      "id": "C18",
+      "document": "论文叙事.md",
+      "line": 89,
+      "text_sha256": "32d0a6e308fee712b5f448dceea754ccb652efbeab9ca26c0aff63ba0612978f",
+      "evidence": [
+        "E06"
+      ],
+      "machine_checked": true,
+      "human_verification": "not_recorded"
+    }
+  ],
+  "human_verification": "not_recorded",
+  "submission_ready": false
+}

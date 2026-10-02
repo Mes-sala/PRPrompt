@@ -2,51 +2,39 @@
 
 **Prototype-Routed Graph Prompting for Few-Shot Node Classification**
 
-当前代码入口 **v2**：用支持集原型关系固定节点的提示路由，学习少量类别提示向量，在冻结 GCN 的隐藏计算中完成任务适配。使用普通 Adam 与线性分类头。
+PRPrompt 利用支持集锚定的类别原型构造固定的节点相关路由，组合少量可学习类别提示，并将提示注入冻结 GCN 的隐藏计算。最终采用原型分类。
 
-2026-10-02 的七数据集 1/3/5-shot 完整边界实验已完成并回传核验。论文主实验建议采用 **F100 原配方的 Soft 路由与居中原型读出**，1-shot 适配单列说明；软分配相对 Hard 的整体优势未成立，数值复跑异常与微调反例全部保留。详见[结果总结与论文方案](docs/results/边界实验_R3_20261002/结果总结与论文方案.md)。
+当前论文方案已经固定，材料入口为 [PRPrompt 论文材料](docs/paper/PRPrompt_20261002/README.md)。七个数据集、1/3/5-shot 的配对结果已完成回传与核验；所有条件使用同一方案，保留负结果及数值复核限制。
 
-当前使用原始 Edgepred 权重。7 个数据集的原始 checkpoint 按固定 SHA256 加载。
+## 论文与数据
 
-## 先读这些
+- [论文叙事](docs/paper/PRPrompt_20261002/论文叙事.md)：摘要、引言、原型路由方法与结果解释。
+- [主比较表](docs/paper/PRPrompt_20261002/主比较表.md)：冻结预训练、全量微调、GPF、GPF-plus、GraphPrompt 统一适配与 PRPrompt。
+- [消融与分类器对照](docs/paper/PRPrompt_20261002/消融与分类器对照.md)：共享提示、去掉提示、冻结表示线性分类，以及固定 PRPrompt 表示后的线性分类。
+- [配对比较](docs/paper/PRPrompt_20261002/配对比较.md)：完整 21 个数据集／shot 条件的差值与区间。
+- [实现与实验协议](docs/paper/PRPrompt_20261002/实现与实验协议.md)：传导式信息范围、原型校正、优化、1-shot 适配及统计细节。
+- [可复用数据与验收](docs/paper/PRPrompt_20261002/README.md#可复用数据)：最终方案 1,260 个逐次记录、完整五指标及配对统计。
 
-- [Prompt 核心叙事与方法](docs/v2/02_Prompt核心叙事.md)：摘要、引言、方法公式和主张边界。
-- [本地论文阅读与叙事判断](docs/v2/01_论文阅读与叙事判断.md)：9 篇原文的“问题—设计—证据”比较。
-- [实验计划与执行命令](docs/v2/03_实验计划与执行.md)：完整方案对预训练冻结读出、微调及已有提示算子的比较。
-- [版本变化](docs/v2/04_版本裁剪与证据迁移.md)：具体删改及历史结果的使用边界。
-- [程序验证记录](docs/validation/v2_validation.md)。
-- [Cora/CiteSeer 的原始权重 F100 结果](docs/validation/未修正Edgepred_F100验证_20261001.md)。
-- [五个新增数据集的 F100 结果](docs/validation/五数据集_F100验证_20261001.md)。
-- [F100、v2 与历史后续实验完整汇总](docs/results/后续实验汇总_20261002/后续实验汇总.md)：10,320个已完成正式单元，14个Edgepred条件，完整五指标、配对差值及负结果。
-- [完整软分配、分类头与 1/3/5-shot 结果](docs/results/边界实验_R3_20261002/结果索引.md)：仅原 Edgepred_Gprompt；35,280 个正式方法单元、15,120 个固定表示探测和 2,520 个父引用。包含完整五指标、配对区间、数值资格与论文方案建议；[冻结计划](experiments/boundary_20261002/PLAN.md)。
-- [原F100配方的配对路由控制](experiments/f100_boundary_20261002/PLAN.md)：已完整执行3,780个新控制及2,520个父引用；[执行记录](docs/validation/F100路由边界_20261002_运行记录.md)。
-- [本地保留范围与清理验收](docs/validation/本地保留范围_20261002.md)：代码、实验结果、表格和文档留本地；checkpoint、训练状态和输入快照仅保留远端。
+PRPrompt 的跨条件平均 Acc / Macro-F1 为 **51.43% / 49.80%**；相对同配方共享提示提高 **15.86 / 15.77 个百分点**。这些数值是固定图和 checkpoint 下的描述性汇总。Photo、Computers 的 3/5-shot 仍落后于全量微调；数值复跑限制在材料中逐项披露。
 
-## 当前实现
+## 实现与复现
 
 ```text
-prprompt/                    提示、模型、支持内选参与预测封存
-experiments/configs/         主比较、shot 曲线、提示机制诊断
-experiments/prepare_original_edgepred.py  原始权重哈希/架构校验与标准路径解析
-experiments/run_benchmark.py     CPU/CUDA 实验运行与续跑
-experiments/summarize.py         覆盖审计、完整方法表、配对统计
-experiments/tests/              冻结、标签隔离、梯度、协议与完整性测试
-docs/v2/                       当前论文叙事与实验计划
+experiments/boundary_20261002/model.py   最终方案的实际训练入口
+experiments/v1_f100/historical.py       冻结实现载入
+experiments/f100_boundary_20261002/     同配方共享提示控制
+experiments/boundary_20261002/probes.py 固定表示分类器对照
+prprompt/                             模型、基线和协议组件
+tools/build_prprompt_paper.py          已验收结果的定向提取与配对统计
+docs/paper/PRPrompt_20261002/           当前论文工作稿与数据
 ```
 
-复用已有 **ProG conda 环境**，依赖范围见 `pyproject.toml`。在仓库根目录先运行：
+实际训练实现与方案标识见[实现协议](docs/paper/PRPrompt_20261002/实现与实验协议.md#可复现入口)。材料提取脚本不启动训练、不修改种子或超参数；默认拒绝覆盖已有交付目录。
 
-```bash
-python experiments/tests/test_protocol.py
-python experiments/tests/test_pipeline.py
-```
+服务器复用 **ProG conda 环境**。本地只保留代码、实验结果、表格及文档；checkpoint、模型状态和数据快照保留服务器。模型权重、运行机密、机器配置、Finder 隐藏文件均由 `.gitignore` 排除。详见[本地保留范围与验收](docs/validation/本地保留范围_20261002.md)。
 
-然后按照[执行文档](docs/v2/03_实验计划与执行.md)在 GPU 服务器准备 checkpoint 清单，执行 `--dry-run` 和 `--smoke`，最后运行正式配置。本地保存代码、实验结果、表格和文档，模型权重与训练状态保留服务器。完整数据、权重、预测和本机路径清单均不进入 Git。
+## 归档与来源
 
-目前支持严格加载两层 ProG GCN checkpoint。当前主表有 7 个完整方法，聚焦预训练冻结读出、完整微调和 Prompt，采用同一支持/查询划分；1-shot 不使用额外验证标签，其余条件仅在支持集内选参。模型拟合只接收支持标签，查询概率封存之后才评分。GPF/GPFPlus 与 GraphPromptDiag 是明确标注的统一节点协议实现，不能把表格描述成全部原论文最佳配置复现。
-
-## 历史与来源
-
-`runtime/`、`archive/`、`local/` 保留先前的代码/文档来源快照，默认新入口是上面的 `prprompt/` 与 `experiments/`。[历史归档导航](docs/历史归档导航.md)保留原资料入口。历史数据检查仍可执行 `python tools/verify_repository.py`。
+[历史归档导航](docs/历史归档导航.md)保留此前材料；现有原始实验记录不因论文材料整理而改写。
 
 第三方源代码沿用原版权和许可证，例如 [ProG 许可证](archive/source_root/ProG/MIT-LICENSE.txt)。本仓库没有为混合来源历史内容重新指定统一许可证。
