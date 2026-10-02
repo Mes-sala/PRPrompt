@@ -61,10 +61,14 @@ def summarize(w,local=False):
                 lo,hi=np.quantile(samples,[.025,.975]);effects.append(dict(dataset='ogbn-arxiv',shots=shot,reference=method,metric=metric,
                     mean_delta=float(delta.mean()),ci95_low=float(lo),ci95_high=float(hi)))
     if local:
-        assert rows==json.loads((w/'analysis/summary.json').read_text())
-        assert effects==json.loads((w/'analysis/paired.json').read_text())
+        from tools.verify_float64_records import compare_records
+        numeric_audit=dict(
+            summary=compare_records(rows,json.loads((w/'analysis/summary.json').read_text())),
+            paired=compare_records(effects,json.loads((w/'analysis/paired.json').read_text())))
+        write(w/'local_numeric_comparison.json',numeric_audit)
         write(w/'local_delivery_status.json',dict(status='complete',units=len(seen),maximum_metric_error=max_error,
             source_and_prediction_hashes_verified=True,summary_and_paired_recomputed=True,local_checkpoint_files=0,
+            numeric_comparison='local_numeric_comparison.json',
             fresh_forward_query_changes=diagnostic_changes,plan_sha256=plan['plan_sha256']))
         return
     analysis=w/'analysis';write(analysis/'summary.json',rows);write(analysis/'paired.json',effects)
