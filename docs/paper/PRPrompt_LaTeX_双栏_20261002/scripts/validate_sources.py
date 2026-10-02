@@ -2,7 +2,7 @@
 """Static manuscript checks only. Does not invoke TeX, BibTeX, or a renderer."""
 from pathlib import Path
 import collections, hashlib, json, re, ast
-from build_tables import render, ROOT, D, SHOTS, METHODS, ABLATION
+from build_tables import render, ROOT, D, SHOTS, METHODS, ABLATION, LOCAL_METHODS, EXTERNAL_METHODS
 
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def read(path): return json.loads(path.read_text())
@@ -39,9 +39,31 @@ for r in paired:
  assert r['interval_source']=='original_paired_interval'
  if k in metrics[:2]: assert r['ci95_low']>0
 expected,cells=render()
-assert len(cells)==432
+assert len(cells)==306
 for name,content in expected.items(): assert (ROOT/'tables'/name).read_text()==content,name
 assert read(ROOT/'table_cell_manifest.json')==cells
+external=read(ROOT/'external/chen2026/node_classification.json')
+assert len(external)==147 and sum(r['included_in_manuscript'] for r in external)==63
+assert {r['method'] for r in external}==set(EXTERNAL_METHODS)
+assert all(r['metric']=='accuracy' and r['runs']==5 and r['origin']=='literature_reported' for r in external)
+extidx={(r['dataset'],r['shots'],r['method']):r for r in external}
+assert len(extidx)==147
+raw=read(ROOT/'external/chen2026/source_rows.json')
+assert len(raw)==21
+for r in raw:
+ values=re.findall(r'(\d+\.\d+)±(\d+\.\d+)',r['line']);assert len(values)==7
+ method=r['line'][:re.search(r'\d+\.\d+±',r['line']).start()].strip()
+ for dataset,(mean,std) in zip(D+['Wisconsin','Texas','Actor','ogbn-arxiv'],values):
+  cell=extidx[dataset,r['shot'],method]
+  assert (cell['reported_mean'],cell['reported_std'])==(mean,std)
+  assert (cell['mean'],cell['std'])==(float(mean),float(std))
+for r in cells:
+ if r['table']=='external':
+  source=extidx[r['dataset'],r['shots'],r['method']]
+  assert (r['mean'],r['std'],r['source_table'])==(source['mean'],source['std'],source['table'])
+ elif r['table']=='main':assert r['method'] in LOCAL_METHODS
+ elif r['table']=='paired':assert r['reference'] in ['FrozenPrototype','FullFineTune','NoRouting']
+assert collections.Counter(r['table'] for r in cells)=={'external':63,'main':135,'ablation':54,'paired':54}
 
 # Check the narrative's highlighted numbers against exactly identified conditions.
 for d,numbers in {'Cora':['73.02','33.56','67.50'],'CiteSeer':['66.17','27.38','47.89'],'PubMed':['70.98','68.37','63.96']}.items():
@@ -109,6 +131,6 @@ for p in ROOT.glob('*.md'):
   if '://' not in link and link!='static_validation.json': assert (p.parent/link.split('#')[0]).exists(),link
 for ext in ['*.pdf','*.aux','*.bbl','*.blg','*.log','*.pt','*.pth','*.ckpt','*.safetensors']:
  assert not list(ROOT.rglob(ext)),f'Unexpected compiled or model artifact: {ext}'
-report=dict(status='passed',scope='static source, bibliography and data validation; no compilation or rendering',languages=reports,shared_generated_table_files=len(expected),numeric_cells_verified=432,primary_and_additional_metric_cells=324,paired_cells=108,bibliographic_records_verified=len(bibkeys),formulas_identical_between_languages=True,source_json_hashes_verified=True,within_condition_seed_statistics_only=True,no_classifier_comparisons=True,main_architecture='intentional placeholder',compilation_performed_by_this_script=False,visual_layout_verified_by_this_script=False,submission_ready=False)
+report=dict(status='passed',scope='static source, bibliography and data validation; no compilation or rendering',languages=reports,shared_generated_table_files=len(expected),numeric_cells_verified=306,local_metric_cells=189,external_accuracy_cells=63,paired_cells=54,external_record_cells=147,external_mtg_excluded=True,external_paired_tests=False,bibliographic_records_verified=len(bibkeys),formulas_identical_between_languages=True,source_json_hashes_verified=True,within_condition_seed_statistics_only=True,no_classifier_comparisons=True,main_architecture='intentional placeholder',compilation_performed_by_this_script=False,visual_layout_verified_by_this_script=False,submission_ready=False)
 (ROOT/'static_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(report,ensure_ascii=False))

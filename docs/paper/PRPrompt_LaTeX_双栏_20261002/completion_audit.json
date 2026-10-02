@@ -1,17 +1,17 @@
 {
   "status": "complete",
   "date": "2026-10-02",
-  "scope": "Bilingual manuscript and verified references, with redesigned tables and compilation/visual/data consistency review",
+  "scope": "Literature baseline import, source records, bilingual table and narrative update, compiled and visually checked",
   "evidence": {
-    "representative_papers_read": 8,
-    "research_references": 22,
+    "representative_papers_read": 9,
+    "research_references": 23,
     "all_references_cited_in_both_languages": true,
     "pdf_pages": {
-      "en": 9,
+      "en": 10,
       "zh": 9
     },
     "data_files_byte_identical_to_previous_package": true,
-    "table_numeric_cells": 432,
+    "table_numeric_cells": 306,
     "new_experiments": false,
     "cross_condition_averages": false,
     "classifier_controls": false,
@@ -25,17 +25,21 @@
       ],
       "generated_files": 8,
       "numbered_tables": 9,
-      "numeric_identity_check": "table_redesign_validation.json",
-      "data_changed": false,
+      "numeric_identity_check": "external/chen2026/import_validation.json",
+      "data_changed": "Added source-labelled external values; original local data unchanged",
       "ranking_emphasis_checked": true
-    }
+    },
+    "local_metric_cells": 189,
+    "external_accuracy_cells": 63,
+    "local_paired_cells": 54,
+    "external_import_validation": "external/chen2026/import_validation.json"
   },
   "publication_status": "working draft",
   "retained_limitations": [
     "One checkpoint per graph with unknown pretraining seed",
     "Reporting scope selected after experiments",
-    "Common-protocol baselines are not best published configurations",
-    "Shared-prompt control changes effective capacity"
+    "Shared-prompt control changes effective capacity",
+    "External literature uses different splits, five trials and pretraining selection; no paired comparison across sources"
   ],
   "remaining_submission_items": [
     "Author information",

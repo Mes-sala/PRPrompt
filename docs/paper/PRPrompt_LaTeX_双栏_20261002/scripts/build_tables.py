@@ -6,6 +6,8 @@ ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data'; OUT=ROOT/'tables'
 D=['Cora','CiteSeer','PubMed']; SHOTS=[1,3,5]
 METHODS=['FrozenPrototype','FullFineTune','GPF','GPFPlus','GraphPromptDiag','PRPrompt']
+LOCAL_METHODS=['FrozenPrototype','FullFineTune','PRPrompt']
+EXTERNAL_METHODS=['Supervised','Fine-tuning','GPPT','Gprompt','All-in-one','GPF','GPF-plus']
 ABLATION=['FrozenPrototype','NoRouting','PRPrompt']
 LABELS={'FrozenPrototype':r'\frozenname','FullFineTune':r'\ftname','GPF':'GPF','GPFPlus':'GPF-plus','GraphPromptDiag':r'\gpromptname','PRPrompt':r'\textbf{\method}','NoRouting':r'\sharedname'}
 METRICS={'accuracy':'Accuracy','macro_f1':'Macro-F1','micro_f1':'Micro-F1','roc_auc_macro':'Macro ROC-AUC','average_precision_macro':'Macro AP'}
@@ -27,11 +29,12 @@ def end(lines,note='',static=False,narrow=False):
  lines.append(r'\end{minipage}\par' if static else (r'\end{table}' if narrow else r'\end{table*}'))
  return '\n'.join(lines)+'\n'
 
-STATS=lang(r'Mean $\pm$ sample standard deviation (\%). Within each fixed condition, three training seeds are averaged per support draw, then 20 support draws are summarized. \textbf{Bold}: best; \underline{underlined}: second-best mean in each column. No averaging across columns.',r'均值 $\pm$ 样本标准差（\%）。每个固定条件内，先平均支持抽样内的 3 个训练 seed，再统计 20 次支持抽样。每列\textbf{粗体}为最优均值，\underline{下划线}为次优；不跨列平均。')
-SHORT=lang(r'Statistics and emphasis follow Table~\ref{tab:main-accuracy}. Each column is a separate dataset/shot condition.',r'统计与强调规则同表~\ref{tab:main-accuracy}；每列对应独立的数据集／shot 条件。')
+STATS=lang(r'Mean $\pm$ std. (\%). Literature panel: \citet{mtg2026}, Tables 4--6, five trials, 90\% test allocation, best reported across pretraining strategies. Local panel: fixed edge-pretrained checkpoint and official test split; three training seeds averaged per support draw, then mean/sample std. over 20 draws. \textbf{Bold}/\underline{underline}: best/second within each panel and column only. Protocols differ; no cross-panel ranking, pairing, or pooled average.',r'均值 $\pm$ 标准差（\%）。文献面板取自 \citet{mtg2026} 表 4--6：5 次抽样、90\% 测试集、不同预训练策略中的最佳报告结果。本地面板使用固定边预测预训练权重与官方测试划分，先平均每个支持抽样的 3 个训练 seed，再统计 20 次抽样的均值／样本标准差。\textbf{粗体}／\underline{下划线}仅表示同面板同列最优／次优；不跨协议排名、配对检验或求平均。')
+SHORT=lang(r'Local runs only: mean $\pm$ sample std. over 20 support draws after averaging three training seeds per draw. \textbf{Bold}/\underline{underline}: best/second in each column and metric panel. No cross-condition average.',r'仅本地运行：先平均每次支持抽样的 3 个训练 seed，再报告 20 次抽样的均值 $\pm$ 样本标准差。\textbf{粗体}／\underline{下划线}表示同列同指标面板最优／次优；不跨条件平均。')
 
 def render():
  main=read('main.json');abl=read('ablation.json');effects=read('paired.json');outputs={};cells=[]
+ external=json.loads((ROOT/'external/chen2026/node_classification.json').read_text())
  def metric_rows(group,data,methods,metric):
   idx={(r['dataset'],r['shots'],r['method']):r for r in data};rows=[]
   for m in methods:
@@ -49,9 +52,23 @@ def render():
  for metric,title in METRICS.items():
   static=metric not in ['accuracy','macro_f1']
   caption=lang(r'\textbf{'+title+r' on few-shot node classification.} Higher is better ($\uparrow$).',r'\textbf{少样本节点分类的 '+title+r'。}越高越好（$\uparrow$）。')
-  lines=start(caption,'tab:main-'+metric,static)+grouped_header()+metric_rows('main',main,METHODS,metric)
-  note=STATS if metric=='accuracy' else SHORT
-  if not static:note+=lang(r' $\dagger$: GraphPrompt under the common-protocol adaptation.',r' $\dagger$：GraphPrompt 的统一协议适配实现。')
+  lines=start(caption,'tab:main-'+metric,static)+grouped_header()
+  if metric=='accuracy':
+   lines.append(r'\multicolumn{10}{@{}l}{\textit{'+lang('Literature-reported baselines','文献报告基线')+r'~\citep{mtg2026}}} \\[2pt]')
+   idx={(r['dataset'],r['shots'],r['method']):r for r in external}
+   for m in EXTERNAL_METHODS:
+    if m=='GPPT':lines.append(r'\midrule')
+    row=[m]
+    for d in D:
+     for s in SHOTS:
+      r=idx[d,s,m];rank=sorted({idx[d,s,k]['mean'] for k in EXTERNAL_METHODS},reverse=True).index(r['mean'])+1
+      macro='bestmeanstd' if rank==1 else 'secondmeanstd' if rank==2 else 'meanstd'
+      cell='\\'+macro+'{'+r['reported_mean']+'}{'+r['reported_std']+'}'
+      row.append(cell);cells.append(dict(table='external',metric=metric,dataset=d,shots=s,method=m,mean=r['mean'],std=r['std'],rank=rank,source='chen2026',source_table=r['table'],latex=cell))
+    lines.append(' & '.join(row)+r' \\')
+   lines.extend([r'\midrule',r'\multicolumn{10}{@{}l}{\textit{'+lang('Local measurements (different protocol)','本地测量（协议不同）')+r'}} \\[2pt]'])
+  lines+=metric_rows('main',main,LOCAL_METHODS,metric)
+  note=STATS if metric=='accuracy' else SHORT+lang(' Literature baselines do not report this metric in Tables 4--6.',r'文献表 4--6 未报告这些基线的本指标。')
   outputs['main_'+metric+'.tex']=end(lines,note,static)
  # One ablation table with two metric panels, sharing the condition header.
  lines=start(lang(r'\textbf{Prototype-routing ablation.} Matched prompt recipe and readout.',r'\textbf{原型路由消融。}提示训练配方与读出保持一致。'),'tab:ablation')+grouped_header()
@@ -66,7 +83,7 @@ def render():
   title=METRICS[metric];caption=lang(r'\textbf{Paired '+title+r' gains of \method.} Differences in percentage points.',r'\textbf{\method 的 '+title+r' 配对增益。}差值单位为百分点。')
   lines=start(caption,'tab:paired-'+metric,True)+grouped_header(lang('Reference','对照方法'))
   lines.extend([r'\renewcommand{\arraystretch}{1.35}'])
-  for m in METHODS[:-1]+['NoRouting']:
+  for m in LOCAL_METHODS[:-1]+['NoRouting']:
    if m in ['GPF','NoRouting']:lines.append(r'\midrule')
    row=[LABELS[m]]
    for d in D:
