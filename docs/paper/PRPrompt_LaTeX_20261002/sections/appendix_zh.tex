@@ -1,0 +1,72 @@
+\section{实现与可复现细节}
+\label{app:protocol}
+\subsection{图预处理与固定权重}
+表~\ref{tab:datasets} 给出执行计划记录的数据维度。特征使用数据加载器的逐行归一化；官方训练与测试掩码分别定义支持池和查询集，验证集标签不用于拟合或选参。其他节点作为未标注图上下文可见。每个任务包含该图的全部类别，每类抽取指定数量的支持节点。
+\input{tables/datasets}
+
+编码器由两层宽度为 128 的 GCNConv 构成，中间使用 LeakyReLU。第一层包含预训练仿射变换与图聚合，提示添加在该层输出、非线性激活之前；第二层卷积在所评估编码器中不再接额外激活。每个数据集的所有方法使用相同权重，结果记录保存权重、图及划分的哈希。预训练来源标识为 \texttt{Edgepred\_Gprompt}，预训练随机种子未记录。
+
+\subsection{训练与预测细节}
+正文描述实际生效的前向计算。Adam 使用 $\beta_1=0.9$、$\beta_2=0.999$、$\epsilon=10^{-8}$，学习率为 0.01，权重衰减为 0。提示正则为提示矩阵元素平方的均值乘以 $10^{-3}$，与优化器权重衰减不同。逐通道尺度使用分母为 $n-1$ 的样本标准差；欧氏归一化采用实现中的 $10^{-12}$ 范数下界。训练中没有生效的蒸馏目标或查询标签目标。
+
+对于支持损失，令 $\bar z_i=\norm{Z_i}$，$m_c=\sum_{j\in S_c}\bar z_j$。当 $k>1$ 时，支持节点 $i$ 的训练原型为
+\begin{equation}
+p_c^{(-i)}=\norm{\frac{m_c-\mathbb I[y_i=c]\bar z_i}{k-\mathbb I[y_i=c]}},\qquad
+\ell_{ic}=\bar z_i^\top p_c^{(-i)}/0.2.
+\label{eq:loo}
+\end{equation}
+$k=1$ 时，以包含自身的类别原型 $\norm{m_c/k}$ 替代 $p_c^{(-i)}$。预测时定义
+\begin{equation}
+z_i^*=\norm{Z_i-\frac1n\sum_{j\in V}Z_j},\quad
+p_c^*=\norm{\frac1k\sum_{i\in S_c}z_i^*},\quad
+\widehat y_i=\arg\max_c (z_i^*)^\top p_c^*.
+\label{eq:predict}
+\end{equation}
+将余弦 logits 除以 0.2 后取 softmax，得到五项指标使用的概率分数。训练时不使用预测阶段的输出中心化。读出是固定实现选择，不是本文的实验比较因素。
+
+\paragraph{计算流程。}
+给定图、固定预训练权重及支持标签：
+\begin{enumerate}
+\item 归一化邻接，计算式~\eqref{eq:attributes} 及第一层预激活表示。
+\item 依式~\eqref{eq:anchor} 初始化支持原型，执行式~\eqref{eq:assignment}--\eqref{eq:refinement} 三轮。
+\item 依式~\eqref{eq:routing} 计算固定路由；共享提示消融则将其替换为 $B_{ic}=1/C$。
+\item 初始化 $P=0$ 并缓存隐藏通道尺度，固定编码器与路由。
+\item 重复 100 步：运行提示编码器，构造支持 logits，依式~\eqref{eq:loss} 更新 $P$。
+\item 依式~\eqref{eq:predict} 计算最终原型分数，封存预测后再使用查询标签评分。
+\end{enumerate}
+
+\subsection{基线拟合与随机种子}
+支持抽样 seed 为 30093000 至 30093019，训练 seed 为 0、1、2。每次抽样在逐类支持池中生成有种子控制的排列，取前 $k$ 个节点；各方法接收相同支持身份。免训练的冻结预训练条件为对齐记录而保留三个 seed 槽位，不能将其视为三次独立拟合。
+
+可学习比较方法使用支持交叉熵。全量微调与输入提示方法包含任务读出，GraphPrompt 适配实现则对提示后的表示进行原型预测。GPF 添加共享特征向量，GPF-plus 学习 20 个特征提示及输入相关组合。它们在 1-shot 下的固定参数为学习率 0.01、权重衰减 0.0001。3-shot 和 5-shot 的三个支持内折各留出每类一个节点，按留出支持交叉熵均值选择四种候选配置，再在完整支持集上拟合所选方法；不使用额外验证标签预算。该协议控制了标注信息与最终训练步数，但没有令总选参计算量或读出参数化完全一致。
+
+\subsection{同一条件内的统计}
+固定数据集、shot 数、预训练权重和方法，以 $a_{st}$ 表示支持 seed $s$、训练 seed $t$ 的某项指标，计算
+\begin{equation}
+\bar a_s=\frac13\sum_{t=1}^{3}a_{st},\quad
+\widehat a=\frac1{20}\sum_{s=1}^{20}\bar a_s,\quad
+\widehat\sigma=\sqrt{\frac1{19}\sum_{s=1}^{20}(\bar a_s-\widehat a)^2}.
+\label{eq:stats}
+\end{equation}
+表中报告 $100\widehat a\pm100\widehat\sigma$，不是标准误。配对比较对 $d_s=\bar a_s^{\mathrm{PRPrompt}}-\bar a_s^{\mathrm{reference}}$ 按支持抽样块重采样，以 10,000 次重采样均值的百分位点构成 95\% 区间。原区间直接复用，不作修改。不跨数据集、shot 或方法计算指标均值与平均效应。
+
+数据包保留 Accuracy、Macro-F1、Micro-F1、宏平均 one-vs-rest ROC-AUC 和宏平均 AP。单标签多分类下 Micro-F1 与 Accuracy 相同，此处为完整性一并列出。不同支持抽样共享固定查询集，区间反映该图条件下支持选择和训练的波动，并非独立图样本的不确定性。
+
+\subsection{环境、来源与数值复核}
+执行计划记录复用 ProG 环境中的 Python 3.11.16、PyTorch 2.11.0+cu130 与 CUDA 13.0，逐次结果记录 CUDA 设备及拟合时间。当前提取包未给出本报告范围独立核算的总 GPU 小时及已核实的加速器清单，本文不据此进行效率比较。
+
+表格来源于封存的三数据集材料，包含主比较 3,240 个单元和额外共享提示 540 个单元，其中 \method 占 540 个单元。提取时核对原始指标文件校验和及配对图、权重、支持／查询身份。源数值审计显示，所选 3,780 个单元在保存表示上的读出全部精确复现，门控／前向误差通过阈值，新前向未产生查询类别变化。这些结论来自归档复核，不是本次重新运行实验；阈值通过也不等同于 CUDA 运算逐位一致。
+
+代码与表格数据见随附仓库 \url{https://github.com/Mes-sala/PRPrompt}。已记录实验的源码版本为 \texttt{0328a2bb68f249a34c89557178b6233daf5ce20d}。论文包包含表格生成、静态检查脚本、哈希及文献来源记录。模型权重和优化器状态保留在实验服务器，不包含在本地论文包内。本文整理既有实验，没有为撰稿新增训练或 bootstrap 分析。
+
+\section{其余逐条件指标}
+\label{app:more}
+以下表格按相同 seed 统计口径补充主比较的其余指标，每一行仍对应独立的数据集／shot 条件。
+\input{tables/main_micro_f1}
+\input{tables/main_roc_auc_macro}
+\input{tables/main_average_precision_macro}
+\clearpage
+\section{配对差值与不确定性}
+\label{app:paired}
+各单元格报告 \method 减去指定对照的差值，单位为百分点，并附未经多重比较校正的 95\% 配对支持 bootstrap 区间。所有数值保留原配对记录，表格仅组织不同条件，不对其求平均。
+\input{tables/paired_all}

@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\caption{\lang{Accuracy (\%, higher is better). Prototype-routing ablation. Within each dataset/shot/method, training seeds are averaged within each support draw; mean and sample standard deviation are then computed over 20 support draws. Bold marks the largest mean in that row.}{Accuracy（\%，越高越好）。原型路由消融。固定数据集、shot 与方法，在每个支持抽样内先平均训练 seed，再对 20 个支持抽样计算均值与样本标准差。粗体为该行最大均值。}}
+\label{tab:ablation-accuracy}
+\small
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrr}
+\toprule
+\lang{Dataset / shot}{数据集 / shot} & \frozenname & \sharedname & \method \\
+\midrule
+Cora / 1 & \meanstd{23.17}{5.48} & \meanstd{22.62}{4.41} & \bestmeanstd{54.59}{9.18} \\
+Cora / 3 & \meanstd{29.42}{3.47} & \meanstd{31.70}{4.95} & \bestmeanstd{70.76}{2.76} \\
+Cora / 5 & \meanstd{33.56}{5.03} & \meanstd{36.08}{4.19} & \bestmeanstd{73.02}{1.95} \\
+CiteSeer / 1 & \meanstd{21.14}{2.87} & \meanstd{20.72}{2.46} & \bestmeanstd{47.12}{6.31} \\
+CiteSeer / 3 & \meanstd{25.29}{2.16} & \meanstd{24.01}{2.70} & \bestmeanstd{61.20}{4.98} \\
+CiteSeer / 5 & \meanstd{27.38}{2.84} & \meanstd{25.73}{2.78} & \bestmeanstd{66.17}{2.16} \\
+PubMed / 1 & \meanstd{55.44}{11.42} & \meanstd{53.84}{10.55} & \bestmeanstd{58.70}{9.78} \\
+PubMed / 3 & \meanstd{65.55}{8.11} & \meanstd{62.96}{7.94} & \bestmeanstd{68.66}{4.58} \\
+PubMed / 5 & \meanstd{68.37}{3.41} & \meanstd{67.95}{3.11} & \bestmeanstd{70.98}{2.46} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

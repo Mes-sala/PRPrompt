@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering
+\caption{\lang{Micro-F1 (\%, higher is better). Main comparison. Within each dataset/shot/method, training seeds are averaged within each support draw; mean and sample standard deviation are then computed over 20 support draws. Bold marks the largest mean in that row. $\dagger$: common-protocol adaptation.}{Micro-F1（\%，越高越好）。主比较。固定数据集、shot 与方法，在每个支持抽样内先平均训练 seed，再对 20 个支持抽样计算均值与样本标准差。粗体为该行最大均值。 $\dagger$：统一协议适配实现。}}
+\label{tab:main-micro_f1}
+\small
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrrr}
+\toprule
+\lang{Dataset / shot}{数据集 / shot} & \frozenname & \ftname & GPF & GPF-plus & \gpromptname & \method \\
+\midrule
+Cora / 1 & \meanstd{23.17}{5.48} & \meanstd{45.41}{10.18} & \meanstd{15.20}{3.24} & \meanstd{30.80}{6.64} & \meanstd{21.88}{4.62} & \bestmeanstd{54.59}{9.18} \\
+Cora / 3 & \meanstd{29.42}{3.47} & \meanstd{61.54}{6.78} & \meanstd{24.32}{4.66} & \meanstd{40.21}{4.80} & \meanstd{27.75}{3.64} & \bestmeanstd{70.76}{2.76} \\
+Cora / 5 & \meanstd{33.56}{5.03} & \meanstd{67.50}{5.06} & \meanstd{28.17}{5.54} & \meanstd{53.14}{5.55} & \meanstd{31.36}{3.61} & \bestmeanstd{73.02}{1.95} \\
+CiteSeer / 1 & \meanstd{21.14}{2.87} & \meanstd{35.76}{6.80} & \meanstd{17.10}{2.64} & \meanstd{21.40}{4.60} & \meanstd{19.53}{3.34} & \bestmeanstd{47.12}{6.31} \\
+CiteSeer / 3 & \meanstd{25.29}{2.16} & \meanstd{42.22}{5.88} & \meanstd{20.36}{2.02} & \meanstd{28.92}{2.68} & \meanstd{24.83}{2.77} & \bestmeanstd{61.20}{4.98} \\
+CiteSeer / 5 & \meanstd{27.38}{2.84} & \meanstd{47.89}{4.85} & \meanstd{21.40}{2.57} & \meanstd{31.82}{2.60} & \meanstd{27.66}{2.49} & \bestmeanstd{66.17}{2.16} \\
+PubMed / 1 & \meanstd{55.44}{11.42} & \meanstd{48.77}{8.54} & \meanstd{36.29}{5.79} & \meanstd{41.12}{6.83} & \meanstd{50.24}{12.95} & \bestmeanstd{58.70}{9.78} \\
+PubMed / 3 & \meanstd{65.55}{8.11} & \meanstd{59.75}{7.97} & \meanstd{51.28}{6.93} & \meanstd{57.46}{4.96} & \meanstd{62.47}{5.54} & \bestmeanstd{68.66}{4.58} \\
+PubMed / 5 & \meanstd{68.37}{3.41} & \meanstd{63.96}{5.18} & \meanstd{55.83}{4.93} & \meanstd{61.37}{5.32} & \meanstd{66.94}{4.09} & \bestmeanstd{70.98}{2.46} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

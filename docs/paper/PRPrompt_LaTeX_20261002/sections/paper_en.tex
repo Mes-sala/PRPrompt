@@ -1,0 +1,128 @@
+\begin{abstract}
+We introduce \method, a graph prompting method that uses support-set prototypes to route trainable prompts to individual nodes. With only a few labeled nodes per class, adaptation must determine both what a prompt should encode and where its contribution should be applied. \method constructs class references from aggregated node attributes, refines them using unlabeled graph features while retaining support anchors, and converts node--prototype associations into a fixed routing matrix. The resulting combinations of class prompt tokens are injected into a frozen graph convolutional encoder, followed by prototype classification. We evaluate each 1-, 3-, and 5-shot setting separately on Cora, CiteSeer, and PubMed using matched support draws and training seeds. In the 5-shot setting, \method achieves accuracies of 73.02\%, 66.17\%, and 70.98\%, respectively; replacing a shared prompt with prototype routing improves accuracy by 36.94, 40.45, and 3.02 percentage points in the corresponding conditions. These paired results support the value of prototype-guided prompt allocation within the evaluated transductive setting.
+\end{abstract}
+
+\section{Introduction}
+Graph prompting adapts a pretrained graph neural network using a limited set of task-specific parameters. This is attractive for few-shot node classification, where only a handful of labels are available for each class. Existing approaches adapt the input feature space, introduce prompt structures, or modify the readout of a frozen representation~\citep{gpf2023,allinone2023,graphprompt2023}. Alongside the choice of where to inject a prompt, a basic design decision concerns how to distribute its contribution across nodes.
+
+A shared prompt applies the same modification to every node at the injection point. It can express a global adjustment, but its allocation does not depend on the relation between a node and the target classes. Input-dependent prompt combinations provide a more flexible alternative~\citep{gpf2023}. In a few-shot task, however, the small labeled support set also supplies an explicit set of class references. We ask whether these references can organize prompt allocation directly, so that learning focuses on prompt content rather than on an additional routing network.
+
+Our hypothesis is that support-set prototypes can serve as coordinates for node-specific adaptation. Nodes related to a similar task class can receive related combinations of prompts, while different class relationships can induce different adjustments. The prototypes need not be learned model parameters: they can be computed from graph attributes and the support labels before prompt optimization. This separates the computation of task-conditioned allocation from the optimization of prompt tokens.
+
+We instantiate this idea as \method. The method first forms centered, normalized representations of two-hop aggregated attributes. Support examples initialize class prototypes, which are refined using unlabeled node features with an explicit anchor to the support initialization. Node--prototype associations are centered across the graph and aggregated over neighbors to obtain a fixed routing matrix. This matrix mixes a small bank of trainable class prompts, which enter the first hidden layer of a frozen GCN. Prediction uses a prototype readout. Figure~\ref{fig:architecture} identifies the roles of the fixed routing and trainable prompts.
+
+We evaluate adaptation and routing with complementary comparisons. The main comparison includes a frozen pretrained encoder, full fine-tuning, and three prompt operators implemented under a common node-classification protocol. The routing ablation holds the prompt parameterization, injection point, optimization recipe, and readout fixed, replacing node-dependent routing with a shared mixture. A no-prompt condition measures the effect of the complete adaptation pipeline. All results are reported separately for Cora, CiteSeer, and PubMed at each shot count; averaging is restricted to seeds within a fixed condition.
+
+Our contributions are:
+\begin{itemize}
+\item A prototype-routed prompt construction that turns support-conditioned class relationships into fixed node-specific coefficients for adapting a frozen graph encoder.
+\item A compact implementation with $C\times128$ trainable prompt parameters, without a learned routing network, and an explicit separation between unlabeled feature use and label-based fitting.
+\item Matched comparisons and routing ablations for three citation datasets at 1, 3, and 5 shots, with condition-specific seed variability and paired uncertainty intervals.
+\end{itemize}
+The contribution concerns the use of class references to organize hidden-layer prompts. It does not assert that prototypes, unlabeled prototype refinement, or node-dependent prompting are individually new.
+
+\section{Related Work}
+\paragraph{Graph prompting and task adaptation.}
+GPPT studies graph pretraining and prompt tuning for downstream adaptation~\citep{gppt2022}. GraphPrompt organizes pretraining and downstream prediction through a common similarity-based template and adapts task-specific readout~\citep{graphprompt2023}. All in One introduces prompt tokens, their structure, and insertion patterns within a multi-task graph prompting framework~\citep{allinone2023}. GPF and GPF-plus operate in the input feature space, including node-dependent prompt combinations~\citep{gpf2023}. Our distinction is the use of support-anchored prototype relationships to compute a fixed allocation of hidden-layer prompts. We do not equate node dependence itself with novelty or claim universal applicability across pretraining objectives.
+
+\paragraph{Prototypes and unlabeled examples.}
+Prototypical Networks classify examples through distances to support-set class representatives~\citep{proto2017}. Semi-supervised few-shot learning has also used unlabeled examples to improve prototype construction~\citep{semiproto2018}. These precedents motivate a restrained interpretation of our design: prototypes provide task references, while the contribution studied here is their role in routing prompt updates. The routing prototypes reside in aggregated attribute space and remain fixed during prompt training; the final prediction prototypes are constructed from the adapted encoder output. We evaluate known classes on one graph rather than meta-learning transfer to unseen classes.
+
+\paragraph{Evaluation protocols.}
+ProG provides a common framework and library for comparing graph prompting methods~\citep{prog2024}. We use a ProG-compatible GCN and fixed edge-prediction checkpoints, and expose the differences between original methods and our common-protocol implementations. The resulting comparisons characterize this controlled setting; they are not reproductions of every baseline's strongest published configuration.
+
+\section{Problem Setting}
+Let $G=(V,E,X)$ be an attributed graph with $n$ nodes, features $X\in\mathbb R^{n\times d}$, and $C$ task classes. For each class $c$, a support set $S_c$ contains $k$ labeled nodes, with $k\in\{1,3,5\}$. Let $S=\bigcup_c S_c$ and let $T$ be a disjoint query set. The full graph topology and all node features are visible; only labels in $S$ are provided to fitting and hyperparameter selection. Query labels are used for scoring after predictions are sealed.
+
+The encoder is a pretrained two-layer GCN~\citep{gcn2017} with hidden and output dimensions of 128. Its parameters are frozen for \method. The task is transductive, same-graph classification over known classes: query features participate in graph aggregation, prototype refinement, and global centering. It is not an inductive unseen-class evaluation. Throughout the paper, a \emph{condition} fixes the dataset, shot count, method, and pretrained checkpoint.
+
+\section{Prototype-Routed Graph Prompting}
+\label{sec:method}
+\input{architecture_placeholder}
+\subsection{Support-anchored class references}
+Let $\widehat A=\widetilde D^{-1/2}(A+I)\widetilde D^{-1/2}$ denote the normalized adjacency with self-loops. We form a routing representation from two-hop aggregated attributes:
+\begin{equation}
+R=\rownorm\!\left(\widehat A^2X-\mathbf1\,\mean_{v\in V}(\widehat A^2X)_v\right).
+\label{eq:attributes}
+\end{equation}
+Here $\rownorm$ applies Euclidean normalization to each row. Routing therefore uses graph attributes and structure, rather than a separate learned network. Initial class references are
+\begin{equation}
+\mu_c^{(0)}=\frac{1}{k}\sum_{i\in S_c}R_i.
+\label{eq:anchor}
+\end{equation}
+
+To incorporate the unlabeled graph while retaining a labeled reference, let $U_V=V\setminus S$. Starting from $\mu^{(0)}$, we apply three fixed refinement iterations:
+\begin{align}
+a_{ic}^{(t)}&=\frac{\exp(R_i^\top\norm{\mu_c^{(t)}}/0.05)}{\sum_{c'}\exp(R_i^\top\norm{\mu_{c'}^{(t)}}/0.05)},\quad i\in U_V,\label{eq:assignment}\\
+\mu_c^{(t+1)}&=0.5\mu_c^{(0)}+0.5\frac{\sum_{i\in U_V}a_{ic}^{(t)}R_i}{\max(\sum_{i\in U_V}a_{ic}^{(t)},10^{-8})},\quad t=0,1,2.\label{eq:refinement}
+\end{align}
+The anchor is always the original support prototype, not the previous iterate. This is a fixed prototype construction; we do not claim an expectation-maximization objective or a convergence guarantee. No labels from $U_V$ enter these computations.
+
+\subsection{From class relationships to a fixed routing matrix}
+Using the refined prototypes, we compute node--class associations at temperature $\tau_r=0.1$:
+\begin{equation}
+Q_{ic}=\softmax_c\!\left(R_i^\top\norm{\mu_c^{(3)}}/\tau_r\right),\qquad
+B=\widehat A\left(Q-\mathbf1\,\mean_{v\in V}Q_v\right).
+\label{eq:routing}
+\end{equation}
+Centering expresses a node's class association relative to the graph-wide average; neighborhood aggregation incorporates adjacent association patterns. $Q$ is a row-normalized association matrix, whereas $B$ contains signed prompt-combination coefficients. We do not interpret $B$ as a class-probability matrix. $B$ is computed once per support set and kept fixed throughout training.
+
+\subsection{Adapting frozen hidden computations}
+Let $H^{\mathrm{pre}}$ be the first GCN layer's preactivation on the original graph. We learn a zero-initialized matrix $P\in\mathbb R^{C\times128}$. With $s$ the vector of channelwise sample standard deviations of $H^{\mathrm{pre}}$, clamped below by $10^{-6}$, the prompted hidden representation is
+\begin{equation}
+\widetilde H^{\mathrm{pre}}=H^{\mathrm{pre}}+10\,[B\tanh(P)]\odot s.
+\label{eq:injection}
+\end{equation}
+The scale vector is broadcast over nodes. The existing LeakyReLU and second graph convolution then produce $Z$. Thus, prompt content is learned through support supervision, while routing and backbone parameters remain fixed. Zero initialization recovers the frozen encoder at the start of optimization. The trainable prompt counts are 896, 768, and 384 for Cora, CiteSeer, and PubMed.
+
+\subsection{Training and prediction}
+We optimize the prompt matrix for 100 Adam steps with learning rate 0.01 and no weight decay:
+\begin{equation}
+\mathcal L(P)=\frac{1}{|S|}\sum_{i\in S}\operatorname{CE}(\ell_i(P),y_i)
++10^{-3}\mean(P\odot P).
+\label{eq:loss}
+\end{equation}
+The support logits $\ell_i$ use cosine prototype classification at temperature 0.2. For 3 and 5 shots, a support node is excluded from its own class prototype when forming its training logits. At 1 shot, training uses the inclusive prototype because excluding the only labeled example would leave that class undefined. Prediction uses support prototypes after subtracting the global output mean and normalizing each node representation. These readout details are fixed throughout the routing ablation; Appendix~\ref{app:protocol} specifies them for reproduction.
+
+The routing is a one-time computation. For sparse graphs, the two attribute aggregation steps cost $O(|E|d)$; prototype refinement costs $O(nCd)$ per iteration; and multiplying $B$ by prompt tokens costs $O(nC\cdot128)$ per optimization step, in addition to the frozen encoder's forward and backward computations. Freezing weights reduces trainable parameters but does not eliminate gradient computation through the second convolution. We report parameter counts, not an unmeasured runtime advantage.
+
+\section{Experiments}
+\subsection{Protocol and comparison methods}
+\label{sec:protocol}
+We evaluate Cora, CiteSeer, and PubMed at 1, 3, and 5 shots per class. The official training masks define the support pools and the official test masks define fixed query sets. Within a support draw, a shared per-class permutation yields nested 1-, 3-, and 5-shot sets. Each condition contains 20 support seeds and three training seeds. All methods share graph, checkpoint, and support/query identities within a condition. The pretrained source is the original edge-prediction checkpoint used by the project for each dataset; its pretraining seed is unavailable.
+
+The main comparison contains: \textbf{Frozen}, with no prompt and the same final prototype readout as \method; \textbf{Full FT}, updating the pretrained encoder and a task readout; \textbf{GPF} and \textbf{GPF-plus}, adapting the input features; and \textbf{GraphPrompt$^{\dagger}$}, a diagonal readout-prompt implementation in the common node protocol. GPF-plus uses 20 prompt tokens. The dagger denotes a protocol adaptation, not a full reproduction of GraphPrompt's original subgraph-based pipeline. These prompt baselines are inspired by their original definitions~\citep{gpf2023,graphprompt2023} but evaluated with the present backbone and selection rules.
+
+\method and the shared-prompt ablation use one fixed recipe. For comparison methods that require selection, 3- and 5-shot fitting uses three support-only folds and four candidates: learning rate in $\{0.001,0.01\}$ and weight decay in $\{0,0.0001\}$. Each candidate fit and final fit uses 100 steps; 1-shot uses fixed parameters. Consequently, the methods do not have identical total optimization budgets. Appendix~\ref{app:protocol} gives the remaining settings.
+
+\paragraph{Statistical unit.}
+For a fixed condition, we first average three training seeds within each support draw, then report the mean and sample standard deviation over the 20 support draws. We never average performance across datasets or shot counts. Paired intervals resample support draws, preserving method pairing, with 10,000 bootstrap samples. They are unadjusted 95\% intervals for the fixed graph and checkpoint. Accuracy and Macro-F1 are the primary reported metrics; the remaining metrics appear in Appendix~\ref{app:more}.
+
+\subsection{Adaptation relative to pretraining, fine-tuning, and prompting}
+This comparison tests whether the complete prototype-routed adaptation improves prediction under the same graph, checkpoint, and labeled support budget. Tables~\ref{tab:main-accuracy} and~\ref{tab:main-macro_f1} report every condition, without a pooled average.
+\input{tables/main_accuracy}
+\input{tables/main_macro_f1}
+
+On Cora at 5 shots, \method reaches 73.02\% accuracy compared with 33.56\% for Frozen and 67.50\% for Full FT. On CiteSeer at the same shot count, the corresponding accuracies are 66.17\%, 27.38\%, and 47.89\%. PubMed has a stronger frozen reference: 68.37\% at 5 shots, compared with 70.98\% for \method and 63.96\% for Full FT. Thus, the improvement over frozen pretraining is substantially smaller on PubMed, an important dependence that a cross-dataset average would hide.
+
+The same condition-wise comparison favors \method over each of the three prompt operators in Accuracy and Macro-F1. All reported Accuracy and Macro-F1 paired intervals against the five main references are positive. These intervals quantify seed-dependent variability within this setup; they do not establish superiority over all graph prompting methods or over independent graph populations. Full paired differences are provided in Appendix~\ref{app:paired}.
+
+\subsection{Does prototype routing add value beyond a shared prompt?}
+The central ablation replaces $B$ in Eq.~\eqref{eq:injection} by the constant matrix with entries $1/C$. This retains the prompt matrix, scale, injection point, optimization, and final readout, but removes node-dependent allocation. The constant matrix is used directly; centering it would erase the prompt. We also retain the no-prompt Frozen reference.
+\input{tables/ablation_accuracy}
+\input{tables/ablation_macro_f1}
+
+Tables~\ref{tab:ablation-accuracy} and~\ref{tab:ablation-macro_f1} show that a shared prompt alone does not account for the gains. At 5 shots, routing improves accuracy over the shared prompt by 36.94 percentage points on Cora, 40.45 on CiteSeer, and 3.02 on PubMed. The respective paired 95\% intervals are $[34.87,39.06]$, $[39.06,41.84]$, and $[1.39,4.51]$ percentage points. The improvement is also positive in both primary metrics in each 1- and 3-shot condition.
+
+This comparison supports the complete prototype-routing construction relative to a shared prompt. It does not isolate prototype refinement, centering, and graph aggregation as separate causes. A uniform mixture also reduces the effective degrees of freedom despite retaining the nominal prompt parameter count. We therefore do not interpret the comparison as a capacity-matched proof of a unique routing mechanism.
+
+\section{Limitations}
+The evaluation covers three citation graphs, one fixed pretrained checkpoint per graph, and same-graph known-class classification. Pretraining seeds are unknown, so variation across pretraining runs is not estimated. The reporting scope was chosen after the experiments were completed; the analysis is descriptive rather than a new independent confirmatory study. It cannot support claims about graph classification, unseen classes, or arbitrary pretraining sources.
+
+The common-protocol prompt baselines and their restricted hyperparameter search need not attain their best published results. Baseline selection also incurs a different training budget from the fixed \method recipe. The routing ablation changes effective prompt capacity and does not distinguish every component of the routing construction. Finally, the method uses query features and graph-wide statistics; deployment without such transductive access requires separate evaluation.
+
+\section{Conclusion}
+\method uses support-anchored prototypes to organize the allocation of trainable hidden-layer prompts in a frozen graph encoder. In the evaluated Cora, CiteSeer, and PubMed settings, condition-wise comparisons and shared-prompt ablations support the value of this allocation. The evidence favors prototype routing as a practical adaptation design within the tested protocol, while leaving its generality across graph families and pretraining sources open.
+
+\section*{Broader Impact}
+The study concerns public citation-network benchmarks and does not evaluate decisions about individuals. Errors can propagate through graph aggregation and unlabeled prototype refinement, particularly when the graph or class structure differs from the evaluated setting. Applications involving consequential decisions require domain-specific evaluation beyond these benchmarks.
