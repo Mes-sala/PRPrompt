@@ -2,7 +2,9 @@
 
 **Prototype-Routed Graph Prompting for Few-Shot Node Classification**
 
-当前版本 **v2**：用支持集原型关系固定节点的提示路由，学习少量类别提示向量，在冻结 GCN 的隐藏计算中完成任务适配。使用普通 Adam 与线性分类头。
+当前代码入口 **v2**：用支持集原型关系固定节点的提示路由，学习少量类别提示向量，在冻结 GCN 的隐藏计算中完成任务适配。使用普通 Adam 与线性分类头。
+
+2026-10-02 的七数据集 1/3/5-shot 完整边界实验已完成并回传核验。论文主实验建议采用 **F100 原配方的 Soft 路由与居中原型读出**，1-shot 适配单列说明；软分配相对 Hard 的整体优势未成立，数值复跑异常与微调反例全部保留。详见[结果总结与论文方案](docs/results/边界实验_R3_20261002/结果总结与论文方案.md)。
 
 当前使用原始 Edgepred 权重。7 个数据集的原始 checkpoint 按固定 SHA256 加载。
 
@@ -16,8 +18,9 @@
 - [Cora/CiteSeer 的原始权重 F100 结果](docs/validation/未修正Edgepred_F100验证_20261001.md)。
 - [五个新增数据集的 F100 结果](docs/validation/五数据集_F100验证_20261001.md)。
 - [F100、v2 与历史后续实验完整汇总](docs/results/后续实验汇总_20261002/后续实验汇总.md)：10,320个已完成正式单元，14个Edgepred条件，完整五指标、配对差值及负结果。
-- [进行中的软分配、分类头与 1/3/5-shot 实验](experiments/boundary_20261002/PLAN.md)：仅原 Edgepred_Gprompt，七数据集完整配对；完成后再决定论文方案。
-- [原F100配方的配对路由控制](experiments/f100_boundary_20261002/PLAN.md)：独立源码与计划，等待主实验完整审计后使用GPU；[执行记录](docs/validation/F100路由边界_20261002_运行记录.md)。
+- [完整软分配、分类头与 1/3/5-shot 结果](docs/results/边界实验_R3_20261002/结果索引.md)：仅原 Edgepred_Gprompt；35,280 个正式方法单元、15,120 个固定表示探测和 2,520 个父引用。包含完整五指标、配对区间、数值资格与论文方案建议；[冻结计划](experiments/boundary_20261002/PLAN.md)。
+- [原F100配方的配对路由控制](experiments/f100_boundary_20261002/PLAN.md)：已完整执行3,780个新控制及2,520个父引用；[执行记录](docs/validation/F100路由边界_20261002_运行记录.md)。
+- [本地保留范围与清理验收](docs/validation/本地保留范围_20261002.md)：代码、实验结果、表格和文档留本地；checkpoint、训练状态和输入快照仅保留远端。
 
 ## 当前实现
 
@@ -38,7 +41,7 @@ python experiments/tests/test_protocol.py
 python experiments/tests/test_pipeline.py
 ```
 
-然后按照[执行文档](docs/v2/03_实验计划与执行.md)准备本机 checkpoint 清单，执行 `--dry-run` 和 `--smoke`，最后运行正式配置。完整数据、权重、预测和本机路径清单均不进入 Git。
+然后按照[执行文档](docs/v2/03_实验计划与执行.md)在 GPU 服务器准备 checkpoint 清单，执行 `--dry-run` 和 `--smoke`，最后运行正式配置。本地保存代码、实验结果、表格和文档，模型权重与训练状态保留服务器。完整数据、权重、预测和本机路径清单均不进入 Git。
 
 目前支持严格加载两层 ProG GCN checkpoint。当前主表有 7 个完整方法，聚焦预训练冻结读出、完整微调和 Prompt，采用同一支持/查询划分；1-shot 不使用额外验证标签，其余条件仅在支持集内选参。模型拟合只接收支持标签，查询概率封存之后才评分。GPF/GPFPlus 与 GraphPromptDiag 是明确标注的统一节点协议实现，不能把表格描述成全部原论文最佳配置复现。
 

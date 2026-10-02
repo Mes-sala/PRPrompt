@@ -1,0 +1,42 @@
+{
+  "schema": "PRPrompt-complete-grid-paper-recommendation-v1",
+  "primary_recipe": "F100_original_soft_routing_centered_readout",
+  "three_and_five_shot_method": "F100Historical",
+  "one_shot_method": "F100OneShotAdapt",
+  "one_shot_qualification": "预声明inclusive损失适配；不能称为原LOO配方。",
+  "joint_recipe_alternative": "Soft__Ridge",
+  "joint_recipe_alternative_scope": "联合训练头比较中较有支持的简化备选，并未得到超越F100整体配方的证据；F100-vs-Ridge未新建配对区间。",
+  "choice_basis": "F100与已声明微调和其他Prompt对照的完整配对表现、Macro-F1、跨条件反例、参数量及数值资格。21条件等权均值是描述性统计，不构造跨图显著性。",
+  "soft_routing_claim": "类别相关提示路由相对Shared和None的收益有支持；Soft相对Hard/HardMatched的整体优势未成立。",
+  "centered_head_claim": "居中原型读出在固定父表示上有条件收益；联合训练收益不普遍，F100的历史LOO及其他配方变化不能归因为分类头单独效应。",
+  "query_scoring_complete_before_recommendation": true,
+  "query_labels_used_for_training_or_hyperparameter_selection": false,
+  "per_condition_recipe_stitching": false,
+  "training_or_protocol_changed_after_query_scoring": false,
+  "new_inferential_statistics": false,
+  "numerical_qualification": "主实验50个、F100新控制16个单元未满足原gate/forward数值门槛；新前向累计1567+784次query类别变化。保存表示读出精确，封存预测及区间未改。",
+  "submission_ready": false,
+  "data_scope": {
+    "family": "Edgepred_Gprompt",
+    "datasets": [
+      "Cora",
+      "CiteSeer",
+      "PubMed",
+      "Photo",
+      "Computers",
+      "Actor",
+      "Chameleon"
+    ],
+    "shots": [
+      1,
+      3,
+      5
+    ],
+    "support_draws": 20,
+    "training_repeats": 3
+  },
+  "runtime_source_commit": "0328a2bb68f249a34c89557178b6233daf5ce20d",
+  "main_plan_sha256": "9ca11e42e7233b6d54fa29aa3520daba4cad1f6bc5e8345016e82ffb3c761699",
+  "F100_plan_sha256": "536e6ef9468c710b666fdae7ad07158d8246218c4d64e5e974857dc3991bf9e3",
+  "descriptive_review_sha256": "073c586180a9e1987e7adeb8fe71fae20a1fcf2e794901b6fcad1634f0950619"
+}
