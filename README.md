@@ -2,7 +2,13 @@
 
 **Prototype-Routed Graph Prompting for Few-Shot Node Classification**
 
-PRPrompt 利用支持集锚定的类别原型构造固定的节点相关路由，组合少量可学习类别提示，并将提示注入冻结 GCN 的隐藏计算。最终采用原型分类。
+PRPrompt 利用支持集锚定的类别原型构造固定的节点相关路由，组合少量可学习类别提示，并采用冻结 GCN 与原型分类。
+
+## 输入层代码入口（2026-10-12）
+
+新增 [输入层 F100Soft 与子图输入 PRPrompt](docs/input_variants.md)：`prprompt/input_variants.py` 提供 `fit_fullgraph` 和 `fit_subgraph`。前者保留原输入层 F100Soft 的数值路径；后者使用子图内传播与均值池化，保留输入 Prompt、固定全图 Soft 路由及原型目标。数据、子图与支持集由调用方提供，不绑定特定实验设置。
+
+下列论文材料及隐藏层实验入口保留其原有版本和适用范围，不代表上述两个输入层入口的实验结果。
 
 当前论文方案已经固定，材料入口为 [PRPrompt 论文材料](docs/paper/PRPrompt_三数据集_20261002/README.md)。当前范围为 Cora、CiteSeer、PubMed 的全部 1/3/5-shot 条件；所有条件使用同一方案，以原型路由为核心组织主比较及消融。
 
