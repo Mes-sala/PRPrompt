@@ -1,9 +1,0 @@
-{
-  "scientific_freeze_sha256": "7cb08854ba27bad3981c5a1b24e4d38904b4c390dcd8440734bc9a8857ceb73c",
-  "legacy_runner_sha256": "6a2b77d4acc79822e082c68613992cddf9fddeca6fdf729b7a2777075c74b7ea",
-  "shard_runner_sha256": "c7e5ea09407b7ef1f465e845b50bc791b8b09a0b78421aaec693f1a408c5249f",
-  "shards": 4,
-  "partition": "cell index modulo four; disjoint full cells; unchanged job algorithm",
-  "replay_requirement": "All six completed ENZYMES/random_s101 episode0 jobs, exact score arrays, class arrays, parameter tensors and loss trajectories",
-  "migration_requirement": "Only after replay passes: stop old producer, preserve every committed file hash, quarantine uncommitted job directories, resume disjoint shards; no scientific changes."
-}

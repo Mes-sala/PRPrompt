@@ -1,9 +1,0 @@
-# R157 CiteSeer固定迁移与审计参数化
-
-依据R155 Cora固定确认，不改变GraphMAE、rank1、A/B学习率0.0025、Prompt学习率0.01、100步、ridge plain教师、scale2损失、k50读出。CiteSeer6类使Prompt参数由896自然变为768，LoRA仍256，合计1024。GraphMAE2是预设辅助检查，不能换checkpoint冒称固定迁移成功。
-
-先完成一支持227199、12步的21行smoke，全轨迹和首末梯度审计后再决定正式。正式5支持227100..227104，105行；固定方案对同教师不带LoRA的scale2匹配比较，同时有旧CE、普通LR LoRA、frozen、GraphPrompt和Direct ridgeplain。主选择不调参，不以本轮最高格替换。
-
-该矩阵仅检验Cora方案直接迁移。CiteSeer既有中心化教师/directcenter及posttdnone/ins1强基线必须按同支持/query另作比较，完成之前不宣称CiteSeer最强或全局提升。后续使用原R73来源与审计，保留来源不同的独立目录。当前未启动正式，也未取得迁移结果。
-
-新训练入口仅去除Cora限定并固定原Cora教师，原运行文件均不改。独立CPU审计的数据集从单数据集配置读取，类别从数据读取；rank1 replay的Prompt形状参数化。Cora与CiteSeer均须完成smoke，以证明参数化没有破坏原路径。

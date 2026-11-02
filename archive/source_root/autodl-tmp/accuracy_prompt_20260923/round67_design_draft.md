@@ -1,9 +1,0 @@
-# 第67轮草案：中心化门控Prompt跨预训练权重筛选
-
-第64轮中心化门控已经明显改善CiteSeer Prompt，第65轮距离项未超过直接教师；继续调损失前，检查新的提示条件是否更适合其他现有预训练权重。继承第63/64轮已验证的教师与门控机制，不声称本轮另有新机制或新论文贡献。
-
-当前服务器已只读确认CiteSeer有九个GCN128 checkpoint：Bandana、DGI、Edgepred_GPPT、Edgepred_Gprompt、GraphCL、GraphMAE、GraphMAE2、S2GAE、SimGRACE。只有文件存在已验证，不能视为已完成当前代码严格加载或源实现一致性审计。正式前逐个strict load、检查两层结构和sidecar/SHA；不兼容则显式skip，不修改权重凑适配。
-
-拟相同新5支持、固定100步Adam0.01，比较Frozen、GraphPrompt、旧岭门控、新中心化门控无KD/概率KD，各原型及固定k50传播。直接中心化教师只计算一次，GraphMAE2当前强Prompt作为跨权重参照。第18轮是旧提示的九权重筛选，第50轮是Cora新读出筛选，均不能替代此处CiteSeer中心化门控重测。
-
-按同权重增量与跨权重绝对准确率分别报告；主候选必须超过最好已有Prompt和强直接教师才固定20支持确认。原冻结主干输入契约不变，不复制checkpoint；只存提示、预测和共享稀疏邻接。第66轮有效角度结果未超过强参照，本轮不叠加关系项。正式矩阵和seed未封存，尚未训练运行。

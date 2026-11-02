@@ -1,6 +1,0 @@
-{
-  "error": "AssertionError(0.00016069412231445312)",
-  "traceback": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/sharpen_propagation_combo_20260924/grid.py\", line 102, in run_job\n    z,prompt,trace=embedding(method)\n                   ^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/sharpen_propagation_combo_20260924/grid.py\", line 90, in embedding\n    assert torch.allclose(actual,saved['scores'],atol=2e-5,rtol=1e-5),error\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 0.00016069412231445312\n",
-  "seed": 24092400,
-  "method": "Combo_temp02_mean"
-}
